@@ -1,0 +1,19 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.inFolder("events")
+    order:
+      - file.name
+      - year
+      - file.path
+  - type: cards
+    name: View. ааа
+    order:
+      - file.name
+      - year
+    markers: number
+    image: note.year
+    imageFit: contain
+    imageAspectRatio: 0.85
