@@ -1,0 +1,28 @@
+filters:
+  and:
+    - file.inFolder("events")
+views:
+  - type: table
+    name: "2026"
+    filters:
+      and:
+        - file.inFolder("events/2026")
+    order:
+      - file.name
+      - Клуб
+      - gravel
+      - Год
+      - Сезон
+      - distance
+      - Date
+    columnSize:
+      note.year: 102
+  - type: cards
+    name: View. ааа
+    order:
+      - file.name
+      - year
+    markers: number
+    image: note.year
+    imageFit: contain
+    imageAspectRatio: 0.85

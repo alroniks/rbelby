@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "e1dae59ab340b522",
+    "type": "split",
+    "children": [
+      {
+        "id": "5ebb40e4a4ae239e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f60a98844e83d52c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "events/2026/Калядкі.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Калядкі"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8baafdef72052c4a",
+    "type": "split",
+    "children": [
+      {
+        "id": "46c408d855604414",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "055216a683b946d2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Праваднік"
+            }
+          },
+          {
+            "id": "626be3119cf5ec17",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "[\"distance\"]",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Пошук"
+            }
+          },
+          {
+            "id": "f1c136026bb39b96",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладкі"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "538c124adb3cbbd4",
+    "type": "split",
+    "children": [
+      {
+        "id": "9c9be2b90a0f5895",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d66a177835ec325a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "events/2025/fest-2026.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Зваротныя спасылкі да fest-2026"
+            }
+          },
+          {
+            "id": "27bb71de71de0784",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "events/2025/fest-2026.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Выходныя спасылкі з fest-2026"
+            }
+          },
+          {
+            "id": "70b358c3ff8e849f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "events/2026/Калядкі.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура Калядкі"
+            }
+          },
+          {
+            "id": "44b1b69b772da729",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Усе ўласцівасці"
+            }
+          },
+          {
+            "id": "acc141b9b7566893",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "git-view"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню хуткай навігацыі": false,
+      "templates:Уставіць шаблон": false,
+      "command-palette:Адкрыць камандную панэль": false,
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-git:Open Git source control": false,
+      "iconic:Open rulebook": false
+    }
+  },
+  "active": "f60a98844e83d52c",
+  "lastOpenFiles": [
+    "events/2026/xaty-n-skij.md",
+    "events/2026/kaneczsezonu-kry-n-chk.md",
+    "events/2026/zavershayushhij-yakutskij.md",
+    "events/2026/iz-lidy-v-minsk.md",
+    "events/2026/iz-minska-v-lidu.md",
+    "events/2026/osipovichskij.md",
+    "events/2026/pleshheniczkij.md",
+    "events/2026/cherven-skij.md",
+    "events/2026/zavershayushhij.md",
+    "events/2026/vetraz-kk.md",
+    "events/2026/osennij-fest-200.md",
+    "events/2026/kantri-roud-gravijny-j.md",
+    "events/2026/gork-kamen-n.md",
+    "events/2026/logojskie-gorki.md",
+    "events/2026/osennyaya-dvuxsotka.md",
+    "events/2026/dneprovskij-rubezh.md",
+    "events/2026/dretun-kk.md",
+    "events/2026/priozer-e-kk.md",
+    "events/2026/volmyanskij-shlyax.md",
+    "events/2026/letnij-vtoroj.md",
+    "events/2026/belorusskij-ty-syachnik.md",
+    "events/2026/vokrug-poles-ya-1000.md",
+    "events/2026/fest-300-pravo-rulya.md",
+    "events/2026/mayak.md",
+    "events/2026/osvejskij.md",
+    "events/2026/grevel-tur-mezhdurech-ya.md",
+    "events/2025",
+    "Бреветы.base",
+    "Маршруты.base",
+    "data/clubs.json",
+    "data/authors.json",
+    "data/clubs.ru.json",
+    "data/authors.ru.json",
+    "data",
+    "Бреветы - RU.base",
+    "clubs/Без назвы.base"
+  ]
+}

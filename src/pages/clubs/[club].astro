@@ -1,0 +1,29 @@
+---
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (() => {
+  return [
+    { params: { club: 12344 }},
+
+  ];
+});
+
+const club = Astro.params.club;
+---
+
+<div>This is club {club}</div>
+
+SIABRY RANDONNEURS	520002
+INDEPENDENT BELARUS	520099
+NA SHOSSERE	        520009
+Grodno Cycling	    520005
+BBB	                520006
+Cadence Mogilev	    520007
+Versta	            520010
+Veloslonim	        520011
+Audax Lida	        520012
+VELO-GORKI	        520013
+ВелоБрест	          520016
+Velo Gomel	        520015
+BELARUS RANDONNEURS CLUB	520001
+Audax Zhodino	      520014

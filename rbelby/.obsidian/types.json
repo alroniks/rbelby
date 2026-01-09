@@ -1,0 +1,12 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "Клуб": "multitext",
+    "distance": "multitext",
+    "gravel": "checkbox",
+    "Date": "date",
+    "test": "multitext"
+  }
+}

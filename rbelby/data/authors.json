@@ -1,0 +1,77 @@
+[
+  {
+    "id": "ik",
+    "name": "Иван Климчук",
+    "email": "alroniks@gmail.com"
+  },
+  {
+    "id": "brusnikin",
+    "name": "C.Брусникин",
+    "email": "brusnikin.sergei@gmail.com"
+  },
+  {
+    "id": "sedne",
+    "name": "К. Седнеў",
+    "email": "kostya1chemist@gmail.com"
+  },
+  {
+    "id": "kriviczkij",
+    "name": "С.Кривицкий",
+    "email": "siarheyk@gmail.com"
+  },
+  {
+    "id": "levchenko",
+    "name": "С. Левченко",
+    "email": "levchenko8232480@gmail.com"
+  },
+  {
+    "id": "kapshevich",
+    "name": "С.Капшевич",
+    "email": "stanislav_k24@mail.ru"
+  },
+  {
+    "id": "chistobaev",
+    "name": "Д.Чистобаев",
+    "email": "chistobaevdm@mail.ru"
+  },
+  {
+    "id": "medel",
+    "name": "А.Медель",
+    "email": "a.medel@mail.ru"
+  },
+  {
+    "id": "fedotov",
+    "name": "Ф.Федотов",
+    "email": "inter_nos@inbox.ru"
+  },
+  {
+    "id": "vlasov",
+    "name": "О.Власов",
+    "email": "oleg7282882@gmail.com"
+  },
+  {
+    "id": "yudiczkij",
+    "name": "П.Юдицкий",
+    "email": "petr591207@gmail.com"
+  },
+  {
+    "id": "sapega",
+    "name": "С.Сапега",
+    "email": "eremeyka@tut.by"
+  },
+  {
+    "id": "valevach",
+    "name": "В.Валевач",
+    "email": "victorovich1963@gmail.com"
+  },
+  {
+    "id": "dubrovnik",
+    "name": "О.Дубровник",
+    "email": "doc207@mail.ru"
+  },
+  {
+    "id": "moxanova",
+    "name": "А. Моханова",
+    "email": "aleksandra.mohanova@gmail.com"
+  }
+]
