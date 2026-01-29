@@ -74,8 +74,7 @@
               "title": "Закладкі"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -179,7 +178,7 @@
       "iconic:Open rulebook": false
     }
   },
-  "active": "f60a98844e83d52c",
+  "active": "055216a683b946d2",
   "lastOpenFiles": [
     "events/2026/xaty-n-skij.md",
     "events/2026/kaneczsezonu-kry-n-chk.md",
