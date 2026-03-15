@@ -95,15 +95,33 @@ async function updateIssue(
   title: string,
   body: string,
   milestoneNumber?: number,
-  labels?: string[]
+  labels?: string[],
+  state?: string
 ) {
   const payload: any = { title, body };
   if (milestoneNumber) payload.milestone = milestoneNumber;
   if (labels) payload.labels = labels;
+  if (state) payload.state = state;
   return fetchGithub(`/issues/${issueNumber}`, {
     method: 'PATCH',
     body: JSON.stringify(payload),
   });
+}
+
+async function addSubIssue(parentIssueNumber: number, subIssueId: number) {
+  try {
+    await fetchGithub(`/issues/${parentIssueNumber}/sub_issues`, {
+      method: 'POST',
+      body: JSON.stringify({ sub_issue_id: subIssueId }),
+    });
+    console.log(`      🔗 Linked sub-issue (ID: ${subIssueId}) to parent #${parentIssueNumber}`);
+  } catch (error: any) {
+    if (error.message.includes('already a sub-issue') || error.message.includes('Validation Failed')) {
+      // Probably already linked
+    } else {
+      console.warn(`      ⚠️ Failed to link sub-issue ${subIssueId}: ${error.message}`);
+    }
+  }
 }
 
 async function run() {
@@ -247,7 +265,7 @@ async function run() {
     // Sort existing sub-issues ascending by number to match the order of tasks in the spec
     existingSubIssues.sort((a: any, b: any) => a.number - b.number);
 
-    const taskLinks: string[] = [];
+    const subIssueIds: number[] = [];
 
     // Check if the main issue is closed, if so, we should probably skip processing entirely based on golden rule
     const existingMainIssue = featureToIssue.get(featureId);
@@ -266,18 +284,22 @@ async function run() {
       const taskIssueBody = `This is a sub-task for feature: [${title}](../../blob/main/docs/specs/${file}).\n\n**Parent Feature ID**: \`${featureId}\`\n\n### Task Description\n${task.description}`;
 
       let taskIssueNumber;
+      let taskIssueId;
 
       if (existingTaskIssue) {
         taskIssueNumber = existingTaskIssue.number;
+        taskIssueId = existingTaskIssue.id;
         // Don't modify closed sub-issues
         if (existingTaskIssue.state !== 'closed') {
           const currentLabels =
             existingTaskIssue.labels?.map((l: any) => l.name) || [];
           const missingLabel = !currentLabels.includes('subtask');
 
+          const targetState = task.completed ? 'closed' : 'open';
           const needsUpdate =
             existingTaskIssue.title !== taskIssueTitle ||
             existingTaskIssue.body !== taskIssueBody ||
+            existingTaskIssue.state !== targetState ||
             (milestoneObj &&
               existingTaskIssue.milestone?.number !== milestoneObj.number) ||
             missingLabel;
@@ -291,7 +313,8 @@ async function run() {
               taskIssueTitle,
               taskIssueBody,
               milestoneObj?.number,
-              ['subtask']
+              ['subtask'],
+              targetState
             );
           }
         } else {
@@ -308,31 +331,26 @@ async function run() {
           ['subtask']
         );
         taskIssueNumber = newTaskIssue.number;
+        taskIssueId = newTaskIssue.id;
         console.log(`      ✅ Created Sub-Issue #${taskIssueNumber}`);
       }
 
       // Keep track of the link to build the parent issue body.
       // We ONLY use `#issueNumber` without the title.
       // GitHub natively renders this as a task badge + title link!
-      taskLinks.push(`- [${task.completed ? 'x' : ' '}] #${taskIssueNumber}`);
+      subIssueIds.push(taskIssueId);
     }
 
     // Build Parent Issue Body
     // Fix absolute link to the file
     const absoluteFileUrl = `https://github.com/${GITHUB_REPOSITORY}/blob/main/docs/specs/${file}`;
 
-    let issueBody = `### Specification: [${title}](${absoluteFileUrl})\n\n**Feature ID**: \`${featureId}\`\n\nThis issue tracks the implementation of the ${title} feature. Please refer to the linked specification document for User Scenarios and Technical Details.\n\n### Implementation Tasks\n\n`;
+    let issueBody = `### Specification: [${title}](${absoluteFileUrl})\n\n**Feature ID**: \`${featureId}\`\n\nThis issue tracks the implementation of the ${title} feature. Please refer to the linked specification document for User Scenarios and Technical Details.\n\n### Implementation Tasks\n\nSee native sub-issues below.`;
 
-    if (taskLinks.length > 0) {
-      issueBody += taskLinks.join('\n');
-    } else {
-      // Fallback if no tasks were parsed
-      issueBody += tasksSectionMatch
-        ? tasksSectionMatch[0].replace('## Implementation Tasks\n', '')
-        : '';
-    }
+    let parentIssueNumber;
 
     if (existingMainIssue) {
+      parentIssueNumber = existingMainIssue.number;
       // We already checked if it's closed above, but to be safe
       if (existingMainIssue.state === 'closed') continue;
 
@@ -371,7 +389,16 @@ async function run() {
         milestoneObj?.number,
         ['feature']
       );
+      parentIssueNumber = newIssue.number;
       console.log(`   ✅ Created Issue #${newIssue.number}`);
+    }
+
+    // Link sub-issues to parent natively
+    if (parentIssueNumber && subIssueIds.length > 0) {
+      console.log(`   🔗 Linking ${subIssueIds.length} sub-issues to Parent #${parentIssueNumber}...`);
+      for (const subId of subIssueIds) {
+        await addSubIssue(parentIssueNumber, subId);
+      }
     }
   }
 
