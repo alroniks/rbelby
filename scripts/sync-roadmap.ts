@@ -25,6 +25,11 @@ if (!GITHUB_REPOSITORY) {
 }
 
 const API_BASE = `https://api.github.com/repos/${GITHUB_REPOSITORY}`;
+// Use beta headers as sub-issues are likely part of a newer or preview API
+// if natively supported, or we just rely on tasklists format in the body.
+// Wait, currently, "Sub-issues" in GitHub Projects/Issues is primarily driven by tasklists in the markdown body:
+// e.g. `- [ ] task #issue_number` or just `- [ ] description`.
+// We will create actual issues for the tasks and reference them in the parent issue body.
 const HEADERS = {
   Authorization: `Bearer ${GITHUB_TOKEN}`,
   Accept: 'application/vnd.github.v3+json',
@@ -136,14 +141,31 @@ async function run() {
     }
   }
 
-  // 4. Fetch all Issues to find existing specs
+  // 4. Fetch all Issues to find existing specs and tasks
   const remoteIssues = await getIssues();
   const featureToIssue = new Map<string, any>();
+  const parentIdToSubIssues = new Map<string, any[]>();
+
   for (const issue of remoteIssues) {
     if (issue.pull_request) continue; // Skip PRs
-    const match = issue.body?.match(/\*\*Feature ID\*\*:\s+`([^`]+)`/);
-    if (match) {
-      featureToIssue.set(match[1], issue);
+
+    // Check if it's a main feature issue
+    const featureMatch = issue.body?.match(/\*\*Feature ID\*\*:\s+`([^`]+)`/);
+    if (featureMatch && !issue.body?.includes('**Parent Feature ID**:')) {
+      featureToIssue.set(featureMatch[1], issue);
+      continue;
+    }
+
+    // Check if it's a sub-issue
+    const subIssueMatch = issue.body?.match(
+      /\*\*Parent Feature ID\*\*:\s+`([^`]+)`/
+    );
+    if (subIssueMatch) {
+      const parentId = subIssueMatch[1];
+      if (!parentIdToSubIssues.has(parentId)) {
+        parentIdToSubIssues.set(parentId, []);
+      }
+      parentIdToSubIssues.get(parentId)!.push(issue);
     }
   }
 
@@ -167,7 +189,6 @@ async function run() {
     }
 
     const rawTitle = titleMatch[1];
-    // Strip "Spec [001]: " or similar prefixes if preferred, or keep full
     const title = rawTitle.replace(/^Spec\s*\[\d+\]:\s*/, '');
     const issueTitle = `Feature: ${title}`;
 
@@ -177,40 +198,127 @@ async function run() {
       ? milestoneMap.get(milestoneTitle)
       : null;
 
-    // Extract tasks
-    const tasksMatch = content.match(/## Implementation Tasks[\s\S]*/);
-    const tasksText = tasksMatch ? tasksMatch[0] : '';
+    // Parse Implementation Tasks
+    const tasksSectionMatch = content.match(
+      /## Implementation Tasks([\s\S]*?)(?=^## |\n*$)/m
+    );
+    const tasks = [];
+    if (tasksSectionMatch) {
+      const taskLines = tasksSectionMatch[1].split('\n');
+      for (const line of taskLines) {
+        const taskMatch = line.match(/^-\s+\[(.)\]\s+(.+)$/);
+        if (taskMatch) {
+          tasks.push({
+            completed: taskMatch[1].toLowerCase() === 'x',
+            title: taskMatch[2].trim(),
+            raw: line,
+          });
+        }
+      }
+    }
 
-    const issueBody = `### Specification: [${title}](docs/specs/${file})\n\n**Feature ID**: \`${featureId}\`\n\nThis issue tracks the implementation of the ${title} feature. Please refer to the linked specification document for User Scenarios and Technical Details.\n\n${tasksText}`;
+    // Sync Sub-Issues
+    const existingSubIssues = parentIdToSubIssues.get(featureId) || [];
+    const taskLinks: string[] = [];
 
-    const existingIssue = featureToIssue.get(featureId);
+    // Check if the main issue is closed, if so, we should probably skip processing entirely based on golden rule
+    const existingMainIssue = featureToIssue.get(featureId);
+    if (existingMainIssue && existingMainIssue.state === 'closed') {
+      console.log(
+        `🔒 Issue for [${featureId}] is closed (Issue #${existingMainIssue.number}). Skipping entire spec.`
+      );
+      continue;
+    }
 
-    if (existingIssue) {
-      if (existingIssue.state === 'closed') {
-        console.log(
-          `🔒 Issue for [${featureId}] is closed (Issue #${existingIssue.number}). Skipping.`
+    for (const task of tasks) {
+      // Find matching sub-issue by title
+      const existingTaskIssue = existingSubIssues.find(
+        (i) => i.title === `Task: ${task.title}`
+      );
+
+      const taskIssueBody = `This is a sub-task for feature: [${title}](../../blob/main/docs/specs/${file}).\n\n**Parent Feature ID**: \`${featureId}\`\n\n### Task Description\n${task.title}`;
+
+      let taskIssueNumber;
+
+      if (existingTaskIssue) {
+        taskIssueNumber = existingTaskIssue.number;
+        // Don't modify closed sub-issues
+        if (existingTaskIssue.state !== 'closed') {
+          const needsUpdate =
+            existingTaskIssue.body !== taskIssueBody ||
+            (milestoneObj &&
+              existingTaskIssue.milestone?.number !== milestoneObj.number);
+          if (needsUpdate) {
+            console.log(
+              `   🔄 Updating Sub-Issue #${existingTaskIssue.number} for: ${task.title}`
+            );
+            await updateIssue(
+              existingTaskIssue.number,
+              `Task: ${task.title}`,
+              taskIssueBody,
+              milestoneObj?.number
+            );
+          }
+        } else {
+          console.log(
+            `   🔒 Sub-Issue #${existingTaskIssue.number} for: ${task.title} is closed. Skipping.`
+          );
+        }
+      } else {
+        console.log(`   ✨ Creating new Sub-Issue for: ${task.title}`);
+        const newTaskIssue = await createIssue(
+          `Task: ${task.title}`,
+          taskIssueBody,
+          milestoneObj?.number
         );
-        continue;
+        taskIssueNumber = newTaskIssue.number;
+        console.log(`      ✅ Created Sub-Issue #${taskIssueNumber}`);
       }
 
-      // Check if update is needed (body, title, or milestone changed)
+      // Keep track of the link to build the parent issue body
+      taskLinks.push(
+        `- [${task.completed ? 'x' : ' '}] #${taskIssueNumber} ${task.title}`
+      );
+    }
+
+    // Build Parent Issue Body
+    // Fix absolute link to the file
+    const absoluteFileUrl = `https://github.com/${GITHUB_REPOSITORY}/blob/main/docs/specs/${file}`;
+
+    let issueBody = `### Specification: [${title}](${absoluteFileUrl})\n\n**Feature ID**: \`${featureId}\`\n\nThis issue tracks the implementation of the ${title} feature. Please refer to the linked specification document for User Scenarios and Technical Details.\n\n### Implementation Tasks\n\n`;
+
+    if (taskLinks.length > 0) {
+      issueBody += taskLinks.join('\n');
+    } else {
+      // Fallback if no tasks were parsed
+      issueBody += tasksSectionMatch
+        ? tasksSectionMatch[0].replace('## Implementation Tasks\n', '')
+        : '';
+    }
+
+    if (existingMainIssue) {
+      // We already checked if it's closed above, but to be safe
+      if (existingMainIssue.state === 'closed') continue;
+
       const needsUpdate =
-        existingIssue.title !== issueTitle ||
-        existingIssue.body !== issueBody ||
+        existingMainIssue.title !== issueTitle ||
+        existingMainIssue.body !== issueBody ||
         (milestoneObj &&
-          existingIssue.milestone?.number !== milestoneObj.number);
+          existingMainIssue.milestone?.number !== milestoneObj.number);
 
       if (needsUpdate) {
-        console.log(`🔄 Updating Issue #${existingIssue.number} for: ${title}`);
+        console.log(
+          `🔄 Updating Issue #${existingMainIssue.number} for: ${title}`
+        );
         await updateIssue(
-          existingIssue.number,
+          existingMainIssue.number,
           issueTitle,
           issueBody,
           milestoneObj?.number
         );
       } else {
         console.log(
-          `✅ Issue #${existingIssue.number} for [${featureId}] is up to date.`
+          `✅ Issue #${existingMainIssue.number} for [${featureId}] is up to date.`
         );
       }
     } else {
