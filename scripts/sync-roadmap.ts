@@ -202,23 +202,48 @@ async function run() {
     const tasksSectionMatch = content.match(
       /## Implementation Tasks\s*\n([\s\S]*?)(?=\n## |$)/
     );
-    const tasks = [];
+    const tasks: any[] = [];
     if (tasksSectionMatch) {
       const taskLines = tasksSectionMatch[1].split('\n');
       for (const line of taskLines) {
-        const taskMatch = line.match(/^\s*-\s+\[(.)\]\s+(.+)$/);
+        // Match "- [ ] **Title**: Description"
+        let taskMatch = line.match(/^\s*-\s+\[(.)\]\s+\*\*(.+?)\*\*:\s+(.+)$/);
         if (taskMatch) {
           tasks.push({
             completed: taskMatch[1].toLowerCase() === 'x',
             title: taskMatch[2].trim(),
+            description: taskMatch[3].trim(),
             raw: line,
           });
+        } else {
+          // Fallback for just "- [ ] Description"
+          taskMatch = line.match(/^\s*-\s+\[(.)\]\s+(.+)$/);
+          if (taskMatch) {
+            const rawDesc = taskMatch[2].trim();
+            // Create a short title from the first 5 words
+            let shortTitle = rawDesc
+              .split(' ')
+              .slice(0, 5)
+              .join(' ')
+              .replace(/[`.,:;]/g, '');
+            if (rawDesc.split(' ').length > 5) shortTitle += '...';
+
+            tasks.push({
+              completed: taskMatch[1].toLowerCase() === 'x',
+              title: shortTitle,
+              description: rawDesc,
+              raw: line,
+            });
+          }
         }
       }
     }
 
     // Sync Sub-Issues
     const existingSubIssues = parentIdToSubIssues.get(featureId) || [];
+    // Sort existing sub-issues ascending by number to match the order of tasks in the spec
+    existingSubIssues.sort((a: any, b: any) => a.number - b.number);
+
     const taskLinks: string[] = [];
 
     // Check if the main issue is closed, if so, we should probably skip processing entirely based on golden rule
@@ -230,13 +255,12 @@ async function run() {
       continue;
     }
 
-    for (const task of tasks) {
-      // Find matching sub-issue by title
-      const existingTaskIssue = existingSubIssues.find(
-        (i) => i.title === `Task: ${task.title}`
-      );
+    for (let i = 0; i < tasks.length; i++) {
+      const task = tasks[i];
+      const existingTaskIssue = existingSubIssues[i];
 
-      const taskIssueBody = `This is a sub-task for feature: [${title}](../../blob/main/docs/specs/${file}).\n\n**Parent Feature ID**: \`${featureId}\`\n\n### Task Description\n${task.title}`;
+      const taskIssueTitle = `${task.title}`;
+      const taskIssueBody = `This is a sub-task for feature: [${title}](../../blob/main/docs/specs/${file}).\n\n**Parent Feature ID**: \`${featureId}\`\n\n### Task Description\n${task.description}`;
 
       let taskIssueNumber;
 
@@ -245,6 +269,7 @@ async function run() {
         // Don't modify closed sub-issues
         if (existingTaskIssue.state !== 'closed') {
           const needsUpdate =
+            existingTaskIssue.title !== taskIssueTitle ||
             existingTaskIssue.body !== taskIssueBody ||
             (milestoneObj &&
               existingTaskIssue.milestone?.number !== milestoneObj.number);
@@ -254,7 +279,7 @@ async function run() {
             );
             await updateIssue(
               existingTaskIssue.number,
-              `Task: ${task.title}`,
+              taskIssueTitle,
               taskIssueBody,
               milestoneObj?.number
             );
@@ -267,7 +292,7 @@ async function run() {
       } else {
         console.log(`   ✨ Creating new Sub-Issue for: ${task.title}`);
         const newTaskIssue = await createIssue(
-          `Task: ${task.title}`,
+          taskIssueTitle,
           taskIssueBody,
           milestoneObj?.number
         );
@@ -275,10 +300,10 @@ async function run() {
         console.log(`      ✅ Created Sub-Issue #${taskIssueNumber}`);
       }
 
-      // Keep track of the link to build the parent issue body
-      taskLinks.push(
-        `- [${task.completed ? 'x' : ' '}] #${taskIssueNumber} ${task.title}`
-      );
+      // Keep track of the link to build the parent issue body.
+      // We ONLY use `#issueNumber` without the title.
+      // GitHub natively renders this as a task badge + title link!
+      taskLinks.push(`- [${task.completed ? 'x' : ' '}] #${taskIssueNumber}`);
     }
 
     // Build Parent Issue Body

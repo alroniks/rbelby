@@ -8,7 +8,7 @@ Configure the site to support multiple languages (Russian as default, Belarusian
 
 ## Implementation Tasks
 
-- [ ] Configure `astro.config.mjs` for i18n (`ru` default without prefix, `/be/`, `/en/`).
-- [ ] Setup UI translation dictionaries (`src/i18n/locales/`).
-- [ ] Build a Language Switcher dropdown component for the Header.
-- [ ] Create utility functions for generating localized paths.
+- [ ] **Configure `astro**: Configure `astro.config.mjs` for i18n (`ru` default without prefix, `/be/`, `/en/`).
+- [ ] **Setup UI translation dictionaries (src/i18n/locales/).**: Setup UI translation dictionaries (`src/i18n/locales/`).
+- [ ] **Build a Language Switcher**: Build a Language Switcher dropdown component for the Header.
+- [ ] **Create utility functions for**: Create utility functions for generating localized paths.

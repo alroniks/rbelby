@@ -8,6 +8,6 @@ Launch the community-focused sections of the site.
 
 ## Implementation Tasks
 
-- [ ] Create `pages/clubs/index.astro` displaying a grid of club cards.
-- [ ] Create `pages/journal/index.astro` to list articles.
-- [ ] Create `pages/journal/[slug].astro` to render individual article markdown.
+- [ ] **Create `pages/clubs/index**: Create `pages/clubs/index.astro` displaying a grid of club cards.
+- [ ] **Create `pages/journal/index**: Create `pages/journal/index.astro` to list articles.
+- [ ] **Create `pages/journal/[slug]**: Create `pages/journal/[slug].astro` to render individual article markdown.

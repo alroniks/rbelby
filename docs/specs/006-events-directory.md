@@ -8,7 +8,7 @@ Create the listing page for all brevets.
 
 ## Implementation Tasks
 
-- [ ] Create `pages/events/index.astro`.
-- [ ] Fetch the events collection using Astro's `getCollection()`.
-- [ ] Build a simple list/grid UI to display event names, dates, and distances.
-- [ ] Implement pagination if the list exceeds a certain number (e.g., 50).
+- [ ] **Create `pages/events/index**: Create `pages/events/index.astro`.
+- [ ] **Fetch the events**: Fetch the events collection using Astro's `getCollection()`.
+- [ ] **Build a simple list/grid**: Build a simple list/grid UI to display event names, dates, and distances.
+- [ ] **Implement pagination if the**: Implement pagination if the list exceeds a certain number (e.g., 50).

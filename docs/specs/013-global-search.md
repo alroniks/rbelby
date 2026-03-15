@@ -8,6 +8,6 @@ Implement an instant site-wide search using Pagefind.
 
 ## Implementation Tasks
 
-- [ ] Install and configure `pagefind` in `package.json` build scripts.
-- [ ] Add `data-pagefind-body` and `data-pagefind-ignore` attributes to global layouts.
-- [ ] Implement the Pagefind UI component in the global Header.
+- [ ] **Install and configure**: Install and configure `pagefind` in `package.json` build scripts.
+- [ ] **Add data-pagefind-body and data-pagefind-ignore**: Add `data-pagefind-body` and `data-pagefind-ignore` attributes to global layouts.
+- [ ] **Implement the Pagefind UI**: Implement the Pagefind UI component in the global Header.

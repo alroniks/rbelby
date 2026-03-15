@@ -8,6 +8,6 @@ Create the dynamic routing for individual brevet pages.
 
 ## Implementation Tasks
 
-- [ ] Create `pages/events/[slug].astro`.
-- [ ] Render the markdown content (`<Content />`) using Tailwind Typography (`prose`).
-- [ ] Build the sidebar/header block displaying meta-info (Date, Distance, Start City).
+- [ ] **Create `pages/events/[slug]**: Create `pages/events/[slug].astro`.
+- [ ] **Render the markdown**: Render the markdown content (`<Content />`) using Tailwind Typography (`prose`).
+- [ ] **Build the sidebar/header block**: Build the sidebar/header block displaying meta-info (Date, Distance, Start City).

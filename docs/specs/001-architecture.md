@@ -8,7 +8,7 @@ Establish the foundational Astro setup, configure Tailwind and Preline UI, and b
 
 ## Implementation Tasks
 
-- [ ] Ensure Astro 5.x, Tailwind CSS 4, and Preline UI are correctly configured.
-- [ ] Configure `content.config.ts` to read `events`, `routes`, `clubs`, and `journal` from the `rbelby/` directory.
-- [ ] Implement Zod schemas for the frontmatter of each content type (based on our current knowledge of the Obsidian data).
-- [ ] Verify that Astro can build successfully without errors.
+- [ ] **Ensure Astro 5**: Ensure Astro 5.x, Tailwind CSS 4, and Preline UI are correctly configured.
+- [ ] **Configure `content**: Configure `content.config.ts` to read `events`, `routes`, `clubs`, and `journal` from the `rbelby/` directory.
+- [ ] **Implement Zod schemas for**: Implement Zod schemas for the frontmatter of each content type (based on our current knowledge of the Obsidian data).
+- [ ] **Verify that Astro**: Verify that Astro can build successfully without errors.
