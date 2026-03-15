@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # Obsidian settings
 src/content/.obsidian/workspace.json
+
+_bmad/custom/config.user.toml
