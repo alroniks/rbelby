@@ -200,13 +200,13 @@ async function run() {
 
     // Parse Implementation Tasks
     const tasksSectionMatch = content.match(
-      /## Implementation Tasks([\s\S]*?)(?=^## |\n*$)/m
+      /## Implementation Tasks\s*\n([\s\S]*?)(?=\n## |$)/
     );
     const tasks = [];
     if (tasksSectionMatch) {
       const taskLines = tasksSectionMatch[1].split('\n');
       for (const line of taskLines) {
-        const taskMatch = line.match(/^-\s+\[(.)\]\s+(.+)$/);
+        const taskMatch = line.match(/^\s*-\s+\[(.)\]\s+(.+)$/);
         if (taskMatch) {
           tasks.push({
             completed: taskMatch[1].toLowerCase() === 'x',
