@@ -7,15 +7,15 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   i18n: {
-    locales: ["ru", "be", "en"],
-    defaultLocale: "ru",
+    locales: ['ru', 'be', 'en'],
+    defaultLocale: 'ru',
     fallback: {
-      be: "ru",
-      en: "ru",
-    }
+      be: 'ru',
+      en: 'ru',
+    },
   },
   prefetch: {
-    prefetchAll: true
+    prefetchAll: true,
   },
   integrations: [react()],
   markdown: {

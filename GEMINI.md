@@ -1,50 +1,48 @@
-# Gemini Context & Project Guide
+# Randonneurs Belarus (rbelby) - AI Agent Instructions
 
-## 1. Project Overview
-**Name:** rbelby (Randonneurs Belarus)
-**Purpose:** Website for the Belarusian Randonneurs community, managing events (brevets), routes, and club information.
-**Architecture:** Static Site Generator (Astro) with an Obsidian-backed content layer.
+Hello Gemini! When you are working in this repository, you must adhere strictly to the following architectural guidelines, workflow rules, and formatting standards.
 
-## 2. Technology Stack
-- **Framework:** Astro 5.x
-- **UI Library:** React 19 (via `@astrojs/react`)
-- **Styling:** Tailwind CSS 4 (via `@tailwindcss/vite` & `@tailwindcss/typography`)
-- **UI Components:** Preline UI
-- **Content Management:** Markdown/Obsidian Vault (`rbelby/` directory)
-- **Internationalization:** Astro i18n (Default: `ru`, Supported: `be`, `en`)
-- **Translation Platform:** Crowdin
-- **Package Manager:** npm
+## 🏗️ Core Architecture (Strict Compliance Required)
 
-## 3. Directory Structure
-- **`/rbelby/`**: The "Content Database". Acts as an Obsidian vault.
-    - `events/`: Brevet event files (Markdown).
-    - `routes/`: Route descriptions.
-    - `data/`: JSON data for `clubs` and `authors`.
-    - `.templates/`: Obsidian templates for new content.
-- **`/src/`**: Application source code.
-    - `components/`: Reusable `.astro` and `.tsx` components.
-    - `layouts/`: Astro layouts (`Event.astro`, `Route.astro`, etc.).
-    - `pages/`: File-based routing.
-    - `i18n/`: Localization utilities and dictionaries.
-    - `plugins/`: Custom plugins (e.g., `remark-modified-time.mjs`).
+You must treat `docs/CONSTITUTION.md` as the ultimate source of truth for all architectural decisions. Here are the most critical points:
 
-## 4. Key Configuration
-- **`astro.config.mjs`**: Main configuration. Includes `react`, `tailwindcss`, `remark-modified-time` plugin, and i18n setup.
-- **`src/content.config.ts`**: (Todo) Needs configuration to properly load collections from `rbelby/`.
-- **`tailwind.config.js`**: (Implicit/Vite) Tailwind 4 configuration.
+1. **NO REACT (`.tsx` or `.jsx`)**: Do not use React components. The project uses **Astro** (`.astro`) components exclusively for UI layout.
+2. **Vanilla JS & Preline UI**: Client-side interactivity MUST be handled via vanilla JavaScript (or Preline's native JS plugins). Do not install other heavy frontend frameworks.
+3. **Tailwind CSS 4**: Use utility classes. Avoid global CSS where possible.
+4. **Content as Data (Obsidian Vault)**: Do not hardcode content into components. All content (events, routes, authors, clubs) lives in the `rbelby/` markdown/json directory. Read data via `src/content.config.ts`.
+5. **Static Site Generation (SSG)**: Keep client-side JavaScript to a minimum for SEO and performance.
 
-## 5. Development Workflow
-- **Start Dev Server:** `npm run dev`
-- **Build Production:** `npm run build`
-- **Lint/Check:** (Standard Astro commands)
+## 🔄 Development Workflow
 
-## 6. Conventions & Guidelines
-- **I18n:** Ensure all user-facing text is localized using the keys in `src/i18n/locales`.
-- **Content:** Primary content lives in `rbelby/` and should be treated as data.
-- **Styling:** Use utility classes (Tailwind). Avoid global CSS where possible.
-- **Components:** Prefer `.astro` components for static layout.
-- **Translation:** Obsidian-based content (`rbelby/`) is translated via Crowdin integration.
+The workflow is simplified and relies heavily on GitHub Issues and iterative planning.
 
-## 7. Current Status / Notes
-- `src/content.config.ts` contains placeholder code (`blog`, `dogs`) and needs to be updated to map the actual content in `rbelby/`.
-- The project is in active development with a mix of static generation and interactive React components.
+1. **English Only**: All specifications, code comments, issues, commit messages, and Markdown documentation must be written in **English**.
+2. **Specs First**: New features begin with a spec drafted in `docs/specs/` (e.g., `docs/specs/001-website-core-structure.md`).
+3. **GitHub Integration**: Specs are linked to GitHub Issues, which live on the Roadmap. Check `docs/WORKFLOW.md` for details.
+4. **Iterative Execution**: Do not try to implement massive changes at once. If asked to implement a feature, use the `enter_plan_mode` tool to safely review the codebase, plan your strategy, and confirm the architecture before writing files.
+
+## 🛠️ Commands and formatting
+
+After completing changes to the source code, always run the following command to format the codebase:
+
+```bash
+npm run format
+```
+
+When building or testing locally:
+
+- Use `npm run build` to verify the production build succeeds without errors.
+- Use `npm run dev` to test changes locally.
+
+## 🗺️ Navigation Guide
+
+- `rbelby/`: The Obsidian Vault containing Markdown content (Brevets, Routes, etc.). This is your database.
+- `src/content.config.ts`: Defines how Astro loads content from `rbelby/`.
+- `docs/CONSTITUTION.md`: The mandatory ruleset.
+- `docs/WORKFLOW.md`: How to plan and execute tasks using GitHub.
+- `docs/specs/`: Active, in-progress, or completed feature specifications.
+- `src/components/`: Reusable `.astro` UI elements.
+- `src/layouts/`: Base HTML shells and page layouts.
+- `src/pages/`: Astro file-based routing.
+
+Remember: Always keep it simple, strictly avoid React, and ensure maximum compliance with the Constitution.
