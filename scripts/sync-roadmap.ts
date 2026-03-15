@@ -79,9 +79,10 @@ async function getIssues() {
 async function createIssue(
   title: string,
   body: string,
-  milestoneNumber?: number
+  milestoneNumber?: number,
+  labels: string[] = []
 ) {
-  const payload: any = { title, body, labels: ['enhancement'] };
+  const payload: any = { title, body, labels };
   if (milestoneNumber) payload.milestone = milestoneNumber;
   return fetchGithub('/issues', {
     method: 'POST',
@@ -93,10 +94,12 @@ async function updateIssue(
   issueNumber: number,
   title: string,
   body: string,
-  milestoneNumber?: number
+  milestoneNumber?: number,
+  labels?: string[]
 ) {
   const payload: any = { title, body };
   if (milestoneNumber) payload.milestone = milestoneNumber;
+  if (labels) payload.labels = labels;
   return fetchGithub(`/issues/${issueNumber}`, {
     method: 'PATCH',
     body: JSON.stringify(payload),
@@ -268,11 +271,17 @@ async function run() {
         taskIssueNumber = existingTaskIssue.number;
         // Don't modify closed sub-issues
         if (existingTaskIssue.state !== 'closed') {
+          const currentLabels =
+            existingTaskIssue.labels?.map((l: any) => l.name) || [];
+          const missingLabel = !currentLabels.includes('subtask');
+
           const needsUpdate =
             existingTaskIssue.title !== taskIssueTitle ||
             existingTaskIssue.body !== taskIssueBody ||
             (milestoneObj &&
-              existingTaskIssue.milestone?.number !== milestoneObj.number);
+              existingTaskIssue.milestone?.number !== milestoneObj.number) ||
+            missingLabel;
+
           if (needsUpdate) {
             console.log(
               `   🔄 Updating Sub-Issue #${existingTaskIssue.number} for: ${task.title}`
@@ -281,7 +290,8 @@ async function run() {
               existingTaskIssue.number,
               taskIssueTitle,
               taskIssueBody,
-              milestoneObj?.number
+              milestoneObj?.number,
+              ['subtask']
             );
           }
         } else {
@@ -294,7 +304,8 @@ async function run() {
         const newTaskIssue = await createIssue(
           taskIssueTitle,
           taskIssueBody,
-          milestoneObj?.number
+          milestoneObj?.number,
+          ['subtask']
         );
         taskIssueNumber = newTaskIssue.number;
         console.log(`      ✅ Created Sub-Issue #${taskIssueNumber}`);
@@ -325,11 +336,16 @@ async function run() {
       // We already checked if it's closed above, but to be safe
       if (existingMainIssue.state === 'closed') continue;
 
+      const currentLabels =
+        existingMainIssue.labels?.map((l: any) => l.name) || [];
+      const missingLabel = !currentLabels.includes('feature');
+
       const needsUpdate =
         existingMainIssue.title !== issueTitle ||
         existingMainIssue.body !== issueBody ||
         (milestoneObj &&
-          existingMainIssue.milestone?.number !== milestoneObj.number);
+          existingMainIssue.milestone?.number !== milestoneObj.number) ||
+        missingLabel;
 
       if (needsUpdate) {
         console.log(
@@ -339,7 +355,8 @@ async function run() {
           existingMainIssue.number,
           issueTitle,
           issueBody,
-          milestoneObj?.number
+          milestoneObj?.number,
+          ['feature']
         );
       } else {
         console.log(
@@ -351,7 +368,8 @@ async function run() {
       const newIssue = await createIssue(
         issueTitle,
         issueBody,
-        milestoneObj?.number
+        milestoneObj?.number,
+        ['feature']
       );
       console.log(`   ✅ Created Issue #${newIssue.number}`);
     }
