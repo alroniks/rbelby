@@ -1,0 +1,91 @@
+<header
+  class="flex w-full flex-wrap border-b border-neutral-800 bg-neutral-900 py-3 text-sm sm:flex-nowrap sm:justify-start"
+>
+  <nav
+    class="mx-auto flex w-full max-w-[85rem] basis-full flex-wrap items-center justify-between px-4"
+  >
+    <a
+      class="flex-none text-xl font-semibold text-white focus:opacity-80 focus:outline-hidden sm:order-1"
+      href="#">randonneur</a
+    >
+    <div class="flex items-center gap-x-2 sm:order-3">
+      <button
+        type="button"
+        class="hs-collapse-toggle relative flex size-9 items-center justify-center gap-x-2 rounded-lg border border-neutral-700 bg-neutral-800 text-white shadow-2xs hover:bg-neutral-700 focus:bg-neutral-700 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:hidden"
+        id="hs-navbar-alignment-collapse"
+        aria-expanded="false"
+        aria-controls="hs-navbar-alignment"
+        aria-label="Toggle navigation"
+        data-hs-collapse="#hs-navbar-alignment"
+      >
+        <svg
+          class="hs-collapse-open:hidden size-4 shrink-0"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><line x1="3" x2="21" y1="6" y2="6"></line><line
+            x1="3"
+            x2="21"
+            y1="12"
+            y2="12"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg
+        >
+        <svg
+          class="hs-collapse-open:block hidden size-4 shrink-0"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
+        >
+        <span class="sr-only">Toggle</span>
+      </button>
+      <a
+        href="/login"
+        class="inline-flex items-center gap-x-2 rounded-full border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-800 shadow-2xs hover:bg-gray-50 focus:bg-gray-50 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+      >
+        Log in
+      </a>
+    </div>
+    <div
+      id="hs-navbar-alignment"
+      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 sm:order-2 sm:block sm:grow-0 sm:basis-auto"
+      aria-labelledby="hs-navbar-alignment-collapse"
+    >
+      <div
+        class="mt-5 flex flex-col gap-5 sm:mt-0 sm:flex-row sm:items-center sm:ps-5"
+      >
+        <a
+          class="font-medium text-white hover:text-gray-300 focus:text-gray-300 focus:outline-hidden"
+          href="/events">Events</a
+        >
+        <a
+          class="font-medium text-gray-400 hover:text-gray-300 focus:text-gray-300 focus:outline-hidden"
+          href="/routes">Routes</a
+        >
+        <a
+          class="font-medium text-gray-400 hover:text-gray-300 focus:text-gray-300 focus:outline-hidden"
+          href="/stats">Statistics</a
+        >
+        <a
+          class="font-medium text-gray-400 hover:text-gray-300 focus:text-gray-300 focus:outline-hidden"
+          href="/clubs">Clubs</a
+        >
+        <a
+          class="font-medium text-gray-400 hover:text-gray-300 focus:text-gray-300 focus:outline-hidden"
+          href="/lang">Language</a
+        >
+      </div>
+    </div>
+  </nav>
+</header>

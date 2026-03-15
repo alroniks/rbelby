@@ -1,7 +1,7 @@
 export const languages: Record<string, string> = {
   ru: 'Русский',
   be: 'Беларускі',
-  en: 'English'
+  en: 'English',
 };
 
 export const defaultLang = 'ru';
