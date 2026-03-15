@@ -10,6 +10,10 @@ This document outlines the simplified workflow for developing the Randonneurs Be
 
 ## The Workflow
 
+### Golden Rule: Closed Specs
+
+Once a GitHub Issue corresponding to a specification is **closed**, the specification file in `docs/specs/` becomes a historical record. **Do not modify closed specs**. If a completed feature requires changes, bugs need fixing, or new requirements emerge, create a **new specification** and a new issue instead of altering the closed one.
+
 ### 1. Planning a New Feature
 
 When starting a new feature, do not jump straight into code. First, define the specification:
