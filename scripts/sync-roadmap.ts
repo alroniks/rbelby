@@ -114,12 +114,19 @@ async function addSubIssue(parentIssueNumber: number, subIssueId: number) {
       method: 'POST',
       body: JSON.stringify({ sub_issue_id: subIssueId }),
     });
-    console.log(`      🔗 Linked sub-issue (ID: ${subIssueId}) to parent #${parentIssueNumber}`);
+    console.log(
+      `      🔗 Linked sub-issue (ID: ${subIssueId}) to parent #${parentIssueNumber}`
+    );
   } catch (error: any) {
-    if (error.message.includes('already a sub-issue') || error.message.includes('Validation Failed')) {
+    if (
+      error.message.includes('already a sub-issue') ||
+      error.message.includes('Validation Failed')
+    ) {
       // Probably already linked
     } else {
-      console.warn(`      ⚠️ Failed to link sub-issue ${subIssueId}: ${error.message}`);
+      console.warn(
+        `      ⚠️ Failed to link sub-issue ${subIssueId}: ${error.message}`
+      );
     }
   }
 }
@@ -395,7 +402,9 @@ async function run() {
 
     // Link sub-issues to parent natively
     if (parentIssueNumber && subIssueIds.length > 0) {
-      console.log(`   🔗 Linking ${subIssueIds.length} sub-issues to Parent #${parentIssueNumber}...`);
+      console.log(
+        `   🔗 Linking ${subIssueIds.length} sub-issues to Parent #${parentIssueNumber}...`
+      );
       for (const subId of subIssueIds) {
         await addSubIssue(parentIssueNumber, subId);
       }
