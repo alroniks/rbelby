@@ -31,18 +31,14 @@
   "fileIcons": {
     "events": {
       "icon": "lucide-bike",
-      "unsynced": [
-        "4c075f81b0018d19"
-      ]
+      "unsynced": ["4c075f81b0018d19"]
     },
     "events/2026/Калядкі.md": {
       "icon": "lucide-tree-pine"
     },
     "routes": {
       "icon": "lucide-route",
-      "unsynced": [
-        "4c075f81b0018d19"
-      ]
+      "unsynced": ["4c075f81b0018d19"]
     }
   },
   "bookmarkIcons": {},
