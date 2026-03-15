@@ -8,6 +8,11 @@ This document outlines the simplified workflow for developing the Randonneurs Be
 - **English Only:** All specifications, architecture documents, issues, and commit messages MUST be written in English.
 - **Single Source of Truth:** `docs/CONSTITUTION.md` defines the architectural boundaries. `docs/specs/` defines what we are building.
 
+## Repository Rules
+
+- **Isolated Subtasks (1 PR = 1 Feature)**: Implement each feature/subtask in isolation on its own branch. Small related tasks may be grouped, but generally, submit one Pull Request per feature.
+- **Step-by-Step Commits (1 Task = 1 Commit)**: Execute specification tasks one at a time. The agent MUST pause after each task, provide a recommended commit message (`<description>, fixes #N`), and wait for the user to execute the `git commit`. The agent MUST NOT commit directly.
+
 ## The Workflow
 
 ### Golden Rule: Closed Specs

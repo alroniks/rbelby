@@ -2,7 +2,7 @@
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = () => {
-  return [{ params: { club: 12344 } }];
+  return [{ params: { club: '12344' } }];
 };
 
 const club = Astro.params.club;

@@ -11,15 +11,10 @@
     "lint": "prettier --check ."
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.0",
     "@tailwindcss/vite": "^4.2.1",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
     "astro": "^6.0.4",
     "dayjs": "^1.11.19",
     "preline": "^4.1.2",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.4",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
