@@ -1,0 +1,5067 @@
+{
+  "version": "2.11",
+  "children": [
+    {
+      "type": "frame",
+      "id": "FwQLs",
+      "x": 0,
+      "y": 0,
+      "name": "Components Library",
+      "fill": "#F0F0F0",
+      "layout": "vertical",
+      "gap": 32,
+      "padding": 32,
+      "children": [
+        {
+          "type": "frame",
+          "id": "nALk3",
+          "name": "Buttons & Tags",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "OzRTh",
+              "name": "comp_BtnOutline",
+              "reusable": true,
+              "cornerRadius": 32,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#0F284B"
+              },
+              "padding": [
+                12,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "LSMWU",
+                  "name": "Label",
+                  "fill": "#0F284B",
+                  "content": "FIND YOUR RIDE",
+                  "fontFamily": "Oswald",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HylwH",
+              "name": "comp_BtnSolid",
+              "reusable": true,
+              "fill": "#0F284B",
+              "cornerRadius": 32,
+              "padding": [
+                12,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "bphah",
+                  "name": "Label",
+                  "fill": "#FFFFFF",
+                  "content": "DISCOVER NOW",
+                  "fontFamily": "Oswald",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aZ6Y7",
+              "name": "comp_TagPill",
+              "reusable": true,
+              "fill": "#FFFFFF",
+              "cornerRadius": 32,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#CBD5E1"
+              },
+              "padding": [
+                6,
+                16
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "n8PMu",
+                  "name": "Label",
+                  "fill": "#64748B",
+                  "content": "#e-sports",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "TYEl3",
+              "name": "comp_PlayBtn",
+              "reusable": true,
+              "width": 48,
+              "height": 48,
+              "fill": "#FFE600",
+              "cornerRadius": 32,
+              "padding": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "f8NwqY",
+                  "name": "Icon",
+                  "fill": "#0F284B",
+                  "content": "▶",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "UoPTB",
+              "name": "comp_YearSwitcher",
+              "reusable": true,
+              "fill": "#FFFFFF",
+              "cornerRadius": 8,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#CBD5E1"
+              },
+              "gap": 12,
+              "padding": [
+                8,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "PC6DT",
+                  "name": "Year",
+                  "fill": "#0F284B",
+                  "content": "2026",
+                  "fontFamily": "Oswald",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "AnLle",
+                  "fill": "#0F284B",
+                  "content": "▼",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "biHYd",
+          "name": "Cards",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "KUMTY",
+              "name": "comp_BentoYellow",
+              "reusable": true,
+              "width": 300,
+              "height": 300,
+              "fill": "#FFE600",
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mKqyW",
+                  "x": 20,
+                  "y": 20,
+                  "name": "Image",
+                  "width": 260,
+                  "height": 260,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1778451510228.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8
+                },
+                {
+                  "type": "frame",
+                  "id": "drDW6",
+                  "x": 240,
+                  "y": 20,
+                  "name": "Arrow",
+                  "width": 40,
+                  "height": 40,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 20,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XQ7cX",
+                      "fill": "#0F284B",
+                      "content": "↗",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uZzYl",
+          "name": "Navigation",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "g99Y1J",
+              "name": "comp_Nav",
+              "reusable": true,
+              "width": 1400,
+              "fill": "#FFFFFF",
+              "padding": [
+                32,
+                64
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "e2yRS",
+                  "name": "logo",
+                  "fill": "#054EA4",
+                  "content": "RBELBY.",
+                  "fontFamily": "Oswald",
+                  "fontSize": 24,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "w1e5k",
+                  "name": "rightGroup",
+                  "gap": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "c3UKXA",
+                      "name": "links",
+                      "gap": 32,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "QsKMa",
+                          "fill": "#0F284B",
+                          "content": "BREVETS",
+                          "fontFamily": "Oswald",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "qwM0r",
+                          "fill": "#0F284B",
+                          "content": "ROUTES",
+                          "fontFamily": "Oswald",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "UAc8w",
+                          "fill": "#0F284B",
+                          "content": "CLUBS",
+                          "fontFamily": "Oswald",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Jf82A",
+                          "fill": "#0F284B",
+                          "content": "EQUIPMENT",
+                          "fontFamily": "Oswald",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Lw5z3",
+                      "name": "langSwitch",
+                      "fill": "#F0F4F8",
+                      "cornerRadius": 16,
+                      "gap": 6,
+                      "padding": [
+                        8,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iTlbI",
+                          "fill": "#054EA4",
+                          "content": "ENG",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "M5E8Sd",
+                          "fill": "#054EA4",
+                          "content": "▼",
+                          "fontFamily": "Inter",
+                          "fontSize": 8,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "p4BY3",
+                      "type": "ref",
+                      "ref": "OzRTh"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "JwRxw",
+          "name": "Headers",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "luOi8",
+              "name": "comp_PageHeader",
+              "reusable": true,
+              "width": 1400,
+              "fill": "#F8F5EE",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                64,
+                64,
+                32,
+                64
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "z1atb",
+                  "name": "Title",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "PAGE TITLE",
+                  "fontFamily": "Oswald",
+                  "fontSize": 64,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "MAP6Z",
+                  "name": "Desc",
+                  "fill": "#64748B",
+                  "content": "Page description goes here.",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tVBNm",
+          "name": "Event Cards",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Oc3mz",
+              "name": "comp_EventCard",
+              "reusable": true,
+              "width": 400,
+              "fill": "#FFFFFF",
+              "cornerRadius": [
+                0,
+                40,
+                0,
+                0
+              ],
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E2E8F0"
+              },
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "MvNck",
+                  "name": "cTop",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "AxAbO",
+                      "name": "Distance",
+                      "fill": "#054EA4",
+                      "content": "◎ 200 KM",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "T9BRho",
+                      "name": "Date",
+                      "fill": "#64748B",
+                      "content": "SEP 12, 2026",
+                      "fontFamily": "Oswald",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Dqw4j",
+                  "name": "Title",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Minskaya Krugosvetka",
+                  "fontFamily": "Oswald",
+                  "fontSize": 24,
+                  "fontWeight": "700"
+                },
+                {
+                  "id": "rfd6p",
+                  "type": "ref",
+                  "ref": "OzRTh",
+                  "descendants": {
+                    "LSMWU": {
+                      "content": "VIEW DETAILS"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "klPfd",
+              "name": "comp_EventCard_V2",
+              "reusable": true,
+              "width": 380,
+              "fill": "#FFFFFF",
+              "cornerRadius": [
+                0,
+                40,
+                0,
+                0
+              ],
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E2E8F0"
+              },
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "yl8Yj",
+                  "name": "Flyer",
+                  "width": "fill_container",
+                  "height": 475,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1778454744307.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": [
+                    0,
+                    40,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "crrLi",
+                  "name": "cBody",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "C40qrp",
+                      "name": "cTop",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "tqFmE",
+                          "name": "cTag",
+                          "fill": "#FFD100",
+                          "cornerRadius": 16,
+                          "padding": [
+                            4,
+                            12
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "f8Dhw",
+                              "name": "Tag",
+                              "fill": "#0F284B",
+                              "content": "FEST",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "kQXzg",
+                          "name": "Date",
+                          "fill": "#64748B",
+                          "content": "SEP 12, 2026",
+                          "fontFamily": "Oswald",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "np4l1",
+                      "name": "Title",
+                      "fill": "#0F284B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Minskaya Krugosvetka",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Oswald",
+                      "fontSize": 24,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "oEXf6",
+                      "name": "cInfo",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Y5jw2Y",
+                          "name": "cDist",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "PFJYp",
+                              "fill": "#054EA4",
+                              "content": "◎",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "sMflv",
+                              "name": "Distance",
+                              "fill": "#0F284B",
+                              "content": "200 KM",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "lClCk",
+                          "name": "cLoc",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Dt4gE",
+                              "fill": "#054EA4",
+                              "content": "⚲",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "FKbOf",
+                              "name": "Location",
+                              "fill": "#64748B",
+                              "content": "Start: Minsk, Belarus",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "H15zY",
+          "name": "comp_Footer",
+          "reusable": true,
+          "width": "fill_container",
+          "fill": "#0B1120",
+          "layout": "vertical",
+          "gap": 64,
+          "padding": [
+            80,
+            64
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "yZLXq",
+              "name": "fTop",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Po2nv",
+                  "name": "fLeft",
+                  "width": 400,
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "e90RD9",
+                      "fill": "#FFFFFF",
+                      "content": "RBELBY.",
+                      "fontFamily": "Oswald",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "O33JP",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "CREATED FOR THE\nJOURNEY. ENGINEERED\nWITH CARE.",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Oswald",
+                      "fontSize": 24,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "R3N69",
+                      "name": "fInputWrap",
+                      "width": "fill_container",
+                      "height": 48,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 4,
+                      "padding": [
+                        4,
+                        4,
+                        4,
+                        16
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xe0lU",
+                          "fill": "#64748B",
+                          "content": "Your Email",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "B2RNAG",
+                          "name": "fInputBtn",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "#054EA4",
+                          "cornerRadius": 4,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "egSKF",
+                              "fill": "#FFFFFF",
+                              "content": "→",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kXkPe",
+                  "name": "fLinks",
+                  "gap": 64,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "kCeQv",
+                      "name": "fCol1",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lsjmG",
+                          "fill": "#FFFFFF",
+                          "content": "QUICK LINKS",
+                          "fontFamily": "Oswald",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "vqEYF",
+                          "fill": "#94A3B8",
+                          "content": "Home",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Vtb0G",
+                          "fill": "#94A3B8",
+                          "content": "Brevets",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "T80xxk",
+                          "fill": "#94A3B8",
+                          "content": "Routes",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Pyjbm",
+                      "name": "fCol2",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mFYRE",
+                          "fill": "#FFFFFF",
+                          "content": "COMMUNITY",
+                          "fontFamily": "Oswald",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "BQOKl",
+                          "fill": "#94A3B8",
+                          "content": "Clubs",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ZlPAE",
+                          "fill": "#94A3B8",
+                          "content": "Journal",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "L3bsyk",
+                          "fill": "#94A3B8",
+                          "content": "Equipment",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "s8z5K",
+                      "name": "fCol3",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Y4yp7r",
+                          "fill": "#FFFFFF",
+                          "content": "CONTACT US",
+                          "fontFamily": "Oswald",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "yXd4N",
+                          "fill": "#94A3B8",
+                          "content": "info@rbelby.cc",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Igctg",
+                          "fill": "#94A3B8",
+                          "content": "Minsk, Belarus",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NEDxd",
+              "name": "fBot",
+              "width": "fill_container",
+              "stroke": {
+                "thickness": {
+                  "top": 1
+                },
+                "fill": "#1E293B"
+              },
+              "padding": [
+                24,
+                0,
+                0,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Jsk6Q",
+                  "fill": "#64748B",
+                  "content": "© 2026 Randonneurs Belarus. All rights reserved.",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "TiC3f",
+          "name": "Club Cards",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "LOwe7",
+              "name": "comp_ClubCard",
+              "reusable": true,
+              "width": 400,
+              "fill": "#F0F4F8",
+              "cornerRadius": [
+                0,
+                40,
+                0,
+                0
+              ],
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "iq1DQ",
+                  "name": "Title",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Club Name",
+                  "lineHeight": 1.1,
+                  "fontFamily": "Oswald",
+                  "fontSize": 24,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "BDX9k",
+                  "name": "City",
+                  "fill": "#64748B",
+                  "content": "City Name",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "qqpxd",
+                  "name": "Id",
+                  "fill": "#054EA4",
+                  "content": "BY520000",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ewS0j",
+          "name": "Journal Cards",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "QmQS8",
+              "name": "comp_JournalCard",
+              "reusable": true,
+              "width": 400,
+              "fill": "#FFFFFF",
+              "cornerRadius": [
+                0,
+                32,
+                0,
+                0
+              ],
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E2E8F0"
+              },
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "leGyj",
+                  "name": "Image",
+                  "width": "fill_container",
+                  "height": 200,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1778453374526.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": [
+                    0,
+                    32,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Y30UI",
+                  "name": "jcBody",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Wwpca",
+                      "name": "Tag",
+                      "fill": "#054EA4",
+                      "content": "CATEGORY",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "rQBwq",
+                      "name": "Title",
+                      "fill": "#0F284B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Article Title Goes Here",
+                      "lineHeight": 1.2,
+                      "fontFamily": "Oswald",
+                      "fontSize": 24,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "TZCX3",
+                      "name": "Excerpt",
+                      "fill": "#64748B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "A short excerpt of the article...",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "eSLST",
+          "name": "Navigation Controls",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "XDyp0",
+              "name": "comp_Pagination",
+              "reusable": true,
+              "gap": 12,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "KsgEx",
+                  "name": "pPrev",
+                  "height": 48,
+                  "cornerRadius": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#CBD5E1"
+                  },
+                  "padding": [
+                    0,
+                    24
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "g964Ls",
+                      "fill": "#64748B",
+                      "content": "PREVIOUS",
+                      "fontFamily": "Oswald",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rnI88",
+                  "name": "p1",
+                  "width": 48,
+                  "height": 48,
+                  "fill": "#054EA4",
+                  "cornerRadius": 24,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "SbxGp",
+                      "fill": "#FFFFFF",
+                      "content": "1",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Z49iwQ",
+                  "name": "p2",
+                  "width": 48,
+                  "height": 48,
+                  "cornerRadius": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#CBD5E1"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "G8X0B",
+                      "fill": "#64748B",
+                      "content": "2",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "opZpe",
+                  "name": "p3",
+                  "width": 48,
+                  "height": 48,
+                  "cornerRadius": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#CBD5E1"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "r8wmeK",
+                      "fill": "#64748B",
+                      "content": "3",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "z3fun",
+                  "fill": "#64748B",
+                  "content": "...",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "Y6caH",
+                  "name": "p12",
+                  "width": 48,
+                  "height": 48,
+                  "cornerRadius": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#CBD5E1"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "StVZM",
+                      "fill": "#64748B",
+                      "content": "12",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vgtK6",
+                  "name": "pNext",
+                  "height": 48,
+                  "cornerRadius": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#054EA4"
+                  },
+                  "padding": [
+                    0,
+                    24
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ePPF2",
+                      "fill": "#054EA4",
+                      "content": "NEXT",
+                      "fontFamily": "Oswald",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "zNCOT",
+      "x": 0,
+      "y": 9000,
+      "name": "Page - Events Directory",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "rVxnb",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "id": "zkhxy",
+          "type": "ref",
+          "ref": "luOi8",
+          "descendants": {
+            "z1atb": {
+              "content": "UPCOMING BREVETS"
+            },
+            "MAP6Z": {
+              "content": "Challenge yourself. Browse and register for upcoming randonneuring events in Belarus."
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "q2zU9",
+          "name": "evtControl",
+          "width": "fill_container",
+          "padding": [
+            0,
+            64
+          ],
+          "children": [
+            {
+              "id": "Eo7pH",
+              "type": "ref",
+              "ref": "UoPTB"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pcu1a",
+          "name": "filterBar",
+          "width": "fill_container",
+          "gap": 16,
+          "padding": [
+            32,
+            64,
+            0,
+            64
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "nzdDo",
+              "name": "search",
+              "width": 300,
+              "height": 48,
+              "cornerRadius": 8,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#CBD5E1"
+              },
+              "padding": [
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "berp4",
+                  "fill": "#94A3B8",
+                  "content": "Search events...",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ZaAmx",
+              "name": "distSel",
+              "width": 160,
+              "height": 48,
+              "cornerRadius": 8,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#CBD5E1"
+              },
+              "padding": [
+                0,
+                16
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "A1ueV9",
+                  "fill": "#0F284B",
+                  "content": "Any Distance",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "r14uH",
+                  "fill": "#0F284B",
+                  "content": "▼",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Z8ytg",
+              "name": "typeSel",
+              "width": 160,
+              "height": 48,
+              "cornerRadius": 8,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#CBD5E1"
+              },
+              "padding": [
+                0,
+                16
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "FVU0Z",
+                  "fill": "#0F284B",
+                  "content": "Any Type",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "s6UZx",
+                  "fill": "#0F284B",
+                  "content": "▼",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ZGacz",
+          "name": "newGrid",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "BMHbF",
+              "name": "row1",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "pTSFE",
+                  "type": "ref",
+                  "ref": "klPfd",
+                  "descendants": {
+                    "f8Dhw": {
+                      "content": "BREVET"
+                    },
+                    "kQXzg": {
+                      "content": "APR 15, 2026"
+                    },
+                    "np4l1": {
+                      "content": "Minskaya Krugosvetka"
+                    },
+                    "sMflv": {
+                      "content": "200 KM"
+                    },
+                    "FKbOf": {
+                      "content": "Start: Minsk"
+                    }
+                  }
+                },
+                {
+                  "id": "Zkjt0",
+                  "type": "ref",
+                  "ref": "klPfd",
+                  "descendants": {
+                    "f8Dhw": {
+                      "content": "BREVET"
+                    },
+                    "kQXzg": {
+                      "content": "MAY 10, 2026"
+                    },
+                    "np4l1": {
+                      "content": "Brestskaya Trexsotka"
+                    },
+                    "sMflv": {
+                      "content": "300 KM"
+                    },
+                    "FKbOf": {
+                      "content": "Start: Brest"
+                    }
+                  }
+                },
+                {
+                  "id": "UrUHm",
+                  "type": "ref",
+                  "ref": "klPfd",
+                  "descendants": {
+                    "f8Dhw": {
+                      "content": "BREVET"
+                    },
+                    "kQXzg": {
+                      "content": "JUN 05, 2026"
+                    },
+                    "np4l1": {
+                      "content": "Polesye 400"
+                    },
+                    "sMflv": {
+                      "content": "400 KM"
+                    },
+                    "FKbOf": {
+                      "content": "Start: Pinsk"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "GEU6Z",
+              "name": "row2",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "myb5T",
+                  "type": "ref",
+                  "ref": "klPfd",
+                  "descendants": {
+                    "f8Dhw": {
+                      "content": "FEST"
+                    },
+                    "kQXzg": {
+                      "content": "JUL 20, 2026"
+                    },
+                    "np4l1": {
+                      "content": "Belorusskij Tysyachnik"
+                    },
+                    "sMflv": {
+                      "content": "1000 KM"
+                    },
+                    "FKbOf": {
+                      "content": "Start: Minsk"
+                    }
+                  }
+                },
+                {
+                  "id": "e7TAZr",
+                  "type": "ref",
+                  "ref": "klPfd",
+                  "descendants": {
+                    "f8Dhw": {
+                      "content": "BREVET"
+                    },
+                    "kQXzg": {
+                      "content": "AUG 12, 2026"
+                    },
+                    "np4l1": {
+                      "content": "Dunajskaya Petlya"
+                    },
+                    "sMflv": {
+                      "content": "200 KM"
+                    },
+                    "FKbOf": {
+                      "content": "Start: Vileyka"
+                    }
+                  }
+                },
+                {
+                  "id": "coTz3",
+                  "type": "ref",
+                  "ref": "klPfd",
+                  "descendants": {
+                    "f8Dhw": {
+                      "content": "FEST"
+                    },
+                    "kQXzg": {
+                      "content": "SEP 25, 2026"
+                    },
+                    "np4l1": {
+                      "content": "Osenniy Fest"
+                    },
+                    "sMflv": {
+                      "content": "200 KM"
+                    },
+                    "FKbOf": {
+                      "content": "Start: Grodno"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ZpupW",
+          "name": "ePagWrap",
+          "width": "fill_container",
+          "padding": [
+            0,
+            0,
+            64,
+            0
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "id": "WhKv9",
+              "type": "ref",
+              "ref": "XDyp0"
+            }
+          ]
+        },
+        {
+          "id": "i9ZL7w",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "e2Lkp",
+      "x": 1600,
+      "y": 9000,
+      "name": "Page - Event Detail",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "dmsLz",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "id": "oqUUj",
+          "type": "ref",
+          "ref": "luOi8",
+          "descendants": {
+            "z1atb": {
+              "content": "MINSKAYA KRUGOSVETKA"
+            },
+            "MAP6Z": {
+              "content": "The classic 200km brevet around the Minsk region."
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "G4IIl",
+          "name": "detailWrap",
+          "width": "fill_container",
+          "gap": 64,
+          "padding": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "rxnMS",
+              "name": "detailLeft",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 40,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "p0iR2v",
+                  "fill": "#0F284B",
+                  "content": "About the Route",
+                  "fontFamily": "Oswald",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "x8jzhJ",
+                  "fill": "#64748B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "This route takes you through the beautiful countryside surrounding Minsk. It features rolling hills, quiet backroads, and several historical checkpoints. Prepare for a mix of smooth tarmac and a few challenging gravel sectors.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "gRtDK",
+                  "name": "mapHolder",
+                  "width": "fill_container",
+                  "height": 400,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1778451982138.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 16
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "h6SpS5",
+              "name": "detailRight",
+              "width": 400,
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xhibm",
+                  "name": "regCard",
+                  "fill": "#F8F5EE",
+                  "cornerRadius": [
+                    0,
+                    40,
+                    0,
+                    0
+                  ],
+                  "layout": "vertical",
+                  "gap": 24,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fh8uX",
+                      "fill": "#0F284B",
+                      "content": "Event Details",
+                      "fontFamily": "Oswald",
+                      "fontSize": 24,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "mSivP",
+                      "name": "stat1",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "j85Sa5",
+                          "fill": "#64748B",
+                          "content": "Distance",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "uD6hv",
+                          "fill": "#0F284B",
+                          "content": "200 KM",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hjwqp",
+                      "name": "stat2",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Z4cII",
+                          "fill": "#64748B",
+                          "content": "Date & Time",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "K3An3",
+                          "fill": "#0F284B",
+                          "content": "April 15, 2026 @ 07:00 AM",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "TpgtA",
+                      "name": "stat3",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "V2i7dq",
+                          "fill": "#64748B",
+                          "content": "Time Limit",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "wEsfq",
+                          "fill": "#0F284B",
+                          "content": "13.5 Hours",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "nUVBY",
+                      "type": "ref",
+                      "ref": "HylwH",
+                      "width": "fill_container",
+                      "justifyContent": "center",
+                      "descendants": {
+                        "bphah": {
+                          "content": "REGISTER FOR EVENT"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "o8qQM",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "UYtd0",
+      "x": 0,
+      "y": 13500,
+      "name": "Page - Routes Directory",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "L1GmBE",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "id": "s3RJI",
+          "type": "ref",
+          "ref": "luOi8",
+          "descendants": {
+            "z1atb": {
+              "content": "ROUTES ARCHIVE"
+            },
+            "MAP6Z": {
+              "content": "Explore our library of classic brevets and permanent routes."
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "qgGYZ",
+          "name": "rGrid",
+          "width": "fill_container",
+          "gap": 32,
+          "padding": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "h4Bwv",
+              "name": "rCol",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "l0egWv",
+                  "type": "ref",
+                  "ref": "Oc3mz",
+                  "descendants": {
+                    "AxAbO": {
+                      "content": "◎ 1200 KM"
+                    },
+                    "T9BRho": {
+                      "content": "Permanent"
+                    },
+                    "Dqw4j": {
+                      "content": "Minsk - Paris - Minsk"
+                    }
+                  }
+                },
+                {
+                  "id": "oMvP3",
+                  "type": "ref",
+                  "ref": "Oc3mz",
+                  "descendants": {
+                    "AxAbO": {
+                      "content": "◎ 300 KM"
+                    },
+                    "T9BRho": {
+                      "content": "Permanent"
+                    },
+                    "Dqw4j": {
+                      "content": "Transgranichny"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hCa2S",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "K8oEfY",
+      "x": 1600,
+      "y": 13500,
+      "name": "Page - Route Detail",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "HcLSw",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "id": "Z2xz00",
+          "type": "ref",
+          "ref": "luOi8",
+          "descendants": {
+            "z1atb": {
+              "content": "MINSK - PARIS - MINSK"
+            },
+            "MAP6Z": {
+              "content": "A legendary 1200km journey simulating the classic PBP format."
+            }
+          }
+        },
+        {
+          "id": "apJvB",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "S8yOEE",
+      "x": 3200,
+      "y": 4500,
+      "name": "Page - Clubs Directory",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "DIzH3",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "id": "YV1I1",
+          "type": "ref",
+          "ref": "luOi8",
+          "descendants": {
+            "z1atb": {
+              "content": "RIDING CLUBS"
+            },
+            "MAP6Z": {
+              "content": "Find local communities, group rides, and fellow randonneurs."
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "l8YFY4",
+          "name": "cGrid",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "ZigbR",
+              "name": "r1",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "B7fJF5",
+                  "type": "ref",
+                  "ref": "LOwe7",
+                  "descendants": {
+                    "iq1DQ": {
+                      "content": "SIABRY RANDONNEURS"
+                    },
+                    "BDX9k": {
+                      "content": "Minsk"
+                    },
+                    "qqpxd": {
+                      "content": "BY520001"
+                    }
+                  }
+                },
+                {
+                  "id": "zm63u",
+                  "type": "ref",
+                  "ref": "LOwe7",
+                  "descendants": {
+                    "iq1DQ": {
+                      "content": "Club BY520013 (Горкі)"
+                    },
+                    "BDX9k": {
+                      "content": "Горкі"
+                    },
+                    "qqpxd": {
+                      "content": "BY520013"
+                    }
+                  }
+                },
+                {
+                  "id": "Xcggg",
+                  "type": "ref",
+                  "ref": "LOwe7",
+                  "descendants": {
+                    "iq1DQ": {
+                      "content": "Club BY520002 (Минск)"
+                    },
+                    "BDX9k": {
+                      "content": "Минск"
+                    },
+                    "qqpxd": {
+                      "content": "BY520002"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Zym4z",
+              "name": "r2",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "l8FDW",
+                  "type": "ref",
+                  "ref": "LOwe7",
+                  "descendants": {
+                    "iq1DQ": {
+                      "content": "Club BY520016 (Брест)"
+                    },
+                    "BDX9k": {
+                      "content": "Брест"
+                    },
+                    "qqpxd": {
+                      "content": "BY520016"
+                    }
+                  }
+                },
+                {
+                  "id": "Egsjs",
+                  "type": "ref",
+                  "ref": "LOwe7",
+                  "descendants": {
+                    "iq1DQ": {
+                      "content": "Club BY520017 (Пинск)"
+                    },
+                    "BDX9k": {
+                      "content": "Пинск"
+                    },
+                    "qqpxd": {
+                      "content": "BY520017"
+                    }
+                  }
+                },
+                {
+                  "id": "Yy7D1",
+                  "type": "ref",
+                  "ref": "LOwe7",
+                  "descendants": {
+                    "iq1DQ": {
+                      "content": "Club BY520006 (Витебск)"
+                    },
+                    "BDX9k": {
+                      "content": "Витебск"
+                    },
+                    "qqpxd": {
+                      "content": "BY520006"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "c6EDn",
+              "name": "r3",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "FGByg",
+                  "type": "ref",
+                  "ref": "LOwe7",
+                  "descendants": {
+                    "iq1DQ": {
+                      "content": "Club BY520010 (Полоцк)"
+                    },
+                    "BDX9k": {
+                      "content": "Полоцк"
+                    },
+                    "qqpxd": {
+                      "content": "BY520010"
+                    }
+                  }
+                },
+                {
+                  "id": "vrecs",
+                  "type": "ref",
+                  "ref": "LOwe7",
+                  "descendants": {
+                    "iq1DQ": {
+                      "content": "Club BY520015 (Гомель)"
+                    },
+                    "BDX9k": {
+                      "content": "Гомель"
+                    },
+                    "qqpxd": {
+                      "content": "BY520015"
+                    }
+                  }
+                },
+                {
+                  "id": "NDNd7",
+                  "type": "ref",
+                  "ref": "LOwe7",
+                  "descendants": {
+                    "iq1DQ": {
+                      "content": "Club BY520011 (Слоним)"
+                    },
+                    "BDX9k": {
+                      "content": "Слоним"
+                    },
+                    "qqpxd": {
+                      "content": "BY520011"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "O5tsV",
+              "name": "r4",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "LhnlG",
+                  "type": "ref",
+                  "ref": "LOwe7",
+                  "descendants": {
+                    "iq1DQ": {
+                      "content": "Club BY520014 (Жодино)"
+                    },
+                    "BDX9k": {
+                      "content": "Жодино"
+                    },
+                    "qqpxd": {
+                      "content": "BY520014"
+                    }
+                  }
+                },
+                {
+                  "id": "gKpOP",
+                  "type": "ref",
+                  "ref": "LOwe7",
+                  "descendants": {
+                    "iq1DQ": {
+                      "content": "Club BY520012 (Лида)"
+                    },
+                    "BDX9k": {
+                      "content": "Лида"
+                    },
+                    "qqpxd": {
+                      "content": "BY520012"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "H0Qd4c",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "xBLew",
+      "x": 0,
+      "y": 4500,
+      "name": "Page - Journal",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "VfG8A",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "id": "pMv16",
+          "type": "ref",
+          "ref": "luOi8",
+          "descendants": {
+            "z1atb": {
+              "content": "THE JOURNAL"
+            },
+            "MAP6Z": {
+              "content": "Ride reports, gear reviews, and stories from the road."
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "pNiI5",
+          "name": "jBody",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 64,
+          "padding": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "mK9Bn",
+              "name": "fSect",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "e1ihM",
+                  "fill": "#0F284B",
+                  "content": "FEATURED STORY",
+                  "fontFamily": "Oswald",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "B9E8g",
+                  "name": "fCard",
+                  "width": "fill_container",
+                  "height": 400,
+                  "fill": "#F0F4F8",
+                  "cornerRadius": [
+                    0,
+                    80,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "aV2oe",
+                      "name": "fImg",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./images/generated-1778453048778.png",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "E5oGM",
+                      "name": "fContent",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "vertical",
+                      "gap": 24,
+                      "padding": 48,
+                      "justifyContent": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "P5Oo6w",
+                          "fill": "#054EA4",
+                          "content": "RIDE REPORT",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Txgbf",
+                          "fill": "#0F284B",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Surviving the 600km in the Rain: A Comprehensive Gear Guide",
+                          "lineHeight": 1.1,
+                          "fontFamily": "Oswald",
+                          "fontSize": 40,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "V92qlS",
+                          "fill": "#64748B",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "When the weather turns sour halfway through a Super Randonneur series, your equipment choices matter more than ever. Here is what saved my ride.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "id": "TW53X",
+                          "type": "ref",
+                          "ref": "HylwH",
+                          "width": "fit_content",
+                          "descendants": {
+                            "bphah": {
+                              "content": "READ FULL STORY"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "T8tpIw",
+              "name": "gridSect",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cBvwY",
+                  "fill": "#0F284B",
+                  "content": "LATEST ARTICLES",
+                  "fontFamily": "Oswald",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "ybznZ",
+                  "name": "row1",
+                  "width": "fill_container",
+                  "gap": 32,
+                  "children": [
+                    {
+                      "id": "sSkka",
+                      "type": "ref",
+                      "ref": "QmQS8",
+                      "width": "fill_container",
+                      "descendants": {
+                        "Wwpca": {
+                          "content": "TRAINING"
+                        },
+                        "rQBwq": {
+                          "content": "Winter Base Miles: How to Stay Motivated"
+                        },
+                        "TZCX3": {
+                          "content": "It's cold, it's dark, and the couch is very comfortable. Here are 5 tips to keep your base training on track this winter."
+                        }
+                      }
+                    },
+                    {
+                      "id": "dxUp0",
+                      "type": "ref",
+                      "ref": "QmQS8",
+                      "width": "fill_container",
+                      "descendants": {
+                        "Wwpca": {
+                          "content": "NUTRITION"
+                        },
+                        "rQBwq": {
+                          "content": "Fueling for the 400km Brevet"
+                        },
+                        "TZCX3": {
+                          "content": "Hitting the wall at 300km is a rite of passage, but it doesn't have to be. Learn how to manage your carb intake."
+                        }
+                      }
+                    },
+                    {
+                      "id": "b56GvN",
+                      "type": "ref",
+                      "ref": "QmQS8",
+                      "width": "fill_container",
+                      "descendants": {
+                        "Wwpca": {
+                          "content": "ROUTES"
+                        },
+                        "rQBwq": {
+                          "content": "Exploring the Polesian Backroads"
+                        },
+                        "TZCX3": {
+                          "content": "A deep dive into one of the most remote and beautiful permanent routes available in the southern region."
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eEzWf",
+                  "name": "row2",
+                  "width": "fill_container",
+                  "gap": 32,
+                  "children": [
+                    {
+                      "id": "wFlkJ",
+                      "type": "ref",
+                      "ref": "QmQS8",
+                      "width": "fill_container",
+                      "descendants": {
+                        "Wwpca": {
+                          "content": "GEAR"
+                        },
+                        "rQBwq": {
+                          "content": "Dynamo Hubs: Are They Worth the Weight?"
+                        },
+                        "TZCX3": {
+                          "content": "We tested three popular dynamo hubs to see if the drag penalty is worth the infinite lighting capability."
+                        }
+                      }
+                    },
+                    {
+                      "id": "fYPRN",
+                      "type": "ref",
+                      "ref": "QmQS8",
+                      "width": "fill_container",
+                      "descendants": {
+                        "Wwpca": {
+                          "content": "COMMUNITY"
+                        },
+                        "rQBwq": {
+                          "content": "Interview with Minskaya 1200 Finisher"
+                        },
+                        "TZCX3": {
+                          "content": "We sat down with last year's fastest finisher to talk about sleep deprivation, hallucinations, and joy."
+                        }
+                      }
+                    },
+                    {
+                      "id": "D3QD5q",
+                      "type": "ref",
+                      "ref": "QmQS8",
+                      "width": "fill_container",
+                      "descendants": {
+                        "Wwpca": {
+                          "content": "MAINTENANCE"
+                        },
+                        "rQBwq": {
+                          "content": "Roadside Tubeless Repair Guide"
+                        },
+                        "TZCX3": {
+                          "content": "When the sealant fails and the hole is too big, you need to know how to plug a tire quickly and safely."
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Y63Jvn",
+              "name": "jPagWrap",
+              "width": "fill_container",
+              "padding": [
+                32,
+                0,
+                0,
+                0
+              ],
+              "justifyContent": "center",
+              "children": [
+                {
+                  "id": "fXKS2",
+                  "type": "ref",
+                  "ref": "XDyp0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "q3LeS",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "z54AAX",
+      "x": 3200,
+      "y": 0,
+      "name": "Page - About",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "kMQL6",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "id": "nbAK8",
+          "type": "ref",
+          "ref": "luOi8",
+          "descendants": {
+            "z1atb": {
+              "content": "ABOUT THE PROJECT"
+            },
+            "MAP6Z": {
+              "content": "Our mission, history, and the spirit of randonneuring."
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "s9igg",
+          "name": "wrap",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 80,
+          "padding": [
+            0,
+            64,
+            80,
+            64
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "yfeCR",
+              "name": "vision",
+              "width": 1000,
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ekwKc",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "CYCLING IS NOT JUST ABOUT THE BIKE. IT'S ABOUT THE JOURNEY, THE PEOPLE, AND THE RELENTLESS WILL TO KEEP PEDALING.",
+                  "lineHeight": 1.1,
+                  "fontFamily": "Oswald",
+                  "fontSize": 48,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "FCQYp",
+                  "fill": "#64748B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Founded in 2010, Randonneurs Belarus started with a simple idea: to bring the rich French tradition of Audax Club Parisien to the sprawling, beautiful roads of our homeland. What began with a handful of enthusiasts has grown into a nationwide movement.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aegUh",
+              "name": "facts",
+              "width": 1000,
+              "height": 240,
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "QFIBc",
+                  "name": "f1",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#FFD100",
+                  "cornerRadius": [
+                    40,
+                    0,
+                    40,
+                    40
+                  ],
+                  "layout": "vertical",
+                  "padding": 40,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Y1gFve",
+                      "fill": "#0F284B",
+                      "content": "ESTABLISHED",
+                      "fontFamily": "Oswald",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "h9E7B",
+                      "fill": "#0F284B",
+                      "content": "2010",
+                      "fontFamily": "Oswald",
+                      "fontSize": 64,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "X0FhAU",
+                  "name": "f2",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#054EA4",
+                  "cornerRadius": [
+                    0,
+                    40,
+                    40,
+                    40
+                  ],
+                  "layout": "vertical",
+                  "padding": 40,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "OJxmR",
+                      "fill": "#FFFFFF",
+                      "content": "ACTIVE CLUBS",
+                      "fontFamily": "Oswald",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "RuWH0",
+                      "fill": "#FFFFFF",
+                      "content": "12",
+                      "fontFamily": "Oswald",
+                      "fontSize": 64,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "L85x8",
+                  "name": "f3",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#F0F4F8",
+                  "cornerRadius": [
+                    40,
+                    40,
+                    40,
+                    0
+                  ],
+                  "layout": "vertical",
+                  "padding": 40,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ClNvY",
+                      "fill": "#0F284B",
+                      "content": "BREVETS HELD",
+                      "fontFamily": "Oswald",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "f9Rwk",
+                      "fill": "#0F284B",
+                      "content": "150+",
+                      "fontFamily": "Oswald",
+                      "fontSize": 64,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "i3hgT",
+              "name": "history",
+              "width": 1000,
+              "gap": 64,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "J6k3N",
+                  "name": "hLeft",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "u2ikws",
+                      "fill": "#0F284B",
+                      "content": "THE EARLY DAYS",
+                      "fontFamily": "Oswald",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "cxZFi",
+                      "fill": "#64748B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Before GPS head units and ultra-light bikepacking gear, completing a 200km brevet required a paper cue sheet, a reliable dynamo, and immense grit. Our first official brevet saw only 8 finishers, battling headwinds and gravel roads. It wasn't about speed; it was about survival and camaraderie.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "iWAII",
+                      "name": "screamer",
+                      "width": "fill_container",
+                      "fill": "#F8F5EE",
+                      "stroke": {
+                        "thickness": {
+                          "left": 4
+                        },
+                        "fill": "#054EA4"
+                      },
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "F6dkEy",
+                          "fill": "#0F284B",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "\"We didn't ride to win. We rode to prove that the human body can outlast the setting sun.\"",
+                          "lineHeight": 1.3,
+                          "fontFamily": "Oswald",
+                          "fontSize": 24,
+                          "fontWeight": "600",
+                          "fontStyle": "italic"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "PHiCI",
+                  "name": "hRight",
+                  "width": 400,
+                  "height": 400,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "WYvvl",
+                      "x": 0,
+                      "y": 0,
+                      "name": "imgH",
+                      "width": 400,
+                      "height": 400,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./images/generated-1778453980705.png",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": [
+                        0,
+                        80,
+                        0,
+                        0
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hJk3n",
+              "name": "mission",
+              "width": 1000,
+              "layout": "vertical",
+              "gap": 40,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "q0MUbQ",
+                  "fill": "#0F284B",
+                  "content": "OUR CORE VALUES",
+                  "fontFamily": "Oswald",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "oo3XF",
+                  "name": "mGrid",
+                  "width": "fill_container",
+                  "gap": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "gjno0",
+                      "name": "m1",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "JAPGV",
+                          "fill": "#FFD100",
+                          "content": "01",
+                          "fontFamily": "Oswald",
+                          "fontSize": 48,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "u7ILt3",
+                          "fill": "#0F284B",
+                          "content": "Self-Sufficiency",
+                          "fontFamily": "Oswald",
+                          "fontSize": 20,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Mc2ds",
+                          "fill": "#64748B",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "No team cars. No sag wagons. Just you, your bike, and what you can carry.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Ne3Qv",
+                      "name": "m2",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iO86f",
+                          "fill": "#FFD100",
+                          "content": "02",
+                          "fontFamily": "Oswald",
+                          "fontSize": 48,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "AMaUD",
+                          "fill": "#0F284B",
+                          "content": "Endurance",
+                          "fontFamily": "Oswald",
+                          "fontSize": 20,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "BDMNT",
+                          "fill": "#64748B",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Pushing past the physical and mental limits to achieve distances previously thought impossible.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "a69Zvt",
+                      "name": "m3",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "CnK7E",
+                          "fill": "#FFD100",
+                          "content": "03",
+                          "fontFamily": "Oswald",
+                          "fontSize": 48,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "z4gjS",
+                          "fill": "#0F284B",
+                          "content": "Camaraderie",
+                          "fontFamily": "Oswald",
+                          "fontSize": 20,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "hrTlf",
+                          "fill": "#64748B",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "We ride alone, but we finish together. Helping a fellow rider is always prioritized over finishing time.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gxO5Z",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "VRZDZ",
+      "x": 4800,
+      "y": 0,
+      "name": "Page - Rules",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "GSRmi",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "id": "B3ZvHU",
+          "type": "ref",
+          "ref": "luOi8",
+          "descendants": {
+            "z1atb": {
+              "content": "OFFICIAL RULES"
+            },
+            "MAP6Z": {
+              "content": "The rules of ACP brevets and our local guidelines."
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "juIiH",
+          "name": "rulesContent",
+          "width": 1000,
+          "layout": "vertical",
+          "gap": 32,
+          "padding": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "jXbNv",
+              "name": "rule1",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cpYC3",
+                  "fill": "#0F284B",
+                  "content": "1. Self-Sufficiency",
+                  "fontFamily": "Oswald",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "FEUrA",
+                  "fill": "#64748B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Each rider must be self-sufficient. No personal follow cars or support of any kind are permitted on the course. You are responsible for your own navigation, mechanical repairs, and well-being.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "PEmfz",
+              "name": "rule2",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Tum7a",
+                  "fill": "#0F284B",
+                  "content": "2. Lighting and Visibility",
+                  "fontFamily": "Oswald",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "rrwB8",
+                  "fill": "#64748B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Bicycles must be equipped with front and rear lights securely mounted. A reflective vest must be worn during night riding or low visibility conditions.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bbv4j",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "cep0U",
+      "x": 6400,
+      "y": 0,
+      "name": "Page - FAQ",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "avJfV",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "id": "U1bFKS",
+          "type": "ref",
+          "ref": "luOi8",
+          "descendants": {
+            "z1atb": {
+              "content": "FREQUENTLY ASKED QUESTIONS"
+            },
+            "MAP6Z": {
+              "content": "Everything you need to know before your first brevet."
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "iLJL8",
+          "name": "faqContent",
+          "width": 1000,
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "PlOA0",
+              "name": "faq1",
+              "width": "fill_container",
+              "fill": "#F8F5EE",
+              "cornerRadius": [
+                0,
+                32,
+                0,
+                0
+              ],
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "YKIhr",
+                  "fill": "#0F284B",
+                  "content": "Q: Do I need a special bike?",
+                  "fontFamily": "Oswald",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "yqGAo",
+                  "fill": "#64748B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "A: No, any human-powered vehicle is allowed as long as it is propelled solely by the rider.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "PjM31",
+              "name": "faq2",
+              "width": "fill_container",
+              "fill": "#F0F4F8",
+              "cornerRadius": [
+                0,
+                32,
+                0,
+                0
+              ],
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "RqR0U",
+                  "fill": "#0F284B",
+                  "content": "Q: What happens if I miss the time limit?",
+                  "fontFamily": "Oswald",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "KTvXV",
+                  "fill": "#64748B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "A: Brevets are not races, but they have strict time limits. If you finish outside the time limit, your ride will not be homologated by ACP, though you still accomplished a great personal feat!",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Zyj3S",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "RaqGI",
+      "x": 1600,
+      "y": 0,
+      "name": "Page - Homepage",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "FONud",
+          "type": "ref",
+          "ref": "g99Y1J",
+          "name": "hNav"
+        },
+        {
+          "type": "frame",
+          "id": "OaqrS",
+          "name": "heroWrap",
+          "width": "fill_container",
+          "height": 600,
+          "padding": [
+            48,
+            64,
+            0,
+            64
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "UTYIP",
+              "name": "heroLeft",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lwRhA",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "STAY AHEAD OF\nTHE CURVE",
+                  "lineHeight": 1,
+                  "fontFamily": "Oswald",
+                  "fontSize": 96,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "wNLQU",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": 400,
+                  "content": "Shift your life into\nthe high gear.",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "i8gPJ",
+                  "name": "tagsWrap",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "RNmp6",
+                      "name": "plusBtn",
+                      "cornerRadius": 16,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#CBD5E1"
+                      },
+                      "padding": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iiE29",
+                          "fill": "#0F284B",
+                          "content": "+",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "W9V1au",
+                      "name": "t1",
+                      "cornerRadius": 32,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#CBD5E1"
+                      },
+                      "padding": [
+                        6,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PSPOz",
+                          "fill": "#0F284B",
+                          "content": "#championship2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n1Cz0",
+                  "name": "heroCard",
+                  "width": 200,
+                  "fill": "#054EA4",
+                  "cornerRadius": [
+                    0,
+                    48,
+                    0,
+                    0
+                  ],
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": [
+                    24,
+                    32
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XArYX",
+                      "fill": "#FFFFFF",
+                      "content": "◎ 12 KM",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Z1bpbX",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 160,
+                      "content": "Running\nAbility",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SBNx3",
+              "name": "heroRight",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "R5vgj",
+                  "name": "heroImg",
+                  "width": 450,
+                  "height": 550,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1778451610770.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": [
+                    0,
+                    120,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "e8g4jY",
+          "name": "statLineTop",
+          "width": "fill_container",
+          "height": 1,
+          "fill": "#E2E8F0"
+        },
+        {
+          "type": "frame",
+          "id": "WaZMl",
+          "name": "statBar",
+          "width": "fill_container",
+          "padding": [
+            24,
+            64
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "text",
+              "id": "Woeri",
+              "fill": "#0F284B",
+              "content": "24 EVENTS",
+              "fontFamily": "Oswald",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "a93JVC",
+              "fill": "#0F284B",
+              "content": "45,200 KILOMETERS",
+              "fontFamily": "Oswald",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "VttdF",
+              "fill": "#0F284B",
+              "content": "320 RIDERS",
+              "fontFamily": "Oswald",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "zFXw7",
+              "fill": "#0F284B",
+              "content": "SEASON 2026",
+              "fontFamily": "Oswald",
+              "fontSize": 14,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "MOLBX",
+          "name": "statLineBot",
+          "width": "fill_container",
+          "height": 1,
+          "fill": "#E2E8F0"
+        },
+        {
+          "type": "frame",
+          "id": "J0OL9u",
+          "name": "bentoWrap",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": 64,
+          "children": [
+            {
+              "type": "text",
+              "id": "SCZoD",
+              "name": "bentoHeader",
+              "fill": "#0F284B",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "UPCOMING EVENTS",
+              "lineHeight": 1.1,
+              "textAlign": "right",
+              "fontFamily": "Oswald",
+              "fontSize": 48,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "T9rytg",
+              "name": "grid",
+              "width": "fill_container",
+              "height": 360,
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "PfxfV",
+                  "name": "boxLeft",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#EFECE1",
+                  "cornerRadius": [
+                    80,
+                    0,
+                    0,
+                    0
+                  ],
+                  "layout": "vertical",
+                  "gap": 24,
+                  "padding": 40,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "o47xS",
+                      "fill": "#0F284B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "JOIN OUR\nCOMMUNITY",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Oswald",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "g28mcN",
+                      "fill": "#0F284B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "GET FREE PASS",
+                      "fontFamily": "Oswald",
+                      "fontSize": 24,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "y53EwX",
+                  "name": "boxMiddle",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#FFD100",
+                  "layout": "vertical",
+                  "padding": 24,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "BiGos",
+                      "name": "topBar",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "QvHaH",
+                          "width": 12,
+                          "height": 12,
+                          "fill": "#0F284B",
+                          "cornerRadius": 6
+                        },
+                        {
+                          "type": "frame",
+                          "id": "US05a",
+                          "name": "arr",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 20,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "CkM26",
+                              "fill": "#0F284B",
+                              "content": "↗",
+                              "fontFamily": "Inter",
+                              "fontSize": 20,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MI9pl",
+                      "name": "imgM",
+                      "width": 200,
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./images/generated-1778451612372.png",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": [
+                        0,
+                        48,
+                        0,
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "lGb9b",
+                  "name": "boxRight",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#F0F4F8",
+                  "cornerRadius": [
+                    0,
+                    80,
+                    0,
+                    0
+                  ],
+                  "layout": "vertical",
+                  "padding": 40,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "kWZYx",
+                      "fill": "#0F284B",
+                      "content": "Cycling - Tour",
+                      "fontFamily": "Oswald",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "J5Dj1O",
+                      "fill": "#0F284B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "WHISK YOURSELF AWAY ON\nA TWO-WHEELED JOY RIDE IN\nPAW-SOME STYLE",
+                      "lineHeight": 1.2,
+                      "fontFamily": "Oswald",
+                      "fontSize": 24,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "VprqG",
+          "name": "routesWrap",
+          "width": "fill_container",
+          "fill": "#054EA4",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            64
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "YMPHM",
+              "name": "routesTop",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "JXy9E",
+                  "name": "routesTopLeft",
+                  "width": 300,
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "oWWM5",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Wheels move the body, two move the soul. Ditch boring, fuel happiness.",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sBaXH",
+                      "name": "btn",
+                      "fill": "#0F284B",
+                      "cornerRadius": 32,
+                      "padding": [
+                        12,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "p1UqRs",
+                          "fill": "#FFFFFF",
+                          "content": "DISCOVER ROUTES",
+                          "fontFamily": "Oswald",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "H3SMFX",
+                  "name": "routesTopRight",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": 600,
+                  "content": "POPULAR ROUTES\nAND ACTIVITIES",
+                  "lineHeight": 1.1,
+                  "textAlign": "right",
+                  "fontFamily": "Oswald",
+                  "fontSize": 48,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "WrISA",
+              "name": "routesGrid",
+              "width": "fill_container",
+              "height": 300,
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "FPvIZ",
+                  "name": "routeCard1",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": [
+                    40,
+                    0,
+                    40,
+                    40
+                  ],
+                  "layout": "vertical",
+                  "gap": 24,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "k96uMY",
+                      "name": "rc1Stats",
+                      "gap": 40,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "pyWGn",
+                          "name": "s1",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "pEzD7",
+                              "fill": "#64748B",
+                              "content": "Total Distance",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "rWxUO",
+                              "fill": "#0F284B",
+                              "content": "1200 KM",
+                              "fontFamily": "Oswald",
+                              "fontSize": 20,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Q8Vl7",
+                      "name": "mapImg",
+                      "width": "fill_container",
+                      "height": 150,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./images/generated-1778451798820.png",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "WRg49",
+                  "name": "routeCard2",
+                  "width": 400,
+                  "height": "fill_container",
+                  "fill": "#FFD100",
+                  "layout": "vertical",
+                  "padding": 32,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "itZof",
+                      "fill": "#0F284B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "GET YOUR\nROUTE DATA",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Oswald",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "QY3G6",
+                      "fill": "#0F284B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Rise above convention. Reimagine the ride.",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "egPDC",
+          "name": "journalWrap",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            64
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "D0OTL",
+              "name": "jTop",
+              "width": "fill_container",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "z5IraF",
+                  "fill": "#0F284B",
+                  "content": "LATEST FROM THE JOURNAL",
+                  "fontFamily": "Oswald",
+                  "fontSize": 48,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "OSgIr",
+              "name": "jGrid",
+              "width": "fill_container",
+              "height": 400,
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "JG0k5",
+                  "name": "jCol1",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "BVraC",
+                      "name": "jCard1",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#F0F4F8",
+                      "cornerRadius": [
+                        40,
+                        0,
+                        40,
+                        40
+                      ],
+                      "layout": "vertical",
+                      "padding": 32,
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "eB8KQ",
+                          "fill": "#0F284B",
+                          "content": "4.9/5",
+                          "fontFamily": "Oswald",
+                          "fontSize": 40,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "poTzQ",
+                          "fill": "#64748B",
+                          "content": "Community Reviews",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "W0KI4",
+                      "name": "jCard2",
+                      "width": "fill_container",
+                      "height": 140,
+                      "fill": "#054EA4",
+                      "cornerRadius": [
+                        0,
+                        40,
+                        40,
+                        40
+                      ],
+                      "layout": "vertical",
+                      "padding": 24,
+                      "justifyContent": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "l9BAE",
+                          "fill": "#FFFFFF",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Intoxicating style, breath taking performance",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "riC6e",
+                  "name": "jCol2",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1778451790036.png",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "F8bn6O",
+                  "name": "jCol3",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "GDDEm",
+                      "name": "jCard3",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#EFECE1",
+                      "cornerRadius": [
+                        0,
+                        40,
+                        40,
+                        40
+                      ],
+                      "layout": "vertical",
+                      "padding": 32,
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "aRtIc",
+                          "fill": "#0F284B",
+                          "content": "Top 5% Rider",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "AgJLp",
+                          "fill": "#0F284B",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "FEEL THE VIBRATION, EMBRACE THE POWER",
+                          "lineHeight": 1.1,
+                          "fontFamily": "Oswald",
+                          "fontSize": 24,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Z6poyk",
+                      "name": "jCard4",
+                      "width": "fill_container",
+                      "height": 140,
+                      "fill": "#0F284B",
+                      "cornerRadius": [
+                        40,
+                        40,
+                        40,
+                        0
+                      ],
+                      "layout": "vertical",
+                      "padding": 24,
+                      "justifyContent": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "m02K6",
+                          "fill": "#FFFFFF",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "The pinnacle of elegant riding.",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "T5XF0W",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "cHldB",
+      "x": 1600,
+      "y": 4500,
+      "name": "Page - Article Detail",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "AtxPs",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "type": "frame",
+          "id": "L1QRp",
+          "name": "artHead",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            80,
+            64,
+            40,
+            64
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "PrXav",
+              "fill": "#054EA4",
+              "content": "GEAR REVIEW",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "yvgPv",
+              "fill": "#0F284B",
+              "textGrowth": "fixed-width",
+              "width": 1000,
+              "content": "Surviving the 600km in the Rain:\nA Comprehensive Gear Guide",
+              "lineHeight": 1.1,
+              "textAlign": "center",
+              "fontFamily": "Oswald",
+              "fontSize": 64,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "VTpZ2",
+              "fill": "#64748B",
+              "content": "By Aliaksandr • April 12, 2026 • 15 min read",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "gQktI",
+          "name": "artHeroWrap",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            0,
+            64,
+            64,
+            64
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "CQOLp",
+              "name": "artHeroImg",
+              "width": 1000,
+              "height": 500,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1778453387076.png",
+                "mode": "fill"
+              },
+              "cornerRadius": [
+                0,
+                80,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "WB1Uy",
+          "name": "artBody",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            0,
+            64,
+            80,
+            64
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "fqHvY",
+              "name": "artContent",
+              "width": 800,
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "y9bqhJ",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "When the weather turns sour halfway through a Super Randonneur series, your equipment choices matter more than ever. I learned this the hard way during my first 600km qualifier. The forecast called for light showers; reality delivered a torrential downpour that lasted for 14 straight hours.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "VwWcq",
+                  "fill": "#0F284B",
+                  "content": "The Right Jacket",
+                  "fontFamily": "Oswald",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "M2LMTy",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "A good rain jacket is the cornerstone of your wet-weather kit. It needs to strike the impossible balance between waterproofing and breathability. Gore-Tex Shakedry was the gold standard, but newer alternatives are closing the gap.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "uYEMh",
+                  "name": "screamer",
+                  "width": "fill_container",
+                  "fill": "#FFD100",
+                  "cornerRadius": 12,
+                  "gap": 24,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fM5Q9",
+                      "content": "💡",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "W2B9Do",
+                      "fill": "#0F284B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "PRO TIP: Always pack your rain gear in a waterproof dry bag inside your saddlebag. A wet jacket at the start of a cold night is a recipe for hypothermia.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "ejAPH",
+                  "fill": "#0F284B",
+                  "content": "Layering strategy",
+                  "fontFamily": "Oswald",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "ZUh3N",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Merino wool base layers retain their insulating properties even when wet. Combine this with a thermal mid-layer and your rain shell, and you create a micro-climate that will sustain you through the coldest descents.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "R38KJA",
+                  "name": "quote",
+                  "width": "fill_container",
+                  "stroke": {
+                    "thickness": {
+                      "left": 4
+                    },
+                    "fill": "#054EA4"
+                  },
+                  "padding": [
+                    24,
+                    0,
+                    24,
+                    32
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "k1AMl0",
+                      "fill": "#0F284B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "\"There is no such thing as bad weather, only bad clothing. And maybe bad tire choices.\"",
+                      "lineHeight": 1.3,
+                      "fontFamily": "Oswald",
+                      "fontSize": 32,
+                      "fontWeight": "600",
+                      "fontStyle": "italic"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "o9hqvn",
+                  "name": "inImg",
+                  "width": "fill_container",
+                  "height": 400,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1778453379394.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 16
+                },
+                {
+                  "type": "text",
+                  "id": "ix9vQ",
+                  "fill": "#64748B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Pictured: 32mm tires dealing with water displacement.",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gFTVB",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "MZdyN",
+      "x": 8000,
+      "y": 0,
+      "name": "Page - Stats",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "z16ba",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "id": "nsxDV",
+          "type": "ref",
+          "ref": "luOi8",
+          "descendants": {
+            "z1atb": {
+              "content": "SEASON STATISTICS"
+            },
+            "MAP6Z": {
+              "content": "Tracking our community's progress, kilometers, and accomplishments."
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "GhF4N",
+          "name": "statControl",
+          "width": "fill_container",
+          "padding": [
+            0,
+            64
+          ],
+          "children": [
+            {
+              "id": "D5ZbI",
+              "type": "ref",
+              "ref": "UoPTB"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "h3cW3b",
+          "name": "sGrid",
+          "width": "fill_container",
+          "gap": 32,
+          "padding": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "cft5W",
+              "name": "sCol1",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Y6h4P1",
+                  "name": "sb1",
+                  "width": "fill_container",
+                  "height": 300,
+                  "fill": "#FFD100",
+                  "cornerRadius": [
+                    0,
+                    80,
+                    0,
+                    0
+                  ],
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 48,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NEWSK",
+                      "fill": "#0F284B",
+                      "content": "Total Kilometers",
+                      "fontFamily": "Oswald",
+                      "fontSize": 24,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "f4lCH7",
+                      "fill": "#0F284B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "45,200",
+                      "lineHeight": 1,
+                      "fontFamily": "Oswald",
+                      "fontSize": 96,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FxC1c",
+              "name": "sCol2",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "X8t9k",
+                  "name": "sb2",
+                  "width": "fill_container",
+                  "height": 300,
+                  "fill": "#054EA4",
+                  "cornerRadius": [
+                    80,
+                    0,
+                    0,
+                    0
+                  ],
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 48,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NgKub",
+                      "fill": "#FFFFFF",
+                      "content": "Active Riders",
+                      "fontFamily": "Oswald",
+                      "fontSize": 24,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "zMmzG",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "320",
+                      "lineHeight": 1,
+                      "fontFamily": "Oswald",
+                      "fontSize": 96,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "M8JGF",
+          "name": "sGrid2",
+          "width": "fill_container",
+          "gap": 32,
+          "padding": [
+            0,
+            64,
+            64,
+            64
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "M3klHq",
+              "name": "sb3",
+              "width": "fill_container",
+              "height": 240,
+              "fill": "#F0F4F8",
+              "cornerRadius": [
+                0,
+                0,
+                0,
+                80
+              ],
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 48,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Wl5gc",
+                  "fill": "#64748B",
+                  "content": "Brevets Completed",
+                  "fontFamily": "Oswald",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "YJOKE",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "24",
+                  "lineHeight": 1,
+                  "fontFamily": "Oswald",
+                  "fontSize": 64,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ovnsZ",
+              "name": "sb4",
+              "width": "fill_container",
+              "height": 240,
+              "fill": "#F0F4F8",
+              "cornerRadius": [
+                0,
+                0,
+                80,
+                0
+              ],
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 48,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Zv7jj",
+                  "fill": "#64748B",
+                  "content": "Super Randonneurs",
+                  "fontFamily": "Oswald",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "KPC8N",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "15",
+                  "lineHeight": 1,
+                  "fontFamily": "Oswald",
+                  "fontSize": 64,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hZ3uw",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "AVQHJ",
+      "x": 4833,
+      "y": 4500,
+      "name": "Page - Club Detail",
+      "width": 1400,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "IN6wY",
+          "type": "ref",
+          "ref": "g99Y1J"
+        },
+        {
+          "type": "frame",
+          "id": "x7ToU",
+          "name": "cHead",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            80,
+            64,
+            40,
+            64
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "EUF68",
+              "fill": "#054EA4",
+              "content": "CLUB PROFILE",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "Anv4W",
+              "fill": "#0F284B",
+              "textGrowth": "fixed-width",
+              "width": 1000,
+              "content": "Minsk Randonneurs",
+              "lineHeight": 1.1,
+              "textAlign": "center",
+              "fontFamily": "Oswald",
+              "fontSize": 64,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "lveoj",
+              "fill": "#64748B",
+              "content": "Minsk, Belarus • BY520002",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "r1kYGB",
+          "name": "cWrap",
+          "width": "fill_container",
+          "gap": 64,
+          "padding": [
+            40,
+            64,
+            80,
+            64
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "N4eLQ",
+              "name": "cLeft",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 40,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "W9vRuS",
+                  "fill": "#0F284B",
+                  "content": "About the Club",
+                  "fontFamily": "Oswald",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "wKyih",
+                  "fill": "#0F284B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "The Minsk Randonneurs is the oldest and largest ultra-distance cycling club in the capital. We host regular weekend training rides, organize official ACP brevets, and foster a welcoming community for cyclists looking to push their endurance limits. Our routes span the entire Minsk region, featuring a mix of smooth tarmac, challenging gravel, and historical landmarks.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "H9XD5",
+                  "name": "cFacts",
+                  "width": "fill_container",
+                  "height": 200,
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "NNh6a",
+                      "name": "cf1",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#F0F4F8",
+                      "cornerRadius": [
+                        32,
+                        0,
+                        32,
+                        32
+                      ],
+                      "layout": "vertical",
+                      "padding": 32,
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "d5V53",
+                          "fill": "#64748B",
+                          "content": "Founded",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Ei8Mr",
+                          "fill": "#0F284B",
+                          "content": "2015",
+                          "fontFamily": "Oswald",
+                          "fontSize": 48,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FF13a",
+                      "name": "cf2",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#FFD100",
+                      "layout": "vertical",
+                      "padding": 32,
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "wMO4R",
+                          "fill": "#0F284B",
+                          "content": "Active Members",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Ro4uc",
+                          "fill": "#0F284B",
+                          "content": "140+",
+                          "fontFamily": "Oswald",
+                          "fontSize": 48,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "J9haCb",
+                      "name": "cf3",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#F0F4F8",
+                      "cornerRadius": [
+                        32,
+                        32,
+                        32,
+                        0
+                      ],
+                      "layout": "vertical",
+                      "padding": 32,
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "dapJ1",
+                          "fill": "#64748B",
+                          "content": "Brevets / Year",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "UEqp6",
+                          "fill": "#0F284B",
+                          "content": "18",
+                          "fontFamily": "Oswald",
+                          "fontSize": 48,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ZT0A2",
+              "name": "cRight",
+              "width": 400,
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "L1SOA",
+                  "name": "contactCard",
+                  "fill": "#054EA4",
+                  "cornerRadius": [
+                    0,
+                    40,
+                    0,
+                    0
+                  ],
+                  "layout": "vertical",
+                  "gap": 24,
+                  "padding": 40,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uWat6",
+                      "fill": "#FFFFFF",
+                      "content": "Club Organizer",
+                      "fontFamily": "Oswald",
+                      "fontSize": 24,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fgf6a",
+                      "name": "cOrg",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "qqgAI",
+                          "width": 64,
+                          "height": 64,
+                          "fill": "#F0F4F8",
+                          "cornerRadius": 32
+                        },
+                        {
+                          "type": "frame",
+                          "id": "bUtMA",
+                          "name": "cName",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "FF14m",
+                              "fill": "#FFFFFF",
+                              "content": "Ivan Ivanov",
+                              "fontFamily": "Inter",
+                              "fontSize": 18,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "O8zL4O",
+                              "fill": "#CBD5E1",
+                              "content": "ACP Representative",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "mDFpz",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "#1E3A8A"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jFhNc",
+                      "name": "cEmail",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xzJbb",
+                          "fill": "#CBD5E1",
+                          "content": "Email",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "MuyZM",
+                          "fill": "#FFFFFF",
+                          "content": "ivan@minsk-randonneurs.by",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "RrMOB",
+                      "name": "cSite",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mWHvy",
+                          "fill": "#CBD5E1",
+                          "content": "Website",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "JC0Pt",
+                          "fill": "#FFFFFF",
+                          "content": "minsk-randonneurs.by",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gGpt8",
+          "type": "ref",
+          "ref": "H15zY"
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "\"color-bg\"": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "\"color-surface\"": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "\"color-text-muted\"": {
+      "type": "color",
+      "value": "#64748B"
+    },
+    "\"font-body\"": {
+      "type": "string",
+      "value": "Inter, sans-serif"
+    },
+    "\"font-heading\"": {
+      "type": "string",
+      "value": "Oswald, sans-serif"
+    },
+    "\"radius-md\"": {
+      "type": "number",
+      "value": 8
+    },
+    "\"radius-sm\"": {
+      "type": "number",
+      "value": 4
+    },
+    "\"spacing-0\"": {
+      "type": "number",
+      "value": 0
+    },
+    "\"spacing-1\"": {
+      "type": "number",
+      "value": 4
+    },
+    "\"spacing-2\"": {
+      "type": "number",
+      "value": 8
+    },
+    "\"spacing-3\"": {
+      "type": "number",
+      "value": 12
+    },
+    "\"spacing-4\"": {
+      "type": "number",
+      "value": 16
+    },
+    "\"spacing-6\"": {
+      "type": "number",
+      "value": 24
+    },
+    "\"spacing-8\"": {
+      "type": "number",
+      "value": 32
+    },
+    "\"color-light-beige\"": {
+      "type": "color",
+      "value": "#F5F3EC"
+    },
+    "\"color-navy\"": {
+      "type": "color",
+      "value": "#131B2B"
+    },
+    "\"color-primary\"": {
+      "type": "color",
+      "value": "#054EA4"
+    },
+    "\"color-secondary\"": {
+      "type": "color",
+      "value": "#FFD100"
+    },
+    "\"color-text\"": {
+      "type": "color",
+      "value": "#131B2B"
+    },
+    "\"color-text-inverse\"": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "\"radius-lg\"": {
+      "type": "number",
+      "value": 16
+    }
+  }
+}
