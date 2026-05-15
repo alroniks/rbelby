@@ -14,11 +14,11 @@ You must treat `docs/CONSTITUTION.md` as the ultimate source of truth for all ar
 
 ## 🔄 Development Workflow
 
-The workflow is simplified and relies heavily on GitHub Issues and iterative planning.
+The workflow is simplified and relies heavily on GitHub Issues and iterative planning. Check `CONTRIBUTING.md` for the full process.
 
 1. **English Only**: All specifications, code comments, issues, commit messages, and Markdown documentation must be written in **English**.
 2. **Specs First**: New features begin with a spec drafted in `docs/specs/` (e.g., `docs/specs/001-website-core-structure.md`).
-3. **GitHub Integration**: Specs are linked to GitHub Issues, which live on the Roadmap. Check `docs/WORKFLOW.md` for details.
+3. **GitHub Integration**: Specs are linked to GitHub Issues, which live on the Roadmap.
 4. **Iterative Execution**: Do not try to implement massive changes at once. If asked to implement a feature, use the `enter_plan_mode` tool to safely review the codebase, plan your strategy, and confirm the architecture before writing files.
 
 ## 🛠️ Commands and formatting
@@ -38,8 +38,9 @@ When building or testing locally:
 
 - `rbelby/`: The Obsidian Vault containing Markdown content (Brevets, Routes, etc.). This is your database.
 - `src/content.config.ts`: Defines how Astro loads content from `rbelby/`.
-- `docs/CONSTITUTION.md`: The mandatory ruleset.
-- `docs/WORKFLOW.md`: How to plan and execute tasks using GitHub.
+- `docs/CONSTITUTION.md`: The mandatory ruleset and architecture truth.
+- `CONTRIBUTING.md`: How to plan, execute tasks, and submit PRs.
+- `docs/ROADMAP.md`: Project milestones and feature phases.
 - `docs/specs/`: Active, in-progress, or completed feature specifications.
 - `src/components/`: Reusable `.astro` UI elements.
 - `src/layouts/`: Base HTML shells and page layouts.

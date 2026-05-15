@@ -1,13 +1,16 @@
-# Randonneurs Belarus (rbelby) Website
+# Randonneurs Belarus Website
+
+https://rbel.by
 
 Welcome to the source repository for the official website of Randonneurs Belarus!
 
 This site is statically generated using **Astro**, styled with **Tailwind CSS 4** and **Preline UI**, and its entire content is managed without a traditional database. Instead, data lives in this repository as Markdown/JSON files (managed via **Obsidian**) and is synchronized with a **Notion Headless CMS**.
 
-This README provides instructions for two main audiences:
+## 🚀 The Vision
 
-1. **Content Editors & Authors** (who write articles and add events).
-2. **Developers & AI Agents** (who build the site's functionality).
+Our goal is to build a "ready, alive website" that minimizes technical debt and maximizes content velocity. To achieve this, we treat **Content as Data** and the **Site as a Static Viewer**. Content editors manage markdown files seamlessly, Astro securely compiles those files into a blazing-fast static site, and Artificial Intelligence (via Gemini) accelerates our development workflow. 
+
+By avoiding heavy databases and complex client-side frameworks, we ensure the project is easily maintainable by the open-source community for years to come.
 
 ---
 
@@ -38,48 +41,22 @@ For managing complex data (like GPS Routes, Clubs, or deep site structure), or i
 
 ## 💻 For Developers & AI Agents
 
-The Randonneurs Belarus website is built with a **Static-First Architecture** emphasizing performance, SEO, and simplicity.
+The site uses a **Static-First Architecture**. If you want to contribute code, please read our **[CONTRIBUTING.md](CONTRIBUTING.md)** guide.
 
-### Tech Stack
-
-- **Framework**: Astro 5.x
-- **Styling**: Tailwind CSS 4
-- **UI Components**: Preline UI (Vanilla JavaScript plugins only)
-- **Database**: The `rbelby/` folder (Markdown/JSON)
-- **CMS Automation**: GitHub Actions + Notion API + Crowdin
-- **Hosting**: Cloudflare Pages
+**Tech Stack Summary**: Astro 6.x, Tailwind CSS 4, Preline UI (Vanilla JS), and a Flat-File CMS (`rbelby/`).
 
 ### 🛑 Strict Architectural Rules
 
-- **No React/Vue/Svelte**: The project relies exclusively on `.astro` components. Client-side interactivity must be handled by Vanilla JavaScript or Preline UI's native JS plugins.
-- **Content as Data**: Do not hardcode content into components. Content must flow from the `rbelby/` directory via Astro Content Collections (`src/content.config.ts`).
-- **Single Source of Truth**: Read `docs/CONSTITUTION.md` for the full architectural rules.
+- **No React/Vue/Svelte**: The project relies exclusively on `.astro` components. Interactivity must use Vanilla JS.
+- **Content as Data**: Do not hardcode content into components.
+- **Single Source of Truth**: Read our **[Constitution](docs/CONSTITUTION.md)** for the absolute architectural rules.
 
-### Local Setup
+### Resources
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-2. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
-   _The site will be available at `http://localhost:4321`._
-
-### Code Quality & Workflows
-
-Before committing any code, ensure you run the formatter to maintain a consistent codebase:
-
-```bash
-npm run format
-```
-
-If you are an AI Agent (like Gemini) or a developer using one, please refer to our workflow guide:
-
-- 📖 **Workflow Guide**: `docs/WORKFLOW.md`
-- 🏗️ **Architecture Rules**: `docs/CONSTITUTION.md`
-- 🗺️ **Roadmap & Milestones**: `docs/ROADMAP.md`
+- 🤖 **AI Instructions**: [`GEMINI.md`](GEMINI.md)
+- 🤝 **Contributing & Workflow**: [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- 🏗️ **Architecture Rules**: [`docs/CONSTITUTION.md`](docs/CONSTITUTION.md)
+- 🗺️ **Roadmap & Milestones**: [`docs/ROADMAP.md`](docs/ROADMAP.md)
 - 📝 **Active Specs**: `docs/specs/`
 
 ### Deployment
