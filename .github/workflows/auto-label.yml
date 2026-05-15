@@ -1,0 +1,53 @@
+name: Auto-label PR
+
+on:
+  pull_request_target:
+    types: [opened, edited, synchronize]
+
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Auto-label PR based on title and branch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const title = pr.title.toLowerCase();
+            const branch = pr.head.ref.toLowerCase();
+
+            const newLabels = new Set();
+
+            // Check for feature
+            if (title.includes('add ') || title.includes('new ') || title.includes('feature ') || branch.startsWith('feature/') || branch.startsWith('feat/')) {
+              newLabels.add('feature');
+            }
+
+            // Check for bugfix
+            if (title.includes('fix ') || title.includes('bug ') || branch.startsWith('fix/') || branch.startsWith('bugfix/')) {
+              newLabels.add('bugfix');
+            }
+
+            // Check for tooling
+            if (title.includes('chore ') || title.includes('tool ') || title.includes('deps ') || branch.startsWith('chore/') || branch.startsWith('tooling/') || branch.startsWith('dependabot/')) {
+              newLabels.add('tooling');
+            }
+
+            // Check for docs/meta
+            if (title.includes('docs ') || title.includes('meta ') || branch.startsWith('docs/')) {
+              newLabels.add('docs/meta');
+            }
+
+            if (newLabels.size > 0) {
+              console.log(`Adding labels: ${Array.from(newLabels).join(', ')}`);
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                labels: Array.from(newLabels)
+              });
+            } else {
+              console.log('No matching keywords found for auto-labeling.');
+            }
