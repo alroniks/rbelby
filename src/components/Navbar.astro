@@ -12,10 +12,14 @@ const t = useTranslations(lang);
     class="mx-auto flex w-full max-w-[85rem] basis-full flex-wrap items-center justify-between px-4"
   >
     <a
-      class="font-heading flex-none text-xl font-semibold text-white focus:opacity-80 focus:outline-hidden sm:order-1"
+      class="flex-none focus:opacity-80 focus:outline-hidden sm:order-1"
       href={lang === 'ru' ? '/' : `/${lang}/`}
     >
-      randonneur
+      <img
+        src="/rbel-icon.png"
+        alt="Randonneurs Belarus"
+        class="h-10 w-auto object-contain"
+      />
     </a>
     <div class="flex items-center gap-x-2 sm:order-3">
       <button
