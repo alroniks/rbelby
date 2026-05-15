@@ -1,0 +1,79 @@
+[
+  {
+    "id": "BY520001",
+    "name": "SIABRY RANDONNEURS",
+    "description": "Description 1",
+    "createdAt": "2021-01-01",
+    "updatedAt": "2021-01-01"
+  },
+  {
+    "id": "BY520013",
+    "name": "Club BY520013 (Горкі)",
+    "city": "Горкі",
+    "site": "",
+    "email": ""
+  },
+  {
+    "id": "BY520002",
+    "name": "Club BY520002 (Минск)",
+    "city": "Минск",
+    "site": "",
+    "email": ""
+  },
+  {
+    "id": "BY520016",
+    "name": "Club BY520016 (Брест)",
+    "city": "Брест",
+    "site": "",
+    "email": ""
+  },
+  {
+    "id": "BY520017",
+    "name": "Club BY520017 (Пинск)",
+    "city": "Пинск",
+    "site": "",
+    "email": ""
+  },
+  {
+    "id": "BY520006",
+    "name": "Club BY520006 (Витебск)",
+    "city": "Витебск",
+    "site": "",
+    "email": ""
+  },
+  {
+    "id": "BY520010",
+    "name": "Club BY520010 (Полоцк)",
+    "city": "Полоцк",
+    "site": "",
+    "email": ""
+  },
+  {
+    "id": "BY520015",
+    "name": "Club BY520015 (Гомель)",
+    "city": "Гомель",
+    "site": "",
+    "email": ""
+  },
+  {
+    "id": "BY520011",
+    "name": "Club BY520011 (Слоним)",
+    "city": "Слоним",
+    "site": "",
+    "email": ""
+  },
+  {
+    "id": "BY520014",
+    "name": "Club BY520014 (Жодино)",
+    "city": "Жодино",
+    "site": "",
+    "email": ""
+  },
+  {
+    "id": "BY520012",
+    "name": "Club BY520012 (Лида)",
+    "city": "Лида",
+    "site": "",
+    "email": ""
+  }
+]

@@ -1,0 +1,27 @@
+- name: feature
+  color: '5319E7'
+  description: 'High-level feature specification (Parent Issue)'
+
+- name: subtask
+  color: '006B75'
+  description: 'Implementation sub-issue or atomic task'
+
+- name: bugfix
+  color: 'D73A4A'
+  description: "Something isn't working correctly or PR fixing a bug"
+
+- name: content
+  color: 'FBCA04'
+  description: 'Content creation or updates (events, routes, articles)'
+
+- name: release
+  color: '0E8A16'
+  description: 'PR: A new feature or major release'
+
+- name: tooling
+  color: 'EDEDED'
+  description: 'PR: Maintenance, dependencies, and tooling'
+
+- name: docs/meta
+  color: '0075CA'
+  description: 'PR: Documentation or meta updates'
