@@ -1,6 +1,16 @@
-export const languages: Record<string, string> = {
+import ru from './locales/ru.json';
+import be from './locales/be.json';
+import en from './locales/en.json';
+
+const ui = {
+  ru,
+  be,
+  en,
+};
+
+export const languages = {
   ru: 'Русский',
-  be: 'Беларускі',
+  be: 'Беларуская',
   en: 'English',
 };
 
@@ -15,7 +25,6 @@ export function getLangFromUrl(url: URL) {
 
 export function useTranslations(lang: keyof typeof languages) {
   return function t(key: string): string {
-    // Returns translation key for fallback
-    return key;
+    return (ui[lang] as any)[key] || (ui[defaultLang] as any)[key] || key;
   };
 }

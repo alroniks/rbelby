@@ -2,3 +2,35 @@
 
 @import '../../node_modules/preline/variants.css';
 @source '../../node_modules/preline/dist/*.js';
+
+@theme {
+  --color-bg: #ffffff;
+  --color-light-beige: #f5f3ec;
+  --color-navy: #131b2b;
+  --color-primary: #054ea4;
+  --color-secondary: #ffd100;
+  --color-surface: #ffffff;
+  --color-text: #131b2b;
+  --color-text-inverse: #ffffff;
+  --color-text-muted: #64748b;
+
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Oswald', sans-serif;
+
+  --radius-lg: 16px;
+  --radius-md: 8px;
+  --radius-sm: 4px;
+}
+
+body {
+  @apply bg-bg text-text font-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading text-navy;
+}

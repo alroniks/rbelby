@@ -1,20 +1,31 @@
 ---
 import '../styles/global.css';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <!doctype html>
-<html lang="ru">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/rbel-icon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>Бреветы Беларуси</title>
+    <title>{t('title')}</title>
+    <meta name="description" content={t('description')} />
+
+    <!-- Analytics -->
+    <script
+      defer
+      src="https://atmetrics.netlify.app/script.js"
+      data-website-id="811ecd8e-a38c-4aaa-935a-ddf29bbadb12"></script>
   </head>
   <body>
     <slot />
   </body>
 
   <!-- Preline UI -->
-  <script is:inline src="./node_modules/preline/dist/index.js"></script>
+  <script is:inline src="/node_modules/preline/dist/index.js"></script>
 </html>
