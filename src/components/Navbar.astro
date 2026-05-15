@@ -6,7 +6,7 @@ const t = useTranslations(lang);
 ---
 
 <header
-  class="border-navy bg-navy flex w-full flex-wrap border-b py-3 text-sm sm:flex-nowrap sm:justify-start"
+  class="border-gray bg-bg flex w-full flex-wrap border-b py-3 text-sm sm:flex-nowrap sm:justify-start"
 >
   <nav
     class="mx-auto flex w-full max-w-[85rem] basis-full flex-wrap items-center justify-between px-4"
@@ -15,16 +15,24 @@ const t = useTranslations(lang);
       class="flex-none focus:opacity-80 focus:outline-hidden sm:order-1"
       href={lang === 'ru' ? '/' : `/${lang}/`}
     >
-      <img
-        src="/rbel-icon.png"
-        alt="Randonneurs Belarus"
-        class="h-10 w-auto object-contain"
-      />
+      <div class="flex items-center gap-3">
+        <img
+          src="/rbel-icon.png"
+          alt="Randonneurs Belarus"
+          class="h-10 w-auto object-contain"
+        />
+        <div
+          class="font-heading text-secondary flex h-10 flex-col justify-center pt-1 text-sm leading-[1] font-black tracking-wider uppercase sm:text-base"
+        >
+          <span>Беларускія</span>
+          <span>Ранданеры</span>
+        </div>
+      </div>
     </a>
     <div class="flex items-center gap-x-2 sm:order-3">
       <button
         type="button"
-        class="hs-collapse-toggle bg-navy relative flex size-9 items-center justify-center gap-x-2 rounded-lg border border-gray-700 text-white shadow-2xs hover:bg-gray-700 focus:bg-gray-700 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:hidden"
+        class="hs-collapse-toggle bg-bg text-text relative flex size-9 items-center justify-center gap-x-2 rounded-lg border border-gray-700 shadow-2xs hover:bg-gray-700 focus:bg-gray-700 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:hidden"
         id="hs-navbar-alignment-collapse"
         aria-expanded="false"
         aria-controls="hs-navbar-alignment"
@@ -65,7 +73,7 @@ const t = useTranslations(lang);
       </button>
       <a
         href={lang === 'ru' ? '/login' : `/${lang}/login`}
-        class="text-navy inline-flex items-center gap-x-2 rounded-full border border-gray-200 bg-white px-3 py-2 text-sm font-medium shadow-2xs hover:bg-gray-50 focus:bg-gray-50 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+        class="text-charcoal inline-flex items-center gap-x-2 rounded-full border border-gray-200 bg-white px-3 py-2 text-sm font-medium shadow-2xs hover:bg-gray-50 focus:bg-gray-50 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
       >
         {t('nav.login')}
       </a>
@@ -79,25 +87,25 @@ const t = useTranslations(lang);
         class="mt-5 flex flex-col gap-5 sm:mt-0 sm:flex-row sm:items-center sm:ps-5"
       >
         <a
-          class="hover:text-secondary focus:text-secondary font-medium text-white focus:outline-hidden"
+          class="hover:text-secondary focus:text-secondary text-text font-medium focus:outline-hidden"
           href={lang === 'ru' ? '/events' : `/${lang}/events`}
         >
           {t('nav.events')}
         </a>
         <a
-          class="text-light-beige hover:text-secondary focus:text-secondary font-medium focus:outline-hidden"
+          class="text-text hover:text-secondary focus:text-secondary font-medium focus:outline-hidden"
           href={lang === 'ru' ? '/routes' : `/${lang}/routes`}
         >
           {t('nav.routes')}
         </a>
         <a
-          class="text-light-beige hover:text-secondary focus:text-secondary font-medium focus:outline-hidden"
+          class="text-text hover:text-secondary focus:text-secondary font-medium focus:outline-hidden"
           href={lang === 'ru' ? '/stats' : `/${lang}/stats`}
         >
           {t('nav.statistics')}
         </a>
         <a
-          class="text-light-beige hover:text-secondary focus:text-secondary font-medium focus:outline-hidden"
+          class="text-text hover:text-secondary focus:text-secondary font-medium focus:outline-hidden"
           href={lang === 'ru' ? '/clubs' : `/${lang}/clubs`}
         >
           {t('nav.clubs')}
@@ -108,13 +116,13 @@ const t = useTranslations(lang);
           <a
             class={lang === 'ru'
               ? 'text-secondary font-bold'
-              : 'text-gray-400 hover:text-white'}
+              : 'text-text-muted hover:text-text'}
             href="/">RU</a
           >
           <a
             class={lang === 'be'
               ? 'text-secondary font-bold'
-              : 'text-gray-400 hover:text-white'}
+              : 'text-text-muted hover:text-text'}
             href="/be/">BY</a
           >
         </div>

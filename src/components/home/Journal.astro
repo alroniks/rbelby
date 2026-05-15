@@ -24,24 +24,24 @@ const articles = [
 ];
 ---
 
-<section class="bg-white py-16 lg:py-24 dark:bg-neutral-900">
+<section class=" py-16 lg:py-24 bg-bg">
   <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
     <div class="mb-12 text-center">
-      <p class="mb-2 text-xs font-bold tracking-widest text-gray-500 uppercase">
+      <p class="mb-2 text-xs font-bold tracking-widest text-text-muted uppercase">
         Journal
       </p>
       <h2
-        class="mb-6 text-3xl leading-tight font-bold text-gray-800 uppercase md:text-4xl dark:text-white"
+        class="mb-6 text-3xl leading-tight font-bold text-text uppercase md:text-4xl text-text"
       >
-        Stay updated <span class="text-orange-500">with our latest news</span
+        Stay updated <span class="text-primary">with our latest news</span
         >,<br />
         featuring exching travel tips,<br />
-        guides and <span class="text-orange-500">brevet's diaries</span>
+        guides and <span class="text-primary">brevet's diaries</span>
       </h2>
       <div class="flex justify-center">
         <a
           href="/blog"
-          class="inline-flex items-center justify-center gap-x-2 rounded-full border border-transparent bg-orange-500 px-6 py-3 text-sm font-semibold text-white hover:bg-orange-600 disabled:pointer-events-none disabled:opacity-50"
+          class="inline-flex items-center justify-center gap-x-2 rounded-full border border-gray bg-primary px-6 py-3 text-sm font-semibold text-text-inverse hover:opacity-90 disabled:pointer-events-none disabled:opacity-50"
         >
           View all
           <svg
@@ -72,19 +72,19 @@ const articles = [
               alt={article.title}
               class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-transparent to-transparent" />
 
             <div class="absolute top-0 left-0 p-4">
-              <span class="inline-block rounded-sm bg-neutral-800/80 px-2 py-1 text-xs text-white backdrop-blur-sm">
+              <span class="inline-block rounded-sm bg-charcoal/80 px-2 py-1 text-xs text-text-inverse backdrop-blur-sm">
                 {article.date}
               </span>
             </div>
 
             <div class="absolute bottom-0 left-0 w-full p-6">
-              <span class="mb-1 block text-xs font-bold text-orange-400 uppercase">
+              <span class="mb-1 block text-xs font-bold text-secondary uppercase">
                 {article.distance}
               </span>
-              <h3 class="text-lg leading-snug font-bold text-white uppercase">
+              <h3 class="text-lg leading-snug font-bold text-text-inverse uppercase">
                 {article.title}
               </h3>
             </div>

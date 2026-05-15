@@ -5,7 +5,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="bg-navy mx-auto w-full px-4 py-10 sm:px-6 lg:px-8">
+<footer class="bg-bg mx-auto w-full px-4 py-10 sm:px-6 lg:px-8">
   <!-- Grid -->
   <div
     class="mx-auto mb-16 grid max-w-[85rem] grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
@@ -14,34 +14,34 @@ const t = useTranslations(lang);
       <h3 class="text-secondary mb-4 text-sm font-bold uppercase">
         {t('footer.connecting')}
       </h3>
-      <p class="text-light-beige text-sm">
+      <p class="text-gray text-sm">
         {t('footer.connecting_desc')}
       </p>
     </div>
     <!-- End Col -->
 
     <div>
-      <h4 class="mb-4 text-sm font-bold text-white uppercase">
+      <h4 class="text-text mb-4 text-sm font-bold uppercase">
         {t('footer.platform')}
       </h4>
       <ul class="space-y-2 text-sm">
         <li>
           <a
-            class="text-gray-400 hover:text-white"
+            class="hover:text-text text-gray-400"
             href={lang === 'ru' ? '/events' : `/${lang}/events`}
             >{t('footer.upcoming')}</a
           >
         </li>
         <li>
           <a
-            class="text-gray-400 hover:text-white"
+            class="hover:text-text text-gray-400"
             href={lang === 'ru' ? '/routes' : `/${lang}/routes`}
             >{t('footer.route_library')}</a
           >
         </li>
         <li>
           <a
-            class="text-gray-400 hover:text-white"
+            class="hover:text-text text-gray-400"
             href={lang === 'ru' ? '/stats' : `/${lang}/stats`}
             >{t('footer.season_stats')}</a
           >
@@ -50,27 +50,27 @@ const t = useTranslations(lang);
     </div>
 
     <div>
-      <h4 class="mb-4 text-sm font-bold text-white uppercase">
+      <h4 class="text-text mb-4 text-sm font-bold uppercase">
         {t('footer.community')}
       </h4>
       <ul class="space-y-2 text-sm">
         <li>
           <a
-            class="text-gray-400 hover:text-white"
+            class="hover:text-text text-gray-400"
             href={lang === 'ru' ? '/clubs' : `/${lang}/clubs`}
             >{t('footer.find_club')}</a
           >
         </li>
         <li>
           <a
-            class="text-gray-400 hover:text-white"
+            class="hover:text-text text-gray-400"
             href={lang === 'ru' ? '/volunteer' : `/${lang}/volunteer`}
             >{t('footer.volunteer')}</a
           >
         </li>
         <li>
           <a
-            class="text-gray-400 hover:text-white"
+            class="hover:text-text text-gray-400"
             href={lang === 'ru' ? '/rules' : `/${lang}/rules`}
             >{t('footer.rules')}</a
           >
@@ -79,18 +79,18 @@ const t = useTranslations(lang);
     </div>
 
     <div>
-      <h4 class="mb-4 text-sm font-bold text-white uppercase">
+      <h4 class="text-text mb-4 text-sm font-bold uppercase">
         {t('footer.connect')}
       </h4>
       <ul class="space-y-2 text-sm">
         <li>
-          <a class="text-gray-400 hover:text-white" href="#">Twitter</a>
+          <a class="hover:text-text text-gray-400" href="#">Twitter</a>
         </li>
         <li>
-          <a class="text-gray-400 hover:text-white" href="#">Instagram</a>
+          <a class="hover:text-text text-gray-400" href="#">Instagram</a>
         </li>
         <li>
-          <a class="text-gray-400 hover:text-white" href="#">Strava Club</a>
+          <a class="hover:text-text text-gray-400" href="#">Strava Club</a>
         </li>
       </ul>
     </div>
@@ -101,11 +101,13 @@ const t = useTranslations(lang);
   <div
     class="mx-auto mt-8 flex max-w-[85rem] flex-col items-center border-t border-gray-700 pt-8 text-center"
   >
-    <img
-      src="/rbel-icon.png"
-      alt="Randonneurs Belarus"
-      class="mb-4 h-24 w-auto object-contain opacity-50 md:h-32"
-    />
+    <div class="mb-4 flex items-center justify-center gap-4 opacity-50">
+      <div
+        class="font-heading text-gray mt-3 flex h-24 flex-col justify-center text-left text-3xl leading-none font-black tracking-widest uppercase sm:text-4xl md:h-32 md:text-6xl"
+      >
+        <span>Беларускія Ранданеры</span>
+      </div>
+    </div>
     <p class="mt-4 text-center text-xs text-gray-500">
       © 2026 Randonneur Platform. All rights reserved.
     </p>
