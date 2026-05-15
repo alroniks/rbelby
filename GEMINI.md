@@ -17,10 +17,11 @@ You must treat `docs/CONSTITUTION.md` as the ultimate source of truth for all ar
 The workflow is simplified and relies heavily on GitHub Issues and iterative planning. Check `CONTRIBUTING.md` for the full process.
 
 1. **English Only**: All specifications, code comments, issues, commit messages, and Markdown documentation must be written in **English**.
-2. **Specs First**: New features begin with a spec drafted in `docs/specs/` (e.g., `docs/specs/001-website-core-structure.md`).
-3. **GitHub Integration**: Specs are linked to GitHub Issues, which live on the Roadmap.
-4. **Design Alignment**: Whenever working on UI features or specs, you MUST inspect the design file `design/ui.pen` (using `pencil` MCP server tools like `mcp_pencil_batch_get`) to understand the intended layout, spacing, and styling. Compare the spec requirements and the codebase against the design. If you discover inconsistencies, **DO NOT update the `.pen` file**. Alert the operator immediately to decide whether to adjust the design or adjust the code to strictly follow the design.
-5. **Iterative Execution**: Do not try to implement massive changes at once. If asked to implement a feature, use the `enter_plan_mode` tool to safely review the codebase, plan your strategy, and confirm the architecture before writing files.
+2. **No Conventional Commits**: Do NOT use conventional commits (e.g., `feat:`, `fix:`, `chore:`). Write plain, descriptive commit messages, PR titles, and changesets that focus on the "what" and "why" in standard English.
+3. **Specs First**: New features begin with a spec drafted in `docs/specs/` (e.g., `docs/specs/001-website-core-structure.md`).
+4. **GitHub Integration**: Specs are linked to GitHub Issues, which live on the Roadmap.
+5. **Design Alignment**: Whenever working on UI features or specs, you MUST inspect the design file `design/ui.pen` (using `pencil` MCP server tools like `mcp_pencil_batch_get`) to understand the intended layout, spacing, and styling. Compare the spec requirements and the codebase against the design. If you discover inconsistencies, **DO NOT update the `.pen` file**. Alert the operator immediately to decide whether to adjust the design or adjust the code to strictly follow the design.
+6. **Iterative Execution**: Do not try to implement massive changes at once. If asked to implement a feature, use the `enter_plan_mode` tool to safely review the codebase, plan your strategy, and confirm the architecture before writing files.
 
 ## 🛠️ Commands and formatting
 
