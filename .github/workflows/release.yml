@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Create Release PR or Tag
+        uses: changesets/action@v1
+        with:
+          # This controls the PR title/commit when collecting changesets
+          commit: 'chore(release): update changelog'
+          title: 'chore(release): update changelog'
+
+          # We don't publish to NPM. This natively tags the repository.
+          publish: npx changeset tag
+
+          # Once the Release PR is merged, it will create a GitHub Release using the changelog
+          createGithubReleases: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

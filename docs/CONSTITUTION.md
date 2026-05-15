@@ -5,18 +5,23 @@ This document is the **ultimate source of truth** for the core principles, archi
 ## I. Core Principles
 
 ### 1. Content as Data (Obsidian Vault)
+
 Primary content (events, routes, clubs, authors) MUST live in the `rbelby/` markdown/json directory. This directory is treated as an Obsidian-backed database. The Astro website serves solely as a presentation layer for this data. No content should be hardcoded in the UI components.
 
 ### 2. Internationalization (i18n)
+
 Support for English, Russian (default), and Belarusian is mandatory. All user-facing UI text MUST be localized using keys in `src/i18n/locales`. Obsidian content translation MUST be managed strictly via the existing Crowdin integration. Native directory-based routing (e.g., `/be/`) is used.
 
 ### 3. SEO and Semantic Data
+
 Every page MUST be SEO-optimized. All data exposed on the website (events, routes, authors) MUST be marked up via JSON-LD based on exact Schema.org definitions.
 
 ### 4. UI and Styling Conventions
+
 Use Preline UI components and Tailwind CSS 4 utility classes exclusively. Avoid global CSS where possible. **React (`.tsx`) and similar heavy frameworks (Vue/Svelte) are explicitly forbidden.** Use `.astro` components exclusively for UI layout. Client-side interactivity MUST be handled via vanilla JavaScript (or Preline's native JS plugins).
 
 ### 5. Static-First Architecture
+
 Utilize Astro's Static Site Generation (SSG). Keep client-side JavaScript to an absolute minimum to ensure fast load times and better search engine indexing.
 
 ## II. The Data Pipeline & Architecture
@@ -36,6 +41,7 @@ We utilize a Static Site Generator (SSG) architecture powered by Astro. Instead 
 - **Content Management**: Markdown/JSON in Obsidian Vault (`rbelby/`).
 - **Translation**: Crowdin (syncs to `src/i18n/locales/`).
 - **Package Manager**: npm (Node.js v20+).
+- **Changelog & Versioning**: Changesets (`@changesets/cli`) using semantic PR descriptions over conventional commits (ADR-0001).
 
 ## IV. Debt & Future Considerations
 

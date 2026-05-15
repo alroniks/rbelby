@@ -8,7 +8,7 @@ This site is statically generated using **Astro**, styled with **Tailwind CSS 4*
 
 ## 🚀 The Vision
 
-Our goal is to build a "ready, alive website" that minimizes technical debt and maximizes content velocity. To achieve this, we treat **Content as Data** and the **Site as a Static Viewer**. Content editors manage markdown files seamlessly, Astro securely compiles those files into a blazing-fast static site, and Artificial Intelligence (via Gemini) accelerates our development workflow. 
+Our goal is to build a "ready, alive website" that minimizes technical debt and maximizes content velocity. To achieve this, we treat **Content as Data** and the **Site as a Static Viewer**. Content editors manage markdown files seamlessly, Astro securely compiles those files into a blazing-fast static site, and Artificial Intelligence (via Gemini) accelerates our development workflow.
 
 By avoiding heavy databases and complex client-side frameworks, we ensure the project is easily maintainable by the open-source community for years to come.
 
