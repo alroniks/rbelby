@@ -1,8 +1,13 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <header
@@ -13,7 +18,7 @@ const t = useTranslations(lang);
   >
     <a
       class="flex-none focus:opacity-80 focus:outline-hidden sm:order-1"
-      href={lang === 'ru' ? '/' : `/${lang}/`}
+      href={translatePath('/')}
     >
       <div class="flex items-center gap-3">
         <img
@@ -25,11 +30,35 @@ const t = useTranslations(lang);
           class="font-heading text-secondary flex h-10 flex-col justify-center pt-1 text-sm leading-[1] font-black tracking-wider uppercase sm:text-base"
         >
           <span>Беларускія</span>
-          <span>Ранданеры</span>
+          <span>Ранданёры</span>
         </div>
       </div>
     </a>
     <div class="flex items-center gap-x-2 sm:order-3">
+      <!-- Language Switcher moved here -->
+      <div
+        class="mr-2 hidden items-center space-x-2 border-r border-gray-600 pr-4 sm:flex"
+      >
+        <a
+          class={lang === 'ru'
+            ? 'text-secondary font-bold'
+            : 'text-text-muted hover:text-text'}
+          href={translatePath('/', 'ru')}>RU</a
+        >
+        <a
+          class={lang === 'be'
+            ? 'text-secondary font-bold'
+            : 'text-text-muted hover:text-text'}
+          href={translatePath('/', 'be')}>BY</a
+        >
+        <a
+          class={lang === 'en'
+            ? 'text-secondary font-bold'
+            : 'text-text-muted hover:text-text'}
+          href={translatePath('/', 'en')}>EN</a
+        >
+      </div>
+
       <button
         type="button"
         class="hs-collapse-toggle bg-bg text-text relative flex size-9 items-center justify-center gap-x-2 rounded-lg border border-gray-700 shadow-2xs hover:bg-gray-700 focus:bg-gray-700 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 sm:hidden"
@@ -139,6 +168,11 @@ const t = useTranslations(lang);
     </style>
 
     <script>
+      declare global {
+        interface Window {
+          applyTheme: (theme: string) => void;
+        }
+      }
       const themes = ['system', 'light', 'dark'];
 
       const handleToggleClick = () => {
@@ -184,42 +218,50 @@ const t = useTranslations(lang);
       >
         <a
           class="hover:text-secondary focus:text-secondary text-text font-medium focus:outline-hidden"
-          href={lang === 'ru' ? '/events' : `/${lang}/events`}
+          href={translatePath('/events')}
         >
           {t('nav.events')}
         </a>
         <a
           class="text-text hover:text-secondary focus:text-secondary font-medium focus:outline-hidden"
-          href={lang === 'ru' ? '/routes' : `/${lang}/routes`}
+          href={translatePath('/routes')}
         >
           {t('nav.routes')}
         </a>
         <a
           class="text-text hover:text-secondary focus:text-secondary font-medium focus:outline-hidden"
-          href={lang === 'ru' ? '/stats' : `/${lang}/stats`}
+          href={translatePath('/stats')}
         >
-          {t('nav.statistics')}
+          {t('nav.stats')}
         </a>
         <a
           class="text-text hover:text-secondary focus:text-secondary font-medium focus:outline-hidden"
-          href={lang === 'ru' ? '/clubs' : `/${lang}/clubs`}
+          href={translatePath('/clubs')}
         >
           {t('nav.clubs')}
         </a>
+
+        <!-- Mobile Language Switcher -->
         <div
-          class="ml-4 flex items-center space-x-2 border-l border-gray-600 pl-4"
+          class="mt-2 flex items-center space-x-4 border-t border-gray-200 pt-4 sm:hidden dark:border-gray-700"
         >
           <a
             class={lang === 'ru'
               ? 'text-secondary font-bold'
-              : 'text-text-muted hover:text-text'}
-            href="/">RU</a
+              : 'text-text-muted'}
+            href={translatePath('/', 'ru')}>RU</a
           >
           <a
             class={lang === 'be'
               ? 'text-secondary font-bold'
-              : 'text-text-muted hover:text-text'}
-            href="/be/">BY</a
+              : 'text-text-muted'}
+            href={translatePath('/', 'be')}>BY</a
+          >
+          <a
+            class={lang === 'en'
+              ? 'text-secondary font-bold'
+              : 'text-text-muted'}
+            href={translatePath('/', 'en')}>EN</a
           >
         </div>
       </div>

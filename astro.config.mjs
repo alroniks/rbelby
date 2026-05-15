@@ -12,6 +12,9 @@ export default defineConfig({
       be: 'ru',
       en: 'ru',
     },
+    routing: {
+      prefixDefaultLocale: false,
+    },
   },
   prefetch: {
     prefetchAll: true,
