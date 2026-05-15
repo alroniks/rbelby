@@ -12,13 +12,51 @@ const t = useTranslations(lang);
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Overpass:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Overpass:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/rbel-icon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{t('title')}</title>
     <meta name="description" content={t('description')} />
+
+    <script is:inline>
+      function applyTheme(theme) {
+        if (
+          theme === 'dark' ||
+          (theme === 'system' &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.add('light');
+          document.documentElement.classList.remove('dark');
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+
+      const savedTheme =
+        typeof localStorage !== 'undefined' && localStorage.getItem('theme')
+          ? localStorage.getItem('theme')
+          : 'system';
+      applyTheme(savedTheme);
+
+      if (typeof window !== 'undefined') {
+        window.applyTheme = applyTheme;
+        window
+          .matchMedia('(prefers-color-scheme: dark)')
+          .addEventListener('change', () => {
+            const currentTheme = localStorage.getItem('theme') || 'system';
+            if (currentTheme === 'system') {
+              applyTheme('system');
+            }
+          });
+      }
+    </script>
 
     <!-- Analytics -->
     <script

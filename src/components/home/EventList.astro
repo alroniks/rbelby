@@ -25,14 +25,14 @@ function formatDate(date: Date) {
 }
 ---
 
-<section class=" py-16 lg:py-24 bg-bg">
+<section class="bg-bg py-16 lg:py-24">
   <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
     <div class="mb-12 text-center">
       <p class="mb-2 text-xs font-bold tracking-widest text-gray-500 uppercase">
         Upcoming Brevets
       </p>
       <h2
-        class="mb-6 text-3xl leading-tight font-bold text-gray-800 uppercase md:text-4xl dark:text-text-inverse"
+        class="dark:text-text-inverse mb-6 text-3xl leading-tight font-bold text-gray-800 uppercase md:text-4xl"
       >
         Register for <span class="text-orange-500">Official Events</span><br />
         Happening <span class="text-orange-500">Soon Near You</span>
@@ -40,7 +40,7 @@ function formatDate(date: Date) {
       <div class="flex justify-center">
         <a
           href="/events"
-          class="inline-flex items-center justify-center gap-x-2 rounded-full border border-gray bg-primary px-6 py-3 text-sm font-semibold text-text-inverse hover:opacity-90 disabled:pointer-events-none disabled:opacity-50"
+          class="border-gray bg-primary text-text-inverse inline-flex items-center justify-center gap-x-2 rounded-full border px-6 py-3 text-sm font-semibold hover:opacity-90 disabled:pointer-events-none disabled:opacity-50"
         >
           View all
           <svg
@@ -64,7 +64,7 @@ function formatDate(date: Date) {
         upcomingEvents.map((event) => (
           <a
             href={`/events/${event.id}`}
-            class="group relative block overflow-hidden rounded-xl bg-charcoal transition-all duration-300 hover:shadow-xl"
+            class="group bg-charcoal relative block overflow-hidden rounded-xl transition-all duration-300 hover:shadow-xl"
           >
             {/* Image */}
             <div class="aspect-w-16 aspect-h-12 overflow-hidden">
@@ -76,9 +76,9 @@ function formatDate(date: Date) {
             </div>
 
             {/* Content */}
-            <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent p-6">
+            <div class="from-charcoal/90 via-charcoal/40 absolute inset-0 flex flex-col justify-end bg-gradient-to-t to-transparent p-6">
               <div class="mb-1">
-                <h3 class="truncate text-lg font-bold text-text-inverse uppercase">
+                <h3 class="text-text-inverse truncate text-lg font-bold uppercase">
                   {event.data.name}
                 </h3>
               </div>
@@ -93,7 +93,7 @@ function formatDate(date: Date) {
                   <span class="block text-xs text-gray-300 uppercase">
                     Date
                   </span>
-                  <span class="mb-1 block leading-none font-semibold text-text-inverse">
+                  <span class="text-text-inverse mb-1 block leading-none font-semibold">
                     {formatDate(event.data.date)}
                   </span>
                   <span class="block text-xs text-orange-400">

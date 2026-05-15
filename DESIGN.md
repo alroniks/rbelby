@@ -1,15 +1,15 @@
 ---
 colors:
-  bg: "#F5F5F0"
-  surface: "#FFFFFF"
-  primary: "#005B7F"
-  secondary: "#0B6623"
-  tertiary: "#654321"
-  charcoal: "#3D312A"
-  gray: "#C2CAD0"
-  text: "#3D312A"
-  text-inverse: "#F5F5F0"
-  text-muted: "#4A5D4E"
+  bg: '#F5F5F0'
+  surface: '#FFFFFF'
+  primary: '#005B7F'
+  secondary: '#0B6623'
+  tertiary: '#654321'
+  charcoal: '#3D312A'
+  gray: '#C2CAD0'
+  text: '#3D312A'
+  text-inverse: '#F5F5F0'
+  text-muted: '#4A5D4E'
 ---
 
 # Design System
