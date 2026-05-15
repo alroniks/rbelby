@@ -71,13 +71,109 @@ const t = useTranslations(lang);
         >
         <span class="sr-only">Toggle</span>
       </button>
-      <a
-        href={lang === 'ru' ? '/login' : `/${lang}/login`}
-        class="text-charcoal inline-flex items-center gap-x-2 rounded-full border border-gray-200 bg-white px-3 py-2 text-sm font-medium shadow-2xs hover:bg-gray-50 focus:bg-gray-50 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+      <button
+        id="theme-toggle"
+        type="button"
+        class="text-charcoal inline-flex items-center gap-x-2 rounded-full border border-gray-200 bg-white p-2 text-sm font-medium shadow-2xs hover:bg-gray-50 focus:bg-gray-50 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+        aria-label="Toggle theme"
       >
-        {t('nav.login')}
-      </a>
+        <svg
+          class="sun hidden h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path
+            d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path
+            d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path
+            d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path
+            d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+        <svg
+          class="moon hidden h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+          ></path>
+        </svg>
+        <svg
+          class="system hidden h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line
+            x1="8"
+            y1="21"
+            x2="16"
+            y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+      </button>
     </div>
+
+    <style is:global>
+      html[data-theme='light'] .sun {
+        display: block;
+      }
+      html[data-theme='dark'] .moon {
+        display: block;
+      }
+      html[data-theme='system'] .system {
+        display: block;
+      }
+    </style>
+
+    <script>
+      const themes = ['system', 'light', 'dark'];
+
+      const handleToggleClick = () => {
+        const currentTheme =
+          document.documentElement.getAttribute('data-theme') || 'system';
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextTheme = themes[(currentIndex + 1) % themes.length];
+
+        localStorage.setItem('theme', nextTheme);
+
+        if (typeof window.applyTheme === 'function') {
+          window.applyTheme(nextTheme);
+        } else {
+          // Fallback
+          const isDark =
+            nextTheme === 'dark' ||
+            (nextTheme === 'system' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.classList.toggle('dark', isDark);
+          document.documentElement.classList.toggle('light', !isDark);
+          document.documentElement.setAttribute('data-theme', nextTheme);
+        }
+      };
+
+      const setupThemeListener = () => {
+        const toggleBtn = document.getElementById('theme-toggle');
+        if (toggleBtn) {
+          toggleBtn.removeEventListener('click', handleToggleClick);
+          toggleBtn.addEventListener('click', handleToggleClick);
+        }
+      };
+
+      setupThemeListener();
+      document.addEventListener('astro:page-load', setupThemeListener);
+    </script>
     <div
       id="hs-navbar-alignment"
       class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 sm:order-2 sm:block sm:grow-0 sm:basis-auto"
