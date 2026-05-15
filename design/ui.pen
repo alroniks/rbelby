@@ -190,7 +190,7 @@
                   "fill": {
                     "type": "image",
                     "enabled": true,
-                    "url": "./images/generated-1778451510228.png",
+                    "url": "images/generated-1778451510228.png",
                     "mode": "fill"
                   },
                   "cornerRadius": 8
@@ -505,7 +505,7 @@
                   "fill": {
                     "type": "image",
                     "enabled": true,
-                    "url": "./images/generated-1778454744307.png",
+                    "url": "images/generated-1778454744307.png",
                     "mode": "fill"
                   },
                   "cornerRadius": [
@@ -1014,7 +1014,7 @@
                   "fill": {
                     "type": "image",
                     "enabled": true,
-                    "url": "./images/generated-1778453374526.png",
+                    "url": "images/generated-1778453374526.png",
                     "mode": "fill"
                   },
                   "cornerRadius": [
@@ -1684,7 +1684,7 @@
                   "fill": {
                     "type": "image",
                     "enabled": true,
-                    "url": "./images/generated-1778451982138.png",
+                    "url": "images/generated-1778451982138.png",
                     "mode": "fill"
                   },
                   "cornerRadius": 16
@@ -2285,7 +2285,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./images/generated-1778453048778.png",
+                        "url": "images/generated-1778453048778.png",
                         "mode": "fill"
                       }
                     },
@@ -2804,7 +2804,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./images/generated-1778453980705.png",
+                        "url": "images/generated-1778453980705.png",
                         "mode": "fill"
                       },
                       "cornerRadius": [
@@ -3383,7 +3383,7 @@
                   "fill": {
                     "type": "image",
                     "enabled": true,
-                    "url": "./images/generated-1778451610770.png",
+                    "url": "images/generated-1778451610770.png",
                     "mode": "fill"
                   },
                   "cornerRadius": [
@@ -3595,7 +3595,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./images/generated-1778451612372.png",
+                        "url": "images/generated-1778451612372.png",
                         "mode": "fill"
                       },
                       "cornerRadius": [
@@ -3799,7 +3799,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./images/generated-1778451798820.png",
+                        "url": "images/generated-1778451798820.png",
                         "mode": "fill"
                       },
                       "cornerRadius": 16
@@ -3972,7 +3972,7 @@
                   "fill": {
                     "type": "image",
                     "enabled": true,
-                    "url": "./images/generated-1778451790036.png",
+                    "url": "images/generated-1778451790036.png",
                     "mode": "fill"
                   }
                 },
@@ -4154,7 +4154,7 @@
               "fill": {
                 "type": "image",
                 "enabled": true,
-                "url": "./images/generated-1778453387076.png",
+                "url": "images/generated-1778453387076.png",
                 "mode": "fill"
               },
               "cornerRadius": [
@@ -4316,7 +4316,7 @@
                   "fill": {
                     "type": "image",
                     "enabled": true,
-                    "url": "./images/generated-1778453379394.png",
+                    "url": "images/generated-1778453379394.png",
                     "mode": "fill"
                   },
                   "cornerRadius": 16
