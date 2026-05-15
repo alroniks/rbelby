@@ -1,20 +1,26 @@
 ---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<section class="overflow-hidden bg-white py-16 lg:py-24 dark:bg-neutral-900">
+<section class="bg-bg overflow-hidden py-16 lg:py-24">
   <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
     <div class="mb-16 text-center">
-      <p class="mb-2 text-xs font-bold tracking-widest text-gray-500 uppercase">
-        Facts and Figures
+      <p
+        class="text-text-muted mb-2 text-xs font-bold tracking-widest uppercase"
+      >
+        {t('stats.label')}
       </p>
       <h2
-        class="text-3xl leading-tight font-bold text-gray-800 uppercase md:text-4xl dark:text-white"
+        class="text-navy text-3xl leading-tight font-bold uppercase md:text-4xl"
       >
-        This is not <span class="text-orange-500">just statistics</span>,<br />
-        it's <span class="text-orange-500">our history</span> and steps towards<br
-        />
-        new discoveries
+        {t('stats.title1')}
+        <span class="text-secondary">{t('stats.title2')}</span>,<br />
+        {t('stats.title3')}
+        <span class="text-secondary">{t('stats.title4')}</span>
+        {t('stats.title5')}
       </h2>
     </div>
 
@@ -27,10 +33,10 @@
         class="relative flex flex-col items-center justify-center p-8 text-center"
       >
         <div
-          class="relative mb-4 flex size-40 animate-[spin_10s_linear_infinite] items-center justify-center rounded-full border-4 border-dashed border-gray-300 dark:border-neutral-700"
+          class="relative mb-4 flex size-40 animate-[spin_10s_linear_infinite] items-center justify-center rounded-full border-4 border-dashed border-gray-300"
         >
           <svg
-            class="size-full text-gray-200 dark:text-neutral-800"
+            class="size-full text-gray-200"
             viewBox="0 0 100 100"
             fill="currentColor"
           >
@@ -43,11 +49,9 @@
         <div
           class="absolute top-1/2 left-1/2 mt-8 -translate-x-1/2 -translate-y-full transform"
         >
-          <span class="block text-4xl font-bold text-gray-800 dark:text-white"
-            >1,248</span
-          >
-          <span class="block text-sm text-gray-500 dark:text-gray-400"
-            >active riders</span
+          <span class="text-navy block text-4xl font-bold">1,248</span>
+          <span class="text-text-muted block text-sm"
+            >{t('stats.active_riders')}</span
           >
         </div>
       </div>
@@ -57,10 +61,10 @@
         class="relative flex flex-col items-center justify-center p-8 text-center"
       >
         <div
-          class="relative mb-4 flex size-40 animate-[spin_12s_linear_infinite_reverse] items-center justify-center rounded-full border-4 border-dashed border-gray-300 dark:border-neutral-700"
+          class="relative mb-4 flex size-40 animate-[spin_12s_linear_infinite_reverse] items-center justify-center rounded-full border-4 border-dashed border-gray-300"
         >
           <svg
-            class="size-full text-gray-200 dark:text-neutral-800"
+            class="size-full text-gray-200"
             viewBox="0 0 100 100"
             fill="currentColor"
           >
@@ -72,11 +76,9 @@
         <div
           class="absolute top-1/2 left-1/2 mt-8 -translate-x-1/2 -translate-y-full transform"
         >
-          <span class="block text-4xl font-bold text-gray-800 dark:text-white"
-            >45</span
-          >
-          <span class="block text-sm text-gray-500 dark:text-gray-400"
-            >total events</span
+          <span class="text-navy block text-4xl font-bold">45</span>
+          <span class="text-text-muted block text-sm"
+            >{t('stats.total_events')}</span
           >
         </div>
       </div>
@@ -86,10 +88,10 @@
         class="relative flex flex-col items-center justify-center p-8 text-center"
       >
         <div
-          class="relative mb-4 flex size-40 animate-[spin_14s_linear_infinite] items-center justify-center rounded-full border-4 border-dashed border-gray-300 dark:border-neutral-700"
+          class="relative mb-4 flex size-40 animate-[spin_14s_linear_infinite] items-center justify-center rounded-full border-4 border-dashed border-gray-300"
         >
           <svg
-            class="size-full text-gray-200 dark:text-neutral-800"
+            class="size-full text-gray-200"
             viewBox="0 0 100 100"
             fill="currentColor"
           >
@@ -101,11 +103,9 @@
         <div
           class="absolute top-1/2 left-1/2 mt-8 -translate-x-1/2 -translate-y-full transform"
         >
-          <span class="block text-4xl font-bold text-gray-800 dark:text-white"
-            >342k</span
-          >
-          <span class="block text-sm text-gray-500 dark:text-gray-400"
-            >km ridden</span
+          <span class="text-navy block text-4xl font-bold">342k</span>
+          <span class="text-text-muted block text-sm"
+            >{t('stats.km_ridden')}</span
           >
         </div>
       </div>

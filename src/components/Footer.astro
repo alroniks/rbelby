@@ -1,61 +1,87 @@
-<footer class="mx-auto w-full bg-black px-4 py-10 sm:px-6 lg:px-8">
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<footer class="bg-navy mx-auto w-full px-4 py-10 sm:px-6 lg:px-8">
   <!-- Grid -->
   <div
     class="mx-auto mb-16 grid max-w-[85rem] grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
   >
     <div class="col-span-1 lg:col-span-1">
-      <h3 class="mb-4 text-sm font-bold text-orange-500 uppercase">
-        Connecting long-distance cyclists
+      <h3 class="text-secondary mb-4 text-sm font-bold uppercase">
+        {t('footer.connecting')}
       </h3>
-      <p class="text-sm text-gray-400">
-        With official brevet events, routes, and community statistics.
+      <p class="text-light-beige text-sm">
+        {t('footer.connecting_desc')}
       </p>
     </div>
     <!-- End Col -->
 
     <div>
-      <h4 class="mb-4 text-sm font-bold text-white uppercase">Platform</h4>
+      <h4 class="mb-4 text-sm font-bold text-white uppercase">
+        {t('footer.platform')}
+      </h4>
       <ul class="space-y-2 text-sm">
         <li>
-          <a class="text-gray-400 hover:text-white" href="/events"
-            >Upcoming Events</a
+          <a
+            class="text-gray-400 hover:text-white"
+            href={lang === 'ru' ? '/events' : `/${lang}/events`}
+            >{t('footer.upcoming')}</a
           >
         </li>
         <li>
-          <a class="text-gray-400 hover:text-white" href="/routes"
-            >Route Library</a
+          <a
+            class="text-gray-400 hover:text-white"
+            href={lang === 'ru' ? '/routes' : `/${lang}/routes`}
+            >{t('footer.route_library')}</a
           >
         </li>
         <li>
-          <a class="text-gray-400 hover:text-white" href="/stats"
-            >Season Stats</a
+          <a
+            class="text-gray-400 hover:text-white"
+            href={lang === 'ru' ? '/stats' : `/${lang}/stats`}
+            >{t('footer.season_stats')}</a
           >
         </li>
       </ul>
     </div>
 
     <div>
-      <h4 class="mb-4 text-sm font-bold text-white uppercase">Community</h4>
+      <h4 class="mb-4 text-sm font-bold text-white uppercase">
+        {t('footer.community')}
+      </h4>
       <ul class="space-y-2 text-sm">
         <li>
-          <a class="text-gray-400 hover:text-white" href="/clubs">Find a Club</a
+          <a
+            class="text-gray-400 hover:text-white"
+            href={lang === 'ru' ? '/clubs' : `/${lang}/clubs`}
+            >{t('footer.find_club')}</a
           >
         </li>
         <li>
-          <a class="text-gray-400 hover:text-white" href="/volunteer"
-            >Volunteer</a
+          <a
+            class="text-gray-400 hover:text-white"
+            href={lang === 'ru' ? '/volunteer' : `/${lang}/volunteer`}
+            >{t('footer.volunteer')}</a
           >
         </li>
         <li>
-          <a class="text-gray-400 hover:text-white" href="/rules"
-            >Rules & Regulations</a
+          <a
+            class="text-gray-400 hover:text-white"
+            href={lang === 'ru' ? '/rules' : `/${lang}/rules`}
+            >{t('footer.rules')}</a
           >
         </li>
       </ul>
     </div>
 
     <div>
-      <h4 class="mb-4 text-sm font-bold text-white uppercase">Connect</h4>
+      <h4 class="mb-4 text-sm font-bold text-white uppercase">
+        {t('footer.connect')}
+      </h4>
       <ul class="space-y-2 text-sm">
         <li>
           <a class="text-gray-400 hover:text-white" href="#">Twitter</a>
@@ -72,13 +98,13 @@
   <!-- End Grid -->
 
   <!-- Big Logo -->
-  <div class="mx-auto mt-8 max-w-[85rem] border-t border-neutral-800 pt-8">
+  <div class="mx-auto mt-8 max-w-[85rem] border-t border-gray-700 pt-8">
     <h1
-      class="text-center text-[12vw] leading-none font-bold tracking-tighter text-gray-200 uppercase opacity-80 select-none"
+      class="font-heading text-center text-[12vw] leading-none font-bold tracking-tighter text-gray-600 uppercase opacity-80 select-none"
     >
       randonneur
     </h1>
-    <p class="mt-4 text-center text-xs text-gray-600">
+    <p class="mt-4 text-center text-xs text-gray-500">
       © 2026 Randonneur Platform. All rights reserved.
     </p>
   </div>
