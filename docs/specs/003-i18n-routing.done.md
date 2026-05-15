@@ -1,0 +1,14 @@
+# Spec [003]: i18n Routing Structure
+
+**Feature ID**: `003-i18n-routing`
+
+## Overview
+
+Configure the site to support multiple languages (Russian as default, Belarusian, English). This needs to be done early so we don't have to rewrite URLs later.
+
+## Implementation Tasks
+
+- [x] **Configure `astro**: Configure `astro.config.mjs` for i18n (`ru` default without prefix, `/be/`, `/en/`).
+- [x] **Setup UI translation dictionaries (src/i18n/locales/).**: Setup UI translation dictionaries (`src/i18n/locales/`).
+- [x] **Build a Language Switcher**: Build a Language Switcher dropdown component for the Header.
+- [x] **Create utility functions for**: Create utility functions for generating localized paths.

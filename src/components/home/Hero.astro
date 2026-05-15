@@ -1,8 +1,13 @@
 ---
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <section class="bg-bg relative flex min-h-[600px] items-center overflow-hidden">
@@ -38,7 +43,7 @@ const t = useTranslations(lang);
     <div class="flex flex-col justify-center gap-4 sm:flex-row">
       <a
         class="bg-primary text-text-inverse inline-flex items-center justify-center gap-x-2 rounded-full border border-transparent px-6 py-3 text-sm font-semibold hover:bg-blue-700 disabled:pointer-events-none disabled:opacity-50"
-        href={lang === 'ru' ? '/events' : `/${lang}/events`}
+        href={translatePath('/events')}
       >
         {t('hero.find_events')}
         <svg
@@ -56,7 +61,7 @@ const t = useTranslations(lang);
       </a>
       <a
         class="text-text-inverse inline-flex items-center justify-center gap-x-2 rounded-full border border-white px-6 py-3 text-sm font-semibold hover:bg-white/10 disabled:pointer-events-none disabled:opacity-50"
-        href={lang === 'ru' ? '/routes' : `/${lang}/routes`}
+        href={translatePath('/routes')}
       >
         {t('hero.explore_routes')}
         <svg

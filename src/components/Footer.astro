@@ -1,8 +1,13 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <footer class="bg-bg mx-auto w-full px-4 py-10 sm:px-6 lg:px-8">
@@ -28,22 +33,19 @@ const t = useTranslations(lang);
         <li>
           <a
             class="hover:text-text text-gray-400"
-            href={lang === 'ru' ? '/events' : `/${lang}/events`}
-            >{t('footer.upcoming')}</a
+            href={translatePath('/events')}>{t('footer.upcoming')}</a
           >
         </li>
         <li>
           <a
             class="hover:text-text text-gray-400"
-            href={lang === 'ru' ? '/routes' : `/${lang}/routes`}
-            >{t('footer.route_library')}</a
+            href={translatePath('/routes')}>{t('footer.route_library')}</a
           >
         </li>
         <li>
           <a
             class="hover:text-text text-gray-400"
-            href={lang === 'ru' ? '/stats' : `/${lang}/stats`}
-            >{t('footer.season_stats')}</a
+            href={translatePath('/stats')}>{t('footer.season_stats')}</a
           >
         </li>
       </ul>
@@ -57,22 +59,19 @@ const t = useTranslations(lang);
         <li>
           <a
             class="hover:text-text text-gray-400"
-            href={lang === 'ru' ? '/clubs' : `/${lang}/clubs`}
-            >{t('footer.find_club')}</a
+            href={translatePath('/clubs')}>{t('footer.find_club')}</a
           >
         </li>
         <li>
           <a
             class="hover:text-text text-gray-400"
-            href={lang === 'ru' ? '/volunteer' : `/${lang}/volunteer`}
-            >{t('footer.volunteer')}</a
+            href={translatePath('/volunteer')}>{t('footer.volunteer')}</a
           >
         </li>
         <li>
           <a
             class="hover:text-text text-gray-400"
-            href={lang === 'ru' ? '/rules' : `/${lang}/rules`}
-            >{t('footer.rules')}</a
+            href={translatePath('/rules')}>{t('footer.rules')}</a
           >
         </li>
       </ul>
@@ -105,7 +104,7 @@ const t = useTranslations(lang);
       <div
         class="font-heading text-gray mt-3 flex h-24 flex-col justify-center text-left text-3xl leading-none font-black tracking-widest uppercase sm:text-4xl md:h-32 md:text-6xl"
       >
-        <span>Беларускія Ранданеры</span>
+        <span>Беларускія Ранданёры</span>
       </div>
     </div>
     <p class="mt-4 text-center text-xs text-gray-500">
