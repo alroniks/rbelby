@@ -33,32 +33,32 @@ const faqs = [
 ];
 ---
 
-<section class="bg-gray-50 py-16 lg:py-24 dark:bg-neutral-800">
+<section class="bg-surface py-16 lg:py-24 bg-surface">
   <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
       <!-- Text Content -->
       <div class="lg:col-span-5">
         <div class="mb-8">
           <p
-            class="mb-2 text-xs font-bold tracking-widest text-gray-500 uppercase"
+            class="mb-2 text-xs font-bold tracking-widest text-text-muted uppercase"
           >
             Do you have any questions?
           </p>
           <h2
-            class="text-3xl leading-tight font-bold text-gray-800 uppercase md:text-4xl dark:text-white"
+            class="text-3xl leading-tight font-bold text-text uppercase md:text-4xl text-text"
           >
-            Learn how to <span class="text-orange-500">participate</span><br />
+            Learn how to <span class="text-primary">participate</span><br />
             in and prepare for a<br />
-            cycling <span class="text-orange-500">adventure</span>
+            cycling <span class="text-primary">adventure</span>
           </h2>
         </div>
-        <p class="mb-8 text-gray-600 dark:text-gray-400">
+        <p class="mb-8 text-text-muted text-text-muted">
           Find answers to common questions about rules, equipment, and
           registration.
         </p>
         <a
           href="/faq"
-          class="inline-flex items-center justify-center gap-x-2 rounded-full border border-transparent bg-orange-500 px-6 py-3 text-sm font-semibold text-white hover:bg-orange-600 disabled:pointer-events-none disabled:opacity-50"
+          class="inline-flex items-center justify-center gap-x-2 rounded-full border border-gray bg-primary px-6 py-3 text-sm font-semibold text-text hover:opacity-90 disabled:pointer-events-none disabled:opacity-50"
         >
           View library
           <svg
@@ -82,17 +82,17 @@ const faqs = [
           {
             faqs.map((faq, index) => (
               <div
-                class="hs-accordion mb-3 rounded-xl border border-transparent bg-white dark:border-neutral-700 dark:bg-neutral-900"
+                class="hs-accordion mb-3 rounded-xl border border-gray  border-gray bg-bg"
                 id={`hs-basic-heading-${index}`}
               >
                 <button
-                  class="hs-accordion-toggle group inline-flex w-full items-center justify-between gap-x-3 rounded-xl p-6 pb-3 text-start font-semibold text-gray-800 transition hover:text-gray-500 focus:text-gray-500 focus:outline-none md:text-lg dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                  class="hs-accordion-toggle group inline-flex w-full items-center justify-between gap-x-3 rounded-xl p-6 pb-3 text-start font-semibold text-text transition hover:text-text-muted focus:text-text-muted focus:outline-none md:text-lg text-text hover:text-primary focus:text-primary"
                   aria-expanded="false"
                   aria-controls={`hs-basic-collapse-${index}`}
                 >
                   {faq.question}
                   <svg
-                    class="hs-accordion-active:hidden block size-5 shrink-0 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                    class="hs-accordion-active:hidden block size-5 shrink-0 text-text-muted group-hover:text-text-muted text-text-muted"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -109,7 +109,7 @@ const faqs = [
                     </>
                   </svg>
                   <svg
-                    class="hs-accordion-active:block hidden size-5 shrink-0 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                    class="hs-accordion-active:block hidden size-5 shrink-0 text-text-muted group-hover:text-text-muted text-text-muted"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -129,7 +129,7 @@ const faqs = [
                   aria-labelledby={`hs-basic-heading-${index}`}
                 >
                   <div class="px-6 pb-6">
-                    <p class="text-gray-600 dark:text-neutral-400">
+                    <p class="text-text-muted text-text-muted">
                       {faq.answer}
                     </p>
                   </div>

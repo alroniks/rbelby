@@ -4,18 +4,19 @@
 @source '../../node_modules/preline/dist/*.js';
 
 @theme {
-  --color-bg: #ffffff;
-  --color-light-beige: #f5f3ec;
-  --color-navy: #131b2b;
-  --color-primary: #054ea4;
-  --color-secondary: #ffd100;
+  --color-bg: #f5f5f0;
+  --color-gray: #c2cad0;
+  --color-charcoal: #3d312a;
+  --color-primary: #005b7f;
+  --color-secondary: #0b6623;
+  --color-tertiary: #654321;
   --color-surface: #ffffff;
-  --color-text: #131b2b;
-  --color-text-inverse: #ffffff;
-  --color-text-muted: #64748b;
+  --color-text: #3d312a;
+  --color-text-inverse: #f5f5f0;
+  --color-text-muted: #4a5d4e;
 
-  --font-body: 'Inter', sans-serif;
-  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-heading: 'Overpass', sans-serif;
 
   --radius-lg: 16px;
   --radius-md: 8px;
@@ -32,5 +33,5 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-heading text-navy;
+  @apply font-heading text-charcoal;
 }
