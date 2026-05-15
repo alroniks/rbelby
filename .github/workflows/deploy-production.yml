@@ -1,0 +1,17 @@
+name: Trigger Production Deploy
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages Production Build
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}" ]; then
+            echo "CLOUDFLARE_DEPLOY_HOOK secret is not set!"
+            exit 1
+          fi
+          curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}"
