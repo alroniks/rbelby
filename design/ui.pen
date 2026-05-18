@@ -834,6 +834,27 @@
                       "fontWeight": "600"
                     }
                   ]
+                },
+                {
+                  "id": "XZBCK",
+                  "type": "ref",
+                  "ref": "Kobcr",
+                  "name": "comp_Tag_Difficulty",
+                  "fill": "$color-accent"
+                },
+                {
+                  "id": "vVYM4",
+                  "type": "ref",
+                  "ref": "Kobcr",
+                  "name": "comp_Tag_Terrain",
+                  "fill": "$color-brand"
+                },
+                {
+                  "id": "SfEI5",
+                  "type": "ref",
+                  "ref": "Kobcr",
+                  "name": "comp_Tag_Status",
+                  "fill": "$color-text-muted"
                 }
               ]
             }
@@ -1009,6 +1030,44 @@
                       "fill": "$color-text-muted"
                     }
                   }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ZgSmJ",
+              "name": "comp_UtilBtn",
+              "reusable": true,
+              "fill": "$color-surface",
+              "cornerRadius": 8,
+              "stroke": {
+                "thickness": 1,
+                "fill": "$color-text-muted"
+              },
+              "gap": 8,
+              "padding": [
+                8,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "y15MD1",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "calendar-plus",
+                  "iconFontFamily": "lucide",
+                  "fill": "$color-text"
+                },
+                {
+                  "type": "text",
+                  "id": "q3aooH",
+                  "fill": "$color-text",
+                  "content": "Action",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 14,
+                  "fontWeight": "600"
                 }
               ]
             }
@@ -2496,7 +2555,7 @@
                               "type": "text",
                               "id": "PALyp",
                               "fill": "$color-text",
-                              "content": "GET YOUR\nCYCLING DATA",
+                              "content": "THE SPIRIT OF\nRANDONNEURING",
                               "lineHeight": 1.1,
                               "fontFamily": "Overpass",
                               "fontSize": 56,
@@ -2557,7 +2616,7 @@
                           "type": "text",
                           "id": "Z8IOw",
                           "fill": "$color-text-muted",
-                          "content": "Rise above convention reimagine the\nride rev it up, unleash the extraordinary\nlegacy on two.",
+                          "content": "No support cars. No podiums. Just you, the route, and the time limit. Randonneuring is about self-reliance, camaraderie, and discovering your own endurance.",
                           "lineHeight": 1.5,
                           "fontFamily": "Montserrat",
                           "fontSize": 18,
@@ -2573,7 +2632,7 @@
                               "type": "text",
                               "id": "ykVUX",
                               "fill": "$color-text",
-                              "content": "READ STORY ↗",
+                              "content": "READ THE RULES ↗",
                               "fontFamily": "Overpass",
                               "fontSize": 18,
                               "fontWeight": "700"
@@ -2631,7 +2690,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "images/generated-1778453379394.png",
+                        "url": "./images/generated-1779134968663.png",
                         "mode": "fill"
                       },
                       "width": "fill_container",
@@ -2754,285 +2813,335 @@
                 {
                   "type": "frame",
                   "id": "iv3xQ",
-                  "name": "comp_ActivityCard",
+                  "name": "comp_UpcomingEventsCard",
                   "reusable": true,
                   "clip": true,
                   "width": 550,
                   "height": 550,
+                  "fill": "$color-surface",
                   "cornerRadius": [
                     0,
                     120,
                     0,
                     0
                   ],
-                  "layout": "none",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "padding": 40,
                   "children": [
                     {
-                      "type": "rectangle",
-                      "id": "U0LrSe",
-                      "x": 0,
-                      "y": 0,
-                      "fill": {
-                        "type": "image",
-                        "enabled": true,
-                        "url": "images/generated-1778453980705.png",
-                        "mode": "fill"
-                      },
-                      "width": "fill_container(0)",
-                      "height": "fill_container(0)"
-                    },
-                    {
-                      "type": "rectangle",
-                      "id": "tQCsZ",
-                      "x": 0,
-                      "y": 0,
-                      "fill": {
-                        "type": "gradient",
-                        "gradientType": "linear",
-                        "enabled": true,
-                        "rotation": 180,
-                        "size": {
-                          "height": 1
-                        },
-                        "colors": [
-                          {
-                            "color": "#e5f0ff",
-                            "position": 0
-                          },
-                          {
-                            "color": "#e5f0ff00",
-                            "position": 1
-                          }
-                        ]
-                      },
-                      "width": "fill_container(0)",
-                      "height": 200
-                    },
-                    {
                       "type": "frame",
-                      "id": "s868HN",
-                      "layoutPosition": "absolute",
-                      "x": 0,
-                      "y": 0,
-                      "width": "fill_container(0)",
-                      "padding": [
-                        32,
-                        48
-                      ],
+                      "id": "AXfHP",
+                      "width": "fill_container",
                       "justifyContent": "space_between",
+                      "alignItems": "end",
                       "children": [
                         {
-                          "type": "frame",
-                          "id": "m59HJm",
-                          "layout": "vertical",
-                          "gap": 4,
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "m3L62",
-                              "fill": "$color-text-muted",
-                              "content": "Total Distance",
-                              "fontFamily": "Montserrat",
-                              "fontSize": 14,
-                              "fontWeight": "600"
-                            },
-                            {
-                              "type": "text",
-                              "id": "WsHAW",
-                              "fill": "$color-text",
-                              "content": "88.9 KM",
-                              "fontFamily": "Overpass",
-                              "fontSize": 24,
-                              "fontWeight": "700"
-                            }
-                          ]
+                          "type": "text",
+                          "id": "feIxh",
+                          "fill": "$color-text",
+                          "content": "UPCOMING BREVETS",
+                          "fontFamily": "Overpass",
+                          "fontSize": 24,
+                          "fontWeight": "700"
                         },
                         {
-                          "type": "frame",
-                          "id": "RcJTp",
-                          "layout": "vertical",
-                          "gap": 4,
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "KcCEY",
-                              "fill": "$color-text-muted",
-                              "content": "Date",
-                              "fontFamily": "Montserrat",
-                              "fontSize": 14,
-                              "fontWeight": "600"
-                            },
-                            {
-                              "type": "text",
-                              "id": "btXM8",
-                              "fill": "$color-text",
-                              "content": "11/06/26",
-                              "fontFamily": "Overpass",
-                              "fontSize": 24,
-                              "fontWeight": "700"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "tpZmo",
-                          "layout": "vertical",
-                          "gap": 4,
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "ZGnM0",
-                              "fill": "$color-text-muted",
-                              "content": "Time",
-                              "fontFamily": "Montserrat",
-                              "fontSize": 14,
-                              "fontWeight": "600"
-                            },
-                            {
-                              "type": "text",
-                              "id": "cryoY",
-                              "fill": "$color-text",
-                              "content": "04:30 H",
-                              "fontFamily": "Overpass",
-                              "fontSize": 24,
-                              "fontWeight": "700"
-                            }
-                          ]
+                          "type": "text",
+                          "id": "IGdCB",
+                          "fill": "$color-brand",
+                          "content": "View Calendar →",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 14,
+                          "fontWeight": "600"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "O1dXZ",
-                      "x": 75,
-                      "y": 150,
-                      "name": "comp_RatingCard",
-                      "reusable": true,
-                      "width": 400,
-                      "height": 400,
-                      "fill": "$color-surface",
-                      "cornerRadius": 16,
+                      "id": "v2pO9",
+                      "width": "fill_container",
                       "layout": "vertical",
-                      "padding": 40,
-                      "justifyContent": "space_between",
+                      "gap": 16,
                       "children": [
                         {
                           "type": "frame",
-                          "id": "z2wBd",
+                          "id": "lllob",
                           "width": "fill_container",
+                          "stroke": {
+                            "thickness": {
+                              "bottom": 1
+                            },
+                            "fill": "#000000"
+                          },
+                          "padding": [
+                            16,
+                            0
+                          ],
                           "justifyContent": "space_between",
+                          "alignItems": "center",
                           "children": [
                             {
-                              "type": "text",
-                              "id": "f1hvOl",
-                              "fill": "$color-text",
-                              "content": "4.9/5",
-                              "lineHeight": 1,
-                              "fontFamily": "Overpass",
-                              "fontSize": 80,
-                              "fontWeight": "700"
-                            },
-                            {
                               "type": "frame",
-                              "id": "owAky",
-                              "cornerRadius": 32,
-                              "stroke": {
-                                "thickness": 1,
-                                "fill": "$color-text"
-                              },
-                              "padding": [
-                                8,
-                                24
-                              ],
+                              "id": "zd1lI",
+                              "layout": "vertical",
+                              "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
-                                  "id": "PWhYL",
+                                  "id": "iA9qS",
                                   "fill": "$color-text",
-                                  "content": "Reviews",
+                                  "content": "Minsk Spring 200",
                                   "fontFamily": "Montserrat",
-                                  "fontSize": 16,
+                                  "fontSize": 18,
                                   "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "ccLOR",
+                                  "fill": "$color-text-muted",
+                                  "content": "April 15",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 14,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "BMNSw",
+                              "gap": 12,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "k19Vyq",
+                                  "fill": "$color-brand",
+                                  "content": "200 km",
+                                  "fontFamily": "Overpass",
+                                  "fontSize": 24,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "icon_font",
+                                  "id": "k8x94",
+                                  "width": 20,
+                                  "height": 20,
+                                  "iconFontName": "chevron-right",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$color-text-muted"
                                 }
                               ]
                             }
                           ]
                         },
                         {
-                          "type": "rectangle",
-                          "id": "B3T7P2",
-                          "fill": "$color-text-muted",
-                          "width": "fill_container",
-                          "height": 2
-                        },
-                        {
                           "type": "frame",
-                          "id": "C9XyLv",
+                          "id": "Uv4kI",
                           "width": "fill_container",
+                          "stroke": {
+                            "thickness": {
+                              "bottom": 1
+                            },
+                            "fill": "#000000"
+                          },
+                          "padding": [
+                            16,
+                            0
+                          ],
                           "justifyContent": "space_between",
-                          "alignItems": "end",
+                          "alignItems": "center",
                           "children": [
                             {
-                              "type": "text",
-                              "id": "axTSD",
-                              "fill": "$color-text",
-                              "content": "Our Best Cycling\nCommunity",
-                              "lineHeight": 1.3,
-                              "fontFamily": "Montserrat",
-                              "fontSize": 20,
-                              "fontWeight": "600"
+                              "type": "frame",
+                              "id": "ehP7f",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "YKCcS",
+                                  "fill": "$color-text",
+                                  "content": "Brest Fortress",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "DkHtP",
+                                  "fill": "$color-text-muted",
+                                  "content": "May 02",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 14,
+                                  "fontWeight": "normal"
+                                }
+                              ]
                             },
                             {
                               "type": "frame",
-                              "id": "fc7EZ",
-                              "gap": 8,
+                              "id": "k2BNd",
+                              "gap": 12,
+                              "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "frame",
-                                  "id": "Zp1MO",
-                                  "width": 48,
-                                  "height": 48,
-                                  "fill": "$color-page-bg",
-                                  "cornerRadius": 24,
-                                  "justifyContent": "center",
-                                  "alignItems": "center",
-                                  "children": [
-                                    {
-                                      "type": "icon_font",
-                                      "id": "xN7Hc",
-                                      "width": 24,
-                                      "height": 24,
-                                      "iconFontName": "star",
-                                      "iconFontFamily": "lucide",
-                                      "fill": "$color-accent"
-                                    }
-                                  ]
+                                  "type": "text",
+                                  "id": "A2NGX",
+                                  "fill": "$color-brand",
+                                  "content": "300 km",
+                                  "fontFamily": "Overpass",
+                                  "fontSize": 24,
+                                  "fontWeight": "700"
                                 },
                                 {
-                                  "type": "rectangle",
-                                  "cornerRadius": 24,
-                                  "id": "AKBb9",
-                                  "fill": {
-                                    "type": "image",
-                                    "enabled": true,
-                                    "url": "images/generated-1779046107266.png",
-                                    "mode": "fill"
-                                  },
-                                  "width": 48,
-                                  "height": 48
+                                  "type": "icon_font",
+                                  "id": "kbh04",
+                                  "width": 20,
+                                  "height": 20,
+                                  "iconFontName": "chevron-right",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$color-text-muted"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "xYhQr",
+                          "width": "fill_container",
+                          "stroke": {
+                            "thickness": {
+                              "bottom": 1
+                            },
+                            "fill": "#000000"
+                          },
+                          "padding": [
+                            16,
+                            0
+                          ],
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "B6crl",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "b6E25",
+                                  "fill": "$color-text",
+                                  "content": "Nemiga Classic",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
                                 },
                                 {
-                                  "type": "rectangle",
-                                  "cornerRadius": 24,
-                                  "id": "dW6D9",
-                                  "fill": {
-                                    "type": "image",
-                                    "enabled": true,
-                                    "url": "images/generated-1779046112726.png",
-                                    "mode": "fill"
-                                  },
-                                  "width": 48,
-                                  "height": 48
+                                  "type": "text",
+                                  "id": "C387R",
+                                  "fill": "$color-text-muted",
+                                  "content": "May 20",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 14,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "NoJSF",
+                              "gap": 12,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "YFsm9",
+                                  "fill": "$color-brand",
+                                  "content": "400 km",
+                                  "fontFamily": "Overpass",
+                                  "fontSize": 24,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "icon_font",
+                                  "id": "UnyRR",
+                                  "width": 20,
+                                  "height": 20,
+                                  "iconFontName": "chevron-right",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$color-text-muted"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "PYvMb",
+                          "width": "fill_container",
+                          "stroke": {
+                            "thickness": {
+                              "bottom": 1
+                            },
+                            "fill": "#000000"
+                          },
+                          "padding": [
+                            16,
+                            0
+                          ],
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "kOcT9",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "U5qIz",
+                                  "fill": "$color-text",
+                                  "content": "Night Rider 600",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "F5OEM8",
+                                  "fill": "$color-text-muted",
+                                  "content": "June 10",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 14,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "D0CC3u",
+                              "gap": 12,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "D8roJd",
+                                  "fill": "$color-brand",
+                                  "content": "600 km",
+                                  "fontFamily": "Overpass",
+                                  "fontSize": 24,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "icon_font",
+                                  "id": "gKFb5",
+                                  "width": 20,
+                                  "height": 20,
+                                  "iconFontName": "chevron-right",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$color-text-muted"
                                 }
                               ]
                             }
@@ -3041,6 +3150,641 @@
                       ]
                     }
                   ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "VIlIc",
+          "name": "comp_AvatarStack",
+          "reusable": true,
+          "gap": -12,
+          "children": [
+            {
+              "type": "frame",
+              "id": "m7eMmb",
+              "name": "ava0",
+              "width": 32,
+              "height": 32,
+              "fill": "#000000",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 2,
+                "fill": "$color-surface"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "jyHUB",
+              "name": "ava1",
+              "width": 32,
+              "height": 32,
+              "fill": "#000000",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 2,
+                "fill": "$color-surface"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "h6wdlU",
+              "name": "ava2",
+              "width": 32,
+              "height": 32,
+              "fill": "#000000",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 2,
+                "fill": "$color-surface"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "X2tBRm",
+          "name": "comp_Badge",
+          "reusable": true,
+          "layout": "vertical",
+          "gap": 8,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "YMsgH",
+              "name": "badgeIcon",
+              "width": 64,
+              "height": 64,
+              "fill": "$color-complementary",
+              "cornerRadius": 32,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "I2gmeP",
+                  "width": 32,
+                  "height": 32,
+                  "iconFontName": "award",
+                  "iconFontFamily": "lucide",
+                  "fill": "$color-brand"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "Ys9MK",
+              "fill": "$color-text",
+              "textGrowth": "fixed-width",
+              "width": 80,
+              "content": "Badge Name",
+              "textAlign": "center",
+              "fontFamily": "Montserrat",
+              "fontSize": 12,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "qtbDp",
+          "name": "comp_BarChart",
+          "reusable": true,
+          "width": "fill_container",
+          "height": 200,
+          "gap": 8,
+          "alignItems": "end",
+          "children": [
+            {
+              "type": "frame",
+              "id": "m988R",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "K5wOMq",
+                  "width": "fill_container",
+                  "height": 113.89371438710917,
+                  "fill": "$color-brand",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "ls8rI",
+                  "fill": "$color-text-muted",
+                  "content": "M1",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Y3N9e",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "FtPM2",
+                  "width": "fill_container",
+                  "height": 137.61079495215756,
+                  "fill": "$color-complementary",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "PctqE",
+                  "fill": "$color-text-muted",
+                  "content": "M2",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NQECI",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "uCJTp",
+                  "width": "fill_container",
+                  "height": 138.27228902720964,
+                  "fill": "$color-brand",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "wO14f",
+                  "fill": "$color-text-muted",
+                  "content": "M3",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wI6T9",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "cwiST",
+                  "width": "fill_container",
+                  "height": 74.57952169847306,
+                  "fill": "$color-complementary",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "J30aTb",
+                  "fill": "$color-text-muted",
+                  "content": "M4",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "OYdl6",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "uWpsS",
+                  "width": "fill_container",
+                  "height": 92.46542996764555,
+                  "fill": "$color-brand",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "No4JJ",
+                  "fill": "$color-text-muted",
+                  "content": "M5",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MgaBT",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "iYSxL",
+                  "width": "fill_container",
+                  "height": 127.47393290232058,
+                  "fill": "$color-complementary",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "u9swE",
+                  "fill": "$color-text-muted",
+                  "content": "M6",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "huXgq",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "EMaJK",
+                  "width": "fill_container",
+                  "height": 109.97117295784717,
+                  "fill": "$color-brand",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "YPR7z",
+                  "fill": "$color-text-muted",
+                  "content": "M7",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "amTIr",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "VSl7v",
+                  "width": "fill_container",
+                  "height": 118.82592264399098,
+                  "fill": "$color-complementary",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "HDvum",
+                  "fill": "$color-text-muted",
+                  "content": "M8",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "LKzkK",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "nAAXP",
+                  "width": "fill_container",
+                  "height": 94.1963167426056,
+                  "fill": "$color-brand",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "zZkWf",
+                  "fill": "$color-text-muted",
+                  "content": "M9",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qltZT",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "c3z1fi",
+                  "width": "fill_container",
+                  "height": 99.41299600303748,
+                  "fill": "$color-complementary",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "m28Dt",
+                  "fill": "$color-text-muted",
+                  "content": "M10",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mpnRO",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "yme34",
+                  "width": "fill_container",
+                  "height": 154.65224470148084,
+                  "fill": "$color-brand",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "KcuC2",
+                  "fill": "$color-text-muted",
+                  "content": "M11",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "S5Nin0",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "kVYwF",
+                  "width": "fill_container",
+                  "height": 67.10794081984255,
+                  "fill": "$color-complementary",
+                  "cornerRadius": [
+                    8,
+                    8,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "MFlh5",
+                  "fill": "$color-text-muted",
+                  "content": "M12",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "zfdD5",
+          "name": "comp_StickyToC",
+          "reusable": true,
+          "width": 240,
+          "fill": "$color-surface",
+          "cornerRadius": 16,
+          "stroke": {
+            "thickness": 1,
+            "fill": "$color-text-muted"
+          },
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "LOHl0",
+              "width": "fill_container",
+              "padding": [
+                0,
+                0,
+                8,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GxH7O",
+                  "fill": "$color-text-muted",
+                  "content": "CONTENTS",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 12,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "H2FMHV",
+              "fill": "$color-brand",
+              "content": "Overview",
+              "fontFamily": "Montserrat",
+              "fontSize": 14,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "yVXtW",
+              "fill": "$color-brand",
+              "content": "Requirements",
+              "fontFamily": "Montserrat",
+              "fontSize": 14,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "SNF75",
+              "fill": "$color-brand",
+              "content": "Registration",
+              "fontFamily": "Montserrat",
+              "fontSize": 14,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "qcHGo",
+              "fill": "$color-brand",
+              "content": "Contact",
+              "fontFamily": "Montserrat",
+              "fontSize": 14,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Fea2u",
+          "name": "comp_FloatingSearch",
+          "reusable": true,
+          "fill": "$color-surface",
+          "cornerRadius": 32,
+          "stroke": {
+            "thickness": 2,
+            "fill": "$color-brand"
+          },
+          "gap": 16,
+          "padding": [
+            16,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "dWXqj",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "search",
+              "iconFontFamily": "lucide",
+              "fill": "$color-brand"
+            },
+            {
+              "type": "text",
+              "id": "TzIWy",
+              "fill": "$color-text-muted",
+              "content": "Search routes, clubs, rules...",
+              "fontFamily": "Montserrat",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "x02amF",
+              "fill": "$color-bg",
+              "cornerRadius": 8,
+              "gap": 4,
+              "padding": [
+                4,
+                8
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "r2zi7M",
+                  "width": 12,
+                  "height": 12,
+                  "iconFontName": "command",
+                  "iconFontFamily": "lucide",
+                  "fill": "$color-text-muted"
+                },
+                {
+                  "type": "text",
+                  "id": "ML78G",
+                  "fill": "$color-text-muted",
+                  "content": "K",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 12,
+                  "fontWeight": "700"
                 }
               ]
             }
@@ -4045,6 +4789,42 @@
                       }
                     }
                   ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EbjJB",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "id": "f7S6d",
+                      "type": "ref",
+                      "ref": "ZgSmJ",
+                      "width": "fill_container",
+                      "descendants": {
+                        "y15MD1": {
+                          "iconFontName": "calendar-plus"
+                        },
+                        "q3aooH": {
+                          "content": "Add to Calendar"
+                        }
+                      }
+                    },
+                    {
+                      "id": "E1iPA3",
+                      "type": "ref",
+                      "ref": "ZgSmJ",
+                      "width": "fill_container",
+                      "descendants": {
+                        "y15MD1": {
+                          "iconFontName": "download"
+                        },
+                        "q3aooH": {
+                          "content": "GPX Track"
+                        }
+                      }
+                    }
+                  ]
                 }
               ]
             }
@@ -4786,6 +5566,42 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EPwDz",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "id": "cVnq8",
+                      "type": "ref",
+                      "ref": "ZgSmJ",
+                      "width": "fill_container",
+                      "descendants": {
+                        "y15MD1": {
+                          "iconFontName": "map"
+                        },
+                        "q3aooH": {
+                          "content": "Send to Strava"
+                        }
+                      }
+                    },
+                    {
+                      "id": "L8vL4",
+                      "type": "ref",
+                      "ref": "ZgSmJ",
+                      "width": "fill_container",
+                      "descendants": {
+                        "y15MD1": {
+                          "iconFontName": "download"
+                        },
+                        "q3aooH": {
+                          "content": "Download GPX"
+                        }
+                      }
+                    }
+                  ]
                 }
               ]
             }
@@ -5227,7 +6043,7 @@
                 {
                   "type": "text",
                   "id": "tJTBT",
-                  "fill": "\\$color-surface",
+                  "fill": "$color-text-muted",
                   "content": "EXPLORE TOPICS",
                   "fontFamily": "Overpass",
                   "fontSize": 20,
@@ -5247,6 +6063,10 @@
                       "width": "fill_container",
                       "fill": "$color-surface",
                       "cornerRadius": 24,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$color-text-muted"
+                      },
                       "layout": "vertical",
                       "gap": 16,
                       "padding": 32,
@@ -5258,12 +6078,12 @@
                           "height": 24,
                           "iconFontName": "route",
                           "iconFontFamily": "lucide",
-                          "fill": "\\$color-text"
+                          "fill": "$color-accent"
                         },
                         {
                           "type": "text",
                           "id": "Prl90",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text",
                           "content": "Ride Reports",
                           "fontFamily": "Overpass",
                           "fontSize": 24,
@@ -5278,6 +6098,10 @@
                       "width": "fill_container",
                       "fill": "$color-surface",
                       "cornerRadius": 24,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$color-text-muted"
+                      },
                       "layout": "vertical",
                       "gap": 16,
                       "padding": 32,
@@ -5289,12 +6113,12 @@
                           "height": 24,
                           "iconFontName": "wrench",
                           "iconFontFamily": "lucide",
-                          "fill": "\\$color-text"
+                          "fill": "$color-accent"
                         },
                         {
                           "type": "text",
                           "id": "vooJO",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text",
                           "content": "Gear Reviews",
                           "fontFamily": "Overpass",
                           "fontSize": 24,
@@ -5309,6 +6133,10 @@
                       "width": "fill_container",
                       "fill": "$color-surface",
                       "cornerRadius": 24,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$color-text-muted"
+                      },
                       "layout": "vertical",
                       "gap": 16,
                       "padding": 32,
@@ -5320,12 +6148,12 @@
                           "height": 24,
                           "iconFontName": "mic",
                           "iconFontFamily": "lucide",
-                          "fill": "\\$color-text"
+                          "fill": "$color-accent"
                         },
                         {
                           "type": "text",
                           "id": "v1Gse",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text",
                           "content": "Interviews",
                           "fontFamily": "Overpass",
                           "fontSize": 24,
@@ -5340,6 +6168,10 @@
                       "width": "fill_container",
                       "fill": "$color-surface",
                       "cornerRadius": 24,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$color-text-muted"
+                      },
                       "layout": "vertical",
                       "gap": 16,
                       "padding": 32,
@@ -5351,12 +6183,12 @@
                           "height": 24,
                           "iconFontName": "newspaper",
                           "iconFontFamily": "lucide",
-                          "fill": "\\$color-text"
+                          "fill": "$color-accent"
                         },
                         {
                           "type": "text",
                           "id": "Sr7gJ",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text",
                           "content": "Club News",
                           "fontFamily": "Overpass",
                           "fontSize": 24,
@@ -5379,7 +6211,7 @@
                 {
                   "type": "text",
                   "id": "e1ihM",
-                  "fill": "\\$color-surface",
+                  "fill": "$color-text-muted",
                   "content": "FEATURED STORY",
                   "fontFamily": "Overpass",
                   "fontSize": 20,
@@ -5426,7 +6258,7 @@
                         {
                           "type": "text",
                           "id": "P5Oo6w",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text-muted",
                           "content": "RIDE REPORT",
                           "fontFamily": "Montserrat",
                           "fontSize": 14,
@@ -5435,7 +6267,7 @@
                         {
                           "type": "text",
                           "id": "Txgbf",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Surviving the 600km in the Rain: A Comprehensive Gear Guide",
@@ -5447,7 +6279,7 @@
                         {
                           "type": "text",
                           "id": "V92qlS",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text-muted",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "When the weather turns sour halfway through a Super Randonneur series, your equipment choices matter more than ever. Here is what saved my ride.",
@@ -5484,7 +6316,7 @@
                 {
                   "type": "text",
                   "id": "lOKms",
-                  "fill": "\\$color-surface",
+                  "fill": "$color-text-muted",
                   "content": "RIDER SPOTLIGHT",
                   "fontFamily": "Overpass",
                   "fontSize": 20,
@@ -5522,7 +6354,7 @@
                         {
                           "type": "text",
                           "id": "vgz7w",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text",
                           "content": "KATSIARYNA M.",
                           "fontFamily": "Overpass",
                           "fontSize": 20,
@@ -5531,7 +6363,7 @@
                         {
                           "type": "text",
                           "id": "Mqu5q",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text-muted",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "\"The hardest part isn't physical exhaustion, it's convincing your mind to keep going at 3 AM.\"",
@@ -5567,7 +6399,7 @@
                         {
                           "type": "text",
                           "id": "y3rvo0",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text",
                           "content": "ALIAKSANDR R.",
                           "fontFamily": "Overpass",
                           "fontSize": 20,
@@ -5576,7 +6408,7 @@
                         {
                           "type": "text",
                           "id": "C1eTO5",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text-muted",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "\"When I started, 200km felt impossible. Now, it's just a warm-up for the real adventure.\"",
@@ -5612,7 +6444,7 @@
                         {
                           "type": "text",
                           "id": "a1sGkp",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text",
                           "content": "DZMITRY K.",
                           "fontFamily": "Overpass",
                           "fontSize": 20,
@@ -5621,7 +6453,7 @@
                         {
                           "type": "text",
                           "id": "y3Nbn",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text-muted",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "\"You learn more about yourself in the last 50km of a 600km brevet than in a lifetime of normal riding.\"",
@@ -5657,7 +6489,7 @@
                         {
                           "type": "text",
                           "id": "T6P1GS",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text",
                           "content": "VOLHA S.",
                           "fontFamily": "Overpass",
                           "fontSize": 20,
@@ -5666,7 +6498,7 @@
                         {
                           "type": "text",
                           "id": "F6D2uC",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text-muted",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "\"My secret to finishing PBP? Eating exactly half a croissant at every single control point.\"",
@@ -5692,7 +6524,7 @@
                 {
                   "type": "text",
                   "id": "cBvwY",
-                  "fill": "\\$color-surface",
+                  "fill": "$color-text-muted",
                   "content": "LATEST ARTICLES",
                   "fontFamily": "Overpass",
                   "fontSize": 20,
@@ -5834,26 +6666,9 @@
               "justifyContent": "center",
               "children": [
                 {
-                  "id": "fXKS2",
+                  "id": "udcuQ",
                   "type": "ref",
-                  "ref": "XDyp0",
-                  "descendants": {
-                    "fDHxw": {
-                      "fill": "\\$color-text"
-                    },
-                    "WQBt0": {
-                      "fill": "\\$color-text"
-                    },
-                    "oMRqO": {
-                      "fill": "\\$color-text"
-                    },
-                    "QFloe": {
-                      "fill": "\\$color-text"
-                    },
-                    "PeMAt": {
-                      "fill": "\\$color-text"
-                    }
-                  }
+                  "ref": "XDyp0"
                 }
               ]
             },
@@ -5901,7 +6716,7 @@
                             {
                               "type": "text",
                               "id": "qbNn2",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text-muted",
                               "content": "MONTHLY READERS",
                               "fontFamily": "Montserrat",
                               "fontSize": 12,
@@ -5910,7 +6725,7 @@
                             {
                               "type": "text",
                               "id": "bsAZS",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text",
                               "content": "15,000+",
                               "fontFamily": "Overpass",
                               "fontSize": 40,
@@ -5928,7 +6743,7 @@
                             {
                               "type": "text",
                               "id": "APglW",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text-muted",
                               "content": "NEWSLETTER SUBS",
                               "fontFamily": "Montserrat",
                               "fontSize": 12,
@@ -5937,7 +6752,7 @@
                             {
                               "type": "text",
                               "id": "VQy7t",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text",
                               "content": "4,200",
                               "fontFamily": "Overpass",
                               "fontSize": 40,
@@ -5955,7 +6770,7 @@
                             {
                               "type": "text",
                               "id": "cO9ar",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text-muted",
                               "content": "PUBLISHED ARTICLES",
                               "fontFamily": "Montserrat",
                               "fontSize": 12,
@@ -5964,7 +6779,7 @@
                             {
                               "type": "text",
                               "id": "n6OpW",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text",
                               "content": "342",
                               "fontFamily": "Overpass",
                               "fontSize": 40,
@@ -5977,11 +6792,74 @@
                   ]
                 },
                 {
-                  "id": "MQvp9",
-                  "type": "ref",
-                  "ref": "WuA7i",
+                  "type": "frame",
+                  "id": "rzRaF",
                   "width": 400,
-                  "height": "fill_container"
+                  "fill": "$color-brand",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "padding": 32,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "o9Y5Tz",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "KRKXy",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "folder-archive",
+                          "iconFontFamily": "lucide",
+                          "fill": "$color-complementary"
+                        },
+                        {
+                          "type": "text",
+                          "id": "U4lRZ",
+                          "fill": "$color-surface",
+                          "content": "PRESS & MEDIA KIT",
+                          "fontFamily": "Overpass",
+                          "fontSize": 24,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "xt1EK",
+                          "fill": "#000000",
+                          "content": "Download logos, brand guidelines, and high-resolution photos for publication.",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Nq9HM",
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "id": "Pu7yN",
+                          "type": "ref",
+                          "ref": "ZgSmJ",
+                          "fill": "$color-complementary",
+                          "descendants": {
+                            "y15MD1": {
+                              "iconFontName": "download",
+                              "fill": "$color-brand"
+                            },
+                            "q3aooH": {
+                              "content": "Download .ZIP (12MB)",
+                              "fill": "$color-brand"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -6496,10 +7374,9 @@
         },
         {
           "type": "frame",
-          "id": "FFYfv",
-          "name": "rulesWrap",
+          "id": "Pe2xj",
           "width": "fill_container",
-          "layout": "vertical",
+          "height": 2411,
           "gap": 64,
           "padding": [
             64,
@@ -6509,205 +7386,65 @@
           ],
           "children": [
             {
-              "type": "frame",
-              "id": "xC4nv",
-              "name": "goldenRule",
-              "width": "fill_container",
-              "fill": "$color-surface",
-              "cornerRadius": 32,
-              "gap": 32,
-              "padding": 48,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "icon_font",
-                  "id": "chBDm",
-                  "width": 64,
-                  "height": 64,
-                  "iconFontName": "shield-alert",
-                  "iconFontFamily": "lucide",
-                  "fill": "$color-brand"
-                },
-                {
-                  "type": "frame",
-                  "id": "o0JvK",
-                  "name": "grText",
-                  "width": "fill_container",
-                  "layout": "vertical",
-                  "gap": 8,
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "mG5ml",
-                      "fill": "$color-text",
-                      "content": "THE GOLDEN RULE: SELF-SUFFICIENCY",
-                      "fontFamily": "Overpass",
-                      "fontSize": 32,
-                      "fontWeight": "700"
-                    },
-                    {
-                      "type": "text",
-                      "id": "fhuam",
-                      "fill": "$color-text-muted",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "Brevets are not races. They are tests of endurance, self-reliance, and camaraderie. Personal follow cars or outside support are strictly prohibited on the route. You must carry what you need, fix your own mechanicals, and navigate independently.",
-                      "lineHeight": 1.5,
-                      "fontFamily": "Montserrat",
-                      "fontSize": 18,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                }
-              ]
+              "id": "tp1AV",
+              "type": "ref",
+              "ref": "zfdD5"
             },
             {
               "type": "frame",
-              "id": "DtZTn",
-              "name": "distSect",
+              "id": "FFYfv",
+              "name": "rulesWrap",
               "width": "fill_container",
               "layout": "vertical",
-              "gap": 32,
+              "gap": 64,
               "children": [
                 {
                   "type": "frame",
-                  "id": "vAKBI",
-                  "name": "distHead",
-                  "layout": "vertical",
-                  "gap": 8,
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "lGV8a",
-                      "fill": "$color-text",
-                      "content": "STANDARD DISTANCES & TIME LIMITS",
-                      "fontFamily": "Overpass",
-                      "fontSize": 32,
-                      "fontWeight": "700"
-                    },
-                    {
-                      "type": "text",
-                      "id": "P1CPx",
-                      "fill": "$color-text-muted",
-                      "content": "Calculated based on an average minimum overall speed of 15 km/h (including stops).",
-                      "fontFamily": "Montserrat",
-                      "fontSize": 18,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "enHP9",
-                  "name": "seriesGrid",
-                  "width": "fill_container",
-                  "gap": 24,
-                  "children": [
-                    {
-                      "id": "LrVeI",
-                      "type": "ref",
-                      "ref": "TOTEU",
-                      "width": "fill_container",
-                      "descendants": {
-                        "gfMg0": {
-                          "content": "200"
-                        },
-                        "cwEFU": {
-                          "content": "13h 30m"
-                        }
-                      }
-                    },
-                    {
-                      "id": "fFeQJ",
-                      "type": "ref",
-                      "ref": "TOTEU",
-                      "width": "fill_container",
-                      "descendants": {
-                        "gfMg0": {
-                          "content": "300"
-                        },
-                        "cwEFU": {
-                          "content": "20h 00m"
-                        }
-                      }
-                    },
-                    {
-                      "id": "Dpbkk",
-                      "type": "ref",
-                      "ref": "TOTEU",
-                      "width": "fill_container",
-                      "descendants": {
-                        "gfMg0": {
-                          "content": "400"
-                        },
-                        "cwEFU": {
-                          "content": "27h 00m"
-                        }
-                      }
-                    },
-                    {
-                      "id": "HLoma",
-                      "type": "ref",
-                      "ref": "TOTEU",
-                      "width": "fill_container",
-                      "descendants": {
-                        "gfMg0": {
-                          "content": "600"
-                        },
-                        "cwEFU": {
-                          "content": "40h 00m"
-                        }
-                      }
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "jDNqy",
-                  "name": "srCard",
+                  "id": "xC4nv",
+                  "name": "goldenRule",
                   "width": "fill_container",
                   "fill": "$color-surface",
                   "cornerRadius": 32,
                   "gap": 32,
-                  "padding": 40,
+                  "padding": 48,
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "icon_font",
-                      "id": "n5zHqg",
+                      "id": "chBDm",
                       "width": 64,
                       "height": 64,
-                      "iconFontName": "award",
+                      "iconFontName": "shield-alert",
                       "iconFontFamily": "lucide",
-                      "fill": "$color-accent"
+                      "fill": "$color-brand"
                     },
                     {
                       "type": "frame",
-                      "id": "s9b5ae",
-                      "name": "srContent",
+                      "id": "o0JvK",
+                      "name": "grText",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 8,
                       "children": [
                         {
                           "type": "text",
-                          "id": "q7onr",
+                          "id": "mG5ml",
                           "fill": "$color-text",
-                          "content": "THE SUPER RANDONNEUR SERIES",
+                          "content": "THE GOLDEN RULE: SELF-SUFFICIENCY",
                           "fontFamily": "Overpass",
-                          "fontSize": 24,
+                          "fontSize": 32,
                           "fontWeight": "700"
                         },
                         {
                           "type": "text",
-                          "id": "uRrys",
+                          "id": "fhuam",
                           "fill": "$color-text-muted",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "A \"Super Randonneur\" is a rider who successfully completes a full series of 200, 300, 400, and 600 km brevets within the same calendar year. Earning this title is a major milestone and serves as the mandatory qualification to ride extreme distances like 1000km, 1200km, and the legendary Paris-Brest-Paris.",
+                          "content": "Brevets are not races. They are tests of endurance, self-reliance, and camaraderie. Personal follow cars or outside support are strictly prohibited on the route. You must carry what you need, fix your own mechanicals, and navigate independently.",
                           "lineHeight": 1.5,
                           "fontFamily": "Montserrat",
-                          "fontSize": 16,
+                          "fontSize": 18,
                           "fontWeight": "normal"
                         }
                       ]
@@ -6716,168 +7453,218 @@
                 },
                 {
                   "type": "frame",
-                  "id": "n3WId",
-                  "name": "longHead",
-                  "layout": "vertical",
-                  "gap": 8,
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "v57AO",
-                      "fill": "$color-text",
-                      "content": "GRAND RANDONNÉES",
-                      "fontFamily": "Overpass",
-                      "fontSize": 32,
-                      "fontWeight": "700"
-                    },
-                    {
-                      "type": "text",
-                      "id": "SsnvO",
-                      "fill": "$color-text-muted",
-                      "content": "Extreme distances requiring the Super Randonneur qualification and strategic sleep planning.",
-                      "fontFamily": "Montserrat",
-                      "fontSize": 18,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "B2TRQ",
-                  "name": "longGrid",
-                  "width": "fill_container",
-                  "gap": 24,
-                  "children": [
-                    {
-                      "id": "lrQSU",
-                      "type": "ref",
-                      "ref": "TOTEU",
-                      "width": "fill_container",
-                      "descendants": {
-                        "gfMg0": {
-                          "content": "1000"
-                        },
-                        "cwEFU": {
-                          "content": "75h 00m"
-                        }
-                      }
-                    },
-                    {
-                      "id": "jWOdc",
-                      "type": "ref",
-                      "ref": "TOTEU",
-                      "width": "fill_container",
-                      "descendants": {
-                        "gfMg0": {
-                          "content": "1200"
-                        },
-                        "cwEFU": {
-                          "content": "90h 00m"
-                        }
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "C0zxcy",
-              "name": "bottomSect",
-              "width": "fill_container",
-              "gap": 48,
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "Je30h",
-                  "name": "ctrlSect",
+                  "id": "DtZTn",
+                  "name": "distSect",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 24,
+                  "gap": 32,
                   "children": [
                     {
-                      "type": "text",
-                      "id": "U2GlWa",
-                      "fill": "$color-text",
-                      "content": "CONTROL POINTS (CPs)",
-                      "fontFamily": "Overpass",
-                      "fontSize": 32,
-                      "fontWeight": "700"
-                    },
-                    {
-                      "type": "text",
-                      "id": "QJetm",
-                      "name": "cText",
-                      "fill": "$color-text-muted",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "To prove you completed the route, you must pass through designated control points within specific opening and closing times. At each control, you must have your brevet card stamped or provide photographic/electronic proof.",
-                      "lineHeight": 1.5,
-                      "fontFamily": "Montserrat",
-                      "fontSize": 16,
-                      "fontWeight": "normal"
+                      "type": "frame",
+                      "id": "vAKBI",
+                      "name": "distHead",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lGV8a",
+                          "fill": "$color-text",
+                          "content": "STANDARD DISTANCES & TIME LIMITS",
+                          "fontFamily": "Overpass",
+                          "fontSize": 32,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "P1CPx",
+                          "fill": "$color-text-muted",
+                          "content": "Calculated based on an average minimum overall speed of 15 km/h (including stops).",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
                     },
                     {
                       "type": "frame",
-                      "id": "h5s2J",
-                      "name": "cpGrid",
+                      "id": "enHP9",
+                      "name": "seriesGrid",
                       "width": "fill_container",
-                      "layout": "vertical",
-                      "gap": 16,
+                      "gap": 24,
                       "children": [
                         {
-                          "type": "frame",
-                          "id": "JjAs5",
-                          "name": "cp1",
-                          "gap": 16,
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "apO60",
-                              "width": 24,
-                              "height": 24,
-                              "iconFontName": "clock-4",
-                              "iconFontFamily": "lucide",
-                              "fill": "$color-accent"
+                          "id": "LrVeI",
+                          "type": "ref",
+                          "ref": "TOTEU",
+                          "width": "fill_container",
+                          "descendants": {
+                            "gfMg0": {
+                              "content": "200"
                             },
-                            {
-                              "type": "text",
-                              "id": "O1xUg",
-                              "fill": "$color-text",
-                              "content": "Opening Time: Based on 34 km/h max speed",
-                              "fontFamily": "Montserrat",
-                              "fontSize": 16,
-                              "fontWeight": "600"
+                            "cwEFU": {
+                              "content": "13h 30m"
                             }
-                          ]
+                          }
+                        },
+                        {
+                          "id": "fFeQJ",
+                          "type": "ref",
+                          "ref": "TOTEU",
+                          "width": "fill_container",
+                          "descendants": {
+                            "gfMg0": {
+                              "content": "300"
+                            },
+                            "cwEFU": {
+                              "content": "20h 00m"
+                            }
+                          }
+                        },
+                        {
+                          "id": "Dpbkk",
+                          "type": "ref",
+                          "ref": "TOTEU",
+                          "width": "fill_container",
+                          "descendants": {
+                            "gfMg0": {
+                              "content": "400"
+                            },
+                            "cwEFU": {
+                              "content": "27h 00m"
+                            }
+                          }
+                        },
+                        {
+                          "id": "HLoma",
+                          "type": "ref",
+                          "ref": "TOTEU",
+                          "width": "fill_container",
+                          "descendants": {
+                            "gfMg0": {
+                              "content": "600"
+                            },
+                            "cwEFU": {
+                              "content": "40h 00m"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jDNqy",
+                      "name": "srCard",
+                      "width": "fill_container",
+                      "fill": "$color-surface",
+                      "cornerRadius": 32,
+                      "gap": 32,
+                      "padding": 40,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "n5zHqg",
+                          "width": 64,
+                          "height": 64,
+                          "iconFontName": "award",
+                          "iconFontFamily": "lucide",
+                          "fill": "$color-accent"
                         },
                         {
                           "type": "frame",
-                          "id": "nCkCT",
-                          "name": "cp2",
-                          "gap": 16,
-                          "alignItems": "center",
+                          "id": "s9b5ae",
+                          "name": "srContent",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
                           "children": [
                             {
-                              "type": "icon_font",
-                              "id": "kDsOh",
-                              "width": 24,
-                              "height": 24,
-                              "iconFontName": "clock-8",
-                              "iconFontFamily": "lucide",
-                              "fill": "$color-accent"
+                              "type": "text",
+                              "id": "q7onr",
+                              "fill": "$color-text",
+                              "content": "THE SUPER RANDONNEUR SERIES",
+                              "fontFamily": "Overpass",
+                              "fontSize": 24,
+                              "fontWeight": "700"
                             },
                             {
                               "type": "text",
-                              "id": "ope8q",
-                              "fill": "$color-text",
-                              "content": "Closing Time: Based on 15 km/h min speed",
+                              "id": "uRrys",
+                              "fill": "$color-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "A \"Super Randonneur\" is a rider who successfully completes a full series of 200, 300, 400, and 600 km brevets within the same calendar year. Earning this title is a major milestone and serves as the mandatory qualification to ride extreme distances like 1000km, 1200km, and the legendary Paris-Brest-Paris.",
+                              "lineHeight": 1.5,
                               "fontFamily": "Montserrat",
                               "fontSize": 16,
-                              "fontWeight": "600"
+                              "fontWeight": "normal"
                             }
                           ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n3WId",
+                      "name": "longHead",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "v57AO",
+                          "fill": "$color-text",
+                          "content": "GRAND RANDONNÉES",
+                          "fontFamily": "Overpass",
+                          "fontSize": 32,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "SsnvO",
+                          "fill": "$color-text-muted",
+                          "content": "Extreme distances requiring the Super Randonneur qualification and strategic sleep planning.",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "B2TRQ",
+                      "name": "longGrid",
+                      "width": "fill_container",
+                      "gap": 24,
+                      "children": [
+                        {
+                          "id": "lrQSU",
+                          "type": "ref",
+                          "ref": "TOTEU",
+                          "width": "fill_container",
+                          "descendants": {
+                            "gfMg0": {
+                              "content": "1000"
+                            },
+                            "cwEFU": {
+                              "content": "75h 00m"
+                            }
+                          }
+                        },
+                        {
+                          "id": "jWOdc",
+                          "type": "ref",
+                          "ref": "TOTEU",
+                          "width": "fill_container",
+                          "descendants": {
+                            "gfMg0": {
+                              "content": "1200"
+                            },
+                            "cwEFU": {
+                              "content": "90h 00m"
+                            }
+                          }
                         }
                       ]
                     }
@@ -6885,266 +7672,244 @@
                 },
                 {
                   "type": "frame",
-                  "id": "jViip",
-                  "name": "gearSect",
+                  "id": "C0zxcy",
+                  "name": "bottomSect",
                   "width": "fill_container",
-                  "fill": "$color-surface",
-                  "cornerRadius": 32,
-                  "layout": "vertical",
-                  "gap": 24,
-                  "padding": 40,
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "g0pYt",
-                      "fill": "$color-text",
-                      "content": "REQUIRED SAFETY GEAR",
-                      "fontFamily": "Overpass",
-                      "fontSize": 32,
-                      "fontWeight": "700"
-                    },
-                    {
-                      "type": "frame",
-                      "id": "vE8MP",
-                      "name": "gList",
-                      "width": "fill_container",
-                      "layout": "vertical",
-                      "gap": 16,
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "ocHCo",
-                          "name": "g1",
-                          "gap": 16,
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "cnswT",
-                              "width": 24,
-                              "height": 24,
-                              "iconFontName": "sun",
-                              "iconFontFamily": "lucide",
-                              "fill": "$color-accent"
-                            },
-                            {
-                              "type": "text",
-                              "id": "B4g8uf",
-                              "fill": "$color-text",
-                              "content": "Front & Rear Lights (Attached to bike)",
-                              "fontFamily": "Montserrat",
-                              "fontSize": 16,
-                              "fontWeight": "600"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "oqaan",
-                          "name": "g2",
-                          "gap": 16,
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "MZJjc",
-                              "width": 24,
-                              "height": 24,
-                              "iconFontName": "shirt",
-                              "iconFontFamily": "lucide",
-                              "fill": "$color-accent"
-                            },
-                            {
-                              "type": "text",
-                              "id": "rBTcN",
-                              "fill": "$color-text",
-                              "content": "Reflective Vest/Sash (Worn at night)",
-                              "fontFamily": "Montserrat",
-                              "fontSize": 16,
-                              "fontWeight": "600"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "MxyKh",
-                          "name": "g3",
-                          "gap": 16,
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "RgKuc",
-                              "width": 24,
-                              "height": 24,
-                              "iconFontName": "shield",
-                              "iconFontFamily": "lucide",
-                              "fill": "$color-accent"
-                            },
-                            {
-                              "type": "text",
-                              "id": "F6a5pD",
-                              "fill": "$color-text",
-                              "content": "Cycling Helmet",
-                              "fontFamily": "Montserrat",
-                              "fontSize": 16,
-                              "fontWeight": "600"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "Y7bLlx",
-                          "name": "g4",
-                          "gap": 16,
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "Xcz9I",
-                              "width": 24,
-                              "height": 24,
-                              "iconFontName": "file-text",
-                              "iconFontFamily": "lucide",
-                              "fill": "$color-accent"
-                            },
-                            {
-                              "type": "text",
-                              "id": "s05Dss",
-                              "fill": "$color-text",
-                              "content": "Brevet Card & ID",
-                              "fontFamily": "Montserrat",
-                              "fontSize": 16,
-                              "fontWeight": "600"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "Yzd0W",
-              "name": "offRulesWrap",
-              "width": "fill_container",
-              "gap": 64,
-              "padding": [
-                64,
-                0
-              ],
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "mYoEy",
-                  "name": "offLeft",
-                  "width": "fill_container",
-                  "layout": "vertical",
                   "gap": 48,
                   "children": [
                     {
-                      "type": "text",
-                      "id": "V3fkuM",
-                      "fill": "$color-text",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "OFFICIAL ACP REGULATIONS",
-                      "fontFamily": "Overpass",
-                      "fontSize": 32,
-                      "fontWeight": "700"
-                    },
-                    {
                       "type": "frame",
-                      "id": "o27MNn",
-                      "name": "ar1",
+                      "id": "Je30h",
+                      "name": "ctrlSect",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 16,
+                      "gap": 24,
                       "children": [
                         {
                           "type": "text",
-                          "id": "s0sJtn",
+                          "id": "U2GlWa",
                           "fill": "$color-text",
-                          "content": "Article 1: Qualification",
+                          "content": "CONTROL POINTS (CPs)",
                           "fontFamily": "Overpass",
-                          "fontSize": 24,
+                          "fontSize": 32,
                           "fontWeight": "700"
                         },
                         {
                           "type": "text",
-                          "id": "vkezJ",
+                          "id": "QJetm",
+                          "name": "cText",
                           "fill": "$color-text-muted",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "These brevets are open to any amateur cyclist regardless of his or her cycling affiliations, covered by insurance. Any rider under the age of 18 must have consent of his or her parent or legal guardian.",
+                          "content": "To prove you completed the route, you must pass through designated control points within specific opening and closing times. At each control, you must have your brevet card stamped or provide photographic/electronic proof.",
                           "lineHeight": 1.5,
                           "fontFamily": "Montserrat",
                           "fontSize": 16,
                           "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "h5s2J",
+                          "name": "cpGrid",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 16,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "JjAs5",
+                              "name": "cp1",
+                              "gap": 16,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "apO60",
+                                  "width": 24,
+                                  "height": 24,
+                                  "iconFontName": "clock-4",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$color-accent"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "O1xUg",
+                                  "fill": "$color-text",
+                                  "content": "Opening Time: Based on 34 km/h max speed",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 16,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "nCkCT",
+                              "name": "cp2",
+                              "gap": 16,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "kDsOh",
+                                  "width": 24,
+                                  "height": 24,
+                                  "iconFontName": "clock-8",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$color-accent"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "ope8q",
+                                  "fill": "$color-text",
+                                  "content": "Closing Time: Based on 15 km/h min speed",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 16,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "y4WIi",
-                      "name": "ar2",
+                      "id": "jViip",
+                      "name": "gearSect",
                       "width": "fill_container",
+                      "fill": "$color-surface",
+                      "cornerRadius": 32,
                       "layout": "vertical",
-                      "gap": 16,
+                      "gap": 24,
+                      "padding": 40,
                       "children": [
                         {
                           "type": "text",
-                          "id": "fQaFS",
+                          "id": "g0pYt",
                           "fill": "$color-text",
-                          "content": "Article 2: Route Deviations",
+                          "content": "REQUIRED SAFETY GEAR",
                           "fontFamily": "Overpass",
-                          "fontSize": 24,
+                          "fontSize": 32,
                           "fontWeight": "700"
                         },
                         {
-                          "type": "text",
-                          "id": "A9RFU",
-                          "fill": "$color-text-muted",
-                          "textGrowth": "fixed-width",
+                          "type": "frame",
+                          "id": "vE8MP",
+                          "name": "gList",
                           "width": "fill_container",
-                          "content": "Each rider must stay on the route. If a rider leaves the route, they must return to the route at the same point prior to continuing, ie. no shortcuts or detours from the route, unless specified by the organizer.",
-                          "lineHeight": 1.5,
-                          "fontFamily": "Montserrat",
-                          "fontSize": 16,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "PFiCC",
-                      "name": "ar3",
-                      "width": "fill_container",
-                      "layout": "vertical",
-                      "gap": 16,
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "AHnj9",
-                          "fill": "$color-text",
-                          "content": "Article 3: Homologation",
-                          "fontFamily": "Overpass",
-                          "fontSize": 24,
-                          "fontWeight": "700"
-                        },
-                        {
-                          "type": "text",
-                          "id": "sVg3R",
-                          "fill": "$color-text-muted",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "At the finish, the rider must sign his brevet card and return it to the organizer. The brevet card will be returned to the rider after the brevet has been verified and a homologation number issued.",
-                          "lineHeight": 1.5,
-                          "fontFamily": "Montserrat",
-                          "fontSize": 16,
-                          "fontWeight": "normal"
+                          "layout": "vertical",
+                          "gap": 16,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "ocHCo",
+                              "name": "g1",
+                              "gap": 16,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "cnswT",
+                                  "width": 24,
+                                  "height": 24,
+                                  "iconFontName": "sun",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$color-accent"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "B4g8uf",
+                                  "fill": "$color-text",
+                                  "content": "Front & Rear Lights (Attached to bike)",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 16,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "oqaan",
+                              "name": "g2",
+                              "gap": 16,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "MZJjc",
+                                  "width": 24,
+                                  "height": 24,
+                                  "iconFontName": "shirt",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$color-accent"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "rBTcN",
+                                  "fill": "$color-text",
+                                  "content": "Reflective Vest/Sash (Worn at night)",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 16,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "MxyKh",
+                              "name": "g3",
+                              "gap": 16,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "RgKuc",
+                                  "width": 24,
+                                  "height": 24,
+                                  "iconFontName": "shield",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$color-accent"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "F6a5pD",
+                                  "fill": "$color-text",
+                                  "content": "Cycling Helmet",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 16,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Y7bLlx",
+                              "name": "g4",
+                              "gap": 16,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "Xcz9I",
+                                  "width": 24,
+                                  "height": 24,
+                                  "iconFontName": "file-text",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$color-accent"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "s05Dss",
+                                  "fill": "$color-text",
+                                  "content": "Brevet Card & ID",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 16,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
                         }
                       ]
                     }
@@ -7152,72 +7917,199 @@
                 },
                 {
                   "type": "frame",
-                  "id": "N1usJ4",
-                  "name": "offRight",
-                  "width": 300,
-                  "layout": "vertical",
-                  "gap": 24,
+                  "id": "Yzd0W",
+                  "name": "offRulesWrap",
+                  "width": "fill_container",
+                  "gap": 64,
+                  "padding": [
+                    64,
+                    0
+                  ],
                   "children": [
                     {
-                      "type": "text",
-                      "id": "e5Xap",
-                      "fill": "$color-text-muted",
-                      "content": "OFFICIAL ARTICLES",
-                      "fontFamily": "Montserrat",
-                      "fontSize": 14,
-                      "fontWeight": "700"
-                    },
-                    {
                       "type": "frame",
-                      "id": "IMrS3",
-                      "name": "tocList",
+                      "id": "mYoEy",
+                      "name": "offLeft",
+                      "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 16,
+                      "gap": 48,
                       "children": [
                         {
                           "type": "text",
-                          "id": "t3X7vW",
+                          "id": "V3fkuM",
                           "fill": "$color-text",
-                          "content": "Article 1: Qualification",
-                          "fontFamily": "Montserrat",
-                          "fontSize": 16,
-                          "fontWeight": "600"
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "OFFICIAL ACP REGULATIONS",
+                          "fontFamily": "Overpass",
+                          "fontSize": 32,
+                          "fontWeight": "700"
                         },
                         {
-                          "type": "text",
-                          "id": "DKSxe",
-                          "fill": "$color-text-muted",
-                          "content": "Article 2: Deviations",
-                          "fontFamily": "Montserrat",
-                          "fontSize": 16,
-                          "fontWeight": "normal"
+                          "type": "frame",
+                          "id": "o27MNn",
+                          "name": "ar1",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "s0sJtn",
+                              "fill": "$color-text",
+                              "content": "Article 1: Qualification",
+                              "fontFamily": "Overpass",
+                              "fontSize": 24,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "vkezJ",
+                              "fill": "$color-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "These brevets are open to any amateur cyclist regardless of his or her cycling affiliations, covered by insurance. Any rider under the age of 18 must have consent of his or her parent or legal guardian.",
+                              "lineHeight": 1.5,
+                              "fontFamily": "Montserrat",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
                         },
                         {
-                          "type": "text",
-                          "id": "rSKrG",
-                          "fill": "$color-text-muted",
-                          "content": "Article 3: Homologation",
-                          "fontFamily": "Montserrat",
-                          "fontSize": 16,
-                          "fontWeight": "normal"
+                          "type": "frame",
+                          "id": "y4WIi",
+                          "name": "ar2",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fQaFS",
+                              "fill": "$color-text",
+                              "content": "Article 2: Route Deviations",
+                              "fontFamily": "Overpass",
+                              "fontSize": 24,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "A9RFU",
+                              "fill": "$color-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Each rider must stay on the route. If a rider leaves the route, they must return to the route at the same point prior to continuing, ie. no shortcuts or detours from the route, unless specified by the organizer.",
+                              "lineHeight": 1.5,
+                              "fontFamily": "Montserrat",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
                         },
                         {
-                          "type": "text",
-                          "id": "u7ajD",
-                          "fill": "$color-text-muted",
-                          "content": "Article 4: Brevet Cards",
-                          "fontFamily": "Montserrat",
-                          "fontSize": 16,
-                          "fontWeight": "normal"
-                        },
+                          "type": "frame",
+                          "id": "PFiCC",
+                          "name": "ar3",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "AHnj9",
+                              "fill": "$color-text",
+                              "content": "Article 3: Homologation",
+                              "fontFamily": "Overpass",
+                              "fontSize": 24,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "sVg3R",
+                              "fill": "$color-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "At the finish, the rider must sign his brevet card and return it to the organizer. The brevet card will be returned to the rider after the brevet has been verified and a homologation number issued.",
+                              "lineHeight": 1.5,
+                              "fontFamily": "Montserrat",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "N1usJ4",
+                      "name": "offRight",
+                      "width": 300,
+                      "layout": "vertical",
+                      "gap": 24,
+                      "children": [
                         {
                           "type": "text",
-                          "id": "Y0rHx",
+                          "id": "e5Xap",
                           "fill": "$color-text-muted",
-                          "content": "Article 5: Abandoning",
+                          "content": "OFFICIAL ARTICLES",
                           "fontFamily": "Montserrat",
-                          "fontSize": 16,
-                          "fontWeight": "normal"
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "IMrS3",
+                          "name": "tocList",
+                          "layout": "vertical",
+                          "gap": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "t3X7vW",
+                              "fill": "$color-text",
+                              "content": "Article 1: Qualification",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "DKSxe",
+                              "fill": "$color-text-muted",
+                              "content": "Article 2: Deviations",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "rSKrG",
+                              "fill": "$color-text-muted",
+                              "content": "Article 3: Homologation",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "u7ajD",
+                              "fill": "$color-text-muted",
+                              "content": "Article 4: Brevet Cards",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Y0rHx",
+                              "fill": "$color-text-muted",
+                              "content": "Article 5: Abandoning",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -7230,7 +8122,9 @@
         {
           "id": "o3yv1",
           "type": "ref",
-          "ref": "H15zY"
+          "ref": "H15zY",
+          "x": 0,
+          "y": 2738
         }
       ]
     },
@@ -7270,198 +8164,231 @@
         },
         {
           "type": "frame",
-          "id": "iLJL8",
-          "name": "faqContent",
+          "id": "tdqHS",
           "width": "fill_container",
+          "height": 1640,
           "gap": 64,
-          "padding": 64,
+          "padding": [
+            64,
+            64,
+            0,
+            64
+          ],
           "children": [
             {
-              "type": "frame",
-              "id": "H5zCh",
-              "name": "newLeft",
-              "width": "fill_container",
-              "layout": "vertical",
-              "gap": 48,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "g2z29j",
-                  "fill": "$color-text",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "Equipment & Gear",
-                  "fontFamily": "Overpass",
-                  "fontSize": 32,
-                  "fontWeight": "700"
+              "id": "g2EDo",
+              "type": "ref",
+              "ref": "zfdD5",
+              "descendants": {
+                "H2FMHV": {
+                  "content": "General Questions"
                 },
-                {
-                  "id": "uaOpU",
-                  "type": "ref",
-                  "ref": "ZbSPm",
-                  "width": "fill_container",
-                  "descendants": {
-                    "At1fI": {
-                      "content": "Q: Do I need a special bike?"
-                    },
-                    "lyRkf": {
-                      "content": "A: No, any human-powered vehicle is allowed as long as it is propelled solely by the rider."
-                    }
-                  }
+                "yVXtW": {
+                  "content": "Brevets & ACP"
                 },
-                {
-                  "id": "KSZgx",
-                  "type": "ref",
-                  "ref": "ZbSPm",
-                  "width": "fill_container",
-                  "descendants": {
-                    "At1fI": {
-                      "content": "Q: What kind of lights are required?"
-                    },
-                    "lyRkf": {
-                      "content": "A: You must have a front white light and a rear red light securely attached to the bike. Both must be turned on during night riding and low visibility. Spare lights are highly recommended."
-                    }
-                  }
+                "SNF75": {
+                  "content": "Gear & Prep"
                 },
-                {
-                  "type": "text",
-                  "id": "VMaip",
-                  "fill": "$color-text",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "Rules & Limits",
-                  "fontFamily": "Overpass",
-                  "fontSize": 32,
-                  "fontWeight": "700"
-                },
-                {
-                  "id": "BBa6x",
-                  "type": "ref",
-                  "ref": "ZbSPm",
-                  "width": "fill_container",
-                  "descendants": {
-                    "At1fI": {
-                      "content": "Q: What happens if I miss the time limit?"
-                    },
-                    "lyRkf": {
-                      "content": "A: Brevets are not races, but they have strict time limits. If you finish outside the time limit, your ride will not be homologated by ACP, though you still accomplished a great personal feat!"
-                    }
-                  }
-                },
-                {
-                  "id": "CffxD",
-                  "type": "ref",
-                  "ref": "ZbSPm",
-                  "width": "fill_container",
-                  "descendants": {
-                    "At1fI": {
-                      "content": "Q: Can I take a shortcut?"
-                    },
-                    "lyRkf": {
-                      "content": "A: No, you must follow the official route. If you leave the route (e.g. to find food or sleep), you must return to it at the exact point where you left."
-                    }
-                  }
-                },
-                {
-                  "type": "text",
-                  "id": "Hq679",
-                  "fill": "$color-text",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "Navigation & Support",
-                  "fontFamily": "Overpass",
-                  "fontSize": 32,
-                  "fontWeight": "700"
-                },
-                {
-                  "id": "ogSjz",
-                  "type": "ref",
-                  "ref": "ZbSPm",
-                  "width": "fill_container",
-                  "descendants": {
-                    "At1fI": {
-                      "content": "Q: How do I navigate the route?"
-                    },
-                    "lyRkf": {
-                      "content": "A: Most riders use a GPS device loaded with the route track. We also provide printable cue sheets."
-                    }
-                  }
-                },
-                {
-                  "id": "X2UBC4",
-                  "type": "ref",
-                  "ref": "ZbSPm",
-                  "width": "fill_container",
-                  "descendants": {
-                    "At1fI": {
-                      "content": "Q: Are there support vehicles?"
-                    },
-                    "lyRkf": {
-                      "content": "A: Randonneuring is unsupported. You must carry your own gear and fix your own mechanical issues. Outside support is only allowed at designated control points."
-                    }
-                  }
+                "qcHGo": {
+                  "content": "Safety"
                 }
-              ]
+              }
             },
             {
               "type": "frame",
-              "id": "l8xs5f",
-              "name": "newRight",
-              "width": 300,
-              "layout": "vertical",
-              "gap": 24,
+              "id": "iLJL8",
+              "name": "faqContent",
+              "width": "fill_container",
+              "gap": 64,
               "children": [
                 {
-                  "type": "text",
-                  "id": "U68Wa",
-                  "fill": "$color-text-muted",
-                  "content": "ON THIS PAGE",
-                  "fontFamily": "Montserrat",
-                  "fontSize": 14,
-                  "fontWeight": "700"
-                },
-                {
                   "type": "frame",
-                  "id": "K8h7z",
-                  "name": "tocList",
+                  "id": "H5zCh",
+                  "name": "newLeft",
+                  "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": 48,
                   "children": [
                     {
                       "type": "text",
-                      "id": "W9A4f",
+                      "id": "g2z29j",
                       "fill": "$color-text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
                       "content": "Equipment & Gear",
-                      "fontFamily": "Montserrat",
-                      "fontSize": 16,
-                      "fontWeight": "600"
+                      "fontFamily": "Overpass",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "id": "uaOpU",
+                      "type": "ref",
+                      "ref": "ZbSPm",
+                      "width": "fill_container",
+                      "descendants": {
+                        "At1fI": {
+                          "content": "Q: Do I need a special bike?"
+                        },
+                        "lyRkf": {
+                          "content": "A: No, any human-powered vehicle is allowed as long as it is propelled solely by the rider."
+                        }
+                      }
+                    },
+                    {
+                      "id": "KSZgx",
+                      "type": "ref",
+                      "ref": "ZbSPm",
+                      "width": "fill_container",
+                      "descendants": {
+                        "At1fI": {
+                          "content": "Q: What kind of lights are required?"
+                        },
+                        "lyRkf": {
+                          "content": "A: You must have a front white light and a rear red light securely attached to the bike. Both must be turned on during night riding and low visibility. Spare lights are highly recommended."
+                        }
+                      }
                     },
                     {
                       "type": "text",
-                      "id": "M45tA",
-                      "fill": "$color-text-muted",
+                      "id": "VMaip",
+                      "fill": "$color-text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
                       "content": "Rules & Limits",
-                      "fontFamily": "Montserrat",
-                      "fontSize": 16,
-                      "fontWeight": "normal"
+                      "fontFamily": "Overpass",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "id": "BBa6x",
+                      "type": "ref",
+                      "ref": "ZbSPm",
+                      "width": "fill_container",
+                      "descendants": {
+                        "At1fI": {
+                          "content": "Q: What happens if I miss the time limit?"
+                        },
+                        "lyRkf": {
+                          "content": "A: Brevets are not races, but they have strict time limits. If you finish outside the time limit, your ride will not be homologated by ACP, though you still accomplished a great personal feat!"
+                        }
+                      }
+                    },
+                    {
+                      "id": "CffxD",
+                      "type": "ref",
+                      "ref": "ZbSPm",
+                      "width": "fill_container",
+                      "descendants": {
+                        "At1fI": {
+                          "content": "Q: Can I take a shortcut?"
+                        },
+                        "lyRkf": {
+                          "content": "A: No, you must follow the official route. If you leave the route (e.g. to find food or sleep), you must return to it at the exact point where you left."
+                        }
+                      }
                     },
                     {
                       "type": "text",
-                      "id": "ufrnB",
-                      "fill": "$color-text-muted",
+                      "id": "Hq679",
+                      "fill": "$color-text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
                       "content": "Navigation & Support",
-                      "fontFamily": "Montserrat",
-                      "fontSize": 16,
-                      "fontWeight": "normal"
+                      "fontFamily": "Overpass",
+                      "fontSize": 32,
+                      "fontWeight": "700"
                     },
                     {
+                      "id": "ogSjz",
+                      "type": "ref",
+                      "ref": "ZbSPm",
+                      "width": "fill_container",
+                      "descendants": {
+                        "At1fI": {
+                          "content": "Q: How do I navigate the route?"
+                        },
+                        "lyRkf": {
+                          "content": "A: Most riders use a GPS device loaded with the route track. We also provide printable cue sheets."
+                        }
+                      }
+                    },
+                    {
+                      "id": "X2UBC4",
+                      "type": "ref",
+                      "ref": "ZbSPm",
+                      "width": "fill_container",
+                      "descendants": {
+                        "At1fI": {
+                          "content": "Q: Are there support vehicles?"
+                        },
+                        "lyRkf": {
+                          "content": "A: Randonneuring is unsupported. You must carry your own gear and fix your own mechanical issues. Outside support is only allowed at designated control points."
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "l8xs5f",
+                  "name": "newRight",
+                  "width": 300,
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
                       "type": "text",
-                      "id": "FNXBM",
+                      "id": "U68Wa",
                       "fill": "$color-text-muted",
-                      "content": "Nutrition & Health",
+                      "content": "ON THIS PAGE",
                       "fontFamily": "Montserrat",
-                      "fontSize": 16,
-                      "fontWeight": "normal"
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "K8h7z",
+                      "name": "tocList",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "W9A4f",
+                          "fill": "$color-text",
+                          "content": "Equipment & Gear",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "M45tA",
+                          "fill": "$color-text-muted",
+                          "content": "Rules & Limits",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ufrnB",
+                          "fill": "$color-text-muted",
+                          "content": "Navigation & Support",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "FNXBM",
+                          "fill": "$color-text-muted",
+                          "content": "Nutrition & Health",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -7571,6 +8498,19 @@
                       }
                     }
                   ]
+                },
+                {
+                  "id": "AExIO",
+                  "type": "ref",
+                  "ref": "poBAI",
+                  "descendants": {
+                    "fdU8z": {
+                      "content": "New to Randonneuring? Learn the basics, rules, and how to prepare for your first brevet."
+                    },
+                    "m8nF3": {
+                      "content": "START HERE"
+                    }
+                  }
                 }
               ]
             },
@@ -7649,6 +8589,21 @@
                   "fontWeight": "600"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Oxss7",
+          "name": "promoWrap",
+          "width": "fill_container",
+          "padding": 64,
+          "children": [
+            {
+              "id": "PSiC5",
+              "type": "ref",
+              "ref": "P8E96",
+              "width": "fill_container"
             }
           ]
         },
@@ -7775,6 +8730,62 @@
                   "fontWeight": "700"
                 }
               ]
+            },
+            {
+              "type": "frame",
+              "id": "CFv9e",
+              "name": "s5",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "eKZn3",
+                  "fill": "$color-text",
+                  "content": "12K+",
+                  "fontFamily": "Overpass",
+                  "fontSize": 48,
+                  "fontWeight": "900"
+                },
+                {
+                  "type": "text",
+                  "id": "t9Zve",
+                  "fill": "$color-text-muted",
+                  "content": "HOMOLOGATIONS",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 14,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KaZyk",
+              "name": "s6",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "v1eCG",
+                  "fill": "$color-text",
+                  "content": "8",
+                  "fontFamily": "Overpass",
+                  "fontSize": 48,
+                  "fontWeight": "900"
+                },
+                {
+                  "type": "text",
+                  "id": "rZDiK",
+                  "fill": "$color-text-muted",
+                  "content": "CLUBS",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 14,
+                  "fontWeight": "700"
+                }
+              ]
             }
           ]
         },
@@ -7831,7 +8842,7 @@
                       "cornerRadius": 24,
                       "stroke": {
                         "thickness": 1,
-                        "fill": "\\$color-tertiary"
+                        "fill": "$color-text"
                       },
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -7843,7 +8854,7 @@
                           "height": 24,
                           "iconFontName": "arrow-left",
                           "iconFontFamily": "lucide",
-                          "fill": "\\$color-text"
+                          "fill": "$color-text"
                         }
                       ]
                     },
@@ -7856,7 +8867,7 @@
                       "cornerRadius": 24,
                       "stroke": {
                         "thickness": 1,
-                        "fill": "\\$color-tertiary"
+                        "fill": "$color-text"
                       },
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -7868,7 +8879,7 @@
                           "height": 24,
                           "iconFontName": "arrow-right",
                           "iconFontFamily": "lucide",
-                          "fill": "\\$color-text"
+                          "fill": "$color-text"
                         }
                       ]
                     }
@@ -7933,6 +8944,39 @@
                       "content": "VIEW ALL EVENTS"
                     }
                   }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "q4JBfv",
+              "width": "fill_container",
+              "gap": 12,
+              "padding": [
+                0,
+                64
+              ],
+              "children": [
+                {
+                  "id": "f9JVQ",
+                  "type": "ref",
+                  "ref": "Kobcr",
+                  "name": "comp_Tag_Terrain",
+                  "fill": "$color-brand"
+                },
+                {
+                  "id": "RHpBH",
+                  "type": "ref",
+                  "ref": "Kobcr",
+                  "name": "comp_Tag_Terrain",
+                  "fill": "$color-brand"
+                },
+                {
+                  "id": "SoqqD",
+                  "type": "ref",
+                  "ref": "Kobcr",
+                  "name": "comp_Tag_Status",
+                  "fill": "$color-text-muted"
                 }
               ]
             }
@@ -8072,21 +9116,6 @@
                   }
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "Oxss7",
-          "name": "promoWrap",
-          "width": "fill_container",
-          "padding": 64,
-          "children": [
-            {
-              "id": "PSiC5",
-              "type": "ref",
-              "ref": "P8E96",
-              "width": "fill_container"
             }
           ]
         },
@@ -8381,6 +9410,14 @@
           "id": "mfKlI",
           "type": "ref",
           "ref": "H15zY"
+        },
+        {
+          "id": "Wq1Mc",
+          "type": "ref",
+          "ref": "Fea2u",
+          "layoutPosition": "absolute",
+          "x": 986,
+          "y": 800
         }
       ]
     },
@@ -9156,6 +10193,32 @@
                   "fontWeight": "700"
                 }
               ]
+            },
+            {
+              "type": "frame",
+              "id": "Dtxi0",
+              "width": "fill_container",
+              "fill": "$color-surface",
+              "cornerRadius": 40,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 48,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VdaVJ",
+                  "fill": "$color-text-muted",
+                  "content": "Distance by Month",
+                  "fontFamily": "Overpass",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                },
+                {
+                  "id": "DsFDA",
+                  "type": "ref",
+                  "ref": "qtbDp"
+                }
+              ]
             }
           ]
         },
@@ -9205,7 +10268,7 @@
             {
               "type": "text",
               "id": "EUF68",
-              "fill": "\\$color-surface",
+              "fill": "$color-text-muted",
               "content": "CLUB PROFILE",
               "fontFamily": "Montserrat",
               "fontSize": 14,
@@ -9217,7 +10280,7 @@
               "name": "headLogoContainer",
               "width": 120,
               "height": 120,
-              "fill": "\\$color-text",
+              "fill": "$color-complementary",
               "cornerRadius": 60,
               "stroke": {
                 "thickness": 2,
@@ -9229,8 +10292,16 @@
                 {
                   "type": "text",
                   "id": "YxLjj",
-                  "fill": "\\$color-surface",
+                  "layoutPosition": "absolute",
+                  "x": 0,
+                  "y": 0,
+                  "fill": "$color-page-bg",
+                  "textGrowth": "fixed-width-height",
+                  "width": "fill_container(120)",
+                  "height": "fill_container(120)",
                   "content": "MR",
+                  "textAlign": "center",
+                  "textAlignVertical": "middle",
                   "fontFamily": "Overpass",
                   "fontSize": 48,
                   "fontWeight": "700"
@@ -9240,7 +10311,7 @@
             {
               "type": "text",
               "id": "Anv4W",
-              "fill": "\\$color-surface",
+              "fill": "$color-text",
               "textGrowth": "fixed-width",
               "width": 1000,
               "content": "Minsk Randonneurs",
@@ -9253,7 +10324,7 @@
             {
               "type": "text",
               "id": "lveoj",
-              "fill": "\\$color-surface",
+              "fill": "$color-text-muted",
               "content": "Minsk, Belarus • BY520002",
               "fontFamily": "Montserrat",
               "fontSize": 16,
@@ -9303,7 +10374,7 @@
                         {
                           "type": "text",
                           "id": "se1V5",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text-muted",
                           "content": "CLUB FACTS",
                           "fontFamily": "Overpass",
                           "fontSize": 20,
@@ -9331,12 +10402,12 @@
                                   "height": 20,
                                   "iconFontName": "history",
                                   "iconFontFamily": "lucide",
-                                  "fill": "\\$color-text"
+                                  "fill": "$color-accent"
                                 },
                                 {
                                   "type": "text",
                                   "id": "YlAV0",
-                                  "fill": "\\$color-surface",
+                                  "fill": "$color-text",
                                   "content": "Founded in 2010",
                                   "fontFamily": "Montserrat",
                                   "fontSize": 16,
@@ -9358,12 +10429,12 @@
                                   "height": 20,
                                   "iconFontName": "map-pin",
                                   "iconFontFamily": "lucide",
-                                  "fill": "\\$color-text"
+                                  "fill": "$color-accent"
                                 },
                                 {
                                   "type": "text",
                                   "id": "IXcaJ",
-                                  "fill": "\\$color-surface",
+                                  "fill": "$color-text",
                                   "content": "Based in Minsk, Belarus",
                                   "fontFamily": "Montserrat",
                                   "fontSize": 16,
@@ -9385,12 +10456,12 @@
                                   "height": 20,
                                   "iconFontName": "users",
                                   "iconFontFamily": "lucide",
-                                  "fill": "\\$color-text"
+                                  "fill": "$color-accent"
                                 },
                                 {
                                   "type": "text",
                                   "id": "G9IlA",
-                                  "fill": "\\$color-surface",
+                                  "fill": "$color-text",
                                   "content": "128 Active Riders",
                                   "fontFamily": "Montserrat",
                                   "fontSize": 16,
@@ -9416,7 +10487,7 @@
                         {
                           "type": "text",
                           "id": "X01nz5",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text-muted",
                           "content": "CLUB ACHIEVEMENTS",
                           "fontFamily": "Overpass",
                           "fontSize": 20,
@@ -9444,12 +10515,12 @@
                                   "height": 20,
                                   "iconFontName": "award",
                                   "iconFontFamily": "lucide",
-                                  "fill": "\\$color-text"
+                                  "fill": "$color-accent"
                                 },
                                 {
                                   "type": "text",
                                   "id": "x5oA0H",
-                                  "fill": "\\$color-surface",
+                                  "fill": "$color-text",
                                   "content": "42 Super Randonneurs",
                                   "fontFamily": "Montserrat",
                                   "fontSize": 16,
@@ -9471,12 +10542,12 @@
                                   "height": 20,
                                   "iconFontName": "globe",
                                   "iconFontFamily": "lucide",
-                                  "fill": "\\$color-text"
+                                  "fill": "$color-accent"
                                 },
                                 {
                                   "type": "text",
                                   "id": "ORQlv",
-                                  "fill": "\\$color-surface",
+                                  "fill": "$color-text",
                                   "content": "24 PBP Finishers",
                                   "fontFamily": "Montserrat",
                                   "fontSize": 16,
@@ -9498,12 +10569,12 @@
                                   "height": 20,
                                   "iconFontName": "route",
                                   "iconFontFamily": "lucide",
-                                  "fill": "\\$color-text"
+                                  "fill": "$color-accent"
                                 },
                                 {
                                   "type": "text",
                                   "id": "Fcn9E",
-                                  "fill": "\\$color-surface",
+                                  "fill": "$color-text",
                                   "content": "345,600 Total Kilometers",
                                   "fontFamily": "Montserrat",
                                   "fontSize": 16,
@@ -9583,7 +10654,7 @@
                             {
                               "type": "text",
                               "id": "Y5utk",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text",
                               "content": "•",
                               "fontFamily": "Montserrat",
                               "fontSize": 18,
@@ -9592,7 +10663,7 @@
                             {
                               "type": "text",
                               "id": "e5oqNg",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
                               "content": "Organize official ACP-sanctioned brevets ranging from 200km to 1000km across diverse terrains.",
@@ -9613,7 +10684,7 @@
                             {
                               "type": "text",
                               "id": "wPRSx",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text",
                               "content": "•",
                               "fontFamily": "Montserrat",
                               "fontSize": 18,
@@ -9622,7 +10693,7 @@
                             {
                               "type": "text",
                               "id": "zFUgt",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
                               "content": "Host social \"no-drop\" rides and introductory workshops for riders new to ultra-distance cycling.",
@@ -9643,7 +10714,7 @@
                             {
                               "type": "text",
                               "id": "IOzgQ",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text",
                               "content": "•",
                               "fontFamily": "Montserrat",
                               "fontSize": 18,
@@ -9652,7 +10723,7 @@
                             {
                               "type": "text",
                               "id": "SY7wI",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
                               "content": "Coordinate the flagship 1200km grand randonnée, bringing together cyclists from all over Europe.",
@@ -9718,7 +10789,7 @@
                       "descendants": {
                         "C5jC7k": {
                           "content": "1",
-                          "fill": "\\$color-surface"
+                          "fill": "$color-text"
                         },
                         "lZnGd": {
                           "content": "Aliaksandr R."
@@ -9869,7 +10940,7 @@
                           "height": 32,
                           "iconFontName": "calendar-clock",
                           "iconFontFamily": "lucide",
-                          "fill": "\\$color-text"
+                          "fill": "$color-accent"
                         },
                         {
                           "type": "frame",
@@ -9880,7 +10951,7 @@
                             {
                               "type": "text",
                               "id": "OlhpM",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text",
                               "content": "MAY 15",
                               "lineHeight": 1.1,
                               "fontFamily": "Overpass",
@@ -9890,7 +10961,7 @@
                             {
                               "type": "text",
                               "id": "A5ED9V",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text-muted",
                               "content": "in 12 days",
                               "fontFamily": "Montserrat",
                               "fontSize": 14,
@@ -9962,7 +11033,7 @@
                           "id": "qqgAI",
                           "width": 64,
                           "height": 64,
-                          "fill": "\\$color-text",
+                          "fill": "$color-accent",
                           "cornerRadius": 32
                         },
                         {
@@ -9975,7 +11046,7 @@
                             {
                               "type": "text",
                               "id": "FF14m",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-brand",
                               "content": "Ivan Ivanov",
                               "fontFamily": "Montserrat",
                               "fontSize": 18,
@@ -9984,7 +11055,7 @@
                             {
                               "type": "text",
                               "id": "O8zL4O",
-                              "fill": "\\$color-surface",
+                              "fill": "$color-text",
                               "content": "ACP Representative",
                               "fontFamily": "Montserrat",
                               "fontSize": 12,
@@ -10011,7 +11082,7 @@
                         {
                           "type": "text",
                           "id": "xzJbb",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text-muted",
                           "content": "Email",
                           "fontFamily": "Montserrat",
                           "fontSize": 12,
@@ -10020,7 +11091,7 @@
                         {
                           "type": "text",
                           "id": "MuyZM",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text",
                           "content": "ivan@minsk-randonneurs.by",
                           "fontFamily": "Montserrat",
                           "fontSize": 14,
@@ -10038,7 +11109,7 @@
                         {
                           "type": "text",
                           "id": "mWHvy",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text-muted",
                           "content": "Website",
                           "fontFamily": "Montserrat",
                           "fontSize": 12,
@@ -10047,7 +11118,7 @@
                         {
                           "type": "text",
                           "id": "JC0Pt",
-                          "fill": "\\$color-surface",
+                          "fill": "$color-text",
                           "content": "minsk-randonneurs.by",
                           "fontFamily": "Montserrat",
                           "fontSize": 14,
@@ -10058,10 +11129,178 @@
                   ]
                 },
                 {
+                  "type": "frame",
                   "id": "NhyLN",
-                  "type": "ref",
-                  "ref": "O1dXZ",
-                  "width": "fill_container"
+                  "name": "comp_SeasonHighlightCard",
+                  "width": "fill_container",
+                  "fill": "$color-surface",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "padding": 32,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Wdytd",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "DLPz3",
+                          "fill": "$color-text",
+                          "content": "2026",
+                          "lineHeight": 1,
+                          "fontFamily": "Overpass",
+                          "fontSize": 64,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VNdOV",
+                          "fill": "$color-brand",
+                          "cornerRadius": 32,
+                          "stroke": {
+                            "thickness": 0
+                          },
+                          "padding": [
+                            8,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "kGeKF",
+                              "fill": "$color-text",
+                              "content": "Reviews",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 16,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "qIHiJ",
+                              "fill": "$color-surface",
+                              "textGrowth": "fixed-width",
+                              "width": 0,
+                              "content": "SEASON ACTIVE",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 12,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "f2n6OK",
+                      "fill": "$color-text-muted",
+                      "width": "fill_container",
+                      "height": 2
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kjqIk",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "R2GLUF",
+                          "fill": "$color-text",
+                          "content": "Belarusian Randonneurs\nCommunity Progress",
+                          "lineHeight": 1.3,
+                          "fontFamily": "Montserrat",
+                          "fontSize": 20,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "je87x",
+                          "name": "comp_AvatarStack",
+                          "gap": -12,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "xwqXG",
+                              "name": "ava0",
+                              "width": 32,
+                              "height": 32,
+                              "fill": "#000000",
+                              "cornerRadius": 16,
+                              "stroke": {
+                                "thickness": 2,
+                                "fill": "$color-surface"
+                              }
+                            },
+                            {
+                              "type": "frame",
+                              "id": "UnSjB",
+                              "name": "ava1",
+                              "width": 32,
+                              "height": 32,
+                              "fill": "#000000",
+                              "cornerRadius": 16,
+                              "stroke": {
+                                "thickness": 2,
+                                "fill": "$color-surface"
+                              }
+                            },
+                            {
+                              "type": "frame",
+                              "id": "FVhah",
+                              "name": "ava2",
+                              "width": 32,
+                              "height": 32,
+                              "fill": "#000000",
+                              "cornerRadius": 16,
+                              "stroke": {
+                                "thickness": 2,
+                                "fill": "$color-surface"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ouxeL",
+                  "width": "fill_container",
+                  "fill": "$color-surface",
+                  "cornerRadius": 32,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "gGNor",
+                      "fill": "$color-text",
+                      "content": "Active Members",
+                      "fontFamily": "Overpass",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "id": "z64xK",
+                      "type": "ref",
+                      "ref": "VIlIc"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s2WrS9",
+                      "fill": "$color-text-muted",
+                      "content": "234 total riders",
+                      "fontFamily": "Montserrat",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
                 }
               ]
             }
@@ -10235,8 +11474,7 @@
                   "id": "bumM3",
                   "name": "rpBadges",
                   "width": "fill_container",
-                  "layout": "vertical",
-                  "gap": 24,
+                  "gap": 16,
                   "children": [
                     {
                       "type": "text",
@@ -10319,6 +11557,45 @@
                           ]
                         }
                       ]
+                    },
+                    {
+                      "id": "VVxTb",
+                      "type": "ref",
+                      "ref": "X2tBRm",
+                      "descendants": {
+                        "I2gmeP": {
+                          "iconFontName": "moon"
+                        },
+                        "Ys9MK": {
+                          "content": "Night Rider"
+                        }
+                      }
+                    },
+                    {
+                      "id": "F97Pus",
+                      "type": "ref",
+                      "ref": "X2tBRm",
+                      "descendants": {
+                        "I2gmeP": {
+                          "iconFontName": "mountain"
+                        },
+                        "Ys9MK": {
+                          "content": "Climber"
+                        }
+                      }
+                    },
+                    {
+                      "id": "lo52I",
+                      "type": "ref",
+                      "ref": "X2tBRm",
+                      "descendants": {
+                        "I2gmeP": {
+                          "iconFontName": "zap"
+                        },
+                        "Ys9MK": {
+                          "content": "Sprinter"
+                        }
+                      }
                     }
                   ]
                 },
@@ -10426,6 +11703,32 @@
                           "fontFamily": "Montserrat",
                           "fontSize": 16,
                           "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "QD7fH",
+                      "width": "fill_container",
+                      "fill": "$color-surface",
+                      "cornerRadius": 40,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 40,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "m7IMHE",
+                          "fill": "$color-text-muted",
+                          "content": "Distance by Month",
+                          "fontFamily": "Overpass",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "id": "IYmAX",
+                          "type": "ref",
+                          "ref": "qtbDp"
                         }
                       ]
                     }
@@ -11018,76 +12321,6 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "frame",
-      "id": "v8DAWE",
-      "x": -7391,
-      "y": 1010,
-      "name": "Frame 1",
-      "clip": true,
-      "width": 2119,
-      "height": 4239,
-      "fill": "#FFFFFF",
-      "layout": "none",
-      "children": [
-        {
-          "type": "rectangle",
-          "id": "q3plR",
-          "x": 427,
-          "y": 321,
-          "fill": {
-            "type": "image",
-            "enabled": true,
-            "url": "Screenshot%202026-05-18%20at%2021.42.44.png",
-            "mode": "fill"
-          },
-          "width": 920,
-          "height": 540
-        },
-        {
-          "type": "rectangle",
-          "id": "SkiPL",
-          "x": 427,
-          "y": 1177,
-          "fill": {
-            "type": "image",
-            "enabled": true,
-            "url": "Screenshot%202026-05-18%20at%2021.42.55.png",
-            "mode": "fill"
-          },
-          "width": 920,
-          "height": 560
-        },
-        {
-          "type": "rectangle",
-          "id": "Oy6dp",
-          "x": 427,
-          "y": 1991,
-          "fill": {
-            "type": "image",
-            "enabled": true,
-            "url": "Screenshot%202026-05-18%20at%2021.43.06.png",
-            "mode": "fill"
-          },
-          "width": 454,
-          "height": 576
-        },
-        {
-          "type": "rectangle",
-          "id": "nlK37",
-          "x": 1260,
-          "y": 1999,
-          "fill": {
-            "type": "image",
-            "enabled": true,
-            "url": "Screenshot%202026-05-18%20at%2021.43.13.png",
-            "mode": "fill"
-          },
-          "width": 440,
-          "height": 568
         }
       ]
     }
