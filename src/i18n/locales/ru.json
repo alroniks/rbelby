@@ -35,5 +35,11 @@
   "footer.find_club": "Найти клуб",
   "footer.volunteer": "Стать волонтером",
   "footer.rules": "Правила ACP",
-  "footer.connect": "Связь"
+  "footer.connect": "Связь",
+  "footer.about": "О проекте",
+  "footer.faq": "FAQ",
+  "footer.privacy": "Политика конфиденциальности",
+  "footer.terms": "Пользовательское соглашение",
+  "page.coming_soon_title": "Скоро появится",
+  "page.coming_soon_desc": "Мы усердно работаем над этой страницей."
 }
