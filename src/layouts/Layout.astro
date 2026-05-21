@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { ClientRouter } from 'astro:transitions';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -9,6 +10,7 @@ const t = useTranslations(lang);
 <!doctype html>
 <html lang={lang}>
   <head>
+    <ClientRouter />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,18 +27,22 @@ const t = useTranslations(lang);
 
     <script is:inline>
       function applyTheme(theme) {
-        if (
-          theme === 'dark' ||
-          (theme === 'system' &&
-            window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ) {
+        let resolvedTheme = theme;
+        if (theme === 'system') {
+          resolvedTheme = window.matchMedia('(prefers-color-scheme: dark)')
+            .matches
+            ? 'dark'
+            : 'light';
+        }
+
+        if (resolvedTheme === 'dark') {
           document.documentElement.classList.add('dark');
           document.documentElement.classList.remove('light');
         } else {
           document.documentElement.classList.add('light');
           document.documentElement.classList.remove('dark');
         }
-        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.setAttribute('data-theme', resolvedTheme);
       }
 
       const savedTheme =
@@ -50,8 +56,7 @@ const t = useTranslations(lang);
         window
           .matchMedia('(prefers-color-scheme: dark)')
           .addEventListener('change', () => {
-            const currentTheme = localStorage.getItem('theme') || 'system';
-            if (currentTheme === 'system') {
+            if (!localStorage.getItem('theme')) {
               applyTheme('system');
             }
           });
@@ -66,8 +71,11 @@ const t = useTranslations(lang);
   </head>
   <body>
     <slot />
-  </body>
-
-  <!-- Preline UI -->
+  </body><!-- Preline UI & Dynamic Re-initialization for Astro View Transitions -->
   <script is:inline src="/node_modules/preline/dist/index.js"></script>
+  <script is:inline>
+    document.addEventListener('astro:page-load', () => {
+      window.HSStaticMethods?.autoInit();
+    });
+  </script>
 </html>

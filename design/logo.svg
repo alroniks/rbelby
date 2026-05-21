@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <!-- Background Green -->
+    <style>
+      .bg { fill: #1a7a4c; }
+      .border { fill: none; stroke: #FFFFFF; stroke-width: 10; rx: 12; }
+      .text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 220px; font-weight: 700; fill: #FFFFFF; }
+      .petal { fill: #4b7dbf; stroke: #264380; stroke-width: 3; stroke-linejoin: round; }
+      .petal-inner { fill: #264380; }
+      .stamen { fill: #ffffff; }
+      .slash { stroke: #FFFFFF; stroke-width: 16; }
+    </style>
+    
+    <g id="petal">
+      <!-- Main light blue petal -->
+      <path d="M 0,-15 C 10,-40 25,-70 30,-90 L 15,-95 L 0,-80 L -15,-95 L -30,-90 C -25,-70 -10,-40 0,-15 Z" class="petal"/>
+      <!-- Dark blue inner accent -->
+      <path d="M 0,-15 L 8,-50 L 0,-65 L -8,-50 Z" class="petal-inner"/>
+      <!-- White stamen dot -->
+      <ellipse cx="0" cy="-30" rx="3" ry="8" class="stamen" />
+    </g>
+
+    <g id="flower">
+      <use href="#petal" transform="rotate(0)" />
+      <use href="#petal" transform="rotate(45)" />
+      <use href="#petal" transform="rotate(90)" />
+      <use href="#petal" transform="rotate(135)" />
+      <use href="#petal" transform="rotate(180)" />
+      <use href="#petal" transform="rotate(225)" />
+      <use href="#petal" transform="rotate(270)" />
+      <use href="#petal" transform="rotate(315)" />
+    </g>
+  </defs>
+
+  <!-- Green Background -->
+  <rect width="600" height="360" rx="20" class="bg" />
+  
+  <!-- White Inner Border -->
+  <rect x="18" y="18" width="564" height="324" class="border" />
+
+  <!-- Text B -->
+  <text x="60" y="275" class="text">B</text>
+
+  <!-- Text R -->
+  <text x="380" y="275" class="text">R</text>
+
+  <!-- Center Flower -->
+  <use href="#flower" x="300" y="180" />
+
+  <!-- Diagonal Slash -->
+  <!-- We draw it over the flower -->
+  <line x1="255" y1="270" x2="345" y2="90" class="slash" />
+</svg>

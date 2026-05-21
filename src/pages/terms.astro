@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout>
+  <Navbar />
+  <PageHeader
+    title="Пользовательское соглашение"
+    description="Правила использования сайта и участия в мероприятиях Randonneurs Belarus."
+  />
+
+  <section class="bg-page-bg py-12 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <!-- Local Navigation (TOC) -->
+        <div class="lg:col-span-9">
+          <article
+            class="prose prose-lg dark:prose-invert prose-headings:font-heading prose-headings:font-bold prose-headings:text-text prose-h2:mt-16 prose-h2:mb-6 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-xl prose-p:font-body prose-p:text-text-muted prose-p:leading-relaxed prose-p:mb-6 prose-a:text-accent prose-ul:my-6 prose-li:font-body prose-li:text-text-muted prose-li:leading-relaxed prose-headings:uppercase max-w-[800px]"
+          >
+            <p>Последнее обновление: 20 Мая 2026 г.</p>
+            <p>
+              Используя данный сайт и участвуя в веломарафонах (бреветах),
+              организуемых под эгидой Randonneurs Belarus, вы полностью и
+              безоговорочно соглашаетесь с нижеперечисленными условиями.
+            </p>
+
+            <h2 id="general">1. Общие положения</h2>
+            <p>
+              Randonneurs Belarus — это добровольное объединение энтузиастов
+              велоспорта на длинные дистанции. Мы предоставляем информационную
+              площадку для регистрации на заезды и публикации результатов. Мы не
+              являемся коммерческой туристической компанией и не предоставляем
+              платные услуги по организации туров.
+            </p>
+
+            <h2 id="responsibility">
+              2. Личная ответственность (Автономность)
+            </h2>
+            <p>
+              Рандоннёрский рух базируется на принципах полной автономности.
+              Участвуя в бревете, вы понимаете и соглашаетесь с тем, что:
+            </p>
+            <ul>
+              <li>Каждый участник находится в индивидуальной поездке.</li>
+              <li>
+                Организаторы не несут ответственности за возможные аварии,
+                травмы, поломки велосипеда, утерю имущества или иной ущерб,
+                полученный в ходе мероприятия.
+              </li>
+              <li>
+                Вы обязаны самостоятельно оценивать свои физические возможности,
+                состояние здоровья и пригодность вашего оборудования.
+              </li>
+              <li>
+                Автомобили сопровождения на трассе запрещены правилами ACP.
+                Помощь допускается только на официальных контрольных пунктах
+                (КП).
+              </li>
+            </ul>
+
+            <h2 id="rules">3. Соблюдение правил дорожного движения</h2>
+            <p>
+              Во время заезда дороги <strong>не перекрываются</strong> для движения
+              транспорта. Все участники обязаны неукоснительно соблюдать Правила дорожного
+              движения Республики Беларусь. За нарушение ПДД участник может быть дисквалифицирован.
+              Использование светового оборудования (передняя белая фара и задний красный
+              маячок) в темное время суток и при недостаточной видимости строго обязательно.
+            </p>
+
+            <h2 id="modifications">
+              4. Изменения маршрутов и отмена мероприятий
+            </h2>
+            <p>
+              Организаторы оставляют за собой право вносить изменения в маршрут,
+              переносить даты или отменять бреветы в случаях возникновения
+              форс-мажорных обстоятельств (экстремальные погодные условия,
+              стихийные бедствия, указания государственных органов и т.д.). В
+              случае изменения информации, мы обязуемся своевременно оповестить
+              участников через сайт и официальные каналы связи.
+            </p>
+
+            <h2 id="intellectual">5. Интеллектуальная собственность</h2>
+            <p>
+              Материалы, опубликованные на сайте (тексты, маршруты, логотипы,
+              правила), являются интеллектуальной собственностью авторов.
+              Копирование и использование материалов сайта разрешено только с
+              указанием источника и активной ссылкой на Randonneurs Belarus.
+            </p>
+          </article>
+        </div>
+
+        <div class="lg:col-span-3">
+          <div
+            class="sticky top-8 rounded-xl border border-gray-200 bg-surface p-6 shadow-sm dark:border-neutral-700"
+          >
+            <h3
+              class="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-text-muted"
+            >
+              Оглавление
+            </h3>
+            <nav class="space-y-3" aria-label="Table of Contents">
+              <a
+                class="block font-body text-sm font-medium text-brand hover:text-accent transition-colors"
+                href="#general">1. Общие положения</a
+              >
+              <a
+                class="block font-body text-sm font-medium text-text-muted hover:text-text transition-colors"
+                href="#responsibility">2. Личная ответственность</a
+              >
+              <a
+                class="block font-body text-sm font-medium text-text-muted hover:text-text transition-colors"
+                href="#rules">3. Соблюдение правил</a
+              >
+              <a
+                class="block font-body text-sm font-medium text-text-muted hover:text-text transition-colors"
+                href="#modifications">4. Изменения мероприятий</a
+              >
+              <a
+                class="block font-body text-sm font-medium text-text-muted hover:text-text transition-colors"
+                href="#intellectual">5. Интеллектуальная собственность</a
+              >
+            </nav>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>

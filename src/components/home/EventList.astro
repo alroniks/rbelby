@@ -1,11 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
+import { getLangFromUrl, getLocalizedCollection } from '../../i18n/utils';
 
+const lang = getLangFromUrl(Astro.url);
 const allEvents = await getCollection('events');
+const localizedEvents = getLocalizedCollection(allEvents, lang);
 const today = new Date();
 
 // Filter and sort events
-const upcomingEvents = allEvents
+const upcomingEvents = localizedEvents
   .filter((event) => event.data.date >= today)
   .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
   .slice(0, 8);
@@ -26,7 +29,7 @@ function formatDate(date: Date) {
 ---
 
 <section class="bg-bg py-16 lg:py-24">
-  <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
     <div class="mb-12 text-center">
       <p class="mb-2 text-xs font-bold tracking-widest text-gray-500 uppercase">
         Upcoming Brevets

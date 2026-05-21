@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout>
+  <Navbar />
+  <PageHeader
+    title="Privacy Policy"
+    description="Learn how we collect, use, and protect your data."
+  />
+
+  <section class="bg-page-bg py-12 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <!-- Local Navigation (TOC) -->
+        <div class="lg:col-span-9">
+          <article
+            class="prose prose-lg dark:prose-invert prose-headings:font-heading prose-headings:font-bold prose-headings:text-text prose-h2:mt-16 prose-h2:mb-6 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-xl prose-p:font-body prose-p:text-text-muted prose-p:leading-relaxed prose-p:mb-6 prose-a:text-accent prose-ul:my-6 prose-li:font-body prose-li:text-text-muted prose-li:leading-relaxed prose-headings:uppercase max-w-[800px]"
+          >
+            <p>Last updated: May 20, 2026</p>
+            <p>
+              Welcome to the Randonneurs Belarus Privacy Policy. We respect your
+              privacy and are committed to protecting your personal data. This
+              policy outlines how we handle your information.
+            </p>
+
+            <h2 id="collection">1. Information Collection</h2>
+            <p>
+              We collect the minimum amount of information necessary. Personal
+              data we may collect during event registration includes:
+            </p>
+            <ul>
+              <li>
+                First and last name (in both national format and Latin alphabet
+                for international protocols).
+              </li>
+              <li>
+                Contact information, including email address and mobile phone
+                number for emergency contact on the route.
+              </li>
+              <li>Club membership information (ACP Code), if applicable.</li>
+            </ul>
+            <p>
+              We do not collect financial information directly. All payments (if
+              any) are processed through secure third-party gateways.
+            </p>
+
+            <h2 id="usage">2. Use of Information</h2>
+            <p>
+              We use the information you provide exclusively for the following
+              purposes:
+            </p>
+            <ul>
+              <li>
+                Registering you as a participant in qualifying rides (brevets).
+              </li>
+              <li>
+                Publishing results publicly on our website (first name, last
+                name, completion time).
+              </li>
+              <li>
+                Communicating with you regarding schedule changes, safety
+                warnings, or event cancellations.
+              </li>
+              <li>
+                Transmitting results to France for international homologation by
+                Audax Club Parisien.
+              </li>
+            </ul>
+
+            <h2 id="third-party">3. Third-Party Sharing</h2>
+            <p>
+              Your name, surname, gender, club affiliation, and result (elapsed
+              time) are transmitted to <strong>Audax Club Parisien (ACP)</strong
+              > in France for the homologation procedure of your results. This is
+              a mandatory condition for participating in official brevets.
+            </p>
+            <p>
+              We do not sell, trade, or transfer your personal data to any
+              commercial organizations for marketing or promotional purposes.
+              Only the organizers of a specific event have access to contact
+              details.
+            </p>
+
+            <h2 id="security">4. Data Security</h2>
+            <p>
+              We take reasonable technical and organizational measures to
+              protect your information against unauthorized access, loss,
+              alteration, or destruction. However, no method of data
+              transmission over the Internet is 100% secure.
+            </p>
+            <p>
+              We store data on secure servers with restricted access. Archival
+              ride results are kept indefinitely as part of the club's sporting
+              history.
+            </p>
+
+            <h2 id="rights">5. Your Rights</h2>
+            <p>In accordance with applicable law, you have the right to:</p>
+            <ul>
+              <li>Request access to the personal data we hold about you.</li>
+              <li>Request correction of inaccurate or incomplete data.</li>
+              <li>
+                Request deletion of your data (however, deleting data from
+                protocols may make it impossible to confirm your sporting
+                results and obtain qualifications).
+              </li>
+            </ul>
+            <p>
+              If you have any questions regarding our privacy policy, please
+              contact the organizers.
+            </p>
+          </article>
+        </div>
+
+        <div class="lg:col-span-3">
+          <div
+            class="bg-surface sticky top-8 rounded-xl border border-gray-200 p-6 shadow-sm dark:border-neutral-700"
+          >
+            <h3
+              class="font-heading text-text-muted mb-4 text-sm font-bold tracking-wider uppercase"
+            >
+              Table of Contents
+            </h3>
+            <nav class="space-y-3" aria-label="Table of Contents">
+              <a
+                class="font-body text-brand hover:text-accent block text-sm font-medium transition-colors"
+                href="#collection">1. Data Collection</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#usage">2. Data Usage</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#third-party">3. Third Parties</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#security">4. Data Security</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#rights">5. Your Rights</a
+              >
+            </nav>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>

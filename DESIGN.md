@@ -1,15 +1,13 @@
 ---
 colors:
-  bg: '#F5F5F0'
-  surface: '#FFFFFF'
-  primary: '#005B7F'
-  secondary: '#0B6623'
-  tertiary: '#654321'
-  charcoal: '#3D312A'
-  gray: '#C2CAD0'
-  text: '#3D312A'
-  text-inverse: '#F5F5F0'
-  text-muted: '#4A5D4E'
+  page-bg: '#ffffff'
+  bg: '#f1e8d9'
+  surface: '#e5f0ff'
+  brand: '#1b3f33'
+  accent: '#014c9e'
+  complementary: '#ceef79'
+  text: '#071a36'
+  text-muted: '#262626'
 ---
 
 # Design System
@@ -20,14 +18,13 @@ This document contains the design tokens and design rationale for the Randonneur
 
 ## Colors
 
-The color palette is inspired by the landscape of Belarus, featuring its numerous lakes, marshes, and deep forests.
+The color palette is inspired by the landscape of Belarus, featuring its numerous lakes, marshes, and deep forests, dynamically sourced from `design/ui.pen`.
 
-- **Primary (#005B7F):** Deep Blue / Teal. Represents the deep, calm lakes of Belarus. Used for primary actions, branding, and major highlights.
-- **Secondary (#0B6623):** Emerald Green. Represents the vibrant, dense forests. Used for secondary elements, badges, and accents.
-- **Tertiary (#654321):** Earth Tonality / Muddy Brown. Represents the fertile, earthy soil. Used for specific accents or supportive visual elements.
-- **Background (#F5F5F0):** Misty White. Represents the morning mist over the fields. Used as the main application background to provide a soft, airy feel.
-- **Charcoal / Text (#3D312A):** Peat Bog Charcoal. Represents the rich, dark peat bogs. Used for primary text and major dark elements instead of stark black or generic navy.
-- **Muted Text (#4A5D4E):** Moss Green. Represents the moss on trees. Used for secondary, muted text to maintain a natural, earthy contrast.
-- **Gray (#C2CAD0):** Foggy Gray. Represents the overcast, foggy skies. Used for borders, subtle backgrounds, and disabled states.
-- **Surface (#FFFFFF):** White. Used for elevated cards and components to contrast against the Misty White background.
-- **Text Inverse (#F5F5F0):** Misty White. Used for text that sits on top of dark components (e.g., Primary or Charcoal backgrounds).
+- **Brand (#1b3f33):** Pine Forest Green. Represents the deep, dense coniferous forests of Belarus. Used as the primary footer background, logo branding, and major dark backdrops.
+- **Accent (#014c9e):** Cornflower Blue. Represents the famous Belarusian cornflowers (Валошка) and randonneuring tradition. Used for solid actions, primary buttons, and highlight badges.
+- **Complementary (#ceef79):** Young Sprout Lime. Represents spring fields and forest moss. Used for subtle icons on dark backgrounds and bright accents.
+- **Background (#f1e8d9):** Warm Straw / Sand. Represents rural roads, harvested fields, and morning warmth. Used as a soft section background.
+- **Page Background (#ffffff):** Crisp White. Used as the main document canvas.
+- **Surface (#e5f0ff):** Soft Lake Mist. Represents the fresh water and misty lakes of Belarus. Used for elevated cards, inner borders, and control backgrounds.
+- **Text (#071a36):** Deep Midnight Blue. Represents the night skies of long-distance brevets. Used for main headings and highly visible body content.
+- **Muted Text (#262626):** Peat Charcoal. Represents the fertile bogs. Used for secondary metadata and auxiliary text.
