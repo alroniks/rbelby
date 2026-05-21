@@ -1,0 +1,37 @@
+---
+interface Props {
+  variant?: 'solid' | 'outline' | 'util' | 'play';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+}
+
+const {
+  variant = 'solid',
+  href,
+  type = 'button',
+  class: className = '',
+} = Astro.props;
+
+const baseStyles =
+  'inline-flex items-center justify-center font-body transition-colors duration-200';
+
+const variants = {
+  solid:
+    'bg-accent text-surface hover:bg-accent/90 rounded-[32px] h-12 px-6 text-sm font-semibold',
+  outline:
+    'bg-transparent text-accent border border-accent hover:bg-accent/10 rounded-[32px] h-12 px-6 text-sm font-semibold',
+  util: 'bg-surface text-text border border-text-muted hover:bg-surface/80 rounded-lg px-4 py-2 text-sm font-semibold gap-2',
+  play: 'bg-brand text-complementary hover:bg-brand/90 rounded-[32px] h-12 w-12 text-base',
+};
+
+const Element = href ? 'a' : 'button';
+const elementProps = href ? { href } : { type };
+---
+
+<Element
+  {...elementProps}
+  class:list={[baseStyles, variants[variant], className]}
+>
+  <slot />
+</Element>

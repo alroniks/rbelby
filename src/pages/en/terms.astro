@@ -1,0 +1,135 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout>
+  <Navbar />
+  <PageHeader
+    title="Terms of Service"
+    description="Rules for using the site and participating in Randonneurs Belarus events."
+  />
+
+  <section class="bg-page-bg py-12 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <!-- Local Navigation (TOC) -->
+        <div class="lg:col-span-9">
+          <article
+            class="prose prose-lg dark:prose-invert prose-headings:font-heading prose-headings:font-bold prose-headings:text-text prose-h2:mt-16 prose-h2:mb-6 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-xl prose-p:font-body prose-p:text-text-muted prose-p:leading-relaxed prose-p:mb-6 prose-a:text-accent prose-ul:my-6 prose-li:font-body prose-li:text-text-muted prose-li:leading-relaxed prose-headings:uppercase max-w-[800px]"
+          >
+            <p>Last updated: May 20, 2026</p>
+            <p>
+              By using this site and participating in cycling marathons
+              (brevets) organized under the auspices of Randonneurs Belarus, you
+              fully and unconditionally agree to the following terms.
+            </p>
+
+            <h2 id="general">1. General Provisions</h2>
+            <p>
+              Randonneurs Belarus is a voluntary association of long-distance
+              cycling enthusiasts. We provide an information platform for ride
+              registration and result publication. We are not a commercial
+              travel agency and do not provide paid tour organization services.
+            </p>
+
+            <h2 id="responsibility">
+              2. Personal Responsibility (Self-Sufficiency)
+            </h2>
+            <p>
+              The randonneuring movement is based on principles of complete
+              self-sufficiency. By participating in a brevet, you understand and
+              agree that:
+            </p>
+            <ul>
+              <li>Every participant is on an individual ride.</li>
+              <li>
+                Organizers bear no responsibility for possible accidents,
+                injuries, bicycle breakdowns, loss of property, or other damages
+                sustained during the event.
+              </li>
+              <li>
+                You are obliged to independently assess your physical
+                capabilities, health condition, and the suitability of your
+                equipment.
+              </li>
+              <li>
+                Support vehicles on the course are prohibited by ACP rules.
+                Assistance is only allowed at official control points.
+              </li>
+            </ul>
+
+            <h2 id="rules">3. Traffic Rules Compliance</h2>
+            <p>
+              During the ride, roads are <strong>not closed</strong> to traffic. All
+              participants must strictly obey the Traffic Rules of the Republic of
+              Belarus. A participant may be disqualified for traffic violations. The
+              use of lighting equipment (front white light and rear red blinker) in
+              the dark and during low visibility is strictly mandatory.
+            </p>
+
+            <h2 id="modifications">4. Route Changes and Event Cancellation</h2>
+            <p>
+              Organizers reserve the right to modify the route, reschedule
+              dates, or cancel brevets in case of force majeure (extreme weather
+              conditions, natural disasters, state authority directives, etc.).
+              In the event of changes, we commit to notifying participants in a
+              timely manner via the website and official communication channels.
+            </p>
+
+            <h2 id="intellectual">5. Intellectual Property</h2>
+            <p>
+              Materials published on the site (texts, routes, logos, rules) are
+              the intellectual property of their authors. Copying and using site
+              materials is permitted only with source attribution and an active
+              link to Randonneurs Belarus.
+            </p>
+          </article>
+        </div>
+
+        <div class="lg:col-span-3">
+          <div
+            class="bg-surface sticky top-8 rounded-xl border border-gray-200 p-6 shadow-sm dark:border-neutral-700"
+          >
+            <h3
+              class="font-heading text-text-muted mb-4 text-sm font-bold tracking-wider uppercase"
+            >
+              Table of Contents
+            </h3>
+            <nav class="space-y-3" aria-label="Table of Contents">
+              <a
+                class="font-body text-brand hover:text-accent block text-sm font-medium transition-colors"
+                href="#general">1. General Provisions</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#responsibility">2. Personal Responsibility</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#rules">3. Traffic Rules Compliance</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#modifications">4. Event Modifications</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#intellectual">5. Intellectual Property</a
+              >
+            </nav>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>

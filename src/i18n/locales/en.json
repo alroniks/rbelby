@@ -35,5 +35,11 @@
   "footer.find_club": "Find a club",
   "footer.volunteer": "Volunteer",
   "footer.rules": "ACP Rules",
-  "footer.connect": "Connect"
+  "footer.connect": "Connect",
+  "footer.about": "About project",
+  "footer.faq": "FAQ",
+  "footer.privacy": "Privacy Policy",
+  "footer.terms": "Terms of Service",
+  "page.coming_soon_title": "Coming Soon",
+  "page.coming_soon_desc": "We are working hard to bring this page to life."
 }

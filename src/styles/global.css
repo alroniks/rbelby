@@ -4,16 +4,20 @@
 @source '../../node_modules/preline/dist/*.js';
 
 @theme {
-  --color-bg: #f5f5f0;
-  --color-gray: #c2cad0;
-  --color-charcoal: #3d312a;
-  --color-primary: #005b7f;
-  --color-secondary: #0b6623;
-  --color-tertiary: #654321;
-  --color-surface: #ffffff;
-  --color-text: #3d312a;
-  --color-text-inverse: #f5f5f0;
-  --color-text-muted: #4a5d4e;
+  --color-accent: #014c9e;
+  --color-bg: #f1e8d9;
+  --color-brand: #1b3f33;
+  --color-complementary: #ceef79;
+  --color-page-bg: #ffffff;
+  --color-surface: #e5f0ff;
+  --color-text: #071a36;
+  --color-text-muted: #262626;
+
+  /* Aliases to map legacy Design.md tokens to design/ui.pen tokens */
+  --color-primary: var(--color-accent);
+  --color-secondary: var(--color-complementary);
+  --color-charcoal: var(--color-text);
+  --color-text-inverse: var(--color-page-bg);
 
   --font-body: 'Montserrat', sans-serif;
   --font-heading: 'Overpass', sans-serif;
@@ -33,17 +37,18 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-heading text-charcoal;
+  @apply font-heading;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root.dark {
-  --color-bg: #1e1e1e;
-  --color-gray: #4a4a4a;
-  --color-charcoal: #f5f5f0;
-  --color-surface: #2a2a2a;
+  --color-bg: #121212;
+  --color-page-bg: #1a1a1a;
+  --color-surface: #242424;
   --color-text: #e0e0e0;
-  --color-text-inverse: #1e1e1e;
   --color-text-muted: #a0a0a0;
+  --color-brand: #2d6652;
+  --color-accent: #1976d2;
+  --color-complementary: #aed581;
 }

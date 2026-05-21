@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout>
+  <Navbar />
+  <PageHeader
+    title="Политика конфиденциальности"
+    description="Узнайте, как мы собираем, используем и защищаем ваши данные."
+  />
+
+  <section class="bg-page-bg py-12 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <!-- Local Navigation (TOC) -->
+        <div class="lg:col-span-9">
+          <article
+            class="prose prose-lg dark:prose-invert prose-headings:font-heading prose-headings:font-bold prose-headings:text-text prose-h2:mt-16 prose-h2:mb-6 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-xl prose-p:font-body prose-p:text-text-muted prose-p:leading-relaxed prose-p:mb-6 prose-a:text-accent prose-ul:my-6 prose-li:font-body prose-li:text-text-muted prose-li:leading-relaxed prose-headings:uppercase max-w-[800px]"
+          >
+            <p>Последнее обновление: 20 Мая 2026 г.</p>
+            <p>
+              Добро пожаловать в политику конфиденциальности Randonneurs
+              Belarus. Мы уважаем вашу личную жизнь и стремимся защитить ваши
+              персональные данные. Настоящая политика описывает, как мы
+              обращаемся с вашей информацией.
+            </p>
+
+            <h2 id="collection">1. Сбор информации</h2>
+            <p>
+              Мы собираем минимально необходимое количество информации. К
+              персональным данным, которые мы можем собирать при регистрации на
+              мероприятия, относятся:
+            </p>
+            <ul>
+              <li>
+                Имя и фамилия участника (как в национальном паспорте, так и
+                латиницей для международных протоколов).
+              </li>
+              <li>
+                Контактная информация, включая адрес электронной почты и номер
+                мобильного телефона для экстренной связи на маршруте.
+              </li>
+              <li>
+                Информация о членстве в клубе (ACP Code клуба), если это
+                применимо.
+              </li>
+            </ul>
+            <p>
+              Мы не собираем финансовую информацию напрямую. Все платежи (если
+              они есть) обрабатываются через защищенные сторонние шлюзы.
+            </p>
+
+            <h2 id="usage">2. Использование данных</h2>
+            <p>
+              Мы используем предоставленную вами информацию исключительно для
+              следующих целей:
+            </p>
+            <ul>
+              <li>
+                Регистрация вас в качестве участника квалификационных заездов
+                (бреветов).
+              </li>
+              <li>
+                Публикация результатов в открытом доступе на нашем сайте (имя,
+                фамилия, время прохождения).
+              </li>
+              <li>
+                Связь с вами по поводу изменений в расписании, предупреждений о
+                безопасности или отмены мероприятий.
+              </li>
+              <li>
+                Передача результатов во Францию для международной омологации
+                Audax Club Parisien.
+              </li>
+            </ul>
+
+            <h2 id="third-party">3. Третьи лица</h2>
+            <p>
+              Ваше имя, фамилия, пол, клубная принадлежность и результат
+              (затраченное время) передаются в <strong
+                >Audax Club Parisien (ACP)</strong
+              > во Францию для процедуры омологации (регистрации) результатов. Это
+              обязательное условие участия в официальных бреветах.
+            </p>
+            <p>
+              Мы не продаем, не обмениваем и не передаем ваши личные данные
+              каким-либо коммерческим организациям для маркетинговых или
+              рекламных целей. Доступ к контактным данным имеют только
+              организаторы конкретного мероприятия.
+            </p>
+
+            <h2 id="security">4. Безопасность данных</h2>
+            <p>
+              Мы принимаем разумные технические и организационные меры для
+              защиты вашей информации от несанкционированного доступа, утери,
+              изменения или уничтожения. Однако ни один метод передачи данных
+              через Интернет не является на 100% безопасным.
+            </p>
+            <p>
+              Мы храним данные на защищенных серверах с ограниченным доступом.
+              Архивные результаты заездов хранятся бессрочно как часть
+              спортивной истории клуба.
+            </p>
+
+            <h2 id="rights">5. Ваши права</h2>
+            <p>
+              В соответствии с действующим законодательством вы имеете право:
+            </p>
+            <ul>
+              <li>
+                Запросить доступ к вашим личным данным, которые мы храним.
+              </li>
+              <li>Требовать исправления неточных или неполных данных.</li>
+              <li>
+                Требовать удаления ваших данных (однако удаление данных из
+                протоколов может сделать невозможным подтверждение ваших
+                спортивных результатов и получение квалификаций).
+              </li>
+            </ul>
+            <p>
+              Если у вас есть вопросы по поводу нашей политики
+              конфиденциальности, свяжитесь с организаторами.
+            </p>
+          </article>
+        </div>
+
+        <div class="lg:col-span-3">
+          <div
+            class="sticky top-8 rounded-xl border border-gray-200 bg-surface p-6 shadow-sm dark:border-neutral-700"
+          >
+            <h3
+              class="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-text-muted"
+            >
+              Навигация
+            </h3>
+            <nav class="space-y-3" aria-label="Table of Contents">
+              <a
+                class="block font-body text-sm font-medium text-brand hover:text-accent transition-colors"
+                href="#collection">1. Сбор информации</a
+              >
+              <a
+                class="block font-body text-sm font-medium text-text-muted hover:text-text transition-colors"
+                href="#usage">2. Использование данных</a
+              >
+              <a
+                class="block font-body text-sm font-medium text-text-muted hover:text-text transition-colors"
+                href="#third-party">3. Третьи лица</a
+              >
+              <a
+                class="block font-body text-sm font-medium text-text-muted hover:text-text transition-colors"
+                href="#security">4. Безопасность</a
+              >
+              <a
+                class="block font-body text-sm font-medium text-text-muted hover:text-text transition-colors"
+                href="#rights">5. Ваши права</a
+              >
+            </nav>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>

@@ -1,0 +1,136 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout>
+  <Navbar />
+  <PageHeader
+    title="Карыстальніцкае пагадненне"
+    description="Правілы выкарыстання сайта і ўдзелу ў мерапрыемствах Randonneurs Belarus."
+  />
+
+  <section class="bg-page-bg py-12 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <!-- Local Navigation (TOC) -->
+        <div class="lg:col-span-9">
+          <article
+            class="prose prose-lg dark:prose-invert prose-headings:font-heading prose-headings:font-bold prose-headings:text-text prose-h2:mt-16 prose-h2:mb-6 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-xl prose-p:font-body prose-p:text-text-muted prose-p:leading-relaxed prose-p:mb-6 prose-a:text-accent prose-ul:my-6 prose-li:font-body prose-li:text-text-muted prose-li:leading-relaxed prose-headings:uppercase max-w-[800px]"
+          >
+            <p>Апошняе абнаўленне: 20 Мая 2026 г.</p>
+            <p>
+              Выкарыстоўваючы гэты сайт і ўдзельнічаючы ў веламарафонах
+              (брэветах), якія арганізуюцца пад эгідай Randonneurs Belarus, вы
+              цалкам і безагаворачна згаджаецеся з ніжэйпералічанымі ўмовамі.
+            </p>
+
+            <h2 id="general">1. Агульныя палажэнні</h2>
+            <p>
+              Randonneurs Belarus — гэта добраахвотнае аб'яднанне энтузіястаў
+              веласпорту на доўгія дыстанцыі. Мы прадстаўляем інфармацыйную
+              пляцоўку для рэгістрацыі на заезды і публікацыі вынікаў. Мы не
+              з'яўляемся камерцыйнай турыстычнай кампаніяй і не аказваем платныя
+              паслугі па арганізацыі тураў.
+            </p>
+
+            <h2 id="responsibility">2. Асабістая адказнасць (Аўтаномнасць)</h2>
+            <p>
+              Ранданнёрскі рух грунтуецца на прынцыпах поўнай аўтаномнасці.
+              Удзельнічаючы ў брэвеце, вы разумееце і згаджаецеся з тым, што:
+            </p>
+            <ul>
+              <li>Кожны ўдзельнік знаходзіцца ў індывідуальнай паездцы.</li>
+              <li>
+                Арганізатары не нясуць адказнасці за магчымыя аварыі, траўмы,
+                паломкі ровара, страту маёмасці або іншы ўрон, атрыманы падчас
+                мерапрыемства.
+              </li>
+              <li>
+                Вы абавязаны самастойна ацэньваць свае фізічныя магчымасці, стан
+                здароўя і прыдатнасць вашага абсталявання.
+              </li>
+              <li>
+                Аўтамабілі суправаджэння на трасе забаронены правіламі ACP.
+                Дапамога дапускаецца толькі на афіцыйных кантрольных пунктах
+                (КП).
+              </li>
+            </ul>
+
+            <h2 id="rules">3. Захаванне правілаў дарожнага руху</h2>
+            <p>
+              Падчас заезду дарогі <strong>не перакрываюцца</strong> для руху транспарту.
+              Усе ўдзельнікі абавязаны няўхільна выконваць Правілы дарожнага руху
+              Рэспублікі Беларусь. За парушэнне ПДР удзельнік можа быць дыскваліфікаваны.
+              Выкарыстанне светлавога абсталявання (пярэдняя белая фара і задні чырвоны
+              маячок) у цёмны час сутак і пры дрэннай бачнасці строга абавязкова.
+            </p>
+
+            <h2 id="modifications">
+              4. Змены маршрутаў і адмена мерапрыемстваў
+            </h2>
+            <p>
+              Арганізатары пакідаюць за сабой права ўносіць змены ў маршрут,
+              пераносіць даты або адмяняць брэветы ў выпадках узнікнення
+              форс-мажорных абставінаў (экстрэмальныя ўмовы надвор'я, стыхійныя
+              бедствы, указанні дзяржаўных органаў і г.д.). У выпадку змены
+              інфармацыі, мы абавязуемся своечасова апавясціць удзельнікаў праз
+              сайт і афіцыйныя каналы сувязі.
+            </p>
+
+            <h2 id="intellectual">5. Інтэлектуальная ўласнасць</h2>
+            <p>
+              Матэрыялы, апублікаваныя на сайце (тэксты, маршруты, лагатыпы,
+              правілы), з'яўляюцца інтэлектуальнай уласнасцю аўтараў.
+              Капіраванне і выкарыстанне матэрыялаў сайта дазволена толькі з
+              указаннем крыніцы і актыўнай спасылкай на Randonneurs Belarus.
+            </p>
+          </article>
+        </div>
+
+        <div class="lg:col-span-3">
+          <div
+            class="bg-surface sticky top-8 rounded-xl border border-gray-200 p-6 shadow-sm dark:border-neutral-700"
+          >
+            <h3
+              class="font-heading text-text-muted mb-4 text-sm font-bold tracking-wider uppercase"
+            >
+              Змест
+            </h3>
+            <nav class="space-y-3" aria-label="Table of Contents">
+              <a
+                class="font-body text-brand hover:text-accent block text-sm font-medium transition-colors"
+                href="#general">1. Агульныя палажэнні</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#responsibility">2. Асабістая адказнасць</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#rules">3. Захаванне правілаў</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#modifications">4. Змены мерапрыемстваў</a
+              >
+              <a
+                class="font-body text-text-muted hover:text-text block text-sm font-medium transition-colors"
+                href="#intellectual">5. Інтэлектуальная ўласнасць</a
+              >
+            </nav>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>

@@ -50,3 +50,65 @@ export function useTranslatedPath(lang: keyof typeof languages) {
       : `/${l}${targetPath === '/' ? '' : targetPath}`;
   };
 }
+
+/**
+ * Parses an entry ID to separate the base canonical ID from its language suffix.
+ * E.g. "2026/22-rajona.en" -> { baseId: "2026/22-rajona", lang: "en" }
+ */
+export function parseEntryId(id: string): { baseId: string; lang: string } {
+  const parts = id.split('.');
+  const lastSegment = parts[parts.length - 1];
+  const hasLocale = ['en', 'be'].includes(lastSegment);
+  const lang = hasLocale ? lastSegment : 'ru';
+  const baseId = hasLocale ? parts.slice(0, -1).join('.') : id;
+  return { baseId, lang };
+}
+
+/**
+ * Returns the correct localized content entry for a specific base entry and target language,
+ * with a reliable fallback path.
+ */
+export function getEntryForLang<T>(
+  entries: T[],
+  baseId: string,
+  targetLang: string
+): T | undefined {
+  // 1. Try exact match for target language (e.g. baseId.en or baseId if target is default)
+  const targetId =
+    targetLang === defaultLang ? baseId : `${baseId}.${targetLang}`;
+  let entry = (entries as any[]).find((e) => e.id === targetId);
+  if (entry) return entry;
+
+  // 2. Fall back to default language (e.g. baseId)
+  entry = (entries as any[]).find((e) => e.id === baseId);
+  if (entry) return entry;
+
+  // 3. Fall back to first available translation as a last resort
+  return (entries as any[]).find((e) => {
+    const { baseId: bId } = parseEntryId(e.id);
+    return bId === baseId;
+  });
+}
+
+/**
+ * Filters a collection to return only the single most appropriate translation for each unique entry
+ * based on the target language.
+ */
+export function getLocalizedCollection<T>(
+  entries: T[],
+  targetLang: string
+): T[] {
+  // Find all unique base canonical IDs
+  const uniqueBaseIds = Array.from(
+    new Set(
+      (entries as any[]).map((e) => {
+        const { baseId } = parseEntryId(e.id);
+        return baseId;
+      })
+    )
+  );
+
+  return uniqueBaseIds
+    .map((baseId) => getEntryForLang(entries, baseId, targetLang))
+    .filter(Boolean) as T[];
+}
