@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PageHeader from '../components/PageHeader.astro';
+import Icon from '../components/Icon.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -17,12 +18,128 @@ const t = useTranslations(lang);
     <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
       <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div class="lg:col-span-9">
-          <article
-            class="prose prose-lg dark:prose-invert prose-headings:font-heading prose-headings:font-bold prose-headings:text-text prose-h2:mt-16 prose-h2:mb-6 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-xl prose-p:font-body prose-p:text-text-muted prose-p:leading-relaxed prose-p:mb-6 prose-a:text-accent prose-ul:my-6 prose-li:font-body prose-li:text-text-muted prose-li:leading-relaxed prose-headings:uppercase max-w-[800px]"
-          >
-            <h2 id="general">General Questions</h2>
-            <p>Here are some general questions.</p>
-          </article>
+          <div class="max-w-[800px]">
+            <h2
+              id="general"
+              class="font-heading text-text mt-16 mb-6 text-2xl font-bold uppercase"
+            >
+              General Questions
+            </h2>
+
+            <div class="hs-accordion-group" data-hs-accordion-always-open>
+              <!-- Accordion Item 1 -->
+              <div
+                class="hs-accordion active bg-surface border-border mb-4 rounded-xl border"
+                id="hs-basic-with-title-and-arrow-stretched-heading-one"
+              >
+                <button
+                  class="hs-accordion-toggle group text-text hover:text-accent inline-flex w-full items-center justify-between gap-x-3 px-5 py-4 pb-3 text-start font-semibold transition focus:outline-none md:text-lg"
+                  aria-expanded="true"
+                  aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
+                >
+                  What is a brevet?
+                  <Icon
+                    name="ChevronDown"
+                    class="hs-accordion-active:hidden text-text-muted group-hover:text-accent block size-5"
+                  />
+                  <Icon
+                    name="ChevronUp"
+                    class="hs-accordion-active:block text-text-muted group-hover:text-accent hidden size-5"
+                  />
+                </button>
+                <div
+                  id="hs-basic-with-title-and-arrow-stretched-collapse-one"
+                  class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
+                  role="region"
+                  aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
+                >
+                  <p
+                    class="text-text-muted font-body px-5 pb-5 leading-relaxed"
+                  >
+                    A brevet is a long-distance cycling event where participants
+                    must complete a set course within a specific time limit.
+                    It's not a race; the goal is simply to finish within the
+                    time limit.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Accordion Item 2 -->
+              <div
+                class="hs-accordion bg-surface border-border mb-4 rounded-xl border"
+                id="hs-basic-with-title-and-arrow-stretched-heading-two"
+              >
+                <button
+                  class="hs-accordion-toggle group text-text hover:text-accent inline-flex w-full items-center justify-between gap-x-3 px-5 py-4 pb-3 text-start font-semibold transition focus:outline-none md:text-lg"
+                  aria-expanded="false"
+                  aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two"
+                >
+                  Do I need a special bike?
+                  <Icon
+                    name="ChevronDown"
+                    class="hs-accordion-active:hidden text-text-muted group-hover:text-accent block size-5"
+                  />
+                  <Icon
+                    name="ChevronUp"
+                    class="hs-accordion-active:block text-text-muted group-hover:text-accent hidden size-5"
+                  />
+                </button>
+                <div
+                  id="hs-basic-with-title-and-arrow-stretched-collapse-two"
+                  class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                  role="region"
+                  aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
+                >
+                  <p
+                    class="text-text-muted font-body px-5 pb-5 leading-relaxed"
+                  >
+                    No, you don't need a special bike. Any human-powered vehicle
+                    that is propelled solely by the rider is generally allowed.
+                    However, it should be comfortable and reliable for long
+                    distances. Road bikes, touring bikes, recumbents, and
+                    velomobiles are common.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Accordion Item 3 -->
+              <div
+                class="hs-accordion bg-surface border-border mb-4 rounded-xl border"
+                id="hs-basic-with-title-and-arrow-stretched-heading-three"
+              >
+                <button
+                  class="hs-accordion-toggle group text-text hover:text-accent inline-flex w-full items-center justify-between gap-x-3 px-5 py-4 pb-3 text-start font-semibold transition focus:outline-none md:text-lg"
+                  aria-expanded="false"
+                  aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
+                >
+                  How do I register for an event?
+                  <Icon
+                    name="ChevronDown"
+                    class="hs-accordion-active:hidden text-text-muted group-hover:text-accent block size-5"
+                  />
+                  <Icon
+                    name="ChevronUp"
+                    class="hs-accordion-active:block text-text-muted group-hover:text-accent hidden size-5"
+                  />
+                </button>
+                <div
+                  id="hs-basic-with-title-and-arrow-stretched-collapse-three"
+                  class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                  role="region"
+                  aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
+                >
+                  <p
+                    class="text-text-muted font-body px-5 pb-5 leading-relaxed"
+                  >
+                    You can register for upcoming events directly on this
+                    website through the Events section. Registration typically
+                    closes a few days before the event date to allow for proper
+                    organization.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="lg:col-span-3">

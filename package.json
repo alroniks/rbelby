@@ -3,6 +3,9 @@
   "type": "module",
   "version": "0.2.0",
   "scripts": {
+    "extract-icons": "tsx scripts/extract-icons.ts",
+    "predev": "npm run extract-icons",
+    "prebuild": "npm run extract-icons",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -14,6 +17,8 @@
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.3",
     "dayjs": "^1.11.20",
+    "griddy-icons": "^0.2.0",
+    "nanostores": "^1.3.0",
     "preline": "^4.2.0",
     "tailwindcss": "^4.2.2"
   },
