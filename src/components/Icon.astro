@@ -1,0 +1,47 @@
+---
+import icons from './icons.json';
+
+export interface Props {
+  name: keyof typeof icons;
+  class?: string;
+  size?: number | string;
+}
+
+const { name, class: className = '', size = 24 } = Astro.props;
+
+const iconData = icons[name];
+---
+
+{
+  iconData ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      stroke="none"
+      class={className}
+      aria-hidden="true"
+    >
+      {iconData.map((pathProps: any) => (
+        <path {...pathProps} />
+      ))}
+    </svg>
+  ) : (
+    <!-- Fallback or missing icon -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="red"
+      stroke-width="2"
+      class={className}
+    >
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  )
+}
