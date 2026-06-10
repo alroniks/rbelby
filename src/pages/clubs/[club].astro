@@ -1,16 +1,444 @@
 ---
-import type { GetStaticPaths } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Icon from '../../components/Icon.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
-export const getStaticPaths = () => {
-  return [{ params: { club: '12344' } }];
-};
+export function getStaticPaths() {
+  return [{ params: { club: 'minsk-randonneurs' } }];
+}
 
-const club = Astro.params.club;
+const { club } = Astro.params;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<div>This is club {club}</div>
+<Layout title="Minsk Randonneurs - Club Detail">
+  <Navbar />
+  <PageHeader
+    title="MINSK RANDONNEURS"
+    description="The founding club of the Belarusian randonneuring movement."
+  />
 
-SIABRY RANDONNEURS 520002 INDEPENDENT BELARUS 520099 NA SHOSSERE 520009 Grodno
-Cycling 520005 BBB 520006 Cadence Mogilev 520007 Versta 520010 Veloslonim 520011
-Audax Lida 520012 VELO-GORKI 520013 ВелоБрест 520016 Velo Gomel 520015 BELARUS
-RANDONNEURS CLUB 520001 Audax Zhodino 520014
+  <main class="bg-page-bg text-text flex w-full flex-col items-center">
+    <div
+      class="flex w-full max-w-[1280px] flex-col gap-[64px] px-[64px] pt-[40px] pb-[80px] lg:flex-row"
+    >
+      {/* cLeft (Main Content) */}
+      <div class="flex min-w-0 flex-1 flex-col gap-[48px]">
+        {/* statsWrap */}
+        <div class="flex w-full flex-col gap-[16px]">
+          <div class="flex w-full flex-wrap gap-[12px]">
+            {/* Fact1 */}
+            <div class="bg-brand rounded-[32px] px-[16px] py-[6px]">
+              <span class="text-surface font-body text-[12px] font-semibold"
+                >EST. 2010</span
+              >
+            </div>
+            {/* Fact2 */}
+            <div class="bg-accent rounded-[32px] px-[16px] py-[6px]">
+              <span class="text-surface font-body text-[12px] font-semibold"
+                >BY520000</span
+              >
+            </div>
+            {/* Fact3 */}
+            <div
+              class="bg-surface border-text-muted rounded-[32px] border px-[16px] py-[6px]"
+            >
+              <span class="text-text font-body text-[12px] font-semibold"
+                >Minsk Region</span
+              >
+            </div>
+          </div>
+        </div>
+
+        {/* eventsWrap */}
+        <div class="flex w-full flex-col gap-[32px] pt-[32px]">
+          <div class="flex w-full items-center justify-between">
+            <h2 class="text-text font-heading text-[32px] font-bold uppercase">
+              UPCOMING CLUB BREVETS
+            </h2>
+            <a
+              href="#"
+              class="text-accent font-body text-[14px] font-semibold hover:underline"
+              >View All &rarr;</a
+            >
+          </div>
+
+          <div class="border-surface flex w-full flex-col border-t">
+            {/* EventRow Placeholder 1 */}
+            <article
+              class="border-surface hover:bg-surface/50 flex w-full items-center gap-[32px] border-b py-[32px] transition-colors"
+            >
+              <div class="flex w-[80px] shrink-0 flex-col items-center">
+                <span
+                  class="text-text-muted font-body mb-1 text-[14px] font-bold tracking-widest uppercase"
+                  >MAY</span
+                >
+                <span
+                  class="text-text font-heading text-[32px] leading-none font-extrabold"
+                  >12</span
+                >
+              </div>
+              <div class="flex min-w-0 flex-1 flex-col gap-[12px]">
+                <h4
+                  class="text-text font-heading truncate text-[28px] leading-tight font-bold"
+                >
+                  Minskaya Krugosvetka
+                </h4>
+                <div class="flex items-center gap-[12px]">
+                  <div class="bg-brand rounded-[16px] px-[12px] py-[4px]">
+                    <span
+                      class="text-page-bg font-body text-[12px] font-bold tracking-wider uppercase"
+                      >ACP CERTIFIED</span
+                    >
+                  </div>
+                  <span
+                    class="text-text-muted font-body text-[14px] font-semibold"
+                    >Minsk</span
+                  >
+                </div>
+              </div>
+              <div class="flex w-[100px] shrink-0 flex-col gap-[8px]">
+                <span
+                  class="text-text font-heading text-[24px] leading-none font-bold"
+                  >200 KM</span
+                >
+                <a
+                  href="#"
+                  class="bg-accent text-page-bg font-body flex h-[28px] items-center justify-center rounded-[16px] px-[16px] py-[6px] text-center text-[12px] leading-none font-bold uppercase transition-colors hover:bg-orange-600"
+                  >REGISTER</a
+                >
+              </div>
+            </article>
+
+            {/* EventRow Placeholder 2 */}
+            <article
+              class="border-surface hover:bg-surface/50 flex w-full items-center gap-[32px] border-b py-[32px] transition-colors"
+            >
+              <div class="flex w-[80px] shrink-0 flex-col items-center">
+                <span
+                  class="text-text-muted font-body mb-1 text-[14px] font-bold tracking-widest uppercase"
+                  >JUN</span
+                >
+                <span
+                  class="text-text font-heading text-[32px] leading-none font-extrabold"
+                  >24</span
+                >
+              </div>
+              <div class="flex min-w-0 flex-1 flex-col gap-[12px]">
+                <h4
+                  class="text-text font-heading truncate text-[28px] leading-tight font-bold"
+                >
+                  Summer Solstice 300
+                </h4>
+                <div class="flex items-center gap-[12px]">
+                  <div class="bg-brand rounded-[16px] px-[12px] py-[4px]">
+                    <span
+                      class="text-page-bg font-body text-[12px] font-bold tracking-wider uppercase"
+                      >ACP CERTIFIED</span
+                    >
+                  </div>
+                  <span
+                    class="text-text-muted font-body text-[14px] font-semibold"
+                    >Minsk</span
+                  >
+                </div>
+              </div>
+              <div class="flex w-[100px] shrink-0 flex-col gap-[8px]">
+                <span
+                  class="text-text font-heading text-[24px] leading-none font-bold"
+                  >300 KM</span
+                >
+                <a
+                  href="#"
+                  class="bg-accent text-page-bg font-body flex h-[28px] items-center justify-center rounded-[16px] px-[16px] py-[6px] text-center text-[12px] leading-none font-bold uppercase transition-colors hover:bg-orange-600"
+                  >REGISTER</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+
+        {/* aboutWrap */}
+        <div class="flex w-full flex-col gap-[32px]">
+          <h2 class="text-text font-heading text-[32px] font-bold uppercase">
+            Our History &amp; Heritage
+          </h2>
+          <p
+            class="text-text-muted font-body text-[18px] leading-relaxed font-normal"
+          >
+            Minsk Randonneurs is dedicated to the spirit of Audax Club Parisien.
+            We organize brevets and long-distance events to challenge riders and
+            build community.
+          </p>
+          <h3
+            class="text-text font-heading mt-[16px] text-[24px] font-bold uppercase"
+          >
+            What We Do
+          </h3>
+          <div class="flex w-full flex-col gap-[16px] pl-[16px]">
+            <div class="flex items-start gap-[12px]">
+              <span
+                class="text-text font-body text-[18px] leading-relaxed font-bold"
+                >&bull;</span
+              >
+              <p
+                class="text-text font-body text-[18px] leading-relaxed font-normal"
+              >
+                Organize official ACP-sanctioned brevets ranging from 200km to
+                1000km.
+              </p>
+            </div>
+            <div class="flex items-start gap-[12px]">
+              <span
+                class="text-text font-body text-[18px] leading-relaxed font-bold"
+                >&bull;</span
+              >
+              <p
+                class="text-text font-body text-[18px] leading-relaxed font-normal"
+              >
+                Host social "no-drop" rides and introductory workshops for
+                beginners.
+              </p>
+            </div>
+            <div class="flex items-start gap-[12px]">
+              <span
+                class="text-text font-body text-[18px] leading-relaxed font-bold"
+                >&bull;</span
+              >
+              <p
+                class="text-text font-body text-[18px] leading-relaxed font-normal"
+              >
+                Coordinate the flagship 1200km grand randonn&eacute;e, bringing
+                together riders nationwide.
+              </p>
+            </div>
+          </div>
+          <h3
+            class="text-text font-heading mt-[16px] text-[24px] font-bold uppercase"
+          >
+            Join the Peloton
+          </h3>
+          <p
+            class="text-text-muted font-body text-[18px] leading-relaxed font-normal"
+          >
+            Whether you are aiming for the prestigious Super Randonneur title or
+            just looking to explore the countryside with a supportive group, you
+            are welcome here.
+          </p>
+        </div>
+
+        {/* clubNewsWrap */}
+        <div class="flex w-full flex-col gap-[24px] pt-[32px]">
+          <h2 class="text-text font-heading text-[32px] font-bold uppercase">
+            CLUB NEWS &amp; REPORTS
+          </h2>
+          <div class="grid w-full grid-cols-1 gap-[32px] md:grid-cols-2">
+            <div
+              class="bg-surface border-text-muted/20 flex w-full flex-col gap-[24px] rounded-[24px] border p-[32px]"
+            >
+              <span class="text-text-muted font-body text-[12px] font-semibold"
+                >May 15, 2026</span
+              >
+              <h4
+                class="text-text font-heading text-[20px] leading-tight font-bold"
+              >
+                Spring Brevet Results Published
+              </h4>
+              <p class="text-text-muted font-body text-[16px] font-normal">
+                Congratulations to all 142 finishers who braved the headwinds
+                this weekend.
+              </p>
+            </div>
+            <div
+              class="bg-surface border-text-muted/20 flex w-full flex-col gap-[24px] rounded-[24px] border p-[32px]"
+            >
+              <span class="text-text-muted font-body text-[12px] font-semibold"
+                >Apr 2, 2026</span
+              >
+              <h4
+                class="text-text font-heading text-[20px] leading-tight font-bold"
+              >
+                Season Opener Social Ride
+              </h4>
+              <p class="text-text-muted font-body text-[16px] font-normal">
+                Join us for a relaxed 100km ride to kick off the new season and
+                meet fellow members.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* cRight (Sidebar) */}
+      <aside class="flex w-full shrink-0 flex-col gap-[24px] lg:w-[400px]">
+        {/* contactCard */}
+        <div
+          class="bg-brand flex w-full flex-col gap-[24px] rounded-tl-[0px] rounded-tr-[40px] rounded-br-[0px] rounded-bl-[0px] p-[40px]"
+        >
+          <h3 class="text-surface font-heading text-[24px] font-bold uppercase">
+            Club Organizer
+          </h3>
+          <div class="flex items-center gap-[16px]">
+            <div
+              class="bg-complementary h-[64px] w-[64px] shrink-0 overflow-hidden rounded-full"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+                class="h-full w-full object-cover"
+                alt=""
+              />
+            </div>
+            <div class="flex flex-col gap-[4px]">
+              <span class="text-surface font-heading text-[18px] font-bold"
+                >Ivan Ivanov</span
+              >
+              <span class="text-surface font-body text-[12px] font-normal"
+                >ACP Representative</span
+              >
+            </div>
+          </div>
+          <div class="bg-surface h-[1px] w-full opacity-30"></div>
+          <div class="flex flex-col gap-[8px]">
+            <span class="text-complementary font-body text-[12px] font-normal"
+              >Email</span
+            >
+            <a
+              href="mailto:ivan@minsk-randonneurs.by"
+              class="text-surface font-body text-[14px] font-semibold hover:underline"
+              >ivan@minsk-randonneurs.by</a
+            >
+          </div>
+          <div class="flex flex-col gap-[8px]">
+            <span class="text-complementary font-body text-[12px] font-normal"
+              >Website</span
+            >
+            <a
+              href="https://minsk-randonneurs.by"
+              target="_blank"
+              class="text-surface font-body text-[14px] font-semibold hover:underline"
+              >minsk-randonneurs.by</a
+            >
+          </div>
+        </div>
+
+        {/* cAchieve */}
+        <div
+          class="bg-accent flex w-full flex-col gap-[24px] rounded-[24px] p-[32px]"
+        >
+          <h3 class="text-surface font-heading text-[20px] font-bold uppercase">
+            CLUB ACHIEVEMENTS
+          </h3>
+          <div class="flex flex-col gap-[16px]">
+            <div class="flex items-center gap-[12px]">
+              <Icon
+                name="Award"
+                class="text-complementary h-[20px] w-[20px] shrink-0"
+              />
+              <span class="text-surface font-body text-[16px] font-semibold"
+                >42 Super Randonneurs</span
+              >
+            </div>
+            <div class="flex items-center gap-[12px]">
+              <Icon
+                name="Map"
+                class="text-complementary h-[20px] w-[20px] shrink-0"
+              />
+              <span class="text-surface font-body text-[16px] font-semibold"
+                >24 PBP Finishers</span
+              >
+            </div>
+            <div class="flex items-center gap-[12px]">
+              <Icon
+                name="Activity"
+                class="text-complementary h-[20px] w-[20px] shrink-0"
+              />
+              <span class="text-surface font-body text-[16px] font-semibold"
+                >345,600 Total Kilometers</span
+              >
+            </div>
+          </div>
+        </div>
+
+        {/* SeasonHighlightCard */}
+        <div
+          class="bg-complementary flex w-full flex-col gap-[24px] rounded-[16px] p-[32px]"
+        >
+          <div class="flex w-full items-center justify-between">
+            <span
+              class="text-brand font-heading text-[64px] leading-none font-bold"
+              >2026</span
+            >
+            <div class="bg-brand rounded-[32px] px-[16px] py-[8px]">
+              <span
+                class="text-surface font-body text-[12px] font-bold tracking-wider uppercase"
+                >SEASON ACTIVE</span
+              >
+            </div>
+          </div>
+          <div class="bg-brand h-[2px] w-full opacity-20"></div>
+          <div class="flex w-full items-center justify-between">
+            <span
+              class="text-brand font-body max-w-[150px] text-[16px] leading-tight font-semibold"
+              >Belarusian Randonneurs Community Progress</span
+            >
+            <div class="flex -space-x-3">
+              <img
+                class="border-surface inline-block h-[32px] w-[32px] rounded-[16px] border-2 object-cover"
+                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=100&auto=format&fit=crop"
+                alt=""
+              />
+              <img
+                class="border-surface inline-block h-[32px] w-[32px] rounded-[16px] border-2 object-cover"
+                src="https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?q=80&w=100&auto=format&fit=crop"
+                alt=""
+              />
+              <img
+                class="border-surface inline-block h-[32px] w-[32px] rounded-[16px] border-2 object-cover"
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Active Members */}
+        <div
+          class="bg-surface flex w-full flex-col gap-[8px] rounded-[32px] p-[32px]"
+        >
+          <span class="text-text font-heading text-[16px] font-bold uppercase"
+            >Active Members</span
+          >
+          {/* VIlIc -> members grid placeholder */}
+          <div class="mt-[8px] flex w-full flex-wrap gap-[8px]">
+            {
+              Array.from({ length: 12 }).map((_, i) => (
+                <div class="bg-gray/30 h-[32px] w-[32px] overflow-hidden rounded-full">
+                  <img
+                    src={`https://i.pravatar.cc/100?img=${i + 10}`}
+                    class="h-full w-full object-cover"
+                    alt=""
+                  />
+                </div>
+              ))
+            }
+            <div
+              class="bg-gray flex h-[32px] w-[32px] items-center justify-center rounded-full"
+            >
+              <span class="text-text-muted text-[10px] font-bold">+222</span>
+            </div>
+          </div>
+          <span
+            class="text-text-muted font-body mt-[8px] text-[12px] font-normal"
+            >234 total riders</span
+          >
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -2,10 +2,8 @@
   "nav.home": "Home",
   "nav.events": "Calendar",
   "nav.routes": "Routes",
-  "nav.clubs": "Clubs",
-  "nav.stats": "Stats",
+  "nav.clubs": "Community",
   "nav.rules": "Rules",
-  "nav.volunteer": "Volunteer",
   "nav.login": "Login",
   "title": "Belarusian Randonneurs",
   "description": "A community of long-distance cycling enthusiasts",
@@ -82,5 +80,6 @@
   "footer.privacy": "Privacy Policy",
   "footer.terms": "Terms of Service",
   "page.coming_soon_title": "Coming Soon",
-  "page.coming_soon_desc": "We are working hard to bring this page to life."
+  "page.coming_soon_desc": "We are working hard to bring this page to life.",
+  "nav.faq": "FAQ"
 }

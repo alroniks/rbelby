@@ -1,0 +1,7 @@
+---
+import RouteDetail from '../../routes/[...id].astro';
+export { getStaticPaths } from '../../routes/[...id].astro';
+const { route } = Astro.props;
+---
+
+<RouteDetail route={route} />

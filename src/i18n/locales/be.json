@@ -2,10 +2,8 @@
   "nav.home": "Галоўная",
   "nav.events": "Каляндар",
   "nav.routes": "Маршруты",
-  "nav.clubs": "Клубы",
-  "nav.stats": "Статыстыка",
+  "nav.clubs": "Супольнасць",
   "nav.rules": "Правілы",
-  "nav.volunteer": "Валанцёрства",
   "nav.login": "Увайсці",
   "title": "Ранданёры Беларусі",
   "description": "Супольнасць аматараў далёкіх велазаездаў",
@@ -82,5 +80,6 @@
   "footer.privacy": "Палітыка прыватнасці",
   "footer.terms": "Карыстальніцкае пагадненне",
   "page.coming_soon_title": "Хутка з'явіцца",
-  "page.coming_soon_desc": "Мы рупліва працуем над гэтай старонкай."
+  "page.coming_soon_desc": "Мы рупліва працуем над гэтай старонкай.",
+  "nav.faq": "FAQ"
 }
