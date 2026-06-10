@@ -1,103 +1,173 @@
 ---
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from '../../i18n/utils';
 import Icon from '../Icon.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 
 const faqs = [
   {
-    question: 'What is a brevet?',
+    question:
+      lang === 'be'
+        ? 'Ці патрэбны мне спецыяльны гоначны ровар?'
+        : lang === 'ru'
+          ? 'Нужен ли мне специальный гоночный велосипед?'
+          : 'Do I need a special racing bike?',
     answer:
-      'A brevet is a long-distance cycling event within prescribed time limits in a non-competitive nature. It is not a race.',
+      lang === 'be'
+        ? 'Зусім не. Камфорт значна больш важны за аэрадынаміку. Калі ваш ровар прыводзіцца ў рух чалавекам, надзейны і зручны для доўгіх гадзін у сядле, вы можаце ехаць на ім. Многія рандонёры аддаюць перавагу гравійнікам або эндуранс-рамам.'
+        : lang === 'ru'
+          ? 'Совсем нет. Комфорт гораздо важнее аэродинамики. Если ваш велосипед приводится в движение человеком, надежен и удобен для долгих часов в седле, вы можете ехать на нем. Многие рандоннеры предпочитают гравийники или эндуранс-рамы.'
+          : 'Not at all. Comfort is much more important than aerodynamics. As long as your bike is human-powered, reliable, and comfortable for long hours, you can ride it. Many riders prefer gravel or endurance frames.',
   },
   {
-    question: 'Who can participate in brevets?',
+    question:
+      lang === 'be'
+        ? 'Што адбываецца, калі я не магу фінішаваць?'
+        : lang === 'ru'
+          ? 'Что происходит, если я не могу финишировать?'
+          : "What happens if I can't finish?",
     answer:
-      'Brevets are open to any cyclist who is physically capable of completing the distance. Membership in a club may be required for some events.',
+      lang === 'be'
+        ? 'Самадастатковасць — залатое правіла. Калі вам трэба сысці з маршруту (DNF), вы павінны паведаміць арганізатару і самастойна дабрацца дадому на цягніку, таксі або з дапамогай сяброў.'
+        : lang === 'ru'
+          ? 'Самодостаточность — золотое правило. Если вам нужно сойти с маршрута (DNF), вы должны сообщить организатору и самостоятельно добраться домой на поезде, такси или с помощью друзей.'
+          : 'Self-reliance is the golden rule. If you need to abandon the ride (DNF), you must notify the organizer and make your own way back home via train, taxi, or a friend.',
   },
   {
-    question: 'Do I need to bring my own bike?',
+    question:
+      lang === 'be'
+        ? 'Ці ёсць пункты харчавання на маршруце?'
+        : lang === 'ru'
+          ? 'Есть ли пункты питания на маршруте?'
+          : 'Are there feeding stations?',
     answer:
-      'Yes, you must provide your own bicycle. It must be human-powered and road-worthy. Ebikes are generally not allowed in official ACP brevets.',
+      lang === 'be'
+        ? 'На некаторых кантрольных пунктах можа быць ежа, але звычайна вы купляеце ўласныя запасы на запраўках і ў кафэ па дарозе. Ешце перш чым згаладаецеся!'
+        : lang === 'ru'
+          ? 'На некоторых контрольных пунктах может быть еда, но обычно вы покупаете собственные припасы на заправках и в кафе по пути. Ешьте прежде чем проголодаетесь!'
+          : 'Some checkpoints may have food, but generally, you buy your own supplies at gas stations and cafes along the route. Eat before you get hungry!',
   },
-  {
-    question: 'What happens if the event is canceled due to bad weather?',
-    answer:
-      'Events are rarely canceled due to weather unless conditions are dangerous. Check the specific event rules for cancellation policies.',
-  },
-  {
-    question: 'Are there age restrictions for participation?',
-    answer:
-      'Generally, participants must be at least 18 years old. Minors may participate with parental consent in some shorter events.',
-  },
-  {
-    question: 'How do I register for an event?',
-    answer:
-      'Registration is handled through this platform. Go to the event page and follow the registration instructions.',
-  },
+];
+
+const timeLimits = [
+  { distance: '200km', limit: '13h 30m' },
+  { distance: '300km', limit: '20h 00m' },
+  { distance: '400km', limit: '27h 00m' },
+  { distance: '600km', limit: '40h 00m' },
 ];
 ---
 
-<section class="bg-surface bg-surface py-16 lg:py-24">
+<section class="bg-page-bg py-20 lg:py-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-    <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
-      <!-- Text Content -->
-      <div class="lg:col-span-5">
-        <div class="mb-8">
-          <p
-            class="text-text-muted mb-2 text-xs font-bold tracking-widest uppercase"
+    <div class="grid grid-cols-1 items-start gap-16 lg:grid-cols-12">
+      <!-- Left Column: Branding, text, image, action button -->
+      <div class="flex flex-col gap-8 lg:col-span-5">
+        <div class="flex flex-col gap-4">
+          <span
+            class="font-body text-brand text-xs font-bold tracking-widest uppercase"
           >
-            Do you have any questions?
-          </p>
+            {t('home.first_time')}
+          </span>
           <h2
-            class="text-text text-text text-3xl leading-tight font-bold uppercase md:text-4xl"
+            class="font-heading text-text text-3xl leading-tight font-black uppercase md:text-[44px]"
           >
-            Learn how to <span class="text-primary">participate</span><br />
-            in and prepare for a<br />
-            cycling <span class="text-primary">adventure</span>
+            {t('home.wondering')}
           </h2>
+          <p class="font-body text-text-muted text-base leading-relaxed">
+            {t('home.wondering_desc')}
+          </p>
         </div>
-        <p class="text-text-muted text-text-muted mb-8">
-          Find answers to common questions about rules, equipment, and
-          registration.
-        </p>
-        <a
-          href="/faq"
-          class="border-gray bg-primary text-text inline-flex items-center justify-center gap-x-2 rounded-full border px-6 py-3 text-sm font-semibold hover:opacity-90 disabled:pointer-events-none disabled:opacity-50"
-        >
-          View library
-          <Icon name="ChevronRight" class="size-4 shrink-0" />
-        </a>
+
+        <!-- Section Image (200px height, rounded-2xl) -->
+        <div class="h-[200px] w-full overflow-hidden rounded-2xl shadow-sm">
+          <img
+            src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=600&auto=format&fit=crop"
+            alt="ACP Brevet Preparation"
+            class="h-full w-full object-cover"
+          />
+        </div>
+
+        <!-- Action Button -->
+        <div>
+          <a
+            href={translatePath('/faq')}
+            class="bg-accent hover:bg-accent/90 inline-flex h-12 items-center justify-center rounded-full px-8 py-3 text-sm font-semibold tracking-wide text-white uppercase transition-colors duration-200"
+          >
+            {t('home.read_faq')}
+          </a>
+        </div>
       </div>
 
-      <!-- Accordion -->
-      <div class="lg:col-span-7">
-        <div class="hs-accordion-group">
+      <!-- Right Column: Time Limits box + Accordion lists -->
+      <div class="flex w-full flex-col gap-8 lg:col-span-7">
+        <!-- Time Limits Box -->
+        <div
+          class="bg-surface border-surface flex flex-col gap-6 rounded-3xl border p-8 shadow-sm"
+        >
+          <div class="flex items-center gap-3">
+            <div class="text-brand shrink-0">
+              <Icon name="Timer" class="size-5" />
+            </div>
+            <span class="font-heading text-brand text-xl font-bold uppercase">
+              {t('home.time_limits')}
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 text-center sm:grid-cols-4">
+            {
+              timeLimits.map((item) => (
+                <div class="bg-page-bg/60 flex flex-col gap-1 rounded-xl border border-white p-4">
+                  <span class="font-heading text-text text-xl font-black md:text-2xl">
+                    {item.distance}
+                  </span>
+                  <span class="font-body text-text-muted text-xs font-semibold md:text-sm">
+                    {item.limit}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- FAQ Accordion List -->
+        <div class="hs-accordion-group flex w-full flex-col gap-3">
           {
             faqs.map((faq, index) => (
               <div
-                class="hs-accordion border-gray border-gray bg-bg mb-3 rounded-xl border"
-                id={`hs-basic-heading-${index}`}
+                class="hs-accordion border-surface overflow-hidden rounded-2xl border bg-white transition-all duration-300"
+                id={`hs-home-faq-${index}`}
               >
                 <button
-                  class="hs-accordion-toggle group text-text hover:text-text-muted focus:text-text-muted text-text hover:text-primary focus:text-primary inline-flex w-full items-center justify-between gap-x-3 rounded-xl p-6 pb-3 text-start font-semibold transition focus:outline-none md:text-lg"
+                  class="hs-accordion-toggle group font-heading text-text hover:text-accent flex w-full items-center justify-between gap-x-4 p-6 text-start text-base font-bold transition-colors duration-150 focus:outline-none md:text-lg"
                   aria-expanded="false"
-                  aria-controls={`hs-basic-collapse-${index}`}
+                  aria-controls={`hs-home-faq-content-${index}`}
                 >
-                  {faq.question}
+                  <span>{faq.question}</span>
                   <Icon
                     name="Plus"
-                    class="hs-accordion-active:hidden text-text-muted group-hover:text-text-muted text-text-muted block size-5 shrink-0"
+                    class="hs-accordion-active:hidden text-text-muted group-hover:text-accent block size-5 shrink-0"
                   />
                   <Icon
                     name="Minus"
-                    class="hs-accordion-active:block text-text-muted group-hover:text-text-muted text-text-muted hidden size-5 shrink-0"
+                    class="hs-accordion-active:block text-text-muted group-hover:text-accent hidden size-5 shrink-0"
                   />
                 </button>
+
                 <div
-                  id={`hs-basic-collapse-${index}`}
+                  id={`hs-home-faq-content-${index}`}
                   class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
-                  aria-labelledby={`hs-basic-heading-${index}`}
+                  aria-labelledby={`hs-home-faq-${index}`}
                 >
-                  <div class="px-6 pb-6">
-                    <p class="text-text-muted text-text-muted">{faq.answer}</p>
+                  <div class="border-surface/50 border-t px-6 pt-1 pb-6">
+                    <p class="font-body text-text-muted text-sm leading-relaxed md:text-base">
+                      {faq.answer}
+                    </p>
                   </div>
                 </div>
               </div>

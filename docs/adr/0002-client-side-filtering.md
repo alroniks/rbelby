@@ -12,7 +12,7 @@ As we build features like the Events Directory (Spec 012) and Global Search (Spe
 
 3. **DOM Updates**: On state change, subscribed Vanilla JS functions will query the necessary DOM elements (e.g., `document.querySelectorAll('[data-event-item]')`) and toggle a `hidden` class based on whether the item matches the current state.
 
-4. **Zero-Result States**: 
+4. **Zero-Result States**:
    - A dedicated "empty state" container (`<div id="empty-state" class="hidden">...</div>`) must be present on pages with filtering.
    - During DOM updates, the script counts the number of visible items.
    - If `visibleCount === 0`, the script removes the `hidden` class from the empty state container and hides the list container.

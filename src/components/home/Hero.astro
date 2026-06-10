@@ -11,50 +11,59 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<section class="bg-bg relative flex min-h-[600px] items-center overflow-hidden">
-  <!-- Background Image -->
-  <div class="absolute inset-0 z-0">
-    <img
-      src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=2070&auto=format&fit=crop"
-      alt="Cyclist"
-      class="h-full w-full object-cover opacity-50"
-    />
-    <div
-      class="from-charcoal/10 via-charcoal/60 to-charcoal absolute inset-0 bg-gradient-to-b"
-    >
+<section
+  class="bg-bg relative flex flex-col items-center justify-center overflow-hidden rounded-b-[48px] px-4 pt-16 pb-20 sm:px-8 lg:px-16"
+>
+  <!-- Active Season Badge/Pill -->
+  <div
+    class="bg-complementary mb-12 flex max-w-full items-center gap-4 rounded-full px-6 py-2 shadow-sm"
+  >
+    <div class="flex items-center gap-3">
+      <span class="font-heading text-brand text-sm font-bold uppercase"
+        >{t('hero.season')}</span
+      >
+      <span
+        class="bg-brand text-surface rounded-full px-3 py-1 text-[10px] font-extrabold tracking-widest uppercase"
+        >{t('hero.active')}</span
+      >
+    </div>
+    <div class="bg-brand/30 h-5 w-px"></div>
+    <div class="text-brand flex items-center gap-2">
+      <span class="font-body text-sm font-bold">24</span>
+      <span class="font-body text-sm font-medium"
+        >{t('hero.upcoming_brevets')}</span
+      >
     </div>
   </div>
 
-  <div
-    class="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-8 lg:px-16"
-  >
+  <!-- Hero Content Wrap -->
+  <div class="flex max-w-4xl flex-col items-center text-center">
     <h1
-      class="text-text-inverse mb-6 block text-3xl leading-tight font-bold tracking-tight uppercase sm:text-4xl md:text-5xl lg:text-6xl"
+      class="font-heading text-text max-w-4xl text-4xl leading-none font-bold tracking-tight uppercase sm:text-5xl md:text-[72px]"
     >
-      {t('hero.title1')}
-      <span class="text-secondary">{t('hero.title2')}</span><br />
-      {t('hero.title3')}
-      <span class="text-secondary">{t('hero.title4')}</span>
+      {t('hero.title1')}<br class="hidden md:inline" />
+      <span class="text-accent">{t('hero.title2')}</span>
     </h1>
 
-    <p class="text-gray mx-auto mt-3 mb-10 max-w-2xl text-lg">
+    <p
+      class="font-body text-text-muted mt-6 mb-8 max-w-[600px] text-lg leading-relaxed font-semibold md:text-xl"
+    >
       {t('hero.subtitle')}
     </p>
 
-    <div class="flex flex-col justify-center gap-4 sm:flex-row">
+    <!-- Buttons -->
+    <div class="flex flex-col items-center gap-4 sm:flex-row">
       <a
-        class="bg-primary text-text-inverse inline-flex items-center justify-center gap-x-2 rounded-full border border-transparent px-6 py-3 text-sm font-semibold hover:bg-blue-700 disabled:pointer-events-none disabled:opacity-50"
         href={translatePath('/events')}
+        class="bg-accent hover:bg-accent/90 inline-flex h-12 items-center justify-center rounded-full px-8 py-3 text-sm font-semibold tracking-wide text-white uppercase transition-colors duration-200"
       >
-        {t('hero.find_events')}
-        <Icon name="ChevronRight" class="size-4 shrink-0" />
+        {t('hero.find_ride')}
       </a>
       <a
-        class="text-text-inverse inline-flex items-center justify-center gap-x-2 rounded-full border border-white px-6 py-3 text-sm font-semibold hover:bg-white/10 disabled:pointer-events-none disabled:opacity-50"
         href={translatePath('/routes')}
+        class="text-accent border-accent hover:bg-accent/10 inline-flex h-12 items-center justify-center rounded-full border bg-transparent px-8 py-3 text-sm font-semibold tracking-wide uppercase transition-colors duration-200"
       >
         {t('hero.explore_routes')}
-        <Icon name="ChevronRight" class="size-4 shrink-0" />
       </a>
     </div>
   </div>
