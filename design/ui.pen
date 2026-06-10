@@ -82,18 +82,9 @@
                             },
                             {
                               "type": "text",
-                              "id": "jNiEr",
-                              "fill": "$color-text",
-                              "content": "CLUBS",
-                              "fontFamily": "Montserrat",
-                              "fontSize": 14,
-                              "fontWeight": "600"
-                            },
-                            {
-                              "type": "text",
                               "id": "h0gvP5",
                               "fill": "$color-text",
-                              "content": "STATS",
+                              "content": "COMMUNITY",
                               "fontFamily": "Montserrat",
                               "fontSize": 14,
                               "fontWeight": "600"
