@@ -1,7 +1,7 @@
 {
   "name": "rbelby",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "scripts": {
     "extract-icons": "tsx scripts/extract-icons.ts",
     "predev": "npm run extract-icons",
