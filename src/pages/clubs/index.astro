@@ -2,18 +2,908 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
-import PageHeader from '../../components/PageHeader.astro';
-import ComingSoon from '../../components/ComingSoon.astro';
+import Icon from '../../components/Icon.astro';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<Layout>
+<Layout title="Community">
   <Navbar />
-  <PageHeader
-    title="RIDING CLUBS"
-    description="Find local communities, group rides, and fellow randonneurs."
-  />
-  <main class="min-h-[50vh]">
-    <ComingSoon />
+
+  <main class="bg-page-bg flex w-full flex-col items-center">
+    {/* StandardStatsHeader */}
+    <section class="bg-bg w-full">
+      <div
+        class="mx-auto flex w-full max-w-[1280px] flex-col gap-[24px] px-[64px] pt-[64px] pb-[32px]"
+      >
+        <div class="flex items-center gap-[12px]">
+          <div class="bg-brand rounded-[6px] px-[8px] py-[4px]">
+            <span
+              class="font-body text-[12px] font-bold tracking-wider text-[#ffffff] uppercase"
+              >SEASON 2026</span
+            >
+          </div>
+          <span
+            class="text-brand font-heading text-[12px] font-bold tracking-wider uppercase"
+          >
+            RIDING CLUBS, STATS &amp; LEADERBOARDS
+          </span>
+        </div>
+        <h1
+          class="text-text font-heading text-[48px] leading-none font-bold uppercase"
+        >
+          Randonneur Community
+        </h1>
+        <p
+          class="text-text-muted font-body max-w-[800px] text-[18px] leading-relaxed font-normal"
+        >
+          Explore the clubs driving the Belarusian randonneuring scene, track
+          seasonal achievements, and view overall standings across all
+          registered riders.
+        </p>
+      </div>
+    </section>
+
+    {/* YearsRow */}
+    <div class="flex w-full max-w-[1280px] gap-[32px] px-[64px] pt-[32px]">
+      <span
+        class="text-brand font-heading cursor-pointer text-[24px] font-extrabold"
+        >2026</span
+      >
+      <span
+        class="text-text-muted font-heading hover:text-text cursor-pointer text-[24px] font-semibold transition-colors"
+        >2025</span
+      >
+      <span
+        class="text-text-muted font-heading hover:text-text cursor-pointer text-[24px] font-semibold transition-colors"
+        >2024</span
+      >
+      <span
+        class="text-text-muted font-heading hover:text-text cursor-pointer text-[24px] font-semibold transition-colors"
+        >2023</span
+      >
+      <span
+        class="text-text-muted font-heading hover:text-text cursor-pointer text-[24px] font-semibold transition-colors"
+        >2022</span
+      >
+      <span
+        class="text-text-muted font-heading hover:text-text cursor-pointer text-[24px] font-semibold transition-colors"
+        >All-time</span
+      >
+    </div>
+
+    <div class="flex w-full max-w-[1280px] flex-col gap-[32px] p-[64px]">
+      {/* Row1: Stats */}
+      <div class="flex w-full flex-col gap-[32px] lg:flex-row">
+        {/* KmCard */}
+        <div
+          class="relative flex flex-1 flex-col gap-[64px] overflow-hidden rounded-[32px] bg-[#1b3f33] p-[48px]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=1200&auto=format&fit=crop"
+            class="absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-overlay"
+            alt=""
+          />
+          <div class="relative z-10 flex w-full items-start justify-between">
+            <span
+              class="font-heading text-[24px] font-bold text-[#ffffff99] uppercase"
+              >Total Kilometers</span
+            >
+            <div
+              class="bg-complementary flex h-[32px] w-[32px] items-center justify-center rounded-full"
+            >
+              <Icon name="Activity" class="text-brand h-[16px] w-[16px]" />
+            </div>
+          </div>
+          <span
+            class="text-complementary font-heading relative z-10 text-[80px] leading-none font-extrabold lg:text-[120px]"
+          >
+            45,200
+          </span>
+        </div>
+
+        {/* Row1Right */}
+        <div class="flex flex-1 flex-col gap-[32px]">
+          {/* RidersCard */}
+          <div
+            class="bg-surface flex flex-1 flex-col gap-[16px] rounded-[32px] p-[24px]"
+          >
+            <div class="flex w-full items-center justify-between">
+              <span
+                class="text-text-muted font-heading text-[20px] font-bold uppercase"
+                >Active Riders</span
+              >
+              <div class="flex -space-x-3">
+                <img
+                  class="border-surface inline-block h-[32px] w-[32px] rounded-full border-2"
+                  src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=100&auto=format&fit=facearea&facepad=2"
+                  alt=""
+                />
+                <img
+                  class="border-surface inline-block h-[32px] w-[32px] rounded-full border-2"
+                  src="https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?q=80&w=100&auto=format&fit=facearea&facepad=2"
+                  alt=""
+                />
+                <img
+                  class="border-surface inline-block h-[32px] w-[32px] rounded-full border-2"
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=facearea&facepad=2"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="flex items-center gap-[16px]">
+              <span
+                class="text-accent font-heading text-[56px] leading-none font-extrabold"
+                >320</span
+              >
+              <div
+                class="bg-complementary flex items-center gap-[4px] rounded-[16px] px-[8px] py-[4px]"
+              >
+                <Icon name="TrendingUp" class="text-brand h-[16px] w-[16px]" />
+                <span class="text-brand font-body text-[14px] font-bold"
+                  >12%</span
+                >
+              </div>
+            </div>
+          </div>
+
+          {/* BrevetsCard */}
+          <div
+            class="bg-complementary flex flex-1 flex-col gap-[16px] rounded-[32px] p-[24px]"
+          >
+            <div class="flex w-full items-center justify-between">
+              <span
+                class="text-brand font-heading text-[20px] font-bold uppercase"
+                >Brevets Completed</span
+              >
+              <Icon name="Flag" class="text-brand h-[24px] w-[24px]" />
+            </div>
+            <div class="flex items-center gap-[16px]">
+              <span
+                class="text-brand font-heading text-[56px] leading-none font-extrabold"
+                >24</span
+              >
+              <div
+                class="bg-surface flex items-center gap-[4px] rounded-[16px] px-[8px] py-[4px]"
+              >
+                <Icon
+                  name="TrendingUp"
+                  class="text-secondary h-[16px] w-[16px]"
+                />
+                <span class="text-secondary font-body text-[14px] font-bold"
+                  >4%</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Row2: Chart */}
+      <div
+        class="bg-bg flex w-full flex-col gap-[48px] rounded-[32px] p-[48px]"
+      >
+        <div class="flex w-full items-start justify-between">
+          <div class="flex flex-col gap-[12px]">
+            <h3
+              class="text-brand font-heading text-[24px] font-extrabold uppercase"
+            >
+              SEASON ACTIVITY
+            </h3>
+            <p class="text-text-muted font-body text-[16px] font-normal">
+              Monthly breakdown of community achievements and participation.
+            </p>
+          </div>
+          <div class="bg-page-bg flex gap-[8px] rounded-[32px] p-[8px]">
+            <div
+              class="bg-brand cursor-pointer rounded-[24px] px-[20px] py-[8px]"
+            >
+              <span class="font-body text-[14px] font-bold text-[#ffffff]"
+                >Distance</span
+              >
+            </div>
+            <div
+              class="cursor-pointer rounded-[24px] px-[20px] py-[8px] transition-colors hover:bg-black/5"
+            >
+              <span class="text-text font-body text-[14px] font-semibold"
+                >Participations</span
+              >
+            </div>
+            <div
+              class="cursor-pointer rounded-[24px] px-[20px] py-[8px] transition-colors hover:bg-black/5"
+            >
+              <span class="text-text font-body text-[14px] font-semibold"
+                >Elevation</span
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-surface border-gray flex h-[260px] w-full items-center justify-center rounded-[16px] border"
+        >
+          {/* Chart Placeholder */}
+          <span
+            class="text-text-muted font-heading font-bold tracking-widest uppercase"
+            >Chart Visualization</span
+          >
+        </div>
+      </div>
+
+      {/* Row3: Rankings */}
+      <div class="flex w-full flex-col gap-[64px] pt-[96px]">
+        <div class="flex w-full flex-col gap-[48px]">
+          <div class="flex flex-col gap-[16px]">
+            <h2
+              class="text-text font-heading text-[48px] leading-none font-extrabold uppercase"
+            >
+              LEADERBOARDS &amp; STANDINGS
+            </h2>
+            <p
+              class="text-text-muted font-body max-w-[600px] text-[16px] font-normal"
+            >
+              Compare individual achievements and club standings across the
+              entire season.
+            </p>
+          </div>
+          <div class="bg-surface flex w-fit gap-[8px] rounded-[32px] p-[8px]">
+            <div
+              class="bg-brand cursor-pointer rounded-[24px] px-[24px] py-[12px]"
+            >
+              <span class="font-body text-[14px] font-bold text-[#ffffff]"
+                >Overall Distance</span
+              >
+            </div>
+            <div
+              class="cursor-pointer rounded-[24px] px-[24px] py-[12px] transition-colors hover:bg-black/5"
+            >
+              <span class="text-text font-body text-[14px] font-semibold"
+                >Brevets Completed</span
+              >
+            </div>
+            <div
+              class="cursor-pointer rounded-[24px] px-[24px] py-[12px] transition-colors hover:bg-black/5"
+            >
+              <span class="text-text font-body text-[14px] font-semibold"
+                >Super Randonneurs</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="flex w-full flex-col gap-[64px] pt-[24px] lg:flex-row">
+          {/* Top Riders */}
+          <div class="flex flex-1 flex-col gap-[32px]">
+            <h3 class="text-text font-heading text-[24px] font-bold uppercase">
+              TOP RIDERS
+            </h3>
+            <div class="flex w-full flex-col gap-[12px]">
+              {/* RankRow_1 */}
+              <div
+                class="bg-bg border-accent flex w-full items-center gap-[24px] rounded-[16px] border-2 p-[16px] pr-[24px] pl-[24px]"
+              >
+                <span
+                  class="text-accent font-heading w-[32px] text-center text-[24px] font-bold"
+                  >1</span
+                >
+                <div
+                  class="bg-bg flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-full"
+                >
+                  <Icon name="User" class="text-text-muted h-[24px] w-[24px]" />
+                </div>
+                <div class="flex min-w-0 flex-1 flex-col gap-[4px]">
+                  <a
+                    href={translatePath('/riders/aliaksandr-r')}
+                    class="text-text font-heading hover:text-accent truncate text-[20px] font-bold transition-colors"
+                    >Aliaksandr R.</a
+                  >
+                  <span
+                    class="text-text-muted font-body truncate text-[14px] font-normal"
+                    >Minsk Randonneurs</span
+                  >
+                </div>
+                <div class="flex shrink-0 items-center gap-[32px]">
+                  <div class="flex flex-col items-end">
+                    <span
+                      class="text-text-muted font-body text-[10px] font-bold uppercase"
+                      >DISTANCE</span
+                    >
+                    <span
+                      class="text-text font-heading text-[16px] font-semibold"
+                      >12,400 km</span
+                    >
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <span
+                      class="text-text-muted font-body text-[10px] font-bold uppercase"
+                      >SRs</span
+                    >
+                    <span
+                      class="text-text font-heading text-[16px] font-semibold"
+                      >4</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              {/* RankRow_2 */}
+              <div
+                class="bg-surface border-text-muted/20 flex w-full items-center gap-[24px] rounded-[16px] border p-[16px] pr-[24px] pl-[24px]"
+              >
+                <span
+                  class="text-text font-heading w-[32px] text-center text-[24px] font-bold"
+                  >2</span
+                >
+                <div
+                  class="bg-bg flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-full"
+                >
+                  <Icon name="User" class="text-text-muted h-[24px] w-[24px]" />
+                </div>
+                <div class="flex min-w-0 flex-1 flex-col gap-[4px]">
+                  <span
+                    class="text-text font-heading truncate text-[20px] font-bold"
+                    >Ivan I.</span
+                  >
+                  <span
+                    class="text-text-muted font-body truncate text-[14px] font-normal"
+                    >Minsk Randonneurs</span
+                  >
+                </div>
+                <div class="flex shrink-0 items-center gap-[32px]">
+                  <div class="flex flex-col items-end">
+                    <span
+                      class="text-text-muted font-body text-[10px] font-bold uppercase"
+                      >DISTANCE</span
+                    >
+                    <span
+                      class="text-text font-heading text-[16px] font-semibold"
+                      >10,200 km</span
+                    >
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <span
+                      class="text-text-muted font-body text-[10px] font-bold uppercase"
+                      >SRs</span
+                    >
+                    <span
+                      class="text-text font-heading text-[16px] font-semibold"
+                      >3</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-surface border-text-muted/20 flex w-full items-center gap-[24px] rounded-[16px] border p-[16px] pr-[24px] pl-[24px]"
+              >
+                <span
+                  class="text-text font-heading w-[32px] text-center text-[24px] font-bold"
+                  >3</span
+                >
+                <div
+                  class="bg-bg flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-full"
+                >
+                  <Icon name="User" class="text-text-muted h-[24px] w-[24px]" />
+                </div>
+                <div class="flex min-w-0 flex-1 flex-col gap-[4px]">
+                  <span
+                    class="text-text font-heading truncate text-[20px] font-bold"
+                    >Petr P.</span
+                  >
+                  <span
+                    class="text-text-muted font-body truncate text-[14px] font-normal"
+                    >Independent</span
+                  >
+                </div>
+                <div class="flex shrink-0 items-center gap-[32px]">
+                  <div class="flex flex-col items-end">
+                    <span
+                      class="text-text-muted font-body text-[10px] font-bold uppercase"
+                      >DISTANCE</span
+                    >
+                    <span
+                      class="text-text font-heading text-[16px] font-semibold"
+                      >8,400 km</span
+                    >
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <span
+                      class="text-text-muted font-body text-[10px] font-bold uppercase"
+                      >SRs</span
+                    >
+                    <span
+                      class="text-text font-heading text-[16px] font-semibold"
+                      >2</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Top Clubs */}
+          <div class="flex flex-1 flex-col gap-[32px]">
+            <h3 class="text-text font-heading text-[24px] font-bold uppercase">
+              TOP CLUBS
+            </h3>
+            <div class="flex w-full flex-col gap-[12px]">
+              {/* ClubRow_1 */}
+              <div
+                class="bg-bg border-complementary flex w-full items-center gap-[24px] rounded-[16px] border-2 p-[16px] pr-[24px] pl-[24px]"
+              >
+                <span
+                  class="text-brand font-heading w-[32px] text-center text-[24px] font-bold"
+                  >1</span
+                >
+                <div class="flex min-w-0 flex-1 flex-col gap-[4px]">
+                  <a
+                    href={translatePath('/clubs/minsk-randonneurs')}
+                    class="text-text font-heading hover:text-accent truncate text-[20px] font-bold transition-colors"
+                    >Minsk Randonneurs</a
+                  >
+                  <span
+                    class="text-text-muted font-body truncate text-[14px] font-normal"
+                    >142 Active</span
+                  >
+                </div>
+                <div class="flex shrink-0 items-center gap-[32px]">
+                  <div class="flex flex-col items-end">
+                    <span
+                      class="text-text-muted font-body text-[10px] font-bold uppercase"
+                      >DISTANCE</span
+                    >
+                    <span
+                      class="text-text font-heading text-[16px] font-semibold"
+                      >18,400 km</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-surface border-text-muted/20 flex w-full items-center gap-[24px] rounded-[16px] border p-[16px] pr-[24px] pl-[24px]"
+              >
+                <span
+                  class="text-text font-heading w-[32px] text-center text-[24px] font-bold"
+                  >2</span
+                >
+                <div class="flex min-w-0 flex-1 flex-col gap-[4px]">
+                  <span
+                    class="text-text font-heading truncate text-[20px] font-bold"
+                    >Brest Randonneurs</span
+                  >
+                  <span
+                    class="text-text-muted font-body truncate text-[14px] font-normal"
+                    >68 Active</span
+                  >
+                </div>
+                <div class="flex shrink-0 items-center gap-[32px]">
+                  <div class="flex flex-col items-end">
+                    <span
+                      class="text-text-muted font-body text-[10px] font-bold uppercase"
+                      >DISTANCE</span
+                    >
+                    <span
+                      class="text-text font-heading text-[16px] font-semibold"
+                      >9,200 km</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-surface border-text-muted/20 flex w-full items-center gap-[24px] rounded-[16px] border p-[16px] pr-[24px] pl-[24px]"
+              >
+                <span
+                  class="text-text font-heading w-[32px] text-center text-[24px] font-bold"
+                  >3</span
+                >
+                <div class="flex min-w-0 flex-1 flex-col gap-[4px]">
+                  <span
+                    class="text-text font-heading truncate text-[20px] font-bold"
+                    >Gomel Ride</span
+                  >
+                  <span
+                    class="text-text-muted font-body truncate text-[14px] font-normal"
+                    >45 Active</span
+                  >
+                </div>
+                <div class="flex shrink-0 items-center gap-[32px]">
+                  <div class="flex flex-col items-end">
+                    <span
+                      class="text-text-muted font-body text-[10px] font-bold uppercase"
+                      >DISTANCE</span
+                    >
+                    <span
+                      class="text-text font-heading text-[16px] font-semibold"
+                      >5,100 km</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Row4: All Clubs Directory */}
+      <div class="flex w-full flex-col gap-[32px] pt-[64px]">
+        <div class="flex w-full items-start justify-between">
+          <div class="flex flex-col gap-[16px]">
+            <h2
+              class="text-text font-heading text-[48px] leading-none font-extrabold uppercase"
+            >
+              ALL CLUBS DIRECTORY
+            </h2>
+            <p
+              class="text-text-muted font-body max-w-[600px] text-[16px] font-normal"
+            >
+              Discover and join local communities across Belarus.
+            </p>
+          </div>
+          <div class="flex flex-col gap-[4px] text-right">
+            <span
+              class="text-text-muted font-body text-[12px] font-bold uppercase"
+              >TOTAL ACTIVE CLUBS</span
+            >
+            <span
+              class="text-accent font-heading text-[48px] leading-none font-extrabold"
+              >6</span
+            >
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-[32px] lg:grid-cols-3">
+          {/* Club_0 */}
+          <div
+            class="bg-surface border-text-muted/20 flex w-full flex-col gap-[32px] rounded-tr-[40px] border p-[32px]"
+          >
+            <div class="flex w-full items-center gap-[24px]">
+              <div
+                class="bg-surface border-text-muted flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-full border-2"
+              >
+                <span class="text-text font-heading text-[28px] font-bold"
+                  >M</span
+                >
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <a
+                  href={translatePath('/clubs/minsk-randonneurs')}
+                  class="text-text font-heading hover:text-accent text-[24px] leading-tight font-bold transition-colors"
+                  >Minsk Randonneurs</a
+                >
+                <div class="flex items-center gap-[8px]">
+                  <span
+                    class="text-text-muted font-body text-[14px] font-semibold"
+                    >BY520000</span
+                  >
+                  <span
+                    class="text-text-muted font-body text-[14px] font-normal"
+                    >&bull;</span
+                  >
+                  <span
+                    class="text-text-muted font-body text-[14px] font-normal"
+                    >Minsk</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="bg-text-muted/20 h-[1px] w-full"></div>
+            <div class="flex w-full justify-between gap-[16px]">
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text-muted font-body text-[10px] font-bold uppercase"
+                  >ACTIVE RIDERS</span
+                >
+                <span class="text-text font-heading text-[20px] font-semibold"
+                  >142</span
+                >
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text-muted font-body text-[10px] font-bold uppercase"
+                  >TOTAL DISTANCE</span
+                >
+                <span class="text-text font-heading text-[20px] font-semibold"
+                  >18,400 km</span
+                >
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text-muted font-body text-[10px] font-bold uppercase"
+                  >SUPER RANDOS</span
+                >
+                <span class="text-text font-heading text-[20px] font-semibold"
+                  >6</span
+                >
+              </div>
+            </div>
+            <div class="bg-text-muted/20 h-[1px] w-full"></div>
+            <div class="flex w-full items-center gap-[12px]">
+              <Icon name="Calendar" class="text-accent h-[16px] w-[16px]" />
+              <span
+                class="text-text font-body flex-1 truncate text-[14px] font-semibold"
+                >Next: Spring 200km</span
+              >
+              <div class="bg-accent rounded-[8px] px-[8px] py-[4px]">
+                <span class="text-surface font-body text-[12px] font-bold"
+                  >in 12 days</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-surface border-text-muted/20 flex w-full flex-col gap-[32px] rounded-tr-[40px] border p-[32px]"
+          >
+            <div class="flex w-full items-center gap-[24px]">
+              <div
+                class="bg-surface border-text-muted flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-full border-2"
+              >
+                <span class="text-text font-heading text-[28px] font-bold"
+                  >B</span
+                >
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <h3
+                  class="text-text font-heading text-[24px] leading-tight font-bold"
+                >
+                  Brest Randonneurs
+                </h3>
+                <div class="flex items-center gap-[8px]">
+                  <span
+                    class="text-text-muted font-body text-[14px] font-semibold"
+                    >BY520001</span
+                  >
+                  <span
+                    class="text-text-muted font-body text-[14px] font-normal"
+                    >&bull;</span
+                  >
+                  <span
+                    class="text-text-muted font-body text-[14px] font-normal"
+                    >Brest</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="bg-text-muted/20 h-[1px] w-full"></div>
+            <div class="flex w-full justify-between gap-[16px]">
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text-muted font-body text-[10px] font-bold uppercase"
+                  >ACTIVE RIDERS</span
+                >
+                <span class="text-text font-heading text-[20px] font-semibold"
+                  >68</span
+                >
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text-muted font-body text-[10px] font-bold uppercase"
+                  >TOTAL DISTANCE</span
+                >
+                <span class="text-text font-heading text-[20px] font-semibold"
+                  >9,200 km</span
+                >
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text-muted font-body text-[10px] font-bold uppercase"
+                  >SUPER RANDOS</span
+                >
+                <span class="text-text font-heading text-[20px] font-semibold"
+                  >3</span
+                >
+              </div>
+            </div>
+            <div class="bg-text-muted/20 h-[1px] w-full"></div>
+            <div class="flex w-full items-center gap-[12px]">
+              <Icon name="Calendar" class="text-accent h-[16px] w-[16px]" />
+              <span
+                class="text-text font-body flex-1 truncate text-[14px] font-semibold"
+                >Next: Brest 200km</span
+              >
+              <div class="bg-accent rounded-[8px] px-[8px] py-[4px]">
+                <span class="text-surface font-body text-[12px] font-bold"
+                  >in 20 days</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-surface border-text-muted/20 flex w-full flex-col gap-[32px] rounded-tr-[40px] border p-[32px]"
+          >
+            <div class="flex w-full items-center gap-[24px]">
+              <div
+                class="bg-surface border-text-muted flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-full border-2"
+              >
+                <span class="text-text font-heading text-[28px] font-bold"
+                  >G</span
+                >
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <h3
+                  class="text-text font-heading text-[24px] leading-tight font-bold"
+                >
+                  Gomel Ride
+                </h3>
+                <div class="flex items-center gap-[8px]">
+                  <span
+                    class="text-text-muted font-body text-[14px] font-semibold"
+                    >BY520003</span
+                  >
+                  <span
+                    class="text-text-muted font-body text-[14px] font-normal"
+                    >&bull;</span
+                  >
+                  <span
+                    class="text-text-muted font-body text-[14px] font-normal"
+                    >Gomel</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="bg-text-muted/20 h-[1px] w-full"></div>
+            <div class="flex w-full justify-between gap-[16px]">
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text-muted font-body text-[10px] font-bold uppercase"
+                  >ACTIVE RIDERS</span
+                >
+                <span class="text-text font-heading text-[20px] font-semibold"
+                  >45</span
+                >
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text-muted font-body text-[10px] font-bold uppercase"
+                  >TOTAL DISTANCE</span
+                >
+                <span class="text-text font-heading text-[20px] font-semibold"
+                  >5,100 km</span
+                >
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text-muted font-body text-[10px] font-bold uppercase"
+                  >SUPER RANDOS</span
+                >
+                <span class="text-text font-heading text-[20px] font-semibold"
+                  >1</span
+                >
+              </div>
+            </div>
+            <div class="bg-text-muted/20 h-[1px] w-full"></div>
+            <div class="flex w-full items-center gap-[12px]">
+              <Icon name="Calendar" class="text-accent h-[16px] w-[16px]" />
+              <span
+                class="text-text font-body flex-1 truncate text-[14px] font-semibold"
+                >Next: Gomel 300km</span
+              >
+              <div class="bg-gray rounded-[8px] px-[8px] py-[4px]">
+                <span class="text-text-muted font-body text-[12px] font-bold"
+                  >TBD</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* RowActivity: Feed Highlights */}
+      <div class="flex w-full flex-col gap-[32px] pt-[64px]">
+        <div class="flex w-full flex-col gap-[16px]">
+          <h2
+            class="text-text font-heading text-[48px] leading-none font-extrabold uppercase"
+          >
+            COMMUNITY HIGHLIGHTS
+          </h2>
+          <p class="text-text-muted font-body text-[16px] font-normal">
+            Recent homologations, milestone achievements, and club
+            announcements.
+          </p>
+        </div>
+
+        <div class="grid w-full grid-cols-1 gap-[32px] md:grid-cols-3">
+          <div
+            class="bg-surface flex w-full flex-col gap-[24px] rounded-[24px] p-[32px]"
+          >
+            <div class="flex items-center gap-[16px]">
+              <div
+                class="bg-brand flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[24px]"
+              >
+                <Icon name="Award" class="h-[24px] w-[24px] text-[#ffffff]" />
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text font-heading text-[20px] leading-none font-extrabold"
+                  >Ihar P.</span
+                >
+                <span
+                  class="text-text-muted font-body text-[12px] font-semibold"
+                  >2 days ago</span
+                >
+              </div>
+            </div>
+            <p class="text-text font-body text-[16px] font-normal">
+              Completed SR Series 2026
+            </p>
+            <div class="bg-bg w-fit rounded-[16px] px-[12px] py-[4px]">
+              <span
+                class="text-text-muted font-body text-[12px] font-bold tracking-wider uppercase"
+                >Super Randonneur</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-surface flex w-full flex-col gap-[24px] rounded-[24px] p-[32px]"
+          >
+            <div class="flex items-center gap-[16px]">
+              <div
+                class="bg-accent flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[24px]"
+              >
+                <Icon name="MapPin" class="h-[24px] w-[24px] text-[#ffffff]" />
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text font-heading text-[20px] leading-none font-extrabold"
+                  >Dzmitry K.</span
+                >
+                <span
+                  class="text-text-muted font-body text-[12px] font-semibold"
+                  >4 days ago</span
+                >
+              </div>
+            </div>
+            <p class="text-text font-body text-[16px] font-normal">
+              Finished Minskaya Krugosvetka
+            </p>
+            <div class="bg-bg w-fit rounded-[16px] px-[12px] py-[4px]">
+              <span
+                class="text-text-muted font-body text-[12px] font-bold tracking-wider uppercase"
+                >200km Homologation</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-surface flex w-full flex-col gap-[24px] rounded-[24px] p-[32px]"
+          >
+            <div class="flex items-center gap-[16px]">
+              <div
+                class="bg-complementary flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[24px]"
+              >
+                <Icon name="Users" class="text-brand h-[24px] w-[24px]" />
+              </div>
+              <div class="flex flex-col gap-[4px]">
+                <span
+                  class="text-text font-heading text-[20px] leading-none font-extrabold"
+                  >Minsk Randonneurs</span
+                >
+                <span
+                  class="text-text-muted font-body text-[12px] font-semibold"
+                  >1 week ago</span
+                >
+              </div>
+            </div>
+            <p class="text-text font-body text-[16px] font-normal">
+              Hosted 45 riders for Season Opener
+            </p>
+            <div class="bg-bg w-fit rounded-[16px] px-[12px] py-[4px]">
+              <span
+                class="text-text-muted font-body text-[12px] font-bold tracking-wider uppercase"
+                >Club Event</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
+
   <Footer />
 </Layout>

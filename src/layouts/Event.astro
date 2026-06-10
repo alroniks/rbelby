@@ -2,6 +2,7 @@
 import Layout from './Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 interface Props {
@@ -12,111 +13,228 @@ const { event } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const formattedDate = new Date(event.data.date).toLocaleDateString(
-  lang === 'en' ? 'en-US' : lang === 'be' ? 'be-BY' : 'ru-RU',
-  { year: 'numeric', month: 'long', day: 'numeric' }
-);
+const formattedDate = new Date(event.data.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const timeValue = new Date(event.data.date).toLocaleTimeString('en-US', {
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: false,
+});
 
 function getTimeLimit(distance: number) {
-  if (distance >= 1200) return '90h';
-  if (distance >= 1000) return '75h';
-  if (distance >= 600) return '40h';
-  if (distance >= 400) return '27h';
-  if (distance >= 300) return '20h';
-  if (distance >= 200) return '13.5h';
+  if (distance >= 1200) return '90.0 Hours';
+  if (distance >= 1000) return '75.0 Hours';
+  if (distance >= 600) return '40.0 Hours';
+  if (distance >= 400) return '27.0 Hours';
+  if (distance >= 300) return '20.0 Hours';
+  if (distance >= 200) return '13.5 Hours';
   return 'N/A';
 }
+
+const isPastEvent = new Date(event.data.date).getTime() < Date.now();
 ---
 
 <Layout title={event.data.name}>
   <Navbar />
-  <main class="bg-bg min-h-screen px-4 py-10 sm:px-8 lg:px-16">
-    <article
-      class="mx-auto max-w-4xl rounded-xl border border-gray-200 bg-white p-8 shadow-sm dark:border-neutral-700 dark:bg-neutral-800"
-    >
-      <header
-        class="mb-8 border-b border-gray-100 pb-8 dark:border-neutral-700"
-      >
+  <main class="bg-bg text-text min-h-screen pb-20">
+    <!-- CustomEventHeader -->
+    <div class="bg-surface border-gray border-b pt-16 pb-12">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-8 lg:px-16">
+        <div class="flex items-center gap-4">
+          <span
+            class="bg-primary text-text-inverse rounded-full px-3 py-1 text-xs font-bold tracking-wider uppercase"
+          >
+            {event.data.type === 'FEST' ? 'FESTIVAL' : 'ACP CERTIFIED'}
+          </span>
+          <span
+            class="text-text-muted text-sm font-bold tracking-widest uppercase"
+          >
+            {event.data.club || 'MINSK RANDONNEURS CLUB'} &bull; BY520002
+          </span>
+        </div>
         <h1
-          class="text-charcoal font-heading dark:text-text mb-4 text-3xl font-bold md:text-4xl"
+          class="font-heading text-text max-w-4xl text-5xl leading-none font-black uppercase md:text-6xl"
         >
           {event.data.name}
         </h1>
-
-        <div class="text-text-muted flex flex-wrap gap-4 text-sm">
-          <div class="flex items-center gap-1">
-            <svg
-              class="size-4"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
-              ></path>
-            </svg>
-            {formattedDate}
-          </div>
-          <div class="flex items-center gap-1">
-            <svg
-              class="size-4"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-              ></path>
-            </svg>
-            {event.data.distance} km ({getTimeLimit(event.data.distance)})
-          </div>
+        <p
+          class="text-text-muted font-body max-w-3xl text-lg font-medium md:text-xl"
+        >
           {
-            event.data.startLocation && (
-              <div class="flex items-center gap-1">
-                <svg
-                  class="size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                  />
-                </svg>
-                {event.data.startLocation}
-              </div>
-            )
+            event.data.seoDescription ||
+              `The classic ${event.data.distance}km brevet.`
           }
-        </div>
-      </header>
-
-      <div
-        class="prose prose-lg dark:prose-invert prose-a:text-primary hover:prose-a:text-secondary max-w-none"
-      >
-        <slot />
+        </p>
       </div>
-    </article>
+    </div>
+
+    <!-- detailWrap -->
+    <div
+      class="mx-auto mt-12 flex max-w-7xl flex-col items-start gap-12 px-4 sm:px-8 lg:flex-row lg:px-16"
+    >
+      <!-- detailLeft -->
+      <div class="flex w-full min-w-0 flex-1 flex-col gap-12">
+        <div
+          class="h-[300px] w-full overflow-hidden rounded-3xl shadow-sm md:h-[450px]"
+        >
+          <img
+            src={event.data.ogImage ||
+              'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop'}
+            alt={event.data.name}
+            class="h-full w-full object-cover"
+          />
+        </div>
+
+        <article
+          class="prose prose-lg dark:prose-invert prose-headings:font-heading prose-headings:font-bold prose-headings:uppercase prose-a:text-primary max-w-none"
+        >
+          <slot />
+        </article>
+      </div>
+
+      <!-- detailRight (Sidebar) -->
+      <aside
+        class="sticky top-24 flex w-full shrink-0 flex-col gap-6 lg:w-[400px]"
+      >
+        <!-- regCard -->
+        <div
+          class="bg-surface border-gray flex flex-col gap-6 rounded-3xl border p-8"
+        >
+          <h3 class="font-heading text-text text-2xl font-bold uppercase">
+            Event Details
+          </h3>
+
+          <div class="flex flex-col gap-4">
+            <!-- Date & Time -->
+            <div class="border-gray flex flex-col gap-1 border-b pb-4">
+              <span
+                class="text-text-muted text-xs font-bold tracking-widest uppercase"
+                >Date & Time</span
+              >
+              <span class="text-text text-lg font-bold"
+                >{formattedDate} @ {timeValue}</span
+              >
+              <button
+                class="text-primary mt-1 flex items-center gap-2 text-sm font-bold hover:text-orange-600"
+              >
+                <Icon name="Calendar" class="size-4" /> Add to Calendar
+              </button>
+            </div>
+
+            <!-- Dist & Time Limit -->
+            <div
+              class="border-gray flex flex-row justify-between border-b pb-4"
+            >
+              <div class="flex flex-col gap-1">
+                <span
+                  class="text-text-muted text-xs font-bold tracking-widest uppercase"
+                  >Distance</span
+                >
+                <span class="text-text text-lg font-bold"
+                  >{event.data.distance} KM</span
+                >
+              </div>
+              <div class="flex flex-col gap-1 text-right">
+                <span
+                  class="text-text-muted text-xs font-bold tracking-widest uppercase"
+                  >Time Limit</span
+                >
+                <span class="text-text text-lg font-bold"
+                  >{getTimeLimit(event.data.distance)}</span
+                >
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="border-gray flex flex-col gap-1 border-b pb-4">
+              <span
+                class="text-text-muted text-xs font-bold tracking-widest uppercase"
+                >Location</span
+              >
+              <span class="text-text text-lg font-bold"
+                >{event.data.startLocation || 'Minsk, Belarus'}</span
+              >
+            </div>
+          </div>
+
+          <div class="mt-2 flex flex-col gap-4">
+            <button
+              class="bg-primary text-text-inverse w-full rounded-full py-4 font-bold tracking-wider uppercase transition-colors hover:bg-orange-600"
+            >
+              {isPastEvent ? 'VIEW RESULTS' : 'REGISTER NOW'}
+            </button>
+            <button
+              class="bg-bg border-gray text-text hover:border-text flex w-full items-center justify-center gap-2 rounded-full border-2 py-4 font-bold tracking-wider uppercase transition-colors"
+            >
+              GPX ROUTE MAP <Icon name="ArrowRight" class="size-4 -rotate-45" />
+            </button>
+          </div>
+        </div>
+
+        <!-- clubHighlightCard -->
+        <div
+          class="bg-surface border-gray flex flex-col gap-6 rounded-3xl border p-8"
+        >
+          <div class="border-gray flex items-center gap-4 border-b pb-6">
+            <div class="flex -space-x-3">
+              <img
+                class="border-surface inline-block size-10 rounded-full border-2"
+                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+                alt="Avatar"
+              />
+              <img
+                class="border-surface inline-block size-10 rounded-full border-2"
+                src="https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+                alt="Avatar"
+              />
+              <div
+                class="border-surface bg-gray text-text inline-flex size-10 items-center justify-center rounded-full border-2 text-xs font-medium"
+              >
+                +8
+              </div>
+            </div>
+            <span class="text-text-muted text-sm font-bold"
+              >{
+                isPastEvent ? '120 riders finished' : '120 riders registered'
+              }</span
+            >
+          </div>
+
+          <div class="border-gray flex items-start gap-4 border-b pb-6">
+            <div
+              class="bg-primary/10 text-primary flex shrink-0 items-center justify-center rounded-full p-3"
+            >
+              <Icon name="Badge" class="size-6" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="text-text font-bold">Official ACP Homologation</span>
+              <span class="text-text-muted text-sm"
+                >All finishers receive an official certification number
+                validated by ACP France.</span
+              >
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div
+              class="bg-gray/50 text-text-muted flex shrink-0 items-center justify-center rounded-full p-3"
+            >
+              <Icon name="Tag" class="size-6" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="text-text font-bold">Homologation & Medal Fees</span>
+              <span class="text-text-muted text-sm"
+                >Riders have the option to purchase the official commemorative
+                ACP Finisher Medal (25 BYN).</span
+              >
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
   </main>
   <Footer />
 </Layout>

@@ -1,0 +1,342 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Icon from '../../components/Icon.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return [{ params: { rider: 'aliaksandr-r' } }];
+}
+
+const { rider } = Astro.params;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="Aliaksandr R. - Rider Profile">
+  <Navbar />
+  <PageHeader
+    title="ALIAKSANDR R."
+    description="Minsk Randonneurs • BY520000"
+  />
+
+  <main class="bg-page-bg text-text flex w-full flex-col items-center">
+    <div
+      class="flex w-full max-w-[1280px] flex-col gap-[64px] p-[64px] lg:flex-row"
+    >
+      {/* rpContentLeft */}
+      <div class="flex min-w-0 flex-1 flex-col gap-[40px]">
+        {/* rpStats */}
+        <div class="flex w-full flex-col gap-[32px]">
+          <div class="flex w-full flex-col gap-[24px] sm:flex-row">
+            {/* st1 */}
+            <div
+              class="bg-brand flex flex-1 flex-col gap-[8px] rounded-[32px] p-[32px]"
+            >
+              <Icon
+                name="Activity"
+                class="text-complementary mb-[8px] h-[24px] w-[24px]"
+              />
+              <span
+                class="text-surface font-heading text-[48px] leading-none font-bold"
+                >12,400</span
+              >
+              <span class="text-surface font-body text-[16px] font-semibold"
+                >Total Kilometers</span
+              >
+            </div>
+            {/* st2 */}
+            <div
+              class="bg-accent flex flex-1 flex-col gap-[8px] rounded-[32px] p-[32px]"
+            >
+              <Icon
+                name="Flag"
+                class="text-complementary mb-[8px] h-[24px] w-[24px]"
+              />
+              <span
+                class="text-surface font-heading text-[48px] leading-none font-bold"
+                >38</span
+              >
+              <span class="text-surface font-body text-[16px] font-semibold"
+                >Completed Events</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-surface flex w-full flex-col gap-[16px] rounded-[40px] p-[40px]"
+          >
+            <span class="text-text-muted font-body text-[16px] font-semibold"
+              >Distance by Month</span
+            >
+            {/* Chart Placeholder */}
+            <div
+              class="bg-bg border-gray flex h-[150px] w-full items-center justify-center rounded-[16px] border"
+            >
+              <span
+                class="text-text-muted font-body text-[12px] font-bold tracking-widest uppercase"
+                >Chart Visualization</span
+              >
+            </div>
+          </div>
+        </div>
+
+        {/* rpYearlyStats */}
+        <div class="flex w-full flex-col gap-[24px]">
+          <h3 class="text-text font-heading text-[24px] font-bold uppercase">
+            YEARLY BREAKDOWN
+          </h3>
+          <div class="flex w-full flex-col">
+            <div
+              class="border-surface flex w-full items-center justify-between border-t py-[24px]"
+            >
+              <div class="flex items-center gap-[48px]">
+                <span class="text-text font-heading text-[32px] font-extrabold"
+                  >2026</span
+                >
+                <span
+                  class="text-text-muted font-body text-[16px] font-semibold"
+                  >12 rides</span
+                >
+              </div>
+              <span class="text-brand font-heading text-[24px] font-bold"
+                >3,200 KM</span
+              >
+            </div>
+
+            <div
+              class="border-surface flex w-full items-center justify-between border-t py-[24px]"
+            >
+              <div class="flex items-center gap-[48px]">
+                <span class="text-text font-heading text-[32px] font-extrabold"
+                  >2025</span
+                >
+                <span
+                  class="text-text-muted font-body text-[16px] font-semibold"
+                  >18 rides</span
+                >
+              </div>
+              <span class="text-brand font-heading text-[24px] font-bold"
+                >4,800 KM</span
+              >
+            </div>
+
+            <div
+              class="border-surface flex w-full items-center justify-between border-t py-[24px]"
+            >
+              <div class="flex items-center gap-[48px]">
+                <span class="text-text font-heading text-[32px] font-extrabold"
+                  >2024</span
+                >
+                <span
+                  class="text-text-muted font-body text-[16px] font-semibold"
+                  >9 rides</span
+                >
+              </div>
+              <span class="text-brand font-heading text-[24px] font-bold"
+                >2,400 KM</span
+              >
+            </div>
+
+            <div
+              class="border-surface flex w-full items-center justify-between border-t py-[24px]"
+            >
+              <div class="flex items-center gap-[48px]">
+                <span class="text-text font-heading text-[32px] font-extrabold"
+                  >2023</span
+                >
+                <span
+                  class="text-text-muted font-body text-[16px] font-semibold"
+                  >7 rides</span
+                >
+              </div>
+              <span class="text-brand font-heading text-[24px] font-bold"
+                >2,000 KM</span
+              >
+            </div>
+          </div>
+        </div>
+
+        {/* rpHist */}
+        <div class="flex w-full flex-col gap-[24px]">
+          <h3 class="text-text font-heading text-[24px] font-bold uppercase">
+            RECENT BREVETS
+          </h3>
+
+          <div class="border-surface flex w-full flex-col border-t">
+            {/* Ride1 */}
+            <article
+              class="border-surface hover:bg-surface/50 flex w-full items-center gap-[32px] border-b py-[32px] transition-colors"
+            >
+              <div class="flex w-[80px] shrink-0 flex-col items-center">
+                <span
+                  class="text-text-muted font-body mb-1 text-[14px] font-bold tracking-widest uppercase"
+                  >MAY</span
+                >
+                <span
+                  class="text-text font-heading text-[32px] leading-none font-extrabold"
+                  >12</span
+                >
+              </div>
+              <div class="flex min-w-0 flex-1 flex-col gap-[12px]">
+                <h4
+                  class="text-text font-heading truncate text-[28px] leading-tight font-bold"
+                >
+                  Minskaya Krugosvetka
+                </h4>
+                <div class="flex items-center gap-[12px]">
+                  <div class="bg-brand rounded-[16px] px-[12px] py-[4px]">
+                    <span
+                      class="text-page-bg font-body text-[12px] font-bold tracking-wider uppercase"
+                      >ACP CERTIFIED</span
+                    >
+                  </div>
+                  <span
+                    class="text-text-muted font-body text-[14px] font-semibold"
+                    >Minsk</span
+                  >
+                </div>
+              </div>
+              <div class="flex w-[100px] shrink-0 flex-col gap-[8px]">
+                <span
+                  class="text-text font-heading text-[24px] leading-none font-bold"
+                  >200 KM</span
+                >
+                <a
+                  href="#"
+                  class="border-text-muted text-text-muted font-body flex h-[28px] items-center justify-center rounded-[16px] border px-[16px] py-[6px] text-center text-[12px] leading-none font-bold uppercase transition-colors hover:bg-black/5"
+                  >RESULTS</a
+                >
+              </div>
+            </article>
+
+            {/* Ride2 */}
+            <article
+              class="border-surface hover:bg-surface/50 flex w-full items-center gap-[32px] border-b py-[32px] transition-colors"
+            >
+              <div class="flex w-[80px] shrink-0 flex-col items-center">
+                <span
+                  class="text-text-muted font-body mb-1 text-[14px] font-bold tracking-widest uppercase"
+                  >APR</span
+                >
+                <span
+                  class="text-text font-heading text-[32px] leading-none font-extrabold"
+                  >24</span
+                >
+              </div>
+              <div class="flex min-w-0 flex-1 flex-col gap-[12px]">
+                <h4
+                  class="text-text font-heading truncate text-[28px] leading-tight font-bold"
+                >
+                  Spring Opener
+                </h4>
+                <div class="flex items-center gap-[12px]">
+                  <div class="bg-brand rounded-[16px] px-[12px] py-[4px]">
+                    <span
+                      class="text-page-bg font-body text-[12px] font-bold tracking-wider uppercase"
+                      >ACP CERTIFIED</span
+                    >
+                  </div>
+                  <span
+                    class="text-text-muted font-body text-[14px] font-semibold"
+                    >Minsk</span
+                  >
+                </div>
+              </div>
+              <div class="flex w-[100px] shrink-0 flex-col gap-[8px]">
+                <span
+                  class="text-text font-heading text-[24px] leading-none font-bold"
+                  >200 KM</span
+                >
+                <a
+                  href="#"
+                  class="border-text-muted text-text-muted font-body flex h-[28px] items-center justify-center rounded-[16px] border px-[16px] py-[6px] text-center text-[12px] leading-none font-bold uppercase transition-colors hover:bg-black/5"
+                  >RESULTS</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      {/* rpSidebarRight */}
+      <aside class="flex w-full shrink-0 flex-col gap-[32px] lg:w-[320px]">
+        {/* rpBadges */}
+        <div class="flex w-full flex-col gap-[16px]">
+          <h3 class="text-text font-heading text-[24px] font-bold uppercase">
+            ACHIEVEMENTS
+          </h3>
+
+          <div class="flex w-full gap-[16px]">
+            {/* b1 */}
+            <div
+              class="bg-surface flex flex-1 flex-col gap-[12px] rounded-[24px] p-[24px]"
+            >
+              <div
+                class="bg-brand flex h-[40px] w-[40px] items-center justify-center rounded-full"
+              >
+                <Icon name="Award" class="text-surface h-[20px] w-[20px]" />
+              </div>
+              <span
+                class="text-text font-heading text-[16px] leading-none font-bold"
+                >SR 2026</span
+              >
+            </div>
+            {/* b2 */}
+            <div
+              class="bg-surface flex flex-1 flex-col gap-[12px] rounded-[24px] p-[24px]"
+            >
+              <div
+                class="bg-brand flex h-[40px] w-[40px] items-center justify-center rounded-full"
+              >
+                <Icon name="Award" class="text-surface h-[20px] w-[20px]" />
+              </div>
+              <span
+                class="text-text font-heading text-[16px] leading-none font-bold"
+                >PBP 2023</span
+              >
+            </div>
+          </div>
+
+          <h3
+            class="text-text font-heading mt-[16px] text-[24px] font-bold uppercase"
+          >
+            AWARDS
+          </h3>
+
+          <div class="flex w-full flex-col gap-[16px]">
+            {/* normalBadges */}
+            <div
+              class="bg-surface border-text-muted/20 flex w-full items-center gap-[12px] rounded-[16px] border px-[16px] py-[8px]"
+            >
+              <Icon name="Star" class="text-accent h-[20px] w-[20px]" />
+              <span class="text-text font-body text-[14px] font-bold"
+                >10,000 KM Milestone</span
+              >
+            </div>
+            <div
+              class="bg-surface border-text-muted/20 flex w-full items-center gap-[12px] rounded-[16px] border px-[16px] py-[8px]"
+            >
+              <Icon name="Star" class="text-accent h-[20px] w-[20px]" />
+              <span class="text-text font-body text-[14px] font-bold"
+                >Fl&egrave;che Winner</span
+              >
+            </div>
+            <div
+              class="bg-surface border-text-muted/20 flex w-full items-center gap-[12px] rounded-[16px] border px-[16px] py-[8px]"
+            >
+              <Icon name="Star" class="text-accent h-[20px] w-[20px]" />
+              <span class="text-text font-body text-[14px] font-bold"
+                >5-Year Veteran</span
+              >
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

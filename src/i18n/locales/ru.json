@@ -2,10 +2,8 @@
   "nav.home": "Главная",
   "nav.events": "Календарь",
   "nav.routes": "Маршруты",
-  "nav.clubs": "Клубы",
-  "nav.stats": "Статистика",
+  "nav.clubs": "Сообщество",
   "nav.rules": "Правила",
-  "nav.volunteer": "Волонтерство",
   "nav.login": "Войти",
   "title": "Рандоннеры Беларуси",
   "description": "Сообщество любителей дальних велопробегов",
@@ -82,5 +80,6 @@
   "footer.privacy": "Политика конфиденциальности",
   "footer.terms": "Пользовательское соглашение",
   "page.coming_soon_title": "Скоро появится",
-  "page.coming_soon_desc": "Мы усердно работаем над этой страницей."
+  "page.coming_soon_desc": "Мы усердно работаем над этой страницей.",
+  "nav.faq": "FAQ"
 }

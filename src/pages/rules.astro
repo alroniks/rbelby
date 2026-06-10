@@ -3,412 +3,410 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PageHeader from '../components/PageHeader.astro';
+import Icon from '../components/Icon.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout>
+<Layout title="Rules & Regulations">
   <Navbar />
-
   <PageHeader
-    title="OFFICIAL RULES"
-    description="The rules of ACP brevets and our local guidelines."
+    title="RULES & REGULATIONS"
+    description="The essential guidelines every randonneur must follow to complete a brevet."
   />
 
-  <section class="bg-page-bg w-full">
+  <main class="bg-page-bg flex w-full flex-col items-center">
     <div
-      class="mx-auto flex max-w-7xl flex-col gap-16 px-4 py-16 sm:px-8 lg:px-16"
+      class="flex w-full max-w-[1280px] flex-col gap-[64px] px-[64px] pt-[64px] pb-[128px] lg:flex-row"
     >
-      <!-- Golden Rule -->
-      <div
-        class="bg-surface flex flex-col items-center gap-8 rounded-[32px] p-8 lg:flex-row lg:items-start lg:p-12"
-      >
-        <svg
-          class="text-brand h-16 w-16 shrink-0"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+      {/* Rules Wrap */}
+      <div class="flex min-w-0 flex-1 flex-col gap-[80px]">
+        {/* Golden Rule Block */}
+        <section
+          class="bg-brand flex w-full items-center gap-[40px] rounded-[24px] p-[48px]"
         >
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          <path d="M12 8v4"></path>
-          <path d="M12 16h.01"></path>
-        </svg>
-        <div class="flex flex-col gap-2">
-          <h2 class="font-heading text-text text-3xl font-bold">
-            THE GOLDEN RULE: SELF-SUFFICIENCY
-          </h2>
-          <p class="font-body text-text-muted text-lg leading-relaxed">
-            Brevets are not races. They are tests of endurance, self-reliance,
-            and camaraderie. Personal follow cars or outside support are
-            strictly prohibited on the route. You must carry what you need, fix
-            your own mechanicals, and navigate independently.
-          </p>
+          <div
+            class="bg-complementary flex h-[96px] w-[96px] shrink-0 items-center justify-center rounded-[48px]"
+          >
+            <Icon name="ShieldAlert" class="text-brand h-[48px] w-[48px]" />
+          </div>
+          <div class="flex flex-1 flex-col gap-[12px]">
+            <h3 class="text-complementary font-heading text-[24px] font-bold">
+              THE GOLDEN RULE: SELF-SUFFICIENCY
+            </h3>
+            <p
+              class="font-body text-[16px] leading-relaxed font-normal text-[#ffffff]"
+            >
+              Brevets are not races. They are tests of endurance, self-reliance,
+              and camaraderie. Personal follow cars or outside support are
+              strictly prohibited on the route. You must carry what you need,
+              fix your own mechanicals, and navigate independently.
+            </p>
+          </div>
+        </section>
+
+        {/* Bottom Split Grid */}
+        <div class="flex w-full flex-col gap-[48px] md:flex-row">
+          {/* Control Points Column */}
+          <section class="flex flex-1 flex-col gap-[24px]">
+            <h3 class="text-text font-heading text-[24px] font-bold">
+              CONTROL POINTS (CPs)
+            </h3>
+            <p
+              class="text-text-muted font-body text-[14px] leading-relaxed font-normal"
+            >
+              To prove you completed the route, you must pass through designated
+              control points within specific opening and closing times. At each
+              control, you must have your brevet card stamped or provide
+              photographic/electronic proof.
+            </p>
+            <div class="flex w-full flex-col gap-[16px]">
+              <div
+                class="bg-surface flex w-full items-center gap-[16px] rounded-[16px] p-[16px]"
+              >
+                <Icon
+                  name="Clock4"
+                  class="text-accent h-[24px] w-[24px] shrink-0"
+                />
+                <p class="text-text font-body text-[14px] font-semibold">
+                  Opening Time: Based on 34 km/h max speed
+                </p>
+              </div>
+              <div
+                class="bg-surface flex w-full items-center gap-[16px] rounded-[16px] p-[16px]"
+              >
+                <Icon
+                  name="Clock8"
+                  class="text-accent h-[24px] w-[24px] shrink-0"
+                />
+                <p class="text-text font-body text-[14px] font-semibold">
+                  Closing Time: Based on 15 km/h min speed
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Safety Gear Column */}
+          <section
+            class="bg-bg flex flex-1 flex-col gap-[24px] rounded-[24px] p-[32px]"
+          >
+            <h3 class="text-brand font-heading text-[20px] font-bold">
+              REQUIRED SAFETY GEAR
+            </h3>
+            <div class="flex w-full flex-col gap-[16px]">
+              <div class="flex items-center gap-[16px]">
+                <Icon
+                  name="Sun"
+                  class="text-brand h-[20px] w-[20px] shrink-0"
+                />
+                <span class="text-text font-body text-[14px] font-semibold"
+                  >Front &amp; Rear Lights (Attached to bike)</span
+                >
+              </div>
+              <div class="flex items-center gap-[16px]">
+                <Icon
+                  name="Shirt"
+                  class="text-brand h-[20px] w-[20px] shrink-0"
+                />
+                <span class="text-text font-body text-[14px] font-semibold"
+                  >Reflective Vest/Sash (Worn at night)</span
+                >
+              </div>
+              <div class="flex items-center gap-[16px]">
+                <Icon
+                  name="Shield"
+                  class="text-brand h-[20px] w-[20px] shrink-0"
+                />
+                <span class="text-text font-body text-[14px] font-semibold"
+                  >Cycling Helmet</span
+                >
+              </div>
+              <div class="flex items-center gap-[16px]">
+                <Icon
+                  name="FileText"
+                  class="text-brand h-[20px] w-[20px] shrink-0"
+                />
+                <span class="text-text font-body text-[14px] font-semibold"
+                  >Brevet Card &amp; ID</span
+                >
+              </div>
+            </div>
+          </section>
         </div>
+
+        {/* Tracking System Explanation */}
+        <section class="flex w-full flex-col gap-[32px] p-[48px]">
+          <div class="flex flex-col gap-[16px]">
+            <h3 class="text-text font-heading text-[24px] font-bold">
+              SMS TRACKING SYSTEM
+            </h3>
+            <p class="text-text-muted font-body text-[16px] font-normal">
+              Randonneurs Belarus uses an automated SMS tracking system to
+              record your progress and broadcast it to the live tracking page.
+            </p>
+          </div>
+          <div class="flex w-full flex-col gap-[24px] md:flex-row">
+            <div class="flex flex-1 flex-col gap-[16px]">
+              <div
+                class="bg-accent/10 text-accent flex h-[32px] w-[32px] items-center justify-center rounded-full text-[14px] font-bold"
+              >
+                1
+              </div>
+              <h4 class="text-text font-heading text-[16px] font-bold">
+                Arrive at CP
+              </h4>
+              <p class="text-text-muted font-body text-[14px] font-normal">
+                Reach the designated location.
+              </p>
+            </div>
+            <div class="flex flex-1 flex-col gap-[16px]">
+              <div
+                class="bg-accent/10 text-accent flex h-[32px] w-[32px] items-center justify-center rounded-full text-[14px] font-bold"
+              >
+                2
+              </div>
+              <h4 class="text-text font-heading text-[16px] font-bold">
+                Send Code
+              </h4>
+              <p class="text-text-muted font-body text-[14px] font-normal">
+                SMS your unique code to the bot.
+              </p>
+            </div>
+            <div class="flex flex-1 flex-col gap-[16px]">
+              <div
+                class="bg-accent/10 text-accent flex h-[32px] w-[32px] items-center justify-center rounded-full text-[14px] font-bold"
+              >
+                3
+              </div>
+              <h4 class="text-text font-heading text-[16px] font-bold">
+                Verify
+              </h4>
+              <p class="text-text-muted font-body text-[14px] font-normal">
+                Get an automated confirmation reply.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-surface/50 border-gray flex w-full items-center gap-[16px] rounded-[16px] border p-[24px]"
+          >
+            <Icon
+              name="MessageSquare"
+              class="text-accent h-[24px] w-[24px] shrink-0"
+            />
+            <p class="text-text font-body text-[14px] font-medium italic">
+              Format: Send "CP1" to +375 XX XXX XX XX
+            </p>
+          </div>
+        </section>
+
+        {/* Official Regulations Wrap */}
+        <section class="flex w-full flex-col gap-[64px] pt-[48px] pb-[64px]">
+          <div class="flex w-full flex-col gap-[36px]">
+            <h2 class="text-text font-heading text-[32px] font-bold uppercase">
+              OFFICIAL ACP REGULATIONS
+            </h2>
+            <div class="flex w-full flex-col gap-[32px]">
+              <div class="flex w-full flex-col gap-[12px]">
+                <h4 class="text-text font-heading text-[20px] font-bold">
+                  Article 1: Qualification
+                </h4>
+                <p
+                  class="text-text-muted font-body text-[16px] leading-relaxed font-normal"
+                >
+                  These brevets are open to any amateur cyclist regardless of
+                  his or her cycling affiliations. Any rider under the age of 18
+                  must have consent of his or her parent or legal guardian.
+                </p>
+                <div class="bg-gray mt-[12px] h-[1px] w-full"></div>
+              </div>
+
+              <div class="flex w-full flex-col gap-[12px]">
+                <h4 class="text-text font-heading text-[20px] font-bold">
+                  Article 2: Route Deviations
+                </h4>
+                <p
+                  class="text-text-muted font-body text-[16px] leading-relaxed font-normal"
+                >
+                  The rider must stay on the route. If a rider leaves the route,
+                  they must return to the route at the same point prior to
+                  continuing, i.e. no shortcuts or detours from the route are
+                  allowed.
+                </p>
+                <div class="bg-gray mt-[12px] h-[1px] w-full"></div>
+              </div>
+
+              <div class="flex w-full flex-col gap-[12px]">
+                <h4 class="text-text font-heading text-[20px] font-bold">
+                  Article 3: Personal Support
+                </h4>
+                <p
+                  class="text-text-muted font-body text-[16px] leading-relaxed font-normal"
+                >
+                  Personal support is only allowed at the control points. Any
+                  violation of this rule will result in immediate
+                  disqualification.
+                </p>
+                <div class="bg-gray mt-[12px] h-[1px] w-full"></div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
-      <!-- Standard Distances -->
-      <div class="flex flex-col gap-8">
-        <div class="flex flex-col gap-2">
-          <h2 class="font-heading text-text text-3xl font-bold">
-            STANDARD DISTANCES & TIME LIMITS
-          </h2>
-          <p class="font-body text-text-muted text-lg">
-            Calculated based on an average minimum overall speed of 15 km/h
-            (including stops).
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <!-- 200 km -->
-          <div
-            class="bg-bg flex flex-col items-center gap-4 rounded-3xl p-8 text-center"
-          >
-            <span
-              class="font-heading text-brand text-5xl leading-tight font-bold"
-              >200</span
-            >
-            <span class="font-heading text-text-muted text-base font-semibold"
-              >KILOMETERS</span
-            >
-            <div class="bg-brand my-1 h-1 w-10 rounded-sm"></div>
-            <span class="font-body text-text text-2xl font-bold">13h 30m</span>
-          </div>
-          <!-- 300 km -->
-          <div
-            class="bg-bg flex flex-col items-center gap-4 rounded-3xl p-8 text-center"
-          >
-            <span
-              class="font-heading text-brand text-5xl leading-tight font-bold"
-              >300</span
-            >
-            <span class="font-heading text-text-muted text-base font-semibold"
-              >KILOMETERS</span
-            >
-            <div class="bg-brand my-1 h-1 w-10 rounded-sm"></div>
-            <span class="font-body text-text text-2xl font-bold">20h 00m</span>
-          </div>
-          <!-- 400 km -->
-          <div
-            class="bg-bg flex flex-col items-center gap-4 rounded-3xl p-8 text-center"
-          >
-            <span
-              class="font-heading text-brand text-5xl leading-tight font-bold"
-              >400</span
-            >
-            <span class="font-heading text-text-muted text-base font-semibold"
-              >KILOMETERS</span
-            >
-            <div class="bg-brand my-1 h-1 w-10 rounded-sm"></div>
-            <span class="font-body text-text text-2xl font-bold">27h 00m</span>
-          </div>
-          <!-- 600 km -->
-          <div
-            class="bg-bg flex flex-col items-center gap-4 rounded-3xl p-8 text-center"
-          >
-            <span
-              class="font-heading text-brand text-5xl leading-tight font-bold"
-              >600</span
-            >
-            <span class="font-heading text-text-muted text-base font-semibold"
-              >KILOMETERS</span
-            >
-            <div class="bg-brand my-1 h-1 w-10 rounded-sm"></div>
-            <span class="font-body text-text text-2xl font-bold">40h 00m</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Super Randonneur Card -->
-      <div
-        class="bg-surface flex flex-col items-center gap-8 rounded-[32px] p-8 lg:flex-row lg:items-start lg:p-10"
+      {/* Right Sidebar */}
+      <aside
+        class="sticky top-[100px] flex w-full shrink-0 flex-col gap-[32px] lg:w-[320px]"
       >
-        <svg
-          class="text-accent h-16 w-16 shrink-0"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+        {/* Quick Distances Reminders */}
+        <div
+          class="bg-bg flex w-full flex-col gap-[16px] rounded-[16px] p-[24px]"
         >
-          <circle cx="12" cy="8" r="7"></circle>
-          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-        </svg>
-        <div class="flex flex-col gap-2">
-          <h2 class="font-heading text-text text-2xl font-bold">
-            THE SUPER RANDONNEUR SERIES
-          </h2>
-          <p class="font-body text-text-muted text-base leading-relaxed">
-            A "Super Randonneur" is a rider who successfully completes a full
-            series of 200, 300, 400, and 600 km brevets within the same calendar
-            year. Earning this title is a major milestone and serves as the
-            mandatory qualification to ride extreme distances like 1000km,
-            1200km, and the legendary Paris-Brest-Paris.
-          </p>
-        </div>
-      </div>
-
-      <!-- Grand Randonnees -->
-      <div class="flex flex-col gap-8">
-        <div class="flex flex-col gap-2">
-          <h2 class="font-heading text-text text-3xl font-bold">
-            GRAND RANDONNÉES
-          </h2>
-          <p class="font-body text-text-muted text-lg">
-            Extreme distances requiring the Super Randonneur qualification and
-            strategic sleep planning.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <!-- 1000 km -->
-          <div
-            class="bg-bg flex flex-col items-center gap-4 rounded-3xl p-8 text-center"
+          <h4
+            class="text-text font-heading text-[16px] font-bold tracking-widest uppercase"
           >
-            <span
-              class="font-heading text-brand text-5xl leading-tight font-bold"
-              >1000</span
-            >
-            <span class="font-heading text-text-muted text-base font-semibold"
-              >KILOMETERS</span
-            >
-            <div class="bg-brand my-1 h-1 w-10 rounded-sm"></div>
-            <span class="font-body text-text text-2xl font-bold">75h 00m</span>
-          </div>
-          <!-- 1200 km -->
-          <div
-            class="bg-bg flex flex-col items-center gap-4 rounded-3xl p-8 text-center"
-          >
-            <span
-              class="font-heading text-brand text-5xl leading-tight font-bold"
-              >1200</span
-            >
-            <span class="font-heading text-text-muted text-base font-semibold"
-              >KILOMETERS</span
-            >
-            <div class="bg-brand my-1 h-1 w-10 rounded-sm"></div>
-            <span class="font-body text-text text-2xl font-bold">90h 00m</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- CPs and Gear Section -->
-      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
-        <!-- Control Points -->
-        <div class="flex flex-col gap-6">
-          <h2 class="font-heading text-text text-3xl font-bold">
-            CONTROL POINTS (CPs)
-          </h2>
-          <p class="font-body text-text-muted text-base leading-relaxed">
-            To prove you completed the route, you must pass through designated
-            control points within specific opening and closing times. At each
-            control, you must have your brevet card stamped or provide
-            photographic/electronic proof.
-          </p>
-          <div class="mt-2 flex flex-col gap-4">
-            <div class="flex items-center gap-4">
-              <svg
-                class="text-accent h-6 w-6 shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><circle cx="12" cy="12" r="10"></circle><polyline
-                  points="12 6 12 12 16 14"></polyline></svg
-              >
-              <span class="font-body text-text text-base font-semibold"
-                >Opening Time: Based on 34 km/h max speed</span
-              >
-            </div>
-            <div class="flex items-center gap-4">
-              <svg
-                class="text-accent h-6 w-6 shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><circle cx="12" cy="12" r="10"></circle><polyline
-                  points="12 6 12 12 8 14"></polyline></svg
-              >
-              <span class="font-body text-text text-base font-semibold"
-                >Closing Time: Based on 15 km/h min speed</span
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- Safety Gear -->
-        <div class="bg-surface flex flex-col gap-6 rounded-[32px] p-8 lg:p-10">
-          <h2 class="font-heading text-text text-3xl font-bold">
-            REQUIRED SAFETY GEAR
-          </h2>
-          <div class="flex flex-col gap-4">
-            <div class="flex items-center gap-4">
-              <svg
-                class="text-accent h-6 w-6 shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"
-                ></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"
-                ></path><path d="m17.66 17.66 1.41 1.41"></path><path
-                  d="M2 12h2"></path><path d="M20 12h2"></path><path
-                  d="m6.34 17.66-1.41 1.41"></path><path
-                  d="m19.07 4.93-1.41 1.41"></path></svg
-              >
-              <span class="font-body text-text text-base font-semibold"
-                >Front & Rear Lights (Attached to bike)</span
-              >
-            </div>
-            <div class="flex items-center gap-4">
-              <svg
-                class="text-accent h-6 w-6 shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path
-                  d="M20.38 3.46 16 2a24 24 0 0 0-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"
-                ></path></svg
-              >
-              <span class="font-body text-text text-base font-semibold"
-                >Reflective Vest/Sash (Worn at night)</span
-              >
-            </div>
-            <div class="flex items-center gap-4">
-              <svg
-                class="text-accent h-6 w-6 shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-                ></path></svg
-              >
-              <span class="font-body text-text text-base font-semibold"
-                >Cycling Helmet</span
-              >
-            </div>
-            <div class="flex items-center gap-4">
-              <svg
-                class="text-accent h-6 w-6 shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path
-                  d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
-                ></path><polyline points="14 2 14 8 20 8"></polyline><line
-                  x1="16"
-                  y1="13"
-                  x2="8"
-                  y2="13"></line><line x1="16" y1="17" x2="8" y2="17"
-                ></line><line x1="10" y1="9" x2="8" y2="9"></line></svg
-              >
-              <span class="font-body text-text text-base font-semibold"
-                >Brevet Card & ID</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Official Regulations List -->
-      <div class="flex flex-col gap-16 py-8 lg:flex-row">
-        <div class="flex flex-1 flex-col gap-12">
-          <h2 class="font-heading text-text text-3xl font-bold">
-            OFFICIAL ACP REGULATIONS
-          </h2>
-
-          <div class="flex flex-col gap-4">
-            <h3 class="font-heading text-text text-2xl font-bold">
-              Article 1: Qualification
-            </h3>
-            <p class="font-body text-text-muted text-base leading-relaxed">
-              These brevets are open to any amateur cyclist regardless of his or
-              her cycling affiliations, covered by insurance. Any rider under
-              the age of 18 must have consent of his or her parent or legal
-              guardian.
-            </p>
-          </div>
-
-          <div class="flex flex-col gap-4">
-            <h3 class="font-heading text-text text-2xl font-bold">
-              Article 2: Route Deviations
-            </h3>
-            <p class="font-body text-text-muted text-base leading-relaxed">
-              Each rider must stay on the route. If a rider leaves the route,
-              they must return to the route at the same point prior to
-              continuing, ie. no shortcuts or detours from the route, unless
-              specified by the organizer.
-            </p>
-          </div>
-
-          <div class="flex flex-col gap-4">
-            <h3 class="font-heading text-text text-2xl font-bold">
-              Article 3: Homologation
-            </h3>
-            <p class="font-body text-text-muted text-base leading-relaxed">
-              At the finish, the rider must sign his brevet card and return it
-              to the organizer. The brevet card will be returned to the rider
-              after the brevet has been verified and a homologation number
-              issued.
-            </p>
-          </div>
-        </div>
-
-        <!-- Sidebar TOC -->
-        <div class="flex w-full shrink-0 flex-col gap-6 lg:w-[300px]">
-          <h4 class="font-body text-text-muted text-sm font-bold uppercase">
-            OFFICIAL ARTICLES
+            TIME LIMITS
           </h4>
-          <div class="flex flex-col gap-4">
-            <a href="#" class="font-body text-text text-base font-semibold"
-              >Article 1: Qualification</a
+
+          <div class="flex w-full flex-col gap-[12px]">
+            <span class="text-brand font-body text-[12px] font-bold"
+              >Standard Distances (BRM)</span
             >
-            <a
-              href="#"
-              class="font-body text-text-muted hover:text-text text-base font-normal transition"
-              >Article 2: Deviations</a
+            <div class="flex w-full items-center justify-between">
+              <span class="text-text font-body text-[14px] font-semibold"
+                >200 km</span
+              >
+              <span class="text-text-muted font-body text-[14px] font-medium"
+                >13h 30m</span
+              >
+            </div>
+            <div class="flex w-full items-center justify-between">
+              <span class="text-text font-body text-[14px] font-semibold"
+                >300 km</span
+              >
+              <span class="text-text-muted font-body text-[14px] font-medium"
+                >20h 00m</span
+              >
+            </div>
+            <div class="flex w-full items-center justify-between">
+              <span class="text-text font-body text-[14px] font-semibold"
+                >400 km</span
+              >
+              <span class="text-text-muted font-body text-[14px] font-medium"
+                >27h 00m</span
+              >
+            </div>
+            <div class="flex w-full items-center justify-between">
+              <span class="text-text font-body text-[14px] font-semibold"
+                >600 km</span
+              >
+              <span class="text-text-muted font-body text-[14px] font-medium"
+                >40h 00m</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="border-gray flex w-full flex-col gap-[12px] border-t pt-[16px]"
+          >
+            <span class="text-brand font-body text-[12px] font-bold"
+              >Long Distances (LRM)</span
             >
-            <a
-              href="#"
-              class="font-body text-text-muted hover:text-text text-base font-normal transition"
-              >Article 3: Homologation</a
-            >
-            <a
-              href="#"
-              class="font-body text-text-muted hover:text-text text-base font-normal transition"
-              >Article 4: Brevet Cards</a
-            >
-            <a
-              href="#"
-              class="font-body text-text-muted hover:text-text text-base font-normal transition"
-              >Article 5: Abandoning</a
-            >
+            <div class="flex w-full items-center justify-between">
+              <span class="text-text font-body text-[14px] font-semibold"
+                >1000 km</span
+              >
+              <span class="text-text-muted font-body text-[14px] font-medium"
+                >75h 00m</span
+              >
+            </div>
+            <div class="flex w-full items-center justify-between">
+              <span class="text-text font-body text-[14px] font-semibold"
+                >1200 km</span
+              >
+              <span class="text-text-muted font-body text-[14px] font-medium"
+                >90h 00m</span
+              >
+            </div>
+          </div>
+
+          <div class="border-gray w-full border-t pt-[16px]">
+            <p class="text-text-muted font-body text-[12px] font-medium italic">
+              Exceeding the time limit by even 1 minute results in
+              non-homologation.
+            </p>
           </div>
         </div>
-      </div>
+
+        {/* Custom ToC */}
+        <div
+          class="bg-brand border-bg flex w-full flex-col gap-[16px] rounded-[16px] border p-[24px]"
+        >
+          <h4
+            class="text-complementary font-heading text-[16px] font-bold tracking-[1.5px]"
+          >
+            CONTENTS
+          </h4>
+          <div class="flex w-full flex-col gap-[12px]">
+            <a
+              href="#"
+              class="text-surface font-body text-[14px] font-semibold transition-colors hover:text-white"
+              >The Golden Rule</a
+            >
+            <a
+              href="#"
+              class="text-surface font-body text-[14px] font-semibold transition-colors hover:text-white"
+              >Control Points (CPs)</a
+            >
+            <a
+              href="#"
+              class="text-surface font-body text-[14px] font-semibold transition-colors hover:text-white"
+              >Required Safety Gear</a
+            >
+            <a
+              href="#"
+              class="text-surface font-body text-[14px] font-semibold transition-colors hover:text-white"
+              >Tracking &amp; SMS</a
+            >
+            <a
+              href="#"
+              class="text-surface font-body text-[14px] font-semibold transition-colors hover:text-white"
+              >Official Regulations</a
+            >
+
+            <div class="mt-[4px] flex w-full flex-col gap-[8px] pl-[16px]">
+              <a
+                href="#"
+                class="text-bg font-body text-[13px] font-medium opacity-80 transition-opacity hover:opacity-100"
+                >Article 1: Qualification</a
+              >
+              <a
+                href="#"
+                class="text-bg font-body text-[13px] font-medium opacity-80 transition-opacity hover:opacity-100"
+                >Article 2: Route Deviations</a
+              >
+              <a
+                href="#"
+                class="text-bg font-body text-[13px] font-medium opacity-80 transition-opacity hover:opacity-100"
+                >Article 3: Personal Support</a
+              >
+              <a
+                href="#"
+                class="text-bg font-body text-[13px] font-medium opacity-80 transition-opacity hover:opacity-100"
+                >Article 4: Traffic Laws</a
+              >
+              <a
+                href="#"
+                class="text-bg font-body text-[13px] font-medium opacity-80 transition-opacity hover:opacity-100"
+                >Article 5: Homologation</a
+              >
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
-  </section>
+  </main>
 
   <Footer />
 </Layout>

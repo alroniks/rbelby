@@ -10,157 +10,234 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout>
+<Layout title="FAQ">
   <Navbar />
-  <PageHeader title="FAQ" description="Frequently Asked Questions" />
+  <PageHeader
+    title="FREQUENTLY ASKED QUESTIONS"
+    description="Frequently asked questions, official rules, and gear guidelines for endurance cycling."
+  />
 
-  <section class="bg-page-bg py-12 lg:py-16">
-    <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-      <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
-        <div class="lg:col-span-9">
-          <div class="max-w-[800px]">
-            <h2
-              id="general"
-              class="font-heading text-text mt-16 mb-6 text-2xl font-bold uppercase"
+  <main class="bg-page-bg text-text flex w-full flex-col items-center">
+    <div
+      class="flex w-full max-w-[1280px] flex-col gap-[64px] px-[80px] pt-[80px] pb-[100px] lg:flex-row"
+    >
+      {/* FaqColumn */}
+      <div class="flex min-w-0 flex-1 flex-col gap-[56px]">
+        {/* Section 1: Equipment & Gear */}
+        <section class="flex w-full flex-col gap-[24px]">
+          <div class="flex items-center gap-[16px]">
+            <div
+              class="bg-brand flex items-center justify-center rounded-[6px] px-[8px] py-[4px]"
             >
-              General Questions
-            </h2>
-
-            <div class="hs-accordion-group" data-hs-accordion-always-open>
-              <!-- Accordion Item 1 -->
-              <div
-                class="hs-accordion active bg-surface border-border mb-4 rounded-xl border"
-                id="hs-basic-with-title-and-arrow-stretched-heading-one"
+              <span
+                class="font-heading text-[12px] font-extrabold text-[#ffffff]"
+                >01</span
               >
-                <button
-                  class="hs-accordion-toggle group text-text hover:text-accent inline-flex w-full items-center justify-between gap-x-3 px-5 py-4 pb-3 text-start font-semibold transition focus:outline-none md:text-lg"
-                  aria-expanded="true"
-                  aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
-                >
-                  What is a brevet?
-                  <Icon
-                    name="ChevronDown"
-                    class="hs-accordion-active:hidden text-text-muted group-hover:text-accent block size-5"
-                  />
-                  <Icon
-                    name="ChevronUp"
-                    class="hs-accordion-active:block text-text-muted group-hover:text-accent hidden size-5"
-                  />
-                </button>
-                <div
-                  id="hs-basic-with-title-and-arrow-stretched-collapse-one"
-                  class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
-                  role="region"
-                  aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
-                >
-                  <p
-                    class="text-text-muted font-body px-5 pb-5 leading-relaxed"
-                  >
-                    A brevet is a long-distance cycling event where participants
-                    must complete a set course within a specific time limit.
-                    It's not a race; the goal is simply to finish within the
-                    time limit.
-                  </p>
-                </div>
-              </div>
+            </div>
+            <h3 class="text-text font-heading text-[24px] font-bold">
+              Equipment &amp; Gear
+            </h3>
+          </div>
 
-              <!-- Accordion Item 2 -->
-              <div
-                class="hs-accordion bg-surface border-border mb-4 rounded-xl border"
-                id="hs-basic-with-title-and-arrow-stretched-heading-two"
-              >
-                <button
-                  class="hs-accordion-toggle group text-text hover:text-accent inline-flex w-full items-center justify-between gap-x-3 px-5 py-4 pb-3 text-start font-semibold transition focus:outline-none md:text-lg"
-                  aria-expanded="false"
-                  aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two"
-                >
-                  Do I need a special bike?
-                  <Icon
-                    name="ChevronDown"
-                    class="hs-accordion-active:hidden text-text-muted group-hover:text-accent block size-5"
-                  />
-                  <Icon
-                    name="ChevronUp"
-                    class="hs-accordion-active:block text-text-muted group-hover:text-accent hidden size-5"
-                  />
-                </button>
-                <div
-                  id="hs-basic-with-title-and-arrow-stretched-collapse-two"
-                  class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
-                  role="region"
-                  aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
-                >
-                  <p
-                    class="text-text-muted font-body px-5 pb-5 leading-relaxed"
-                  >
-                    No, you don't need a special bike. Any human-powered vehicle
-                    that is propelled solely by the rider is generally allowed.
-                    However, it should be comfortable and reliable for long
-                    distances. Road bikes, touring bikes, recumbents, and
-                    velomobiles are common.
-                  </p>
-                </div>
-              </div>
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+          >
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                Do I need a special bike?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+            <div class="h-[1px] w-full bg-[#f1f5f9]"></div>
+            <p
+              class="font-body text-[14px] leading-relaxed font-normal text-[#262626]"
+            >
+              No, any human-powered vehicle is allowed as long as it is
+              propelled solely by the rider.
+            </p>
+          </div>
 
-              <!-- Accordion Item 3 -->
-              <div
-                class="hs-accordion bg-surface border-border mb-4 rounded-xl border"
-                id="hs-basic-with-title-and-arrow-stretched-heading-three"
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+          >
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                What lights are required?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Rules & Limits */}
+        <section class="flex w-full flex-col gap-[24px]">
+          <div class="flex items-center gap-[16px]">
+            <div
+              class="bg-brand flex items-center justify-center rounded-[6px] px-[8px] py-[4px]"
+            >
+              <span
+                class="font-heading text-[12px] font-extrabold text-[#ffffff]"
+                >02</span
               >
-                <button
-                  class="hs-accordion-toggle group text-text hover:text-accent inline-flex w-full items-center justify-between gap-x-3 px-5 py-4 pb-3 text-start font-semibold transition focus:outline-none md:text-lg"
-                  aria-expanded="false"
-                  aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
-                >
-                  How do I register for an event?
-                  <Icon
-                    name="ChevronDown"
-                    class="hs-accordion-active:hidden text-text-muted group-hover:text-accent block size-5"
-                  />
-                  <Icon
-                    name="ChevronUp"
-                    class="hs-accordion-active:block text-text-muted group-hover:text-accent hidden size-5"
-                  />
-                </button>
-                <div
-                  id="hs-basic-with-title-and-arrow-stretched-collapse-three"
-                  class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
-                  role="region"
-                  aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
-                >
-                  <p
-                    class="text-text-muted font-body px-5 pb-5 leading-relaxed"
-                  >
-                    You can register for upcoming events directly on this
-                    website through the Events section. Registration typically
-                    closes a few days before the event date to allow for proper
-                    organization.
-                  </p>
-                </div>
-              </div>
+            </div>
+            <h3 class="text-text font-heading text-[24px] font-bold">
+              Rules &amp; Limits
+            </h3>
+          </div>
+
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+          >
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                What happens if I miss a control time limit?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+          </div>
+
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+          >
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                Can my friends drive alongside me?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Section 3: Navigation & Support */}
+        <section class="flex w-full flex-col gap-[24px]">
+          <div class="flex items-center gap-[16px]">
+            <div
+              class="bg-brand flex items-center justify-center rounded-[6px] px-[8px] py-[4px]"
+            >
+              <span
+                class="font-heading text-[12px] font-extrabold text-[#ffffff]"
+                >03</span
+              >
+            </div>
+            <h3 class="text-text font-heading text-[24px] font-bold">
+              Navigation &amp; Support
+            </h3>
+          </div>
+
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+          >
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                Will there be route signs?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+          </div>
+
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+          >
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                How do I get the GPX?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Sidebar */}
+      <aside
+        class="sticky top-[100px] flex w-full shrink-0 flex-col gap-[48px] lg:w-[280px]"
+      >
+        <div
+          class="bg-surface border-text-muted flex h-[48px] w-full items-center gap-[12px] rounded-[24px] border px-[20px]"
+        >
+          <Icon
+            name="Search"
+            class="text-text-muted h-[18px] w-[18px] shrink-0"
+          />
+          <input
+            type="text"
+            placeholder="Search questions..."
+            class="text-text-muted font-body w-full border-none bg-transparent text-[14px] font-medium outline-none"
+          />
+        </div>
+
+        <div class="flex w-full flex-col gap-[16px]">
+          <h4 class="text-text font-heading text-[16px] font-bold uppercase">
+            POPULAR TAGS
+          </h4>
+          <div class="flex w-full flex-wrap gap-[8px]">
+            <span
+              class="bg-surface border-gray text-text-muted font-body rounded-full border px-[12px] py-[4px] text-[13px] font-medium"
+              >Lights</span
+            >
+            <span
+              class="bg-surface border-gray text-text-muted font-body rounded-full border px-[12px] py-[4px] text-[13px] font-medium"
+              >Time Limits</span
+            >
+            <span
+              class="bg-surface border-gray text-text-muted font-body rounded-full border px-[12px] py-[4px] text-[13px] font-medium"
+              >GPS Route</span
+            >
+            <span
+              class="bg-surface border-gray text-text-muted font-body rounded-full border px-[12px] py-[4px] text-[13px] font-medium"
+              >Checkpoints</span
+            >
+          </div>
+        </div>
+
+        <div class="flex w-full flex-col gap-[16px]">
+          <h4 class="text-text font-heading text-[16px] font-bold uppercase">
+            CATEGORIES
+          </h4>
+          <div class="flex w-full flex-col gap-[16px]">
+            <div class="flex items-center gap-[10px]">
+              <div class="bg-accent h-[4px] w-[4px] rounded-full"></div>
+              <span class="text-text font-body text-[14px] font-semibold"
+                >Equipment &amp; Gear</span
+              >
+            </div>
+            <div class="flex items-center gap-[10px]">
+              <div class="h-[4px] w-[4px] bg-transparent"></div>
+              <span
+                class="text-text-muted hover:text-text font-body cursor-pointer text-[14px] font-normal transition-colors"
+                >Rules &amp; Limits</span
+              >
+            </div>
+            <div class="flex items-center gap-[10px]">
+              <div class="h-[4px] w-[4px] bg-transparent"></div>
+              <span
+                class="text-text-muted hover:text-text font-body cursor-pointer text-[14px] font-normal transition-colors"
+                >Navigation &amp; Support</span
+              >
             </div>
           </div>
         </div>
-
-        <div class="lg:col-span-3">
-          <div
-            class="bg-surface sticky top-8 rounded-xl border border-gray-200 p-6 shadow-sm dark:border-neutral-700"
-          >
-            <h3
-              class="font-heading text-text-muted mb-4 text-sm font-bold tracking-wider uppercase"
-            >
-              ON THIS PAGE
-            </h3>
-            <nav class="space-y-3" aria-label="Table of Contents">
-              <a
-                class="font-body text-brand hover:text-accent block text-sm font-medium transition-colors"
-                href="#general">General Questions</a
-              >
-            </nav>
-          </div>
-        </div>
-      </div>
+      </aside>
     </div>
-  </section>
+  </main>
+
   <Footer />
 </Layout>

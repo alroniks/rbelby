@@ -18,6 +18,7 @@ const events = defineCollection({
       club: z.string().optional().catch(undefined),
       startLocation: z.string().optional().catch(undefined),
       organizer: z.string().optional().catch(undefined),
+      routeId: z.string().optional().catch(undefined),
     })
     .merge(seoSchema),
 });
