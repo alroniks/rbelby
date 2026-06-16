@@ -1,0 +1,190 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection } from 'astro:content';
+import { getLangFromUrl, useTranslatedPath } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+const allRiders = await getCollection('riders');
+const allClubs = await getCollection('clubs');
+const clubMap = Object.fromEntries(allClubs.map((c) => [c.id, c]));
+
+const riders = allRiders.map((rider) => ({
+  ...rider,
+  club: rider.data.clubId ? clubMap[rider.data.clubId] : null,
+}));
+
+riders.sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const cities = [...new Set(riders.map((r) => r.data.city).filter(Boolean))].sort();
+---
+
+<Layout title="Riders Directory">
+  <Navbar />
+  <PageHeader
+    title="RIDERS DIRECTORY"
+    description="All registered randonneurs of Randonneurs Belarus."
+  />
+
+  <main class="bg-page-bg text-text flex w-full flex-col items-center">
+    <div
+      class="flex w-full max-w-[1280px] flex-col gap-[80px] px-[64px] pt-[64px] pb-[128px] lg:flex-row"
+    >
+      {/* Riders list */}
+      <div class="flex flex-1 flex-col gap-[8px]" id="riders-list">
+        {
+          riders.map((rider) => (
+            <article
+              class="rider-row border-surface hover:bg-surface/50 flex w-full items-center gap-[24px] border-b py-[24px] transition-colors"
+              data-name={rider.data.name.toLowerCase()}
+              data-city={rider.data.city?.toLowerCase() ?? ''}
+              data-club={rider.data.clubId ?? ''}
+            >
+              <div class="bg-surface border-text-muted flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-full border">
+                <Icon name="User" class="text-text-muted h-[22px] w-[22px]" />
+              </div>
+
+              <div class="flex min-w-0 flex-1 flex-col gap-[4px]">
+                <a
+                  href={translatePath(`/riders/${rider.id}`)}
+                  class="text-text font-heading hover:text-accent truncate text-[20px] font-bold transition-colors"
+                >
+                  {rider.data.name}
+                </a>
+                <span class="text-text-muted font-body text-[14px] font-normal">
+                  {rider.club?.data.name ?? 'Independent'}{rider.data.city ? ` • ${rider.data.city}` : ''}
+                </span>
+              </div>
+
+              <a
+                href={translatePath(`/riders/${rider.id}`)}
+                class="border-text-muted text-text-muted font-body flex h-[32px] items-center justify-center rounded-[16px] border px-[16px] py-[6px] text-[12px] font-bold uppercase transition-colors hover:bg-black/5"
+              >
+                PROFILE
+              </a>
+            </article>
+          ))
+        }
+
+        <div id="no-results" class="hidden w-full py-[80px] text-center">
+          <h3 class="text-text font-heading mb-[12px] text-[32px] font-extrabold">
+            No riders found
+          </h3>
+          <p class="text-text-muted font-body text-[16px] font-normal">
+            Try adjusting your filters.
+          </p>
+        </div>
+      </div>
+
+      {/* Sidebar */}
+      <aside class="flex w-[220px] shrink-0 flex-col gap-[48px]">
+        {/* Search */}
+        <div class="flex flex-col gap-[8px]">
+          <label
+            for="search-riders"
+            class="text-text-muted font-body text-[12px] font-bold tracking-widest uppercase"
+          >
+            SEARCH
+          </label>
+          <input
+            id="search-riders"
+            type="text"
+            placeholder="Name..."
+            class="border-text-muted text-text font-body focus:border-accent w-full rounded-[8px] border bg-transparent px-[16px] py-[12px] text-[16px] font-normal focus:outline-none"
+          />
+        </div>
+
+        {/* City filter */}
+        <div class="flex flex-col gap-[16px]">
+          <h4
+            class="text-text-muted font-body text-[14px] font-bold tracking-widest uppercase"
+          >
+            CITY
+          </h4>
+          <div class="filter-group flex flex-col gap-[16px]" data-filter-type="city">
+            <label class="group flex cursor-pointer items-center gap-[12px]">
+              <input type="radio" name="city" value="all" checked class="peer hidden" />
+              <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
+              <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
+                All Cities
+              </span>
+            </label>
+            {
+              cities.map((city) => (
+                <label class="group flex cursor-pointer items-center gap-[12px]">
+                  <input type="radio" name="city" value={city!.toLowerCase()} class="peer hidden" />
+                  <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
+                  <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
+                    {city}
+                  </span>
+                </label>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-[8px]">
+          <span class="text-text-muted font-body text-[12px] font-bold uppercase">TOTAL</span>
+          <span class="text-accent font-heading text-[48px] leading-none font-extrabold">
+            {riders.length}
+          </span>
+          <span class="text-text-muted font-body text-[14px] font-normal">registered riders</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const rows = document.querySelectorAll('.rider-row');
+    const noResults = document.getElementById('no-results');
+    const searchInput = document.getElementById('search-riders') as HTMLInputElement;
+    const filterGroups = document.querySelectorAll('.filter-group');
+
+    function applyFilters() {
+      const query = searchInput.value.toLowerCase().trim();
+      const cityRadio = document.querySelector('input[name="city"]:checked') as HTMLInputElement;
+      const city = cityRadio?.value ?? 'all';
+
+      let visible = 0;
+      rows.forEach((row) => {
+        const el = row as HTMLElement;
+        const name = el.dataset.name ?? '';
+        const rowCity = el.dataset.city ?? '';
+
+        const matchName = !query || name.includes(query);
+        const matchCity = city === 'all' || rowCity === city;
+
+        if (matchName && matchCity) {
+          el.classList.remove('hidden');
+          el.classList.add('flex');
+          visible++;
+        } else {
+          el.classList.add('hidden');
+          el.classList.remove('flex');
+        }
+      });
+
+      if (visible === 0) {
+        noResults?.classList.remove('hidden');
+      } else {
+        noResults?.classList.add('hidden');
+      }
+    }
+
+    searchInput?.addEventListener('input', applyFilters);
+    filterGroups.forEach((group) => {
+      group.querySelectorAll('input').forEach((input) => {
+        input.addEventListener('change', applyFilters);
+      });
+    });
+  });
+</script>

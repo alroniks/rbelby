@@ -4,22 +4,27 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import Icon from '../../components/Icon.astro';
+import { getCollection } from 'astro:content';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
-export function getStaticPaths() {
-  return [{ params: { club: 'minsk-randonneurs' } }];
+export async function getStaticPaths() {
+  const clubs = await getCollection('clubs');
+  return clubs.map((club) => ({
+    params: { club: club.id },
+    props: { club },
+  }));
 }
 
-const { club } = Astro.params;
+const { club } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title="Minsk Randonneurs - Club Detail">
+<Layout title={`${club.data.name} - Club Detail`}>
   <Navbar />
   <PageHeader
-    title="MINSK RANDONNEURS"
-    description="The founding club of the Belarusian randonneuring movement."
+    title={club.data.name}
+    description={club.data.description || (club.data.city ? `Randonneuring club from ${club.data.city}.` : 'Randonneurs Belarus affiliated club.')}
   />
 
   <main class="bg-page-bg text-text flex w-full flex-col items-center">
@@ -31,26 +36,25 @@ const t = useTranslations(lang);
         {/* statsWrap */}
         <div class="flex w-full flex-col gap-[16px]">
           <div class="flex w-full flex-wrap gap-[12px]">
-            {/* Fact1 */}
-            <div class="bg-brand rounded-[32px] px-[16px] py-[6px]">
-              <span class="text-surface font-body text-[12px] font-semibold"
-                >EST. 2010</span
-              >
-            </div>
-            {/* Fact2 */}
+            {club.data.createdAt && (
+              <div class="bg-brand rounded-[32px] px-[16px] py-[6px]">
+                <span class="text-surface font-body text-[12px] font-semibold">
+                  EST. {club.data.createdAt.split('-')[0]}
+                </span>
+              </div>
+            )}
             <div class="bg-accent rounded-[32px] px-[16px] py-[6px]">
-              <span class="text-surface font-body text-[12px] font-semibold"
-                >BY520000</span
-              >
+              <span class="text-surface font-body text-[12px] font-semibold">
+                {club.id}
+              </span>
             </div>
-            {/* Fact3 */}
-            <div
-              class="bg-surface border-text-muted rounded-[32px] border px-[16px] py-[6px]"
-            >
-              <span class="text-text font-body text-[12px] font-semibold"
-                >Minsk Region</span
-              >
-            </div>
+            {club.data.city && (
+              <div class="bg-surface border-text-muted rounded-[32px] border px-[16px] py-[6px]">
+                <span class="text-text font-body text-[12px] font-semibold">
+                  {club.data.city}
+                </span>
+              </div>
+            )}
           </div>
         </div>
 
@@ -280,49 +284,54 @@ const t = useTranslations(lang);
           class="bg-brand flex w-full flex-col gap-[24px] rounded-tl-[0px] rounded-tr-[40px] rounded-br-[0px] rounded-bl-[0px] p-[40px]"
         >
           <h3 class="text-surface font-heading text-[24px] font-bold uppercase">
-            Club Organizer
+            Contact
           </h3>
           <div class="flex items-center gap-[16px]">
             <div
-              class="bg-complementary h-[64px] w-[64px] shrink-0 overflow-hidden rounded-full"
+              class="bg-complementary flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-full"
             >
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
-                class="h-full w-full object-cover"
-                alt=""
-              />
+              <span class="text-brand font-heading text-[28px] font-bold">
+                {club.data.name[0]}
+              </span>
             </div>
             <div class="flex flex-col gap-[4px]">
-              <span class="text-surface font-heading text-[18px] font-bold"
-                >Ivan Ivanov</span
-              >
-              <span class="text-surface font-body text-[12px] font-normal"
-                >ACP Representative</span
-              >
+              <span class="text-surface font-heading text-[18px] font-bold">
+                {club.data.name}
+              </span>
+              <span class="text-surface font-body text-[12px] font-normal">
+                {club.id} &bull; Randonneurs Belarus
+              </span>
             </div>
           </div>
           <div class="bg-surface h-[1px] w-full opacity-30"></div>
-          <div class="flex flex-col gap-[8px]">
-            <span class="text-complementary font-body text-[12px] font-normal"
-              >Email</span
-            >
-            <a
-              href="mailto:ivan@minsk-randonneurs.by"
-              class="text-surface font-body text-[14px] font-semibold hover:underline"
-              >ivan@minsk-randonneurs.by</a
-            >
-          </div>
-          <div class="flex flex-col gap-[8px]">
-            <span class="text-complementary font-body text-[12px] font-normal"
-              >Website</span
-            >
-            <a
-              href="https://minsk-randonneurs.by"
-              target="_blank"
-              class="text-surface font-body text-[14px] font-semibold hover:underline"
-              >minsk-randonneurs.by</a
-            >
-          </div>
+          {club.data.email && (
+            <div class="flex flex-col gap-[8px]">
+              <span class="text-complementary font-body text-[12px] font-normal">Email</span>
+              <a
+                href={`mailto:${club.data.email}`}
+                class="text-surface font-body text-[14px] font-semibold hover:underline"
+              >
+                {club.data.email}
+              </a>
+            </div>
+          )}
+          {club.data.site && (
+            <div class="flex flex-col gap-[8px]">
+              <span class="text-complementary font-body text-[12px] font-normal">Website</span>
+              <a
+                href={club.data.site}
+                target="_blank"
+                class="text-surface font-body text-[14px] font-semibold hover:underline"
+              >
+                {club.data.site.replace(/^https?:\/\//, '')}
+              </a>
+            </div>
+          )}
+          {!club.data.email && !club.data.site && (
+            <p class="text-surface font-body text-[14px] font-normal opacity-70">
+              Contact information not yet available.
+            </p>
+          )}
         </div>
 
         {/* cAchieve */}

@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection, render } from 'astro:content';
+import { getLangFromUrl, useTranslatedPath } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('journal');
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+const allAuthors = await getCollection('authors');
+const author = article.data.author ? allAuthors.find((a) => a.id === article.data.author) : null;
+
+const date = new Date(article.data.date);
+const dateStr = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Layout
+  title={`${article.data.title} — Journal`}
+>
+  <Navbar />
+
+  <main class="bg-page-bg text-text flex w-full flex-col items-center">
+    {/* Article Header */}
+    <section class="bg-bg w-full">
+      <div class="mx-auto flex w-full max-w-[1280px] flex-col gap-[24px] px-[64px] pt-[64px] pb-[48px]">
+        <a
+          href={translatePath('/journal')}
+          class="text-text-muted font-body flex items-center gap-[8px] text-[14px] font-semibold hover:underline"
+        >
+          <Icon name="ArrowLeft" class="h-[14px] w-[14px]" />
+          Back to Journal
+        </a>
+
+        <div class="flex items-center gap-[12px]">
+          <span class="text-text-muted font-body text-[14px] font-semibold">{dateStr}</span>
+          {
+            author && (
+              <>
+                <span class="text-text-muted font-body text-[14px]">&bull;</span>
+                <span class="text-text-muted font-body text-[14px] font-semibold">
+                  {author.data.name}
+                </span>
+              </>
+            )
+          }
+        </div>
+
+        <h1 class="text-text font-heading text-[48px] leading-tight font-bold">
+          {article.data.title}
+        </h1>
+
+        {
+          article.data.tags && article.data.tags.length > 0 && (
+            <div class="flex flex-wrap gap-[8px]">
+              {article.data.tags.map((tag) => (
+                <div class="bg-surface border-text-muted/20 rounded-[16px] border px-[12px] py-[4px]">
+                  <span class="text-text-muted font-body text-[12px] font-semibold">#{tag}</span>
+                </div>
+              ))}
+            </div>
+          )
+        }
+      </div>
+    </section>
+
+    {/* Article Body */}
+    <div class="w-full max-w-[1280px] px-[64px] py-[64px]">
+      <div
+        class="prose prose-lg text-text font-body max-w-[720px] leading-relaxed
+          prose-headings:font-heading prose-headings:font-bold prose-headings:text-text prose-headings:uppercase
+          prose-p:text-text-muted prose-p:font-normal
+          prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-text prose-strong:font-bold
+          prose-li:text-text-muted
+          prose-hr:border-surface"
+      >
+        <Content />
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
