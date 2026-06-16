@@ -1,0 +1,171 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection } from 'astro:content';
+import { getLangFromUrl, useTranslatedPath } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+const allArticles = await getCollection('journal');
+allArticles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const allAuthors = await getCollection('authors');
+const authorMap = Object.fromEntries(allAuthors.map((a) => [a.id, a]));
+
+const allTags = [...new Set(allArticles.flatMap((a) => a.data.tags ?? []))].sort();
+---
+
+<Layout title="Journal">
+  <Navbar />
+  <PageHeader
+    title="JOURNAL"
+    description="Reports, guides, and stories from the Belarusian randonneuring community."
+  />
+
+  <main class="bg-page-bg text-text flex w-full flex-col items-center">
+    <div
+      class="flex w-full max-w-[1280px] flex-col gap-[80px] px-[64px] pt-[64px] pb-[128px] lg:flex-row"
+    >
+      {/* Article list */}
+      <div class="flex flex-1 flex-col gap-[0px]" id="articles-list">
+        {
+          allArticles.length === 0 ? (
+            <div class="flex w-full flex-col items-center gap-[16px] py-[80px] text-center">
+              <Icon name="FileText" class="text-text-muted h-[48px] w-[48px]" />
+              <h3 class="text-text font-heading text-[32px] font-extrabold">No articles yet</h3>
+              <p class="text-text-muted font-body text-[16px] font-normal">
+                Check back soon for stories from the community.
+              </p>
+            </div>
+          ) : (
+            allArticles.map((article) => {
+              const author = article.data.author ? authorMap[article.data.author] : null;
+              const date = new Date(article.data.date);
+              const dateStr = date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              });
+
+              return (
+                <article
+                  class="article-row border-surface hover:bg-surface/50 flex w-full flex-col gap-[16px] border-b py-[40px] transition-colors"
+                  data-tags={(article.data.tags ?? []).join(',')}
+                >
+                  <div class="flex items-center gap-[12px]">
+                    <span class="text-text-muted font-body text-[12px] font-semibold">
+                      {dateStr}
+                    </span>
+                    {author && (
+                      <>
+                        <span class="text-text-muted font-body text-[12px]">&bull;</span>
+                        <span class="text-text-muted font-body text-[12px] font-semibold">
+                          {author.data.name}
+                        </span>
+                      </>
+                    )}
+                  </div>
+
+                  <a href={translatePath(`/journal/${article.id}`)}>
+                    <h2 class="text-text font-heading hover:text-accent text-[28px] leading-tight font-bold transition-colors">
+                      {article.data.title}
+                    </h2>
+                  </a>
+
+                  {article.data.tags && article.data.tags.length > 0 && (
+                    <div class="flex flex-wrap gap-[8px]">
+                      {article.data.tags.map((tag) => (
+                        <div class="bg-surface border-text-muted/20 rounded-[16px] border px-[12px] py-[4px]">
+                          <span class="text-text-muted font-body text-[12px] font-semibold">
+                            #{tag}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  <a
+                    href={translatePath(`/journal/${article.id}`)}
+                    class="text-accent font-body text-[14px] font-semibold hover:underline"
+                  >
+                    Read more &rarr;
+                  </a>
+                </article>
+              );
+            })
+          )
+        }
+      </div>
+
+      {/* Sidebar */}
+      <aside class="flex w-[220px] shrink-0 flex-col gap-[48px]">
+        {
+          allTags.length > 0 && (
+            <div class="flex flex-col gap-[16px]">
+              <h4 class="text-text-muted font-body text-[14px] font-bold tracking-widest uppercase">
+                TAGS
+              </h4>
+              <div class="filter-group flex flex-col gap-[12px]" data-filter-type="tag">
+                <label class="group flex cursor-pointer items-center gap-[12px]">
+                  <input type="radio" name="tag" value="all" checked class="peer hidden" />
+                  <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
+                  <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
+                    All Topics
+                  </span>
+                </label>
+                {allTags.map((tag) => (
+                  <label class="group flex cursor-pointer items-center gap-[12px]">
+                    <input type="radio" name="tag" value={tag} class="peer hidden" />
+                    <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
+                    <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
+                      #{tag}
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          )
+        }
+
+        <div class="flex flex-col gap-[8px]">
+          <span class="text-text-muted font-body text-[12px] font-bold uppercase">ARTICLES</span>
+          <span class="text-accent font-heading text-[48px] leading-none font-extrabold">
+            {allArticles.length}
+          </span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const rows = document.querySelectorAll('.article-row');
+    const filterGroups = document.querySelectorAll('.filter-group');
+
+    function applyFilters() {
+      const tagRadio = document.querySelector('input[name="tag"]:checked') as HTMLInputElement;
+      const tag = tagRadio?.value ?? 'all';
+
+      rows.forEach((row) => {
+        const el = row as HTMLElement;
+        const tags = (el.dataset.tags ?? '').split(',').filter(Boolean);
+        const match = tag === 'all' || tags.includes(tag);
+        el.classList.toggle('hidden', !match);
+        el.classList.toggle('flex', match);
+      });
+    }
+
+    filterGroups.forEach((group) => {
+      group.querySelectorAll('input').forEach((input) => {
+        input.addEventListener('change', applyFilters);
+      });
+    });
+  });
+</script>

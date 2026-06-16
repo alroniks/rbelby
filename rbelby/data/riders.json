@@ -1,0 +1,17 @@
+[
+  { "id": "ik", "name": "Іван Клімчук", "clubId": "BY520001", "city": "Мінск" },
+  { "id": "brusnikin", "name": "С. Брусникін", "clubId": "BY520001", "city": "Мінск" },
+  { "id": "sedne", "name": "К. Сяднеў", "clubId": "BY520001", "city": "Мінск" },
+  { "id": "kriviczkij", "name": "С. Крывіцкі", "clubId": "BY520001", "city": "Мінск" },
+  { "id": "levchenko", "name": "С. Леўчанка", "clubId": "BY520016", "city": "Брэст" },
+  { "id": "kapshevich", "name": "С. Капшэвіч", "clubId": "BY520001", "city": "Мінск" },
+  { "id": "chistobaev", "name": "Дз. Чыстабаеў", "clubId": "BY520015", "city": "Гомель" },
+  { "id": "medel", "name": "А. Медэль", "clubId": "BY520001", "city": "Мінск" },
+  { "id": "fedotov", "name": "Ф. Федотаў", "clubId": "BY520001", "city": "Мінск" },
+  { "id": "vlasov", "name": "А. Уласаў", "clubId": "BY520006", "city": "Віцебск" },
+  { "id": "yudiczkij", "name": "П. Юдзіцкі", "clubId": "BY520001", "city": "Мінск" },
+  { "id": "sapega", "name": "С. Сапега", "clubId": "BY520001", "city": "Мінск" },
+  { "id": "valevach", "name": "В. Валевач", "clubId": "BY520001", "city": "Мінск" },
+  { "id": "dubrovnik", "name": "А. Дубровік", "clubId": "BY520001", "city": "Мінск" },
+  { "id": "moxanova", "name": "А. Маханава", "clubId": "BY520001", "city": "Мінск" }
+]

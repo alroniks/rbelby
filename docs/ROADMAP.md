@@ -15,7 +15,7 @@ Welcome to the project roadmap! This document provides a high-level, human-reada
 - **[001] Architecture & Data Pipeline:** Set up Astro, Preline UI, `content.config.ts`, and parse the `rbelby/` vault. _(Spec: `docs/specs/001-architecture.md`)_
 - **[002] Global Layout & Theming:** Build Header, Footer, and the Client-side Dark/Light theme switcher. _(Spec: `docs/specs/002-global-layout.md`)_
 - **[003] i18n Routing Structure:** Configure Astro i18n (`ru`, `be`, `en`) and add the Language Switcher UI. _(Spec: `docs/specs/003-i18n-routing.md`)_
-- **[004] Core Static Pages:** Build the "About" and "Rules" static pages and basic FAQ structure. _(Spec: `docs/specs/004-core-static-pages.md`)_
+- **[004] Core Static Pages:** Build the "About", "Rules", "Privacy", and "Terms" static pages, and basic FAQ structure. _(Spec: `docs/specs/004-core-static-pages.md`)_
 - **[005] Basic Homepage:** Build the Hero banner, quick project explanation, and CTA button. _(Spec: `docs/specs/005-basic-homepage.md`)_
 
 ---
@@ -39,7 +39,7 @@ Welcome to the project roadmap! This document provides a high-level, human-reada
 **Estimated Completion:** Early June 2026 (~2 weeks)
 **Goal:** Launch the supporting community pages.
 
-- **[010] Clubs & Journal (MVP):** List cycling clubs, their stats, and build the article listing/detail pages. _(Spec: `docs/specs/010-clubs-journal.md`)_
+- **[010] Community MVP (Clubs, Riders & Journal):** List cycling clubs, their stats, rider profiles, and build the article listing/detail pages. _(Spec: `docs/specs/010-community-mvp.md`)_
 
 ---
 
@@ -86,8 +86,19 @@ Welcome to the project roadmap! This document provides a high-level, human-reada
 
 ## 📝 Phase 8: CMS & Contributor Workflows
 
-**GitHub Milestone:** `v1.0 - Notion CMS Integration`
-**Estimated Completion:** September 2026 (~3 weeks)
-**Goal:** Lower the barrier for new writers.
+**GitHub Milestone:** `v1.0 - CMS Integration`
+**Estimated Completion:** October 2026 (~5 weeks)
+**Goal:** Lower the barrier for content writers and give club organizers a self-service admin.
 
 - **[016] CMS Automation (Notion -> GitHub):** Integrate Notion API, automate PR creation, handle Cloudflare Previews, and link to Crowdin. _(Spec: `docs/specs/016-notion-cms.md`)_
+- **[018] Org Events Admin (Payload CMS):** Deploy a Payload CMS instance on Cloudflare Workers + D1 giving club organizers a self-service form UI to manage their own events, with per-club access isolation and automatic site rebuild on publish. _(Spec: `docs/specs/018-org-events-cms.md`)_
+
+---
+
+## 🔒 Phase 9: User Accounts & Auth (Future)
+
+**GitHub Milestone:** `v1.1 - User Accounts`
+**Estimated Completion:** TBD
+**Goal:** Provide personalized dashboards, settings, and cloud sync for user data.
+
+- **[017] Authentication & Profile Settings:** Implement Login, secure sessions, and the user Settings dashboard. _(Spec: `docs/specs/017-auth-settings.md`)_
