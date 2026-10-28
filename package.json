@@ -36,5 +36,6 @@
     "tsx": "^4.21.0",
     "typescript": "^6.0.3"
   },
-  "private": "true"
+  "private": "true",
+  "packageManager": "pnpm@9.10.0+sha1.216899f511c8dfde183c7cb50b69009c779534a8"
 }

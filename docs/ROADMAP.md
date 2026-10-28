@@ -1,93 +1,108 @@
 # Randonneurs Belarus (rbelby) Website Roadmap
 
-Welcome to the project roadmap! This document provides a high-level, human-readable overview of how we plan to build out the website. The project is broken down into atomic features, organized into phases.
+This document gives a high-level, human-readable overview of how we build the website. Each feature is a spec in `docs/specs/`; phases map to **GitHub Milestones** (synced by `scripts/sync-roadmap.ts`).
 
-**Estimates & Milestones:** Based on an estimated availability of 5-10 hours per week (1-2 hours a day in free time), each atomic task is expected to take ~1 week. The phases outlined below should be mapped directly to **GitHub Milestones**, allowing for easy progress tracking. Target dates are rough estimates to keep the project moving forward steadily.
-
----
-
-## 🏗️ Phase 1: Foundation & Core UI
-
-**GitHub Milestone:** `v0.1 - Foundation`
-**Estimated Completion:** End of April 2026 (~5 weeks)
-**Goal:** Establish the basic architecture, global layout, and i18n support so all future components have a solid base.
-
-- **[001] Architecture & Data Pipeline:** Set up Astro, Preline UI, `content.config.ts`, and parse the `rbelby/` vault. _(Spec: `docs/specs/001-architecture.md`)_
-- **[002] Global Layout & Theming:** Build Header, Footer, and the Client-side Dark/Light theme switcher. _(Spec: `docs/specs/002-global-layout.md`)_
-- **[003] i18n Routing Structure:** Configure Astro i18n (`ru`, `be`, `en`) and add the Language Switcher UI. _(Spec: `docs/specs/003-i18n-routing.md`)_
-- **[004] Core Static Pages:** Build the "About" and "Rules" static pages and basic FAQ structure. _(Spec: `docs/specs/004-core-static-pages.md`)_
-- **[005] Basic Homepage:** Build the Hero banner, quick project explanation, and CTA button. _(Spec: `docs/specs/005-basic-homepage.md`)_
+**Estimates:** 5–10 hours per week, ~1 week per atomic task.
 
 ---
 
-## 📅 Phase 2: Events & Routes (MVP)
+## 🔀 Direction change (October 2026)
 
-**GitHub Milestone:** `v0.2 - Events MVP`
-**Estimated Completion:** End of May 2026 (~4 weeks)
-**Goal:** Deliver the most critical content to users: the schedule and the maps.
+rbel.by is now the `by` Region's **external Public Home** on [Brevly](https://brevly.app) ([ADR-0003](adr/0003-live-data-from-brevly.md), Brevly ADR-0013):
 
-- **[006] Basic Events Directory:** List all upcoming brevets from the markdown files. _(Spec: `docs/specs/006-events-directory.md`)_
-- **[007] Event Detail Page:** Build the individual brevet page (date, distance, start point, description). _(Spec: `docs/specs/007-event-detail.md`)_
-- **[008] Basic Routes Directory:** List all available routes. _(Spec: `docs/specs/008-routes-directory.md`)_
-- **[009] Route Detail Page:** Display route data, map placeholder, and link from Event to Route. _(Spec: `docs/specs/009-route-detail.md`)_
+- **Events, clubs, results and riders come live from Brevly's public read API** (`brevly.public.v1`). Organizers edit in Brevly; the site updates without a rebuild.
+- **Journal and Learn pages stay markdown** in `rbelby/`.
+- **Registration and every account action live on brevly.app.** rbel.by has no login, settings or bookmarks.
+- **New design:** `design/brevly.pen` in `brevlylabs/brevly`, frame `01b · Public Pages · rbel.by` (light mode designed; the existing dark mode stays and gets designed later; Overpass + Montserrat, rb-\* landscape palette, built from Brevly blocks via the `brand: rbelby` theme).
 
----
+Brevly's own plan for this lives in its specs 0059 (public API, done), 0058 (Public Home redirects, Brevly M4) and 0047 (rbel.by cut-over, Brevly M4).
 
-## 🎨 Phase 3: Community & Content (MVP)
+### What happened to the old plan
 
-**GitHub Milestone:** `v0.3 - Community MVP`
-**Estimated Completion:** Early June 2026 (~2 weeks)
-**Goal:** Launch the supporting community pages.
-
-- **[010] Clubs & Journal (MVP):** List cycling clubs, their stats, and build the article listing/detail pages. _(Spec: `docs/specs/010-clubs-journal.md`)_
-
----
-
-## 🛠️ Phase 4: UX Enhancements & Rich Data
-
-**GitHub Milestone:** `v0.4 - Rich UX`
-**Estimated Completion:** Late June 2026 (~2 weeks)
-**Goal:** Make the lists actually useful and detailed for riders through multiple views and rich metadata.
-
-- **[011] UX Enhancements & Rich Data:** Implement 'Card' vs 'Table' views, Badges, Route Version History, and Event Reports. _(Spec: `docs/specs/011-ux-rich-data.md`)_
-
----
-
-## 🔍 Phase 5: Discovery & Smart Filtering
-
-**GitHub Milestone:** `v0.5 - Search & Discovery`
-**Estimated Completion:** Mid-July 2026 (~3 weeks)
-**Goal:** Help users find exactly what they are looking for quickly.
-
-- **[012] Season & Client-Side Filtering:** Automatically filter by current season, and add distance/city sidebar filters. _(Spec: `docs/specs/012-filtering.md`)_
-- **[013] Global Full-Text Search:** Integrate `Pagefind` for instant search across all content in the Header. _(Spec: `docs/specs/013-global-search.md`)_
+| Old spec            | Status         | Replaced by                                                                        |
+| ------------------- | -------------- | ---------------------------------------------------------------------------------- |
+| 001 Architecture    | Done, amended  | 017 (runtime switches to on-demand rendering)                                      |
+| 002 Global layout   | Done, rework   | 018 (new nav/footer; dark mode kept)                                               |
+| 003 i18n routing    | Done, kept     | — (locale also passed to the API in 017)                                           |
+| 004 Static pages    | Done, rework   | 025 (About/Rules/FAQ become Learn pages)                                           |
+| 005 Homepage        | Done, rework   | 023                                                                                |
+| 006–007 Events      | Done, replaced | 020, 021 (live from Brevly)                                                        |
+| 008–009 Routes      | Done, removed  | 021 (routes are Tracks inside events) · 019 (redirects)                            |
+| 010 Clubs & Journal | Deleted        | 022 (clubs), 025 (journal)                                                         |
+| 011 Rich UX         | Deleted        | Card/Table toggle dropped; badges → 018; reports → 024/025; route versions dropped |
+| 012 Filtering       | Deleted        | 020 (server-side finder via URL params; supersedes ADR-0002)                       |
+| 013 Pagefind search | Deleted        | 026                                                                                |
+| 014 Bookmarks       | Deleted        | Dropped — personal state lives on Brevly                                           |
+| 015 SEO & Stats     | Deleted        | JSON-LD/OG split across 020–024; stats → 023 / 024                                 |
+| 016 Notion CMS      | Deleted        | Dropped for event data (Brevly is the CMS); revisit for Journal later if needed    |
 
 ---
 
-## 👤 Phase 6: Personalization (Bookmarks)
+## 🧱 Phase A: Foundation on Brevly
 
-**GitHub Milestone:** `v0.6 - Personalization`
-**Estimated Completion:** Early August 2026 (~2 weeks)
-**Goal:** Allow users to save their favorite events and routes locally.
+**GitHub Milestone:** `v0.3 - Brevly Foundation`
+**Estimated Completion:** November 2026
+**Goal:** Running on Cloudflare with a typed Brevly client, the new brand, and a clear content inventory.
 
-- **[014] Personalization (Bookmarks):** Implement `localStorage` bookmarks, a unified dashboard, and JSON Backup/Restore. _(Spec: `docs/specs/014-bookmarks.md`)_
-
----
-
-## 📈 Phase 7: Growth, Stats, & Social
-
-**GitHub Milestone:** `v0.7 - Growth Engine`
-**Estimated Completion:** Late August 2026 (~2 weeks)
-**Goal:** Optimize for sharing, SEO, and community gamification.
-
-- **[015] SEO, Growth & Stats:** Add JSON-LD, generate OpenGraph images automatically, build Shareable Cards, and create the Statistics page. _(Spec: `docs/specs/015-seo-stats.md`)_
+- **[017] Runtime & Brevly API Client:** Cloudflare adapter, on-demand rendering, typed ConnectRPC client, caching, graceful failure. _(Spec: `docs/specs/017-brevly-runtime-client.md`)_
+- **[018] Brand Theme & Common Blocks:** rb-\* tokens, Overpass/Montserrat, new Nav/Footer, shared blocks, 404. _(Spec: `docs/specs/018-rbelby-brand-theme.md`)_
+- **[019] Content Inventory & Vault Migration:** Inventory, hand data to Brevly, redirect map, retire vault collections. _(Spec: `docs/specs/019-content-migration.md`)_
 
 ---
 
-## 📝 Phase 8: CMS & Contributor Workflows
+## 📅 Phase B: Live Public Pages
 
-**GitHub Milestone:** `v1.0 - Notion CMS Integration`
-**Estimated Completion:** September 2026 (~3 weeks)
-**Goal:** Lower the barrier for new writers.
+**GitHub Milestone:** `v0.4 - Live Pages`
+**Estimated Completion:** January 2027 (in step with Brevly M1, when ECC's 2027 calendar is published)
+**Goal:** Calendar, events, clubs and home render live Brevly data.
 
-- **[016] CMS Automation (Notion -> GitHub):** Integrate Notion API, automate PR creation, handle Cloudflare Previews, and link to Crowdin. _(Spec: `docs/specs/016-notion-cms.md`)_
+- **[020] Live Calendar:** `/calendar` with finder, year overview, edge states. _(Spec: `docs/specs/020-live-calendar.md`)_
+- **[021] Live Event Page:** `/events/{id}` for brevets, fests and Flèche in every state. _(Spec: `docs/specs/021-live-event-page.md`)_
+- **[022] Live Clubs:** `/clubs` and `/clubs/{id}`. _(Spec: `docs/specs/022-live-clubs.md`)_
+- **[023] New Home Page:** Hero, next starts, season stats, clubs. _(Spec: `docs/specs/023-home-page.md`)_
+
+---
+
+## ✍️ Phase C: Editorial
+
+**GitHub Milestone:** `v0.5 - Journal & Learn`
+**Estimated Completion:** February 2027
+**Goal:** The region's own content in the new design.
+
+- **[025] Journal & Learn:** Markdown Learn pages and the journal. _(Spec: `docs/specs/025-journal-learn.md`)_
+- **[026] Site Search:** `/search` across editorial and live events. _(Spec: `docs/specs/026-search.md`)_
+
+---
+
+## 🏁 Phase D: Results & Riders
+
+**GitHub Milestone:** `v0.6 - Results & Riders`
+**Estimated Completion:** March–May 2027 — **gated on Brevly M2 (results) and M4 (regional riders, awards)**
+**Goal:** Live results during and after rides, regional rider pages.
+
+- **[024] Results & Regional Rider Pages:** Event results, ride results, rider pages. _(Spec: `docs/specs/024-results-riders.md`)_
+
+---
+
+## 🔁 Phase E: Cut-over
+
+**GitHub Milestone:** `v1.0 - Public Home`
+**Estimated Completion:** May 2027 — **with Brevly 0058 / 0047**
+**Goal:** Brevly redirects its BY regional pages to rbel.by; the old pipeline is retired.
+
+- **[027] Public Home Cut-over:** URL templates, sitemap, redirect verification, retirement. _(Spec: `docs/specs/027-cutover.md`)_
+
+---
+
+## 🔌 Requests to Brevly (API gaps found in the design)
+
+The design needs a few things `brevly.public.v1` doesn't return yet. Raise them on the Brevly side; the affected blocks stay hidden until then.
+
+- **Start location** (city/coordinates) on events or tracks — Calendar · Map, Quick Facts. (`ControlPoint` has no coordinates either.)
+- **Club logo and description** — 0059's spec text lists `logo_url`/`description`, the proto's `PublicClubSummary` doesn't carry them.
+- **Track time limit and map embed** — listed in 0059's text, missing from `Track` in the proto.
+- **Region season stats** (finishers, total km) for Home / Season Stats and Clubs / In Numbers.
+- **Club stats** (season kilometres, recent finishes) for the club page.
+- **iCal feed** for "Subscribe to calendar".
+- **Text query** on `ListEvents` for search.
+- **Locale in Public Home URL templates**, so redirected visitors land on `/be/…` or `/en/…`.
