@@ -1,5 +1,12 @@
 # rbelby
 
+## 0.3.2
+
+### Patch Changes
+
+- 08a0926: **Fix Cloudflare Pages build dependencies and deployment triggers** (#155)
+- 833f0dc: **Bump the npm_and_yarn group across 1 directory with 4 updates** (#157)
+
 ## 0.3.1
 
 ### Patch Changes
