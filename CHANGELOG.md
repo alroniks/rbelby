@@ -1,5 +1,11 @@
 # rbelby
 
+## 0.3.1
+
+### Patch Changes
+
+- 72a4113: **Bump @astrojs/node from 10.1.4 to 11.1.11 in the npm_and_yarn group across 1 directory** (#153)
+
 ## 0.3.0
 
 ### Minor Changes
