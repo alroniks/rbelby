@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install Dependencies
         run: npm install
@@ -58,6 +58,11 @@ jobs:
 
             echo "Creating GitHub Release $TAG..."
             gh release create "$TAG" -F release-notes.md -t "$TAG"
+
+            if [ -n "${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}" ]; then
+              echo "Triggering Cloudflare Deploy Hook..."
+              curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}"
+            fi
           else
             echo "Tag $TAG already exists, skipping release."
           fi
