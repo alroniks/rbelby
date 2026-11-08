@@ -4,6 +4,7 @@ spec: NNNN
 title: Short imperative title
 status: draft # draft (still being detailed) | ready (implementer may take it). Done = file deleted by the merged PR
 depends_on: [] # ticket ids that must be done on main first
+# gh_issue: 123 # optional: issue on the brevlylabs org Project this ticket closes (PR body: `Closes #123`)
 scope: # files this ticket is expected to change (informational, not enforced)
   - src/example/**
 ---

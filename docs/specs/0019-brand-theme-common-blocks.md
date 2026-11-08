@@ -15,6 +15,7 @@
 - **Preline removed:** plain Tailwind + small vanilla scripts; the Constitution's styling rule is updated.
 - **Nav:** Brevets (`/calendar`) · Clubs · Learn; BY/RU/EN switch; theme switch; guest only. Journal and search are not in the nav until their specs ship.
 - **Footer:** Ride / Learn / About columns, socials, Telegram chat, Support Brevly, Powered by Brevly; Terms and Privacy link to Brevly's legal pages.
+- **Preview notice:** when `BREVLY_API_URL` isn't the production API, every page shows a fixed Notice Bar "Preview · test data from dev.brevly.app", above any notice from `site.json`.
 - **Site config:** `rbelby/site.json` (zod-validated collection) — notice bar, hero copy and image, How It Works, Why People Ride, flagship slider items, footer links, socials, chat link. Longer copy may live as markdown next to it.
 
 ## 3. Execution Tasks (The "Checklist")
@@ -30,6 +31,7 @@
 - [ ] Nav and Footer per design.
 - [ ] Notice Bar, Page Header, Section Header, Breadcrumbs, Pagination, CTA Band, Data Notice, Empty State, Distance Badge, Status Chip.
 - [ ] `rbelby/site.json` collection and schema.
+- [ ] Preview notice bar when not on the production API.
 - [ ] 404 page: hero + next starts island (`ListEvents`), hero only when Brevly is unavailable.
 - [ ] `npm run check` and `npm run build` pass.
 

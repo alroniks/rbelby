@@ -16,6 +16,13 @@ A simplified copy of Brevly's spec-driven workflow. rbel.by is a public site wit
 - Detail only the next tickets (`status: ready`); later ones stay `status: draft` until their blockers are merged.
 - `node scripts/tickets.mjs list` shows the wall.
 
+## GitHub
+
+- The repo is `brevlylabs/rbelby`, on the `brevlylabs` org Project v2 board shared with Brevly (Brevly spec 0098).
+- Git stays canonical. A task may arrive as an issue on the board (cross-repo work from Brevly, a bug): if it's real work, it becomes a spec or ticket file here, with the issue number in the ticket's `gh_issue:`.
+- A PR for such a ticket says `Closes #<gh_issue>` so merging closes the issue.
+- No issue sync tooling here: Brevly's `sync-gh`, `state` and `guard` are not ported. Creating, labelling or closing issues needs the operator's go-ahead.
+
 ## Roles
 
 - **Operator** approves specs and merges PRs. Nothing is committed, pushed or merged without an explicit instruction.
@@ -28,6 +35,13 @@ A simplified copy of Brevly's spec-driven workflow. rbel.by is a public site wit
 - `npm run tests` — Vitest (API client only).
 - `npm run build`.
 - CI runs check and build on every pull request.
+
+## Deploy
+
+One Cloudflare Worker, two stages (spec 0018):
+
+- **Merge to `main`** → `wrangler versions upload --preview-alias dev` with `BREVLY_API_URL=https://dev.brevly.app/api` → `dev-rbelby.<subdomain>.workers.dev`, closed by Cloudflare Access, test data. A manual workflow run can point the preview at the production API.
+- **Published release** → `wrangler deploy` → `rbel.by`, production API.
 
 ## Design
 

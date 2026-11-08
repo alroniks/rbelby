@@ -20,7 +20,7 @@ The new design lives in `~/dev/alr/business/brevly/design/brevly.pen`, frame `01
 
 1. **Data split.** Brevly owns regions, clubs, events, tracks, controls, startlists, results, riders and their history. `rbelby/` owns Learn pages, the future journal, authors and site config (`site.json`: notice bar, hero, flagship slider, footer).
 2. **Rendering.** `@astrojs/cloudflare` on Workers. Pages are prerendered by default; detail pages (`/events/{id}`, `/clubs/{id}`, …) render on demand because their IDs aren't known at build time and their content must be in the HTML; live parts of list pages (calendar list, next starts, club cards) are `server:defer` islands in a static shell. No custom cache layer: Brevly's `Cache-Control` headers apply.
-3. **Client.** One wrapper in `src/lib/brevly/` around the BSR-generated `@buf/brevlylabs_public.bufbuild_es` package and `@connectrpc/connect-web`. Endpoint from `BREVLY_API_URL` (production `brevly.app`, optional staging `dev.brevly.app`).
+3. **Client.** One wrapper in `src/lib/brevly/` around the BSR-generated `@buf/brevlylabs_public.bufbuild_es` package and `@connectrpc/connect-web`. Endpoint from `BREVLY_API_URL` (production `brevly.app`; the dev preview reads `dev.brevly.app`).
 4. **Show what Brevly provides.** No filtering or fallback data on rbel.by: if Brevly publishes one event, the site shows one event. Blocks without API data are hidden.
 5. **IDs and links.** Brevly's numeric public IDs are the URLs. Rider actions use the `register_url` / `public_url` Brevly returns.
 6. **Guests only.** No sign-in on rbel.by until Brevly offers authentication for external sites.

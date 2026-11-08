@@ -31,7 +31,9 @@
 ### Phase 3: GitHub cleanup (operator approval)
 
 - [ ] Close issues #71–#110 with a comment pointing to `docs/specs/README.md`; close milestones v0.2–v1.0.
+- [ ] Add `brevlylabs/rbelby` to the `brevlylabs` org Project v2 (repo transferred by the operator).
 
 ## 4. Drafts & Notes (Living Document)
 
 - **2026-10-24:** decided in the rbel.by re-plan grilling (Q20, Q21, Q27): keep it simple — a public site without user data.
+- **2026-10-28:** repo moves to `brevlylabs/rbelby` and stays public. Tasks may come from the org Project board; only `gh_issue:` + `Closes #N` are adopted from Brevly spec 0098.
