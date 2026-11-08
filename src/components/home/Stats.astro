@@ -3,112 +3,52 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const stats = [
+  {
+    value: '2.4M+',
+    label: t('stats.km_label'),
+  },
+  {
+    value: '12,5K+',
+    label: t('stats.homologations_label'),
+  },
+  {
+    value: '1,200+',
+    label: t('stats.riders_label'),
+  },
+  {
+    value: '140+',
+    label: t('stats.sr_label'),
+  },
+  {
+    value: '150+',
+    label: t('stats.routes_label'),
+  },
+  {
+    value: '2010',
+    label: t('stats.established_label'),
+  },
+];
 ---
 
-<section class="bg-bg overflow-hidden py-16 lg:py-24">
+<section class="bg-brand py-12 md:py-16">
   <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-    <div class="mb-16 text-center">
-      <p
-        class="text-text-muted mb-2 text-xs font-bold tracking-widest uppercase"
-      >
-        {t('stats.label')}
-      </p>
-      <h2
-        class="text-charcoal text-3xl leading-tight font-bold uppercase md:text-4xl"
-      >
-        {t('stats.title1')}
-        <span class="text-secondary">{t('stats.title2')}</span>,<br />
-        {t('stats.title3')}
-        <span class="text-secondary">{t('stats.title4')}</span>
-        {t('stats.title5')}
-      </h2>
-    </div>
-
-    <!-- Stats Grid -->
-    <div class="relative grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
-      <!-- Decorative background line/circles could go here -->
-
-      <!-- Stat 1 -->
-      <div
-        class="relative flex flex-col items-center justify-center p-8 text-center"
-      >
-        <div
-          class="relative mb-4 flex size-40 animate-[spin_10s_linear_infinite] items-center justify-center rounded-full border-4 border-dashed border-gray-300"
-        >
-          <svg
-            class="size-full text-gray-200"
-            viewBox="0 0 100 100"
-            fill="currentColor"
-          >
-            <!-- Simple gear representation -->
-            <path
-              d="M50 0 L60 10 L70 5 L80 15 L90 10 L95 20 L100 25 L90 35 L95 45 L85 55 L90 65 L80 75 L70 70 L60 80 L50 90 L40 80 L30 70 L20 75 L10 65 L15 55 L5 45 L10 35 L0 25 L5 20 L10 10 L20 15 L30 5 L40 10 Z"
-            ></path>
-          </svg>
-        </div>
-        <div
-          class="absolute top-1/2 left-1/2 mt-8 -translate-x-1/2 -translate-y-full transform"
-        >
-          <span class="text-charcoal block text-4xl font-bold">1,248</span>
-          <span class="text-text-muted block text-sm"
-            >{t('stats.active_riders')}</span
-          >
-        </div>
-      </div>
-
-      <!-- Stat 2 -->
-      <div
-        class="relative flex flex-col items-center justify-center p-8 text-center"
-      >
-        <div
-          class="relative mb-4 flex size-40 animate-[spin_12s_linear_infinite_reverse] items-center justify-center rounded-full border-4 border-dashed border-gray-300"
-        >
-          <svg
-            class="size-full text-gray-200"
-            viewBox="0 0 100 100"
-            fill="currentColor"
-          >
-            <path
-              d="M50 0 L60 10 L70 5 L80 15 L90 10 L95 20 L100 25 L90 35 L95 45 L85 55 L90 65 L80 75 L70 70 L60 80 L50 90 L40 80 L30 70 L20 75 L10 65 L15 55 L5 45 L10 35 L0 25 L5 20 L10 10 L20 15 L30 5 L40 10 Z"
-            ></path>
-          </svg>
-        </div>
-        <div
-          class="absolute top-1/2 left-1/2 mt-8 -translate-x-1/2 -translate-y-full transform"
-        >
-          <span class="text-charcoal block text-4xl font-bold">45</span>
-          <span class="text-text-muted block text-sm"
-            >{t('stats.total_events')}</span
-          >
-        </div>
-      </div>
-
-      <!-- Stat 3 -->
-      <div
-        class="relative flex flex-col items-center justify-center p-8 text-center"
-      >
-        <div
-          class="relative mb-4 flex size-40 animate-[spin_14s_linear_infinite] items-center justify-center rounded-full border-4 border-dashed border-gray-300"
-        >
-          <svg
-            class="size-full text-gray-200"
-            viewBox="0 0 100 100"
-            fill="currentColor"
-          >
-            <path
-              d="M50 0 L60 10 L70 5 L80 15 L90 10 L95 20 L100 25 L90 35 L95 45 L85 55 L90 65 L80 75 L70 70 L60 80 L50 90 L40 80 L30 70 L20 75 L10 65 L15 55 L5 45 L10 35 L0 25 L5 20 L10 10 L20 15 L30 5 L40 10 Z"
-            ></path>
-          </svg>
-        </div>
-        <div
-          class="absolute top-1/2 left-1/2 mt-8 -translate-x-1/2 -translate-y-full transform"
-        >
-          <span class="text-charcoal block text-4xl font-bold">342k</span>
-          <span class="text-text-muted block text-sm"
-            >{t('stats.km_ridden')}</span
-          >
-        </div>
-      </div>
+    <div
+      class="grid grid-cols-2 gap-8 text-center md:grid-cols-3 lg:grid-cols-6"
+    >
+      {
+        stats.map((stat) => (
+          <div class="flex flex-col items-center gap-2">
+            <span class="font-heading text-surface text-4xl font-black tracking-tight md:text-5xl">
+              {stat.value}
+            </span>
+            <span class="font-body text-complementary max-w-[180px] text-xs font-bold tracking-wide uppercase md:text-sm">
+              {stat.label}
+            </span>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

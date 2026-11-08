@@ -1,0 +1,94 @@
+---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import Icon from '../Icon.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const steps = [
+  {
+    number: '01',
+    icon: 'Calendar',
+    title: t('how.step1.title'),
+    desc: t('how.step1.desc'),
+  },
+  {
+    number: '02',
+    icon: 'Tool',
+    title: t('how.step2.title'),
+    desc: t('how.step2.desc'),
+  },
+  {
+    number: '03',
+    icon: 'LocationPin',
+    title: t('how.step3.title'),
+    desc: t('how.step3.desc'),
+  },
+  {
+    number: '04',
+    icon: 'Badge',
+    title: t('how.step4.title'),
+    desc: t('how.step4.desc'),
+  },
+];
+---
+
+<section class="bg-page-bg py-20 lg:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+    <!-- Section Header -->
+    <div
+      class="mx-auto mb-16 flex max-w-3xl flex-col items-center gap-4 text-center"
+    >
+      <div
+        class="border-brand inline-flex items-center justify-center rounded-full border px-4 py-1"
+      >
+        <span
+          class="font-heading text-brand text-[10px] font-bold tracking-widest uppercase"
+        >
+          {t('how.badge')}
+        </span>
+      </div>
+
+      <h2
+        class="font-heading text-text text-3xl font-extrabold tracking-tight uppercase md:text-4xl"
+      >
+        {t('how.title')}
+      </h2>
+
+      <p
+        class="font-body text-text-muted max-w-[600px] text-base leading-relaxed"
+      >
+        {t('how.subtitle')}
+      </p>
+    </div>
+
+    <!-- Steps Grid -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {
+        steps.map((step) => (
+          <div class="flex flex-col justify-start gap-8 rounded-[24px] border-0 bg-white/80 p-8">
+            {/* Top Row: Number & Icon */}
+            <div class="flex items-center justify-between">
+              <span class="font-heading text-brand/20 text-3xl leading-none font-black">
+                {step.number}
+              </span>
+              <div class="bg-page-bg border-surface text-accent flex size-12 items-center justify-center rounded-full border">
+                <Icon name={step.icon as any} class="size-5" />
+              </div>
+            </div>
+
+            {/* Bottom Row: Title & Desc */}
+            <div class="flex flex-col gap-3">
+              <h3 class="font-heading text-text text-xl font-extrabold">
+                {step.title}
+              </h3>
+              <p class="font-body text-text-muted text-sm leading-relaxed">
+                {step.desc}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

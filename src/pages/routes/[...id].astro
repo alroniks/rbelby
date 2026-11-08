@@ -1,0 +1,189 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
+import {
+  getEntryForLang,
+  parseEntryId,
+  getLangFromUrl,
+} from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  const routes = await getCollection('routes');
+  const uniqueBaseIds = Array.from(
+    new Set(routes.map((r) => parseEntryId(r.id).baseId))
+  );
+
+  return uniqueBaseIds
+    .map((baseId) => {
+      const route =
+        getEntryForLang(routes, baseId, 'en') ||
+        getEntryForLang(routes, baseId, 'ru');
+      if (!route) return null;
+      return {
+        params: { id: baseId },
+        props: { route },
+      };
+    })
+    .filter(Boolean);
+}
+
+const { route } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+const { Content } = await render(route);
+
+// Fallbacks for missing schema properties
+const startLoc = route.data.startLocation || 'Unknown';
+const endLoc = route.data.endLocation || startLoc;
+const type = route.data.type || '100% Paved';
+const status = (route.data as any).status || 'OFFICIAL';
+const elevation = (route.data as any).elevation || 0;
+---
+
+<Layout title={route.data.name}>
+  <Navbar />
+  <main class="bg-bg text-text min-h-screen pb-20">
+    <!-- Route Header -->
+    <div class="bg-surface border-gray border-b pt-16 pb-12">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-8 lg:px-16">
+        <div class="flex items-center gap-4">
+          <span
+            class="bg-primary text-text-inverse rounded-full px-3 py-1 text-xs font-bold tracking-wider uppercase"
+          >
+            {status}
+          </span>
+          <span
+            class="text-text-muted text-sm font-bold tracking-widest uppercase"
+          >
+            {type} &bull; {route.data.distance} KM
+          </span>
+        </div>
+        <h1
+          class="font-heading text-text max-w-4xl text-5xl leading-none font-black uppercase md:text-6xl"
+        >
+          {route.data.name}
+        </h1>
+        <p
+          class="text-text-muted font-body max-w-3xl text-lg font-medium md:text-xl"
+        >
+          {
+            route.data.seoDescription ||
+              `An official route starting from ${startLoc}.`
+          }
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="mx-auto mt-12 flex max-w-7xl flex-col items-start gap-12 px-4 sm:px-8 lg:flex-row lg:px-16"
+    >
+      <!-- Main Content (Map & Description) -->
+      <div class="flex w-full min-w-0 flex-1 flex-col gap-12">
+        <!-- Map Placeholder -->
+        <div
+          class="border-gray bg-gray/30 relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-3xl border shadow-sm md:h-[600px]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200&auto=format&fit=crop"
+            class="absolute inset-0 h-full w-full object-cover opacity-50 mix-blend-overlay"
+            alt="Map Background"
+          />
+          <div
+            class="bg-surface/90 border-gray relative z-10 flex max-w-xs flex-col items-center gap-2 rounded-2xl border p-6 text-center backdrop-blur"
+          >
+            <Icon name="Map" class="text-primary size-8" />
+            <h3 class="font-heading text-lg font-bold">Interactive Map</h3>
+            <p class="text-text-muted text-sm">
+              GPX Viewer integration will be available here.
+            </p>
+          </div>
+        </div>
+
+        <article
+          class="prose prose-lg dark:prose-invert prose-headings:font-heading prose-headings:font-bold prose-headings:uppercase prose-a:text-primary max-w-none"
+        >
+          <Content />
+        </article>
+      </div>
+
+      <!-- Sidebar -->
+      <aside
+        class="sticky top-24 flex w-full shrink-0 flex-col gap-6 lg:w-[400px]"
+      >
+        <div
+          class="bg-surface border-gray flex flex-col gap-6 rounded-3xl border p-8"
+        >
+          <h3 class="font-heading text-text text-2xl font-bold uppercase">
+            Route Stats
+          </h3>
+
+          <div class="flex flex-col gap-4">
+            <!-- Distance & Elevation -->
+            <div
+              class="border-gray flex flex-row justify-between border-b pb-4"
+            >
+              <div class="flex flex-col gap-1">
+                <span
+                  class="text-text-muted text-xs font-bold tracking-widest uppercase"
+                  >Distance</span
+                >
+                <span class="text-text text-lg font-bold"
+                  >{route.data.distance} KM</span
+                >
+              </div>
+              <div class="flex flex-col gap-1 text-right">
+                <span
+                  class="text-text-muted text-xs font-bold tracking-widest uppercase"
+                  >Elevation</span
+                >
+                <span class="text-text text-lg font-bold">{elevation} m</span>
+              </div>
+            </div>
+
+            <!-- Start / Finish -->
+            <div class="border-gray flex flex-col gap-1 border-b pb-4">
+              <span
+                class="text-text-muted text-xs font-bold tracking-widest uppercase"
+                >Start Point</span
+              >
+              <span class="text-text text-lg font-bold">{startLoc}</span>
+            </div>
+            <div class="border-gray flex flex-col gap-1 border-b pb-4">
+              <span
+                class="text-text-muted text-xs font-bold tracking-widest uppercase"
+                >End Point</span
+              >
+              <span class="text-text text-lg font-bold">{endLoc}</span>
+            </div>
+
+            <!-- Type -->
+            <div class="border-gray flex flex-col gap-1 border-b pb-4">
+              <span
+                class="text-text-muted text-xs font-bold tracking-widest uppercase"
+                >Surface</span
+              >
+              <span class="text-text text-lg font-bold">{type}</span>
+            </div>
+          </div>
+
+          <div class="mt-2 flex flex-col gap-4">
+            <button
+              class="bg-primary text-text-inverse flex w-full items-center justify-center gap-2 rounded-full py-4 font-bold tracking-wider uppercase transition-colors hover:bg-orange-600"
+            >
+              <Icon name="Download" class="size-5" /> DOWNLOAD GPX
+            </button>
+            <button
+              class="bg-bg border-gray text-text hover:border-text w-full rounded-full border-2 py-4 font-bold tracking-wider uppercase transition-colors"
+            >
+              VIEW IN RIDEWITHGPS
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <Footer />
+</Layout>

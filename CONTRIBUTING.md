@@ -8,8 +8,8 @@ This document serves as your guide to contributing to the codebase.
 
 Our goal is to build a "ready, alive website" that minimizes technical debt and maximizes content velocity. To achieve this, we treat **Content as Data** and the **Site as a Static Viewer**.
 
-- Content editors manage markdown files in Obsidian.
-- Astro securely validates and compiles those files into a blazing-fast static site.
+- Club organizers manage events in [Brevly](https://brevly.app); the site renders them live from Brevly's public API.
+- Editors manage Learn pages and site config as markdown/JSON in Obsidian.
 - Artificial Intelligence (via Gemini) accelerates our development workflow.
 
 For the strict technical rules, read our **[Constitution](docs/CONSTITUTION.md)**.
@@ -37,18 +37,18 @@ For the strict technical rules, read our **[Constitution](docs/CONSTITUTION.md)*
 - **Styling**: Utility-first via Tailwind 4.
 - **Formatting**: Run `npm run format` before committing. We use Prettier with Astro and Tailwind plugins.
 
-## 🔄 Development Workflow (Specs & GitHub)
+## 🔄 Development Workflow (Specs & Tickets)
 
-We follow a Spec-Driven, issue-linked workflow to ensure quality and track progress against our **[Roadmap](docs/ROADMAP.md)**.
+We follow a simplified spec-driven workflow; the full process is in **[docs/agents/workflow.md](docs/agents/workflow.md)** and the plan in **[docs/specs/README.md](docs/specs/README.md)**.
 
-1. **English Only**: All specs, comments, issues, and commits MUST be in English.
-2. **Architecture Decisions (ADRs)**: Any major architectural changes or technical direction shifts MUST be recorded as an ADR in `docs/adr/`. See the **[ADR README](docs/adr/README.md)** for the template and rules.
-3. **Specs First**: Never jump straight into code. Draft a markdown file in `docs/specs/` (e.g., `docs/specs/001-feature.md`) outlining user stories and requirements.
-4. **GitHub Integration**: Create a GitHub Issue, link it to the spec in the description, and add it to the project Roadmap.
-5. **Design Alignment**: Before and during implementation, align the spec requirements with the design file located at `design/ui.pen`. If you find any inconsistencies between the spec, the code, and the design, **DO NOT automatically update the design**. Instead, flag the inconsistency to the operator to decide whether to adjust the design or adjust the code to follow the design.
-6. **Isolated Subtasks**: 1 PR = 1 Feature. Implement each spec on its own branch.
-7. **Step-by-Step Commits**: Keep commits atomic and descriptive (`feat: add core website routing (#12)`).
-8. **Closed Specs**: Once the issue is closed, the spec is historical. Do not modify closed specs. Create new ones for bugs or new requirements.
+1. **English Only**: All specs, comments, commits and PRs MUST be in English.
+2. **Architecture Decisions (ADRs)**: Major architectural changes are recorded as an ADR in `docs/adr/`. See the **[ADR README](docs/adr/README.md)**.
+3. **Specs First**: Never jump straight into code. Copy `docs/specs/_template.md` to `docs/specs/NNNN-feature.md` and add a row to `docs/specs/README.md`.
+4. **Tickets**: A spec that needs several PRs is split into `docs/tickets/NNNN-TT-slug.md`. The PR implementing a ticket deletes its ticket file.
+5. **Design Alignment**: Align with the design in `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by`. If spec, code and design disagree, **DO NOT update the design**; flag it to the operator.
+6. **One PR per ticket** (or per small spec), on its own branch.
+7. **Checks**: `npm run check` and `npm run build` must pass; CI runs them on every PR.
+8. **Done Specs**: Finished specs move to `docs/specs/done/` and are historical; create new specs for follow-ups.
 
 ## 🤖 AI-Assisted Development
 

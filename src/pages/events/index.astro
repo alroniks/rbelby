@@ -9,6 +9,7 @@ import {
   useTranslatedPath,
   getLocalizedCollection,
 } from '../../i18n/utils';
+import Icon from '../../components/Icon.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
@@ -20,294 +21,539 @@ const localizedEvents = getLocalizedCollection(allEvents, lang);
 const events = localizedEvents.map((event) => {
   const date = new Date(event.data.date);
   const year = date.getFullYear();
-  const month = date.toLocaleString('default', { month: 'long' });
+  const monthStr = date
+    .toLocaleString('en-US', { month: 'short' })
+    .toUpperCase();
+  const monthNum = date.getMonth();
 
   return {
     ...event,
     timestamp: date.getTime(),
     year,
-    month,
-    dist: event.data.distance, // Short alias for data attr
+    monthNum,
+    monthStr,
+    dayStr: date.getDate().toString().padStart(2, '0'),
+    dist: event.data.distance,
     loc: event.data.startLocation || 'Unknown',
-    type: event.data.type || 'road', // Default to road if undefined
+    type: event.data.type || 'BRM',
+    club: event.data.club || 'Randonneurs Belarus',
   };
 });
 
-// Sort by date initially (upcoming first)
 events.sort((a, b) => a.timestamp - b.timestamp);
 
-// Extract unique values for filters
+const eventsByMonth: Record<string, typeof events> = {};
+events.forEach((event) => {
+  if (!eventsByMonth[event.monthStr]) {
+    eventsByMonth[event.monthStr] = [];
+  }
+  eventsByMonth[event.monthStr].push(event);
+});
+
 const locations = [...new Set(events.map((e) => e.loc))].sort();
 const years = [...new Set(events.map((e) => e.year))].sort((a, b) => b - a);
 const types = [...new Set(events.map((e) => e.type))];
 
-function getTimeLimit(distance: number) {
-  if (distance >= 1200) return '90h';
-  if (distance >= 1000) return '75h';
-  if (distance >= 600) return '40h';
-  if (distance >= 400) return '27h';
-  if (distance >= 300) return '20h';
-  if (distance >= 200) return '13.5h';
-  return 'N/A';
-}
+const nextEvent = events.find((e) => e.timestamp >= Date.now()) || events[0];
 ---
 
 <Layout>
   <Navbar />
   <PageHeader
-    title="UPCOMING BREVETS"
-    description="Challenge yourself. Browse and register for upcoming randonneuring events in Belarus."
+    title="SEASON CALENDAR"
+    description="Browse the schedule and plan your upcoming challenges."
   />
 
-  <main class="min-h-screen bg-gray-50 dark:bg-neutral-900">
-    <!-- Header / Filter Bar -->
-    <div
-      class="sticky top-0 z-20 border-b border-gray-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-900"
-    >
-      <div class="mx-auto max-w-7xl px-4 py-4 sm:px-8 lg:px-16">
-        <!-- Top Row: Title + Mobile Search Toggle -->
-        <div class="mb-4 flex items-center justify-end lg:hidden">
-          <button
-            id="mobile-filter-toggle"
-            class="dark:hover:text-text p-2 text-gray-500 hover:text-gray-800 dark:text-gray-400"
-          >
-            <svg
-              class="size-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75"
-              ></path>
-            </svg>
-          </button>
-        </div>
+  <main class="bg-page-bg text-text flex w-full flex-col items-center">
+    <div class="flex w-full max-w-[1280px] flex-col">
+      {/* Hero Wrap */}
+      {
+        nextEvent && (
+          <div class="relative flex h-[600px] w-full flex-col">
+            <img
+              src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=2070&auto=format&fit=crop"
+              alt="Next Event"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+            <div class="absolute inset-0 bg-[#000000A0]" />
 
-        <!-- Controls Container -->
-        <div
-          id="filter-controls"
-          class="hidden flex-col items-start justify-between gap-4 lg:flex lg:flex-row lg:items-center"
-        >
-          <!-- Left: Year/Type Toggles (Reference Style Pill) -->
-          <div
-            class="flex items-center space-x-1 rounded-lg bg-gray-100 p-1 dark:bg-neutral-800"
-          >
-            <button
-              class="filter-year-btn dark:text-text rounded-md bg-white px-4 py-1.5 text-sm font-medium text-gray-800 shadow-sm transition-all dark:bg-neutral-700"
-              data-year="all">All</button
-            >
-            {
-              years.map((year) => (
-                <button
-                  class="filter-year-btn dark:hover:text-text rounded-md px-4 py-1.5 text-sm font-medium text-gray-500 transition-all hover:text-gray-800 dark:text-gray-400"
-                  data-year={year}
-                >
-                  {year}
-                </button>
-              ))
-            }
-          </div>
-
-          <!-- Middle: Search & Dropdowns -->
-          <div class="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
-            <!-- Search -->
-            <div class="relative w-full lg:w-64">
-              <div
-                class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
-              >
-                <svg
-                  class="size-4 text-gray-400 dark:text-neutral-500"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  ><circle cx="11" cy="11" r="8"></circle><path
-                    d="m21 21-4.3-4.3"></path></svg
-                >
-              </div>
-              <input
-                type="text"
-                id="search-input"
-                class="block w-full rounded-lg border-transparent bg-gray-100 py-2 ps-10 pe-4 text-sm focus:border-orange-500 focus:ring-orange-500 disabled:pointer-events-none disabled:opacity-50 dark:bg-neutral-800 dark:text-neutral-400 dark:placeholder-neutral-500"
-                placeholder="Search events..."
-              />
-            </div>
-
-            <!-- Distance Select -->
-            <select
-              id="distance-select"
-              class="block w-full rounded-lg border-transparent bg-gray-100 px-3 py-2 pe-9 text-sm focus:border-orange-500 focus:ring-orange-500 sm:w-auto dark:bg-neutral-800 dark:text-neutral-400"
-            >
-              <option value="all">Distance: All</option>
-              <option value="200">200 km</option>
-              <option value="300">300 km</option>
-              <option value="400">400 km</option>
-              <option value="600">600 km</option>
-              <option value="1000">1000+ km</option>
-            </select>
-
-            <!-- Location Select -->
-            <select
-              id="location-select"
-              class="block w-full rounded-lg border-transparent bg-gray-100 px-3 py-2 pe-9 text-sm focus:border-orange-500 focus:ring-orange-500 sm:w-auto dark:bg-neutral-800 dark:text-neutral-400"
-            >
-              <option value="all">Location: All</option>
-              {locations.map((loc) => <option value={loc}>{loc}</option>)}
-            </select>
-          </div>
-
-          <!-- Right: Sort -->
-          <div
-            class="mt-2 flex w-full items-center gap-2 border-l border-gray-200 pl-0 lg:mt-0 lg:w-auto lg:pl-4 dark:border-neutral-800"
-          >
-            <span
-              class="text-xs font-semibold text-gray-500 uppercase dark:text-neutral-500"
-              >Sort by:</span
-            >
-            <div class="flex space-x-2">
-              <button
-                class="sort-btn text-sm font-medium text-orange-600 hover:underline dark:text-orange-500"
-                data-sort="date">Date</button
-              >
-              <button
-                class="sort-btn dark:hover:text-text text-sm font-medium text-gray-500 transition-colors hover:text-gray-800 dark:text-gray-400"
-                data-sort="dist">Dist</button
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Events Grid -->
-    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-8 lg:px-16">
-      <div
-        id="events-grid"
-        class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-      >
-        {
-          events.map((event) => (
-            <article
-              class="event-card group flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-xs transition-all duration-300 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800"
-              data-name={event.data.name.toLowerCase()}
-              data-year={event.year}
-              data-dist={event.dist}
-              data-loc={event.loc}
-              data-date={event.timestamp}
-            >
-              <div class="relative h-40 overflow-hidden">
-                <img
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  src="https://images.unsplash.com/photo-1559166631-ef208440c75a?q=80&w=600&auto=format&fit=crop"
-                  alt={event.data.name}
-                />
-                <div class="absolute top-3 right-3">
-                  <span class="dark:text-text inline-flex items-center gap-x-1 rounded-lg bg-white/90 px-2 py-1 text-xs font-medium text-gray-800 shadow-sm backdrop-blur-sm dark:bg-neutral-900/90">
-                    {event.data.type || 'Road'}
+            <div class="absolute inset-0 flex flex-col justify-end gap-[24px] px-[64px] pt-[64px] pb-[80px]">
+              <div class="flex w-full items-center justify-between">
+                <div class="bg-accent flex items-center justify-center rounded-[20px] px-[16px] py-[8px]">
+                  <span class="text-surface font-heading text-[14px] leading-none font-bold">
+                    NEXT EVENT
                   </span>
                 </div>
               </div>
 
-              <div class="flex flex-grow flex-col p-5">
-                <div class="mb-2 flex items-start justify-between">
-                  <span class="text-xs font-bold tracking-wider text-orange-600 uppercase dark:text-orange-500">
-                    {event.month} {new Date(event.data.date).getDate()}
+              <div class="flex w-full flex-col gap-[24px]">
+                <h2 class="font-heading max-w-[900px] text-[80px] leading-tight font-extrabold text-[#FFFFFF]">
+                  {nextEvent.data.name}
+                </h2>
+
+                <div class="flex flex-wrap items-center gap-[32px]">
+                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                    {new Date(nextEvent.data.date).toLocaleDateString('en-US', {
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}
                   </span>
-                  <span class="text-xs text-gray-500 dark:text-gray-400">
-                    {event.loc}
+                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                    &bull;
+                  </span>
+                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                    {nextEvent.loc}
+                  </span>
+                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                    &bull;
+                  </span>
+                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                    {nextEvent.dist} KM
+                  </span>
+                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                    &bull;
+                  </span>
+                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                    +1,200m
                   </span>
                 </div>
 
-                <h3 class="dark:text-text mb-1 text-xl font-bold text-gray-800 transition-colors group-hover:text-orange-600 dark:group-hover:text-orange-500">
-                  <a href={translatePath(`/events/${event.id}`)}>
-                    {event.data.name}
+                <div class="flex items-center gap-[16px] pt-[16px]">
+                  <a
+                    href={translatePath(`/events/${nextEvent.id}`)}
+                    class="bg-accent text-surface flex h-[52px] items-center justify-center rounded-[32px] px-[32px] py-[16px] text-[16px] leading-none font-bold transition-colors hover:bg-orange-600"
+                  >
+                    Register Now
                   </a>
-                </h3>
-
-                <p class="mt-auto flex items-center gap-4 border-t border-gray-100 pt-4 text-sm text-gray-600 dark:border-neutral-700 dark:text-gray-300">
-                  <span class="flex items-center gap-1 font-semibold">
-                    <svg
-                      class="size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                      />
-                    </svg>
-                    {getTimeLimit(event.dist)}
-                  </span>
-                  <span class="flex items-center gap-1 font-semibold">
-                    <svg
-                      class="size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                    >
-                      <>
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                        />
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        />
-                      </>
-                    </svg>
-                    {event.dist} km
-                  </span>
-                </p>
+                  <a
+                    href={translatePath(`/events/${nextEvent.id}`)}
+                    class="flex h-[52px] items-center justify-center rounded-[32px] border border-[#FFFFFF] px-[32px] py-[16px] text-[16px] leading-none font-semibold text-[#FFFFFF] transition-colors hover:bg-white/10"
+                  >
+                    Route Details
+                  </a>
+                </div>
               </div>
-            </article>
-          ))
-        }
+
+              <div class="mt-[24px] flex w-full items-center justify-between border-t border-[#ffffff33] pt-[32px]">
+                <div class="flex gap-[8px]">
+                  <div class="bg-accent h-[4px] w-[32px] rounded-[2px]" />
+                  <div class="h-[4px] w-[16px] rounded-[2px] bg-[#ffffff80]" />
+                  <div class="h-[4px] w-[16px] rounded-[2px] bg-[#ffffff80]" />
+                </div>
+                <div class="flex gap-[16px]">
+                  <button class="flex items-center justify-center rounded-[32px] border border-[#ffffff80] px-[16px] py-[12px] leading-none text-[#ffffff] transition-colors hover:bg-white/10">
+                    <Icon name="ArrowLeft" class="h-[20px] w-[20px]" />
+                  </button>
+                  <button class="flex items-center justify-center rounded-[32px] border border-[#ffffff] px-[16px] py-[12px] leading-none text-[#ffffff] transition-colors hover:bg-white/10">
+                    <Icon name="ArrowRight" class="h-[20px] w-[20px]" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      }
+
+      {/* FestsWrap */}
+      <div
+        class="bg-surface flex w-full flex-col gap-[48px] px-[64px] py-[80px]"
+      >
+        <div class="flex w-full items-end justify-between">
+          <div class="flex flex-col gap-[12px]">
+            <h3
+              class="text-text font-heading text-[32px] leading-none font-extrabold uppercase"
+            >
+              FESTIVALS & PERMANENTS
+            </h3>
+            <p
+              class="text-text-muted font-body text-[16px] leading-tight font-normal"
+            >
+              Ride these routes on any day within the open window. Submit your
+              track to homologate.
+            </p>
+          </div>
+          <a
+            href={translatePath('/rules')}
+            class="border-text-muted text-text flex items-center justify-center rounded-[32px] border px-[24px] py-[12px] text-[14px] leading-none font-semibold transition-colors hover:bg-black/5"
+          >
+            View Rules
+          </a>
+        </div>
+
+        <div class="flex w-full flex-col gap-[32px] md:flex-row">
+          {/* FestCards */}
+          <div
+            class="bg-surface flex min-w-[300px] flex-1 items-center gap-[24px] rounded-[24px] border border-[#C2CAD0] p-[24px]"
+          >
+            <Icon
+              name="Calendar"
+              class="text-text-muted h-[48px] w-[48px] shrink-0"
+            />
+            <div class="flex w-full flex-col gap-[8px]">
+              <span
+                class="text-text-muted font-body text-[12px] leading-none font-bold uppercase"
+                >May 1 &ndash; May 31</span
+              >
+              <h4
+                class="text-text font-heading text-[24px] leading-tight font-bold"
+              >
+                May Challenge 200km
+              </h4>
+              <span
+                class="text-text-muted font-body text-[14px] leading-none font-normal"
+                >Minsk Region</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-surface flex min-w-[300px] flex-1 items-center gap-[24px] rounded-[24px] border border-[#C2CAD0] p-[24px]"
+          >
+            <Icon
+              name="Calendar"
+              class="text-text-muted h-[48px] w-[48px] shrink-0"
+            />
+            <div class="flex w-full flex-col gap-[8px]">
+              <span
+                class="text-text-muted font-body text-[12px] leading-none font-bold uppercase"
+                >June 1 &ndash; June 15</span
+              >
+              <h4
+                class="text-text font-heading text-[24px] leading-tight font-bold"
+              >
+                Fl&egrave;che Belarus (Teams)
+              </h4>
+              <span
+                class="text-text-muted font-body text-[14px] leading-none font-normal"
+                >Any location, finish in Minsk</span
+              >
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- No Results State -->
-      <div id="no-results" class="hidden py-20 text-center">
-        <div
-          class="mb-4 inline-flex size-16 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
-        >
-          <svg
-            class="size-6 text-gray-400"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-            ></path></svg
-          >
+      {/* Main Content Area */}
+      <div
+        class="flex w-full flex-col gap-[80px] px-[64px] pt-[80px] pb-[128px] lg:flex-row"
+      >
+        {/* Schedule */}
+        <div class="flex flex-1 flex-col gap-[80px]" id="events-list">
+          {
+            Object.entries(eventsByMonth).map(([month, monthEvents]) => (
+              <div class="month-block flex w-full flex-col gap-[24px]">
+                {/* MonthDivider */}
+                <div class="flex w-full items-center gap-[16px]">
+                  <div class="bg-surface border-text-muted flex items-center justify-center rounded-[20px] border px-[16px] py-[8px]">
+                    <span class="text-text-muted font-body text-[16px] leading-none font-semibold uppercase">
+                      {month}
+                    </span>
+                  </div>
+                  <div class="bg-text-muted h-[1px] flex-1" />
+                </div>
+
+                {/* List */}
+                <div class="flex w-full flex-col">
+                  {monthEvents.map((event) => (
+                    <article
+                      class="event-row border-surface hover:bg-surface/50 flex w-full items-center gap-[32px] border-b py-[32px] transition-colors"
+                      data-name={event.data.name.toLowerCase()}
+                      data-year={event.year}
+                      data-dist={event.dist}
+                      data-loc={event.loc}
+                      data-type={event.type}
+                      data-date={event.timestamp}
+                    >
+                      {/* DateBlock */}
+                      <div class="flex w-[80px] shrink-0 flex-col items-center">
+                        <span class="text-text-muted font-body mb-1 text-[14px] leading-none font-bold tracking-widest uppercase">
+                          {event.monthStr}
+                        </span>
+                        <span class="text-text font-heading text-[32px] leading-none font-extrabold">
+                          {event.dayStr}
+                        </span>
+                      </div>
+
+                      {/* Banner */}
+                      <div class="h-[80px] w-[120px] shrink-0 overflow-hidden rounded-[8px] bg-gray-200">
+                        <img
+                          src="https://images.unsplash.com/photo-1559166631-ef208440c75a?q=80&w=300&auto=format&fit=crop"
+                          class="h-full w-full object-cover"
+                          alt=""
+                        />
+                      </div>
+
+                      {/* Center */}
+                      <div class="flex min-w-0 flex-1 flex-col gap-[12px]">
+                        <div class="flex flex-col gap-[4px]">
+                          <a
+                            href={translatePath(`/events/${event.id}`)}
+                            class="hover:text-accent transition-colors"
+                          >
+                            <h4 class="text-text font-heading truncate text-[28px] leading-tight font-bold">
+                              {event.data.name}
+                            </h4>
+                          </a>
+                          <span class="text-accent font-body text-[14px] leading-none font-semibold">
+                            {event.club}
+                          </span>
+                        </div>
+
+                        <div class="flex items-center gap-[12px]">
+                          <div
+                            class={`border-text-muted flex items-center justify-center rounded-[16px] border px-[12px] py-[4px] ${event.type === 'POPULAIRE' ? 'bg-accent' : event.type === 'FEST' ? 'bg-secondary' : 'bg-brand'}`}
+                          >
+                            <span class="text-page-bg font-body text-[12px] leading-none font-bold tracking-wider uppercase">
+                              {event.type === 'POPULAIRE'
+                                ? 'POPULAIRE'
+                                : event.type === 'FEST'
+                                  ? 'FEST'
+                                  : 'ACP CERTIFIED'}
+                            </span>
+                          </div>
+                          <span class="text-text-muted font-body text-[14px] leading-none font-semibold">
+                            {event.loc}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* ActionWrap */}
+                      <div class="flex w-[100px] shrink-0 flex-col gap-[8px]">
+                        <span class="text-text font-heading text-[24px] leading-none font-bold">
+                          {event.dist} KM
+                        </span>
+                        {event.timestamp < Date.now() ? (
+                          <a
+                            href={translatePath(`/events/${event.id}`)}
+                            class="border-text-muted text-text-muted font-body flex h-[28px] items-center justify-center rounded-[16px] border px-[16px] py-[6px] text-center text-[12px] leading-none font-bold uppercase transition-colors hover:bg-black/5"
+                          >
+                            RESULTS
+                          </a>
+                        ) : (
+                          <a
+                            href={translatePath(`/events/${event.id}`)}
+                            class="bg-accent text-page-bg font-body flex h-[28px] items-center justify-center rounded-[16px] px-[16px] py-[6px] text-center text-[12px] leading-none font-bold uppercase transition-colors hover:bg-orange-600"
+                          >
+                            REGISTER
+                          </a>
+                        )}
+                      </div>
+
+                      {/* Bookmark */}
+                      <button
+                        class="text-text-muted hover:text-accent flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[24px] border border-transparent transition-colors"
+                        title="Bookmark"
+                      >
+                        <Icon name="Bookmark" class="h-[24px] w-[24px]" />
+                      </button>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+
+          <div id="no-results" class="hidden w-full py-[80px] text-center">
+            <h3
+              class="text-text font-heading mb-[12px] text-[32px] font-extrabold"
+            >
+              No events found
+            </h3>
+            <p class="text-text-muted font-body text-[16px] font-normal">
+              Try adjusting your filters.
+            </p>
+          </div>
         </div>
-        <h3 class="dark:text-text text-lg font-semibold text-gray-800">
-          No events found
-        </h3>
-        <p class="text-gray-500 dark:text-gray-400">
-          Try adjusting your search or filters.
-        </p>
+
+        {/* Sidebar Filters */}
+        <aside class="flex w-[220px] shrink-0 flex-col gap-[64px]">
+          {/* SeasonDropdown */}
+          <div class="flex w-full flex-col gap-[8px]">
+            <label
+              for="filter-year"
+              class="text-text-muted font-body text-[12px] leading-none font-bold tracking-widest uppercase"
+            >
+              SEASON
+            </label>
+            <div class="relative w-full">
+              <select
+                id="filter-year"
+                class="border-text-muted text-text font-body focus:border-accent w-full cursor-pointer appearance-none rounded-[8px] border bg-transparent px-[16px] py-[12px] text-[18px] font-semibold focus:outline-none"
+              >
+                <option value="all">All Seasons</option>
+                {years.map((y) => <option value={y}>{y}</option>)}
+              </select>
+              <div
+                class="text-text-muted pointer-events-none absolute inset-y-0 right-[16px] flex items-center"
+              >
+                <Icon name="ChevronDown" class="h-[12px] w-[12px]" />
+              </div>
+            </div>
+          </div>
+
+          {/* Filters */}
+          <div class="flex w-full flex-col gap-[24px]" id="filter-controls">
+            <h4
+              class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase"
+            >
+              FILTERS
+            </h4>
+
+            {/* BookmarksFilter */}
+            <div
+              class="border-surface flex items-center gap-[12px] border-b py-[16px]"
+            >
+              <input
+                type="checkbox"
+                id="filter-bookmarks"
+                class="border-text-muted accent-accent h-[20px] w-[20px] cursor-pointer rounded-[4px] border"
+              />
+              <label
+                for="filter-bookmarks"
+                class="text-text font-body cursor-pointer text-[14px] font-semibold"
+              >
+                Bookmarked Only
+              </label>
+            </div>
+
+            {/* Distances */}
+            <div class="flex flex-col gap-[16px]">
+              <h5
+                class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase"
+              >
+                DISTANCE
+              </h5>
+              <div
+                class="filter-group flex flex-col gap-[16px]"
+                data-filter-type="dist"
+              >
+                {
+                  [
+                    { value: 'all', label: 'All Distances' },
+                    { value: '200', label: '200 km' },
+                    { value: '300', label: '300 km' },
+                    { value: '400', label: '400 km' },
+                    { value: '600', label: '600+ km' },
+                  ].map((opt) => (
+                    <label class="group flex cursor-pointer items-center gap-[12px]">
+                      <input
+                        type="radio"
+                        name="dist"
+                        value={opt.value}
+                        checked={opt.value === 'all'}
+                        class="peer hidden"
+                      />
+                      <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
+                      <span class="text-text-muted peer-checked:text-text text-[16px] font-medium transition-colors peer-checked:font-bold">
+                        {opt.label}
+                      </span>
+                    </label>
+                  ))
+                }
+              </div>
+            </div>
+
+            {/* Regions */}
+            <div class="flex flex-col gap-[16px]">
+              <h5
+                class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase"
+              >
+                REGION / CLUB
+              </h5>
+              <div
+                class="filter-group flex flex-col gap-[16px]"
+                data-filter-type="loc"
+              >
+                <label
+                  class="group flex cursor-pointer items-center gap-[12px]"
+                >
+                  <input
+                    type="radio"
+                    name="loc"
+                    value="all"
+                    checked
+                    class="peer hidden"
+                  />
+                  <div
+                    class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors"
+                  >
+                  </div>
+                  <span
+                    class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold"
+                  >
+                    All Regions
+                  </span>
+                </label>
+                {
+                  locations.map((loc) => (
+                    <label class="group flex cursor-pointer items-center gap-[12px]">
+                      <input
+                        type="radio"
+                        name="loc"
+                        value={loc}
+                        class="peer hidden"
+                      />
+                      <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
+                      <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
+                        {loc}
+                      </span>
+                    </label>
+                  ))
+                }
+              </div>
+            </div>
+
+            {/* Event Types */}
+            <div class="flex flex-col gap-[16px]">
+              <h5
+                class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase"
+              >
+                EVENT TYPE
+              </h5>
+              <div
+                class="filter-group flex flex-col gap-[16px]"
+                data-filter-type="type"
+              >
+                <label
+                  class="group flex cursor-pointer items-center gap-[12px]"
+                >
+                  <input
+                    type="radio"
+                    name="type"
+                    value="all"
+                    checked
+                    class="peer hidden"
+                  />
+                  <div
+                    class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors"
+                  >
+                  </div>
+                  <span
+                    class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold"
+                  >
+                    All Types
+                  </span>
+                </label>
+                {
+                  types.map((t) => (
+                    <label class="group flex cursor-pointer items-center gap-[12px]">
+                      <input
+                        type="radio"
+                        name="type"
+                        value={t}
+                        class="peer hidden"
+                      />
+                      <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
+                      <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
+                        {t}
+                      </span>
+                    </label>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
   </main>
@@ -316,152 +562,83 @@ function getTimeLimit(distance: number) {
 </Layout>
 
 <script>
-  // Simple Vanilla JS for Client-Side Filtering
   document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.getElementById('events-grid');
-    const cards = document.querySelectorAll('.event-card');
+    const rows = document.querySelectorAll('.event-row');
     const noResults = document.getElementById('no-results');
+    const monthBlocks = document.querySelectorAll('.month-block');
+    const yearSelect = document.getElementById(
+      'filter-year'
+    ) as HTMLSelectElement;
+    const filterGroups = document.querySelectorAll('.filter-group');
 
-    // Controls
-    const searchInput = document.getElementById('search-input');
-    const yearBtns = document.querySelectorAll('.filter-year-btn');
-    const distanceSelect = document.getElementById('distance-select');
-    const locationSelect = document.getElementById('location-select');
-    const sortBtns = document.querySelectorAll('.sort-btn');
-    const mobileToggle = document.getElementById('mobile-filter-toggle');
-    const filterControls = document.getElementById('filter-controls');
-
-    let currentFilters = {
-      search: '',
-      year: 'all',
-      distance: 'all',
-      location: 'all',
-      sort: 'date', // date | dist
-    };
-
-    // --- Filter Logic ---
     function applyFilters() {
+      const year = yearSelect.value;
+      const filters: Record<string, string> = {};
+
+      filterGroups.forEach((group) => {
+        const type = (group as HTMLElement).dataset.filterType!;
+        const checked = group.querySelector(
+          'input:checked'
+        ) as HTMLInputElement;
+        filters[type] = checked ? checked.value : 'all';
+      });
+
       let visibleCount = 0;
-      const cardsArray = Array.from(cards);
 
-      // 1. Filter
-      cardsArray.forEach((card) => {
-        const name = card.dataset.name;
-        const year = card.dataset.year;
-        const dist = parseInt(card.dataset.dist);
-        const loc = card.dataset.loc;
+      rows.forEach((row) => {
+        const dataYear = (row as HTMLElement).dataset.year;
+        const dataDist = parseInt((row as HTMLElement).dataset.dist || '0');
+        const dataLoc = (row as HTMLElement).dataset.loc;
+        const dataType = (row as HTMLElement).dataset.type;
 
-        let matchesSearch = name.includes(currentFilters.search.toLowerCase());
-        let matchesYear =
-          currentFilters.year === 'all' || year === currentFilters.year;
-        let matchesLoc =
-          currentFilters.location === 'all' || loc === currentFilters.location;
+        let match = true;
+        if (year !== 'all' && dataYear !== year) match = false;
+        if (filters.loc !== 'all' && dataLoc !== filters.loc) match = false;
+        if (filters.type !== 'all' && dataType !== filters.type) match = false;
 
-        let matchesDist = true;
-        if (currentFilters.distance !== 'all') {
-          const targetDist = parseInt(currentFilters.distance);
-          if (targetDist === 1000) matchesDist = dist >= 1000;
-          else matchesDist = dist === targetDist;
+        if (filters.dist !== 'all') {
+          const targetDist = parseInt(filters.dist);
+          if (targetDist === 600) {
+            if (dataDist < 600) match = false;
+          } else {
+            if (dataDist !== targetDist) match = false;
+          }
         }
 
-        if (matchesSearch && matchesYear && matchesLoc && matchesDist) {
-          card.classList.remove('hidden');
+        if (match) {
+          row.classList.remove('hidden');
+          row.classList.add('flex');
           visibleCount++;
         } else {
-          card.classList.add('hidden');
+          row.classList.add('hidden');
+          row.classList.remove('flex');
         }
       });
 
-      // 2. Sort Visible Cards
-      // We can re-append them to the grid in order
-      // NOTE: This re-sorting logic operates on the DOM elements directly
-      const sortedCards = cardsArray
-        .filter((c) => !c.classList.contains('hidden'))
-        .sort((a, b) => {
-          const valA = parseInt(a.dataset[currentFilters.sort]);
-          const valB = parseInt(b.dataset[currentFilters.sort]);
-          return valA - valB;
-        });
+      monthBlocks.forEach((block) => {
+        const visibleRows = block.querySelectorAll('.event-row.flex');
+        if (visibleRows.length === 0) {
+          block.classList.add('hidden');
+          block.classList.remove('flex', 'flex-col');
+        } else {
+          block.classList.remove('hidden');
+          block.classList.add('flex', 'flex-col');
+        }
+      });
 
-      // Append sorted cards back to grid (moves them)
-      sortedCards.forEach((card) => grid.appendChild(card));
-
-      // 3. Toggle Empty State
       if (visibleCount === 0) {
-        noResults.classList.remove('hidden');
+        noResults?.classList.remove('hidden');
       } else {
-        noResults.classList.add('hidden');
+        noResults?.classList.add('hidden');
       }
     }
 
-    // --- Event Listeners ---
-
-    // Search
-    searchInput.addEventListener('input', (e) => {
-      currentFilters.search = e.target.value;
-      applyFilters();
-    });
-
-    // Year Toggle
-    yearBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        // Update UI
-        yearBtns.forEach((b) => {
-          b.classList.remove(
-            'bg-white',
-            'dark:bg-neutral-700',
-            'text-gray-800',
-            'dark:text-text',
-            'shadow-sm'
-          );
-          b.classList.add('text-gray-500', 'dark:text-gray-400');
-        });
-        btn.classList.add(
-          'bg-white',
-          'dark:bg-neutral-700',
-          'text-gray-800',
-          'dark:text-text',
-          'shadow-sm'
-        );
-        btn.classList.remove('text-gray-500', 'dark:text-gray-400');
-
-        currentFilters.year = btn.dataset.year;
-        applyFilters();
+    yearSelect?.addEventListener('change', applyFilters);
+    filterGroups.forEach((group) => {
+      const inputs = group.querySelectorAll('input');
+      inputs.forEach((input) => {
+        input.addEventListener('change', applyFilters);
       });
-    });
-
-    // Distance
-    distanceSelect.addEventListener('change', (e) => {
-      currentFilters.distance = e.target.value;
-      applyFilters();
-    });
-
-    // Location
-    locationSelect.addEventListener('change', (e) => {
-      currentFilters.location = e.target.value;
-      applyFilters();
-    });
-
-    // Sort
-    sortBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        // Update UI
-        sortBtns.forEach((b) => {
-          b.classList.remove('text-orange-600', 'dark:text-orange-500');
-          b.classList.add('text-gray-500', 'dark:text-gray-400');
-        });
-        btn.classList.add('text-orange-600', 'dark:text-orange-500');
-        btn.classList.remove('text-gray-500', 'dark:text-gray-400');
-
-        currentFilters.sort = btn.dataset.sort;
-        applyFilters();
-      });
-    });
-
-    // Mobile Toggle
-    mobileToggle.addEventListener('click', () => {
-      filterControls.classList.toggle('hidden');
-      filterControls.classList.toggle('flex');
     });
   });
 </script>

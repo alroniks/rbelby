@@ -29,17 +29,35 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Create Release PR or Tag
+      - name: Create Release PR
+        id: changesets
         uses: changesets/action@v1
         with:
-          # This controls the PR title/commit when collecting changesets
           commit: 'Update changelog for release'
           title: 'Update changelog for release'
-
-          # We don't publish to NPM. This natively tags the repository.
-          publish: npx changeset tag
-
-          # Once the Release PR is merged, it will create a GitHub Release using the changelog
-          createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Tag and GitHub Release
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=$(jq -r .version package.json)
+          TAG="v$VERSION"
+
+          # Only release if the tag doesn't already exist on the remote
+          if ! git ls-remote --tags origin | grep -q "refs/tags/$TAG"; then
+            echo "Creating tag $TAG..."
+            git tag "$TAG"
+            git push origin "$TAG"
+
+            echo "Extracting release notes..."
+            # Extract the changelog section specifically for this version
+            awk "/^## $VERSION/{flag=1; next} /^## /{flag=0} flag" CHANGELOG.md > release-notes.md
+
+            echo "Creating GitHub Release $TAG..."
+            gh release create "$TAG" -F release-notes.md -t "$TAG"
+          else
+            echo "Tag $TAG already exists, skipping release."
+          fi

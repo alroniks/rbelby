@@ -3,47 +3,241 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PageHeader from '../components/PageHeader.astro';
+import Icon from '../components/Icon.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout>
+<Layout title="FAQ">
   <Navbar />
-  <PageHeader title="FAQ" description="Frequently Asked Questions" />
+  <PageHeader
+    title="FREQUENTLY ASKED QUESTIONS"
+    description="Frequently asked questions, official rules, and gear guidelines for endurance cycling."
+  />
 
-  <section class="bg-page-bg py-12 lg:py-16">
-    <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-      <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
-        <div class="lg:col-span-9">
-          <article
-            class="prose prose-lg dark:prose-invert prose-headings:font-heading prose-headings:font-bold prose-headings:text-text prose-h2:mt-16 prose-h2:mb-6 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-xl prose-p:font-body prose-p:text-text-muted prose-p:leading-relaxed prose-p:mb-6 prose-a:text-accent prose-ul:my-6 prose-li:font-body prose-li:text-text-muted prose-li:leading-relaxed prose-headings:uppercase max-w-[800px]"
+  <main class="bg-page-bg text-text flex w-full flex-col items-center">
+    <div
+      class="flex w-full max-w-[1280px] flex-col gap-[64px] px-[80px] pt-[80px] pb-[100px] lg:flex-row"
+    >
+      {/* FaqColumn */}
+      <div class="flex min-w-0 flex-1 flex-col gap-[56px]">
+        {/* Section 1: Equipment & Gear */}
+        <section class="flex w-full flex-col gap-[24px]">
+          <div class="flex items-center gap-[16px]">
+            <div
+              class="bg-brand flex items-center justify-center rounded-[6px] px-[8px] py-[4px]"
+            >
+              <span
+                class="font-heading text-[12px] font-extrabold text-[#ffffff]"
+                >01</span
+              >
+            </div>
+            <h3 class="text-text font-heading text-[24px] font-bold">
+              Equipment &amp; Gear
+            </h3>
+          </div>
+
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
           >
-            <h2 id="general">General Questions</h2>
-            <p>Here are some general questions.</p>
-          </article>
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                Do I need a special bike?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+            <div class="h-[1px] w-full bg-[#f1f5f9]"></div>
+            <p
+              class="font-body text-[14px] leading-relaxed font-normal text-[#262626]"
+            >
+              No, any human-powered vehicle is allowed as long as it is
+              propelled solely by the rider.
+            </p>
+          </div>
+
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+          >
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                What lights are required?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Rules & Limits */}
+        <section class="flex w-full flex-col gap-[24px]">
+          <div class="flex items-center gap-[16px]">
+            <div
+              class="bg-brand flex items-center justify-center rounded-[6px] px-[8px] py-[4px]"
+            >
+              <span
+                class="font-heading text-[12px] font-extrabold text-[#ffffff]"
+                >02</span
+              >
+            </div>
+            <h3 class="text-text font-heading text-[24px] font-bold">
+              Rules &amp; Limits
+            </h3>
+          </div>
+
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+          >
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                What happens if I miss a control time limit?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+          </div>
+
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+          >
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                Can my friends drive alongside me?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Section 3: Navigation & Support */}
+        <section class="flex w-full flex-col gap-[24px]">
+          <div class="flex items-center gap-[16px]">
+            <div
+              class="bg-brand flex items-center justify-center rounded-[6px] px-[8px] py-[4px]"
+            >
+              <span
+                class="font-heading text-[12px] font-extrabold text-[#ffffff]"
+                >03</span
+              >
+            </div>
+            <h3 class="text-text font-heading text-[24px] font-bold">
+              Navigation &amp; Support
+            </h3>
+          </div>
+
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+          >
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                Will there be route signs?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+          </div>
+
+          <div
+            class="flex w-full flex-col gap-[16px] rounded-[12px] border border-[#f1f5f9] bg-[#ffffff] p-[24px] shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+          >
+            <div class="flex w-full items-center justify-between gap-[16px]">
+              <h4 class="text-text font-heading text-[17px] font-semibold">
+                How do I get the GPX?
+              </h4>
+              <Icon
+                name="ChevronDown"
+                class="h-[18px] w-[18px] shrink-0 text-[#94a3b8]"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Sidebar */}
+      <aside
+        class="sticky top-[100px] flex w-full shrink-0 flex-col gap-[48px] lg:w-[280px]"
+      >
+        <div
+          class="bg-surface border-text-muted flex h-[48px] w-full items-center gap-[12px] rounded-[24px] border px-[20px]"
+        >
+          <Icon
+            name="Search"
+            class="text-text-muted h-[18px] w-[18px] shrink-0"
+          />
+          <input
+            type="text"
+            placeholder="Search questions..."
+            class="text-text-muted font-body w-full border-none bg-transparent text-[14px] font-medium outline-none"
+          />
         </div>
 
-        <div class="lg:col-span-3">
-          <div
-            class="bg-surface sticky top-8 rounded-xl border border-gray-200 p-6 shadow-sm dark:border-neutral-700"
-          >
-            <h3
-              class="font-heading text-text-muted mb-4 text-sm font-bold tracking-wider uppercase"
+        <div class="flex w-full flex-col gap-[16px]">
+          <h4 class="text-text font-heading text-[16px] font-bold uppercase">
+            POPULAR TAGS
+          </h4>
+          <div class="flex w-full flex-wrap gap-[8px]">
+            <span
+              class="bg-surface border-gray text-text-muted font-body rounded-full border px-[12px] py-[4px] text-[13px] font-medium"
+              >Lights</span
             >
-              ON THIS PAGE
-            </h3>
-            <nav class="space-y-3" aria-label="Table of Contents">
-              <a
-                class="font-body text-brand hover:text-accent block text-sm font-medium transition-colors"
-                href="#general">General Questions</a
-              >
-            </nav>
+            <span
+              class="bg-surface border-gray text-text-muted font-body rounded-full border px-[12px] py-[4px] text-[13px] font-medium"
+              >Time Limits</span
+            >
+            <span
+              class="bg-surface border-gray text-text-muted font-body rounded-full border px-[12px] py-[4px] text-[13px] font-medium"
+              >GPS Route</span
+            >
+            <span
+              class="bg-surface border-gray text-text-muted font-body rounded-full border px-[12px] py-[4px] text-[13px] font-medium"
+              >Checkpoints</span
+            >
           </div>
         </div>
-      </div>
+
+        <div class="flex w-full flex-col gap-[16px]">
+          <h4 class="text-text font-heading text-[16px] font-bold uppercase">
+            CATEGORIES
+          </h4>
+          <div class="flex w-full flex-col gap-[16px]">
+            <div class="flex items-center gap-[10px]">
+              <div class="bg-accent h-[4px] w-[4px] rounded-full"></div>
+              <span class="text-text font-body text-[14px] font-semibold"
+                >Equipment &amp; Gear</span
+              >
+            </div>
+            <div class="flex items-center gap-[10px]">
+              <div class="h-[4px] w-[4px] bg-transparent"></div>
+              <span
+                class="text-text-muted hover:text-text font-body cursor-pointer text-[14px] font-normal transition-colors"
+                >Rules &amp; Limits</span
+              >
+            </div>
+            <div class="flex items-center gap-[10px]">
+              <div class="h-[4px] w-[4px] bg-transparent"></div>
+              <span
+                class="text-text-muted hover:text-text font-body cursor-pointer text-[14px] font-normal transition-colors"
+                >Navigation &amp; Support</span
+              >
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
-  </section>
+  </main>
+
   <Footer />
 </Layout>
