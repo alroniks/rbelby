@@ -1,5 +1,27 @@
 # rbelby
 
+## 0.3.0
+
+### Minor Changes
+
+- 5a7e5b7: **A big upgrade of the UI pages and implementing the main one from the updated UI** (#143)
+- c4c90a3: **New Crowdin updates** (#144)
+- 890f43e: **Add new pages for FAQ, rules, about, community, club and rider profile** (#145)
+
+### Patch Changes
+
+- 2d1fa45: **Fix technical debt related to the project deps usage** (#136)
+- b489c63: **Bump prettier-plugin-tailwindcss from 0.7.2 to 0.8.0** (#138)
+- ab71663: **Bump @types/node from 25.8.0 to 25.9.2** (#139)
+- 0925928: **Bump dotenv from 17.3.1 to 17.4.2** (#140)
+- 123a6d3: **Bump astro from 6.3.3 to 6.3.7** (#141)
+- bb5ee8a: **Bump eslint from 10.0.3 to 10.4.1** (#142)
+- 92f65dd: **Bump @tailwindcss/vite from 4.3.0 to 4.3.1** (#146)
+- e37db73: **Bump eslint-plugin-astro from 1.6.0 to 1.7.0** (#147)
+- 9e215a1: **Bump @tailwindcss/typography from 0.5.19 to 0.5.20** (#149)
+- 93b0d9a: **Bump astro from 6.4.8 to 7.4.6** (#150)
+- 2b03c17: **Fix issues with unfinished specs implementations** (#151)
+
 ## 0.2.0
 
 ### Minor Changes
