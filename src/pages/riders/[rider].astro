@@ -5,7 +5,11 @@ import Footer from '../../components/Footer.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import Icon from '../../components/Icon.astro';
 import { getCollection } from 'astro:content';
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils';
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from '../../i18n/utils';
 
 export async function getStaticPaths() {
   const riders = await getCollection('riders');
@@ -21,7 +25,9 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 const allClubs = await getCollection('clubs');
-const club = rider.data.clubId ? allClubs.find((c) => c.id === rider.data.clubId) : null;
+const club = rider.data.clubId
+  ? allClubs.find((c) => c.id === rider.data.clubId)
+  : null;
 ---
 
 <Layout title={`${rider.data.name} - Rider Profile`}>

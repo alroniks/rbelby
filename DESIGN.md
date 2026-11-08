@@ -18,7 +18,7 @@ This document contains the design tokens and design rationale for the Randonneur
 
 ## Colors
 
-The color palette is inspired by the landscape of Belarus, featuring its numerous lakes, marshes, and deep forests, dynamically sourced from `design/ui.pen`.
+The color palette is inspired by the landscape of Belarus, featuring its numerous lakes, marshes, and deep forests, originally sourced from `design/ui.pen`. Being replaced by the rbel.by brand in `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b` (spec 0019).
 
 - **Brand (#1b3f33):** Pine Forest Green. Represents the deep, dense coniferous forests of Belarus. Used as the primary footer background, logo branding, and major dark backdrops.
 - **Accent (#014c9e):** Cornflower Blue. Represents the famous Belarusian cornflowers (Валошка) and randonneuring tradition. Used for solid actions, primary buttons, and highlight badges.

@@ -4,7 +4,11 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import Icon from '../../components/Icon.astro';
 import { getCollection } from 'astro:content';
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils';
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -594,7 +598,10 @@ const allClubs = await getCollection('clubs');
                 </div>
                 <div class="bg-text-muted/20 h-[1px] w-full" />
                 <div class="flex w-full items-center gap-[12px]">
-                  <Icon name="MapPin" class="text-text-muted h-[16px] w-[16px]" />
+                  <Icon
+                    name="MapPin"
+                    class="text-text-muted h-[16px] w-[16px]"
+                  />
                   <span class="text-text-muted font-body flex-1 truncate text-[14px] font-semibold">
                     {club.data.city || 'Belarus'}
                   </span>

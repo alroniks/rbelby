@@ -1,5 +1,7 @@
 # ADR 0002: Client-Side Filtering, State Management, and History
 
+> **Superseded by [ADR-0003](./0003-live-data-from-brevly.md)** (2026-10-23): calendar filters are now URL parameters resolved server-side against Brevly's API.
+
 ## Context
 
 As we build features like the Events Directory (Spec 012) and Global Search (Spec 013), we need to handle state changes (e.g., active filters, search queries) dynamically on the client without relying on heavyweight frameworks like React. We must adhere to the vanilla JS requirement stated in the Constitution.

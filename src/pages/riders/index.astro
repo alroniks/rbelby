@@ -21,7 +21,9 @@ const riders = allRiders.map((rider) => ({
 
 riders.sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-const cities = [...new Set(riders.map((r) => r.data.city).filter(Boolean))].sort();
+const cities = [
+  ...new Set(riders.map((r) => r.data.city).filter(Boolean)),
+].sort();
 ---
 
 <Layout title="Riders Directory">
@@ -57,7 +59,8 @@ const cities = [...new Set(riders.map((r) => r.data.city).filter(Boolean))].sort
                   {rider.data.name}
                 </a>
                 <span class="text-text-muted font-body text-[14px] font-normal">
-                  {rider.club?.data.name ?? 'Independent'}{rider.data.city ? ` • ${rider.data.city}` : ''}
+                  {rider.club?.data.name ?? 'Independent'}
+                  {rider.data.city ? ` • ${rider.data.city}` : ''}
                 </span>
               </div>
 
@@ -72,7 +75,9 @@ const cities = [...new Set(riders.map((r) => r.data.city).filter(Boolean))].sort
         }
 
         <div id="no-results" class="hidden w-full py-[80px] text-center">
-          <h3 class="text-text font-heading mb-[12px] text-[32px] font-extrabold">
+          <h3
+            class="text-text font-heading mb-[12px] text-[32px] font-extrabold"
+          >
             No riders found
           </h3>
           <p class="text-text-muted font-body text-[16px] font-normal">
@@ -106,18 +111,37 @@ const cities = [...new Set(riders.map((r) => r.data.city).filter(Boolean))].sort
           >
             CITY
           </h4>
-          <div class="filter-group flex flex-col gap-[16px]" data-filter-type="city">
+          <div
+            class="filter-group flex flex-col gap-[16px]"
+            data-filter-type="city"
+          >
             <label class="group flex cursor-pointer items-center gap-[12px]">
-              <input type="radio" name="city" value="all" checked class="peer hidden" />
-              <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
-              <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
+              <input
+                type="radio"
+                name="city"
+                value="all"
+                checked
+                class="peer hidden"
+              />
+              <div
+                class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors"
+              >
+              </div>
+              <span
+                class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold"
+              >
                 All Cities
               </span>
             </label>
             {
               cities.map((city) => (
                 <label class="group flex cursor-pointer items-center gap-[12px]">
-                  <input type="radio" name="city" value={city!.toLowerCase()} class="peer hidden" />
+                  <input
+                    type="radio"
+                    name="city"
+                    value={city!.toLowerCase()}
+                    class="peer hidden"
+                  />
                   <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
                   <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
                     {city}
@@ -129,11 +153,18 @@ const cities = [...new Set(riders.map((r) => r.data.city).filter(Boolean))].sort
         </div>
 
         <div class="flex flex-col gap-[8px]">
-          <span class="text-text-muted font-body text-[12px] font-bold uppercase">TOTAL</span>
-          <span class="text-accent font-heading text-[48px] leading-none font-extrabold">
+          <span
+            class="text-text-muted font-body text-[12px] font-bold uppercase"
+            >TOTAL</span
+          >
+          <span
+            class="text-accent font-heading text-[48px] leading-none font-extrabold"
+          >
             {riders.length}
           </span>
-          <span class="text-text-muted font-body text-[14px] font-normal">registered riders</span>
+          <span class="text-text-muted font-body text-[14px] font-normal"
+            >registered riders</span
+          >
         </div>
       </aside>
     </div>
@@ -146,12 +177,16 @@ const cities = [...new Set(riders.map((r) => r.data.city).filter(Boolean))].sort
   document.addEventListener('DOMContentLoaded', () => {
     const rows = document.querySelectorAll('.rider-row');
     const noResults = document.getElementById('no-results');
-    const searchInput = document.getElementById('search-riders') as HTMLInputElement;
+    const searchInput = document.getElementById(
+      'search-riders'
+    ) as HTMLInputElement;
     const filterGroups = document.querySelectorAll('.filter-group');
 
     function applyFilters() {
       const query = searchInput.value.toLowerCase().trim();
-      const cityRadio = document.querySelector('input[name="city"]:checked') as HTMLInputElement;
+      const cityRadio = document.querySelector(
+        'input[name="city"]:checked'
+      ) as HTMLInputElement;
       const city = cityRadio?.value ?? 'all';
 
       let visible = 0;
