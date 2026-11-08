@@ -60,6 +60,16 @@ const authors = defineCollection({
   }),
 });
 
+const riders = defineCollection({
+  loader: file('./rbelby/data/riders.json'),
+  schema: z.object({
+    id: z.string().catch('unknown'),
+    name: z.string().catch('Unknown Rider'),
+    clubId: z.string().optional().catch(undefined),
+    city: z.string().optional().catch(undefined),
+  }),
+});
+
 const journal = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './rbelby/journal' }),
   schema: z
@@ -72,4 +82,4 @@ const journal = defineCollection({
     .merge(seoSchema),
 });
 
-export const collections = { events, routes, clubs, authors, journal };
+export const collections = { events, routes, clubs, authors, journal, riders };
