@@ -37,24 +37,22 @@ const links = [
 <section class="bg-page-bg py-16 md:py-20">
   <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
-      {
-        links.map((link) => (
-          <a href={link.href} class="group flex flex-col justify-between">
-            <p class="font-body text-text mb-6 text-sm leading-relaxed font-semibold md:text-base">
-              {link.desc}
-            </p>
-            <div class="border-accent group-hover:border-accent/80 flex w-fit items-center gap-2 border-b-2 pb-1 transition-colors duration-200">
-              <span class="font-heading text-accent text-sm font-bold tracking-wide uppercase">
-                {link.title}
-              </span>
-              <Icon
-                name="ArrowRight"
-                class="text-accent size-4 transition-transform duration-200 group-hover:translate-x-1"
-              />
-            </div>
-          </a>
-        ))
-      }
+      {links.map((link) => (
+        <a href={link.href} class="group flex flex-col justify-between">
+          <p class="font-body text-text mb-6 text-sm leading-relaxed font-semibold md:text-base">
+            {link.desc}
+          </p>
+          <div class="border-accent group-hover:border-accent/80 flex w-fit items-center gap-2 border-b-2 pb-1 transition-colors duration-200">
+            <span class="font-heading text-accent text-sm font-bold tracking-wide uppercase">
+              {link.title}
+            </span>
+            <Icon
+              name="ArrowRight"
+              class="text-accent size-4 transition-transform duration-200 group-hover:translate-x-1"
+            />
+          </div>
+        </a>
+      ))}
     </div>
   </div>
 </section>

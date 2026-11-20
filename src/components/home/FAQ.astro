@@ -69,14 +69,10 @@ const timeLimits = [
       <!-- Left Column: Branding, text, image, action button -->
       <div class="flex flex-col gap-8 lg:col-span-5">
         <div class="flex flex-col gap-4">
-          <span
-            class="font-body text-brand text-xs font-bold tracking-widest uppercase"
-          >
+          <span class="font-body text-brand text-xs font-bold tracking-widest uppercase">
             {t('home.first_time')}
           </span>
-          <h2
-            class="font-heading text-text text-3xl leading-tight font-black uppercase md:text-[44px]"
-          >
+          <h2 class="font-heading text-text text-3xl leading-tight font-black uppercase md:text-[44px]">
             {t('home.wondering')}
           </h2>
           <p class="font-body text-text-muted text-base leading-relaxed">
@@ -107,9 +103,7 @@ const timeLimits = [
       <!-- Right Column: Time Limits box + Accordion lists -->
       <div class="flex w-full flex-col gap-8 lg:col-span-7">
         <!-- Time Limits Box -->
-        <div
-          class="bg-surface border-surface flex flex-col gap-6 rounded-3xl border p-8 shadow-sm"
-        >
+        <div class="bg-surface border-surface flex flex-col gap-6 rounded-3xl border p-8 shadow-sm">
           <div class="flex items-center gap-3">
             <div class="text-brand shrink-0">
               <Icon name="Timer" class="size-5" />
@@ -120,59 +114,55 @@ const timeLimits = [
           </div>
 
           <div class="grid grid-cols-2 gap-4 text-center sm:grid-cols-4">
-            {
-              timeLimits.map((item) => (
-                <div class="bg-page-bg/60 flex flex-col gap-1 rounded-xl border border-white p-4">
-                  <span class="font-heading text-text text-xl font-black md:text-2xl">
-                    {item.distance}
-                  </span>
-                  <span class="font-body text-text-muted text-xs font-semibold md:text-sm">
-                    {item.limit}
-                  </span>
-                </div>
-              ))
-            }
+            {timeLimits.map((item) => (
+              <div class="bg-page-bg/60 flex flex-col gap-1 rounded-xl border border-white p-4">
+                <span class="font-heading text-text text-xl font-black md:text-2xl">
+                  {item.distance}
+                </span>
+                <span class="font-body text-text-muted text-xs font-semibold md:text-sm">
+                  {item.limit}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
         <!-- FAQ Accordion List -->
         <div class="hs-accordion-group flex w-full flex-col gap-3">
-          {
-            faqs.map((faq, index) => (
-              <div
-                class="hs-accordion border-surface overflow-hidden rounded-2xl border bg-white transition-all duration-300"
-                id={`hs-home-faq-${index}`}
+          {faqs.map((faq, index) => (
+            <div
+              class="hs-accordion border-surface overflow-hidden rounded-2xl border bg-white transition-all duration-300"
+              id={`hs-home-faq-${index}`}
+            >
+              <button
+                class="hs-accordion-toggle group font-heading text-text hover:text-accent flex w-full items-center justify-between gap-x-4 p-6 text-start text-base font-bold transition-colors duration-150 focus:outline-none md:text-lg"
+                aria-expanded="false"
+                aria-controls={`hs-home-faq-content-${index}`}
               >
-                <button
-                  class="hs-accordion-toggle group font-heading text-text hover:text-accent flex w-full items-center justify-between gap-x-4 p-6 text-start text-base font-bold transition-colors duration-150 focus:outline-none md:text-lg"
-                  aria-expanded="false"
-                  aria-controls={`hs-home-faq-content-${index}`}
-                >
-                  <span>{faq.question}</span>
-                  <Icon
-                    name="Plus"
-                    class="hs-accordion-active:hidden text-text-muted group-hover:text-accent block size-5 shrink-0"
-                  />
-                  <Icon
-                    name="Minus"
-                    class="hs-accordion-active:block text-text-muted group-hover:text-accent hidden size-5 shrink-0"
-                  />
-                </button>
+                <span>{faq.question}</span>
+                <Icon
+                  name="Plus"
+                  class="hs-accordion-active:hidden text-text-muted group-hover:text-accent block size-5 shrink-0"
+                />
+                <Icon
+                  name="Minus"
+                  class="hs-accordion-active:block text-text-muted group-hover:text-accent hidden size-5 shrink-0"
+                />
+              </button>
 
-                <div
-                  id={`hs-home-faq-content-${index}`}
-                  class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
-                  aria-labelledby={`hs-home-faq-${index}`}
-                >
-                  <div class="border-surface/50 border-t px-6 pt-1 pb-6">
-                    <p class="font-body text-text-muted text-sm leading-relaxed md:text-base">
-                      {faq.answer}
-                    </p>
-                  </div>
+              <div
+                id={`hs-home-faq-content-${index}`}
+                class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                aria-labelledby={`hs-home-faq-${index}`}
+              >
+                <div class="border-surface/50 border-t px-6 pt-1 pb-6">
+                  <p class="font-body text-text-muted text-sm leading-relaxed md:text-base">
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
-            ))
-          }
+            </div>
+          ))}
         </div>
       </div>
     </div>

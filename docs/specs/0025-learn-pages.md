@@ -4,12 +4,12 @@
 
 - **Goal:** The region's evergreen pages as plain markdown under `/learn`, replacing the hardcoded About, Rules and FAQ pages.
 - **User Flow:** _Visitor:_ opens Learn → What is a brevet → follows the ToC → "More in Learn".
-- **Design:** `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Learn` (`scNPL`), `Learn · What is a brevet` (`GSqXy`), `Learn · Rules` (`jG68h`), `Learn · Awards & Super Randonneur` (`VnS6W`), `Learn · FAQ` (`E0o1N0`), `Learn · About us` (`Ji21u`); Markdown styles in `Blocks · Journal & Learn`.
+- **Design:** `design/rbelby.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Learn` (`scNPL`), `Learn · What is a brevet` (`GSqXy`), `Learn · Rules` (`jG68h`), `Learn · Awards & Super Randonneur` (`VnS6W`), `Learn · FAQ` (`E0o1N0`), `Learn · About us` (`Ji21u`); Markdown styles in `Blocks · Journal & Learn`.
 - **Affected Areas:** `rbelby/learn/`, `src/content.config.ts`, `src/pages/learn/`.
 
 ## 2. Technical Plan (The "How" for this specific feature)
 
-- **Content:** `rbelby/learn/<slug>.md` in Russian; frontmatter is only `title` and `description`; ToC from H2s. Translations `rbelby/learn/{be,en}/<slug>.md` edited directly in the repo (agent-assisted translation in the same PR); no Crowdin.
+- **Content:** `rbelby/learn/<slug>.md` in Russian; frontmatter is only `title` and `description`; ToC from H2s. Translations `rbelby/learn/{be,en}/<slug>.md` edited directly in the repo (agent-assisted translation in the same PR).
 - **Rendering:** fully prerendered.
 - **Pages:** What is a brevet, Rules, FAQ, About us, Awards & Super Randonneur — content carried over from today's `about`, `rules`, `faq` pages.
 
@@ -24,4 +24,3 @@
 ## 4. Drafts & Notes (Living Document)
 
 - Blocked by: 0019.
-- **2026-11-21:** Crowdin dropped; translations are files in the repo.

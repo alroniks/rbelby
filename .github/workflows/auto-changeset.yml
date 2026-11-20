@@ -40,7 +40,7 @@ jobs:
         run: |
           cat <<EOF > ".changeset/pr-${PR_NUM}.md"
           ---
-          "rbelby": ${TYPE}
+          'rbelby': ${TYPE}
           ---
 
           **${TITLE}** (#${PR_NUM})

@@ -3,7 +3,7 @@
 ## 1. Context & Specification (The "What")
 
 - **Goal:** `/search?q=` across Learn (and later Journal) pages and live events.
-- **Design:** `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Search` (`e3N9HK`).
+- **Design:** `design/rbelby.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Search` (`e3N9HK`).
 - **Affected Areas:** `src/pages/search.astro`, Nav.
 
 ## 2. Technical Plan (The "How" for this specific feature)

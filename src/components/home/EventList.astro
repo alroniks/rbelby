@@ -47,13 +47,9 @@ function formatDate(date: Date) {
 <section class="bg-page-bg overflow-hidden py-20 lg:py-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
     <!-- Header with Sliding Arrows -->
-    <div
-      class="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end"
-    >
+    <div class="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
       <div>
-        <h2
-          class="font-heading text-text text-3xl font-extrabold tracking-tight uppercase md:text-5xl"
-        >
+        <h2 class="font-heading text-text text-3xl font-extrabold tracking-tight uppercase md:text-5xl">
           {t('home.upcoming_events')}
         </h2>
       </div>
@@ -91,84 +87,76 @@ function formatDate(date: Date) {
       id="events-slider"
       class="scrollbar-hide flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-6"
     >
-      {
-        upcomingEvents.map((event) => (
-          <div class="w-[280px] shrink-0 snap-start sm:w-[320px] md:w-[368px]">
-            <a
-              href={translatePath(`/events/${event.id}`)}
-              class="group bg-page-bg border-surface flex h-[460px] flex-col overflow-hidden rounded-[24px] border-2 transition-all duration-300 hover:shadow-xl"
-            >
-              {/* Top Flyer Container */}
-              <div class="bg-surface relative h-[200px] w-full overflow-hidden">
-                <img
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  src={
-                    event.data.ogImage ||
-                    'https://images.unsplash.com/photo-1559166631-ef208440c75a?q=80&w=600&auto=format&fit=crop'
-                  }
-                  alt={event.data.name}
-                />
+      {upcomingEvents.map((event) => (
+        <div class="w-[280px] shrink-0 snap-start sm:w-[320px] md:w-[368px]">
+          <a
+            href={translatePath(`/events/${event.id}`)}
+            class="group bg-page-bg border-surface flex h-[460px] flex-col overflow-hidden rounded-[24px] border-2 transition-all duration-300 hover:shadow-xl"
+          >
+            {/* Top Flyer Container */}
+            <div class="bg-surface relative h-[200px] w-full overflow-hidden">
+              <img
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src={
+                  event.data.ogImage ||
+                  'https://images.unsplash.com/photo-1559166631-ef208440c75a?q=80&w=600&auto=format&fit=crop'
+                }
+                alt={event.data.name}
+              />
 
-                {/* Badges */}
-                <div class="absolute top-4 right-4 left-4 z-10 flex items-center justify-between">
-                  <div class="bg-brand flex items-center justify-center rounded-full px-3 py-1.5">
-                    <span class="font-heading text-surface text-xs font-bold">
-                      {event.data.distance} KM
-                    </span>
-                  </div>
-                  <div class="bg-accent flex items-center justify-center rounded-full px-3 py-1.5">
-                    <span class="font-heading text-surface text-xs font-bold">
-                      BRM
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Content Box */}
-              <div class="flex flex-1 flex-col justify-between p-6">
-                <div class="flex flex-col gap-2">
-                  <span class="font-heading text-accent text-xs font-bold tracking-wider uppercase md:text-sm">
-                    {formatDate(event.data.date)}
+              {/* Badges */}
+              <div class="absolute top-4 right-4 left-4 z-10 flex items-center justify-between">
+                <div class="bg-brand flex items-center justify-center rounded-full px-3 py-1.5">
+                  <span class="font-heading text-surface text-xs font-bold">
+                    {event.data.distance} KM
                   </span>
-                  <h3 class="font-heading text-text line-clamp-2 text-xl leading-tight font-black uppercase md:text-2xl">
-                    {event.data.name}
-                  </h3>
                 </div>
-
-                {/* Info Rows */}
-                <div class="border-surface mt-auto flex flex-col gap-2 border-t pt-4">
-                  <div class="text-text-muted flex items-center gap-2">
-                    <Icon
-                      name="LocationPin"
-                      class="text-text-muted size-4 shrink-0"
-                    />
-                    <span class="font-body text-sm font-medium">
-                      {t('home.starts_in')}:{' '}
-                      {event.data.startLocation || 'Minsk'}
-                    </span>
-                  </div>
-                  <div class="text-text-muted flex items-center gap-2">
-                    <Icon
-                      name="Timer"
-                      class="text-text-muted size-4 shrink-0"
-                    />
-                    <span class="font-body text-sm font-medium">
-                      Limit: {getTimeLimit(event.data.distance)}
-                    </span>
-                  </div>
+                <div class="bg-accent flex items-center justify-center rounded-full px-3 py-1.5">
+                  <span class="font-heading text-surface text-xs font-bold">
+                    BRM
+                  </span>
                 </div>
               </div>
-            </a>
-          </div>
-        ))
-      }
-      {
-        upcomingEvents.length === 0 && (
-          <div class="text-text-muted border-surface col-span-full w-full rounded-[24px] border-2 border-dashed py-16 text-center">
-            No upcoming events scheduled at this moment.
-          </div>
-        )
-      }
+            </div>
+
+            {/* Bottom Content Box */}
+            <div class="flex flex-1 flex-col justify-between p-6">
+              <div class="flex flex-col gap-2">
+                <span class="font-heading text-accent text-xs font-bold tracking-wider uppercase md:text-sm">
+                  {formatDate(event.data.date)}
+                </span>
+                <h3 class="font-heading text-text line-clamp-2 text-xl leading-tight font-black uppercase md:text-2xl">
+                  {event.data.name}
+                </h3>
+              </div>
+
+              {/* Info Rows */}
+              <div class="border-surface mt-auto flex flex-col gap-2 border-t pt-4">
+                <div class="text-text-muted flex items-center gap-2">
+                  <Icon
+                    name="LocationPin"
+                    class="text-text-muted size-4 shrink-0"
+                  />
+                  <span class="font-body text-sm font-medium">
+                    {t('home.starts_in')}: {event.data.startLocation || 'Minsk'}
+                  </span>
+                </div>
+                <div class="text-text-muted flex items-center gap-2">
+                  <Icon name="Timer" class="text-text-muted size-4 shrink-0" />
+                  <span class="font-body text-sm font-medium">
+                    Limit: {getTimeLimit(event.data.distance)}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      ))}
+      {upcomingEvents.length === 0 && (
+        <div class="text-text-muted border-surface col-span-full w-full rounded-[24px] border-2 border-dashed py-16 text-center">
+          No upcoming events scheduled at this moment.
+        </div>
+      )}
     </div>
   </div>
 </section>

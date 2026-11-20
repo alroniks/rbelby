@@ -33,7 +33,7 @@ Pages are prerendered by default; live data renders on demand on Cloudflare Work
 
 ### Resources
 
-- 🤖 **AI Instructions**: [`GEMINI.md`](GEMINI.md)
+- 🤖 **AI Instructions**: [`AGENTS.md`](AGENTS.md)
 - 🤝 **Contributing & Workflow**: [`CONTRIBUTING.md`](CONTRIBUTING.md)
 - 🏗️ **Architecture Rules**: [`docs/CONSTITUTION.md`](docs/CONSTITUTION.md)
 - 🗺️ **Specs & Milestones**: [`docs/specs/README.md`](docs/specs/README.md)
@@ -41,7 +41,7 @@ Pages are prerendered by default; live data renders on demand on Cloudflare Work
 
 ### Deployment
 
-Today the site deploys via **Cloudflare Pages** when a GitHub release is published. Spec 0018 moves it to one **Cloudflare Worker** with two stages:
+Today the site deploys via **Cloudflare Pages** when a GitHub release is published. Spec 0031 moves it to one **Cloudflare Worker** with two stages:
 
 - **Merge to `main`** → dev preview at `dev-rbelby.<subdomain>.workers.dev` (Cloudflare Access), test data from `dev.brevly.app`.
 - **Published release** → production at `rbel.by`, data from `brevly.app`.
@@ -50,4 +50,4 @@ The Brevly API endpoint is set with `BREVLY_API_URL`.
 
 ---
 
-_Developed with ❤️ and Gemini CLI._
+_Developed with ❤️ and AI coding agents._

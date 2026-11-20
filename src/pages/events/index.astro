@@ -67,108 +67,100 @@ const nextEvent = events.find((e) => e.timestamp >= Date.now()) || events[0];
   <main class="bg-page-bg text-text flex w-full flex-col items-center">
     <div class="flex w-full max-w-[1280px] flex-col">
       {/* Hero Wrap */}
-      {
-        nextEvent && (
-          <div class="relative flex h-[600px] w-full flex-col">
-            <img
-              src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=2070&auto=format&fit=crop"
-              alt="Next Event"
-              class="absolute inset-0 h-full w-full object-cover"
-            />
-            <div class="absolute inset-0 bg-[#000000A0]" />
+      {nextEvent && (
+        <div class="relative flex h-[600px] w-full flex-col">
+          <img
+            src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=2070&auto=format&fit=crop"
+            alt="Next Event"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-[#000000A0]" />
 
-            <div class="absolute inset-0 flex flex-col justify-end gap-[24px] px-[64px] pt-[64px] pb-[80px]">
-              <div class="flex w-full items-center justify-between">
-                <div class="bg-accent flex items-center justify-center rounded-[20px] px-[16px] py-[8px]">
-                  <span class="text-surface font-heading text-[14px] leading-none font-bold">
-                    NEXT EVENT
-                  </span>
-                </div>
+          <div class="absolute inset-0 flex flex-col justify-end gap-[24px] px-[64px] pt-[64px] pb-[80px]">
+            <div class="flex w-full items-center justify-between">
+              <div class="bg-accent flex items-center justify-center rounded-[20px] px-[16px] py-[8px]">
+                <span class="text-surface font-heading text-[14px] leading-none font-bold">
+                  NEXT EVENT
+                </span>
+              </div>
+            </div>
+
+            <div class="flex w-full flex-col gap-[24px]">
+              <h2 class="font-heading max-w-[900px] text-[80px] leading-tight font-extrabold text-[#FFFFFF]">
+                {nextEvent.data.name}
+              </h2>
+
+              <div class="flex flex-wrap items-center gap-[32px]">
+                <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                  {new Date(nextEvent.data.date).toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}
+                </span>
+                <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                  &bull;
+                </span>
+                <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                  {nextEvent.loc}
+                </span>
+                <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                  &bull;
+                </span>
+                <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                  {nextEvent.dist} KM
+                </span>
+                <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                  &bull;
+                </span>
+                <span class="text-[20px] font-semibold text-[#E0E0E0]">
+                  +1,200m
+                </span>
               </div>
 
-              <div class="flex w-full flex-col gap-[24px]">
-                <h2 class="font-heading max-w-[900px] text-[80px] leading-tight font-extrabold text-[#FFFFFF]">
-                  {nextEvent.data.name}
-                </h2>
-
-                <div class="flex flex-wrap items-center gap-[32px]">
-                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
-                    {new Date(nextEvent.data.date).toLocaleDateString('en-US', {
-                      month: 'long',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}
-                  </span>
-                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
-                    &bull;
-                  </span>
-                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
-                    {nextEvent.loc}
-                  </span>
-                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
-                    &bull;
-                  </span>
-                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
-                    {nextEvent.dist} KM
-                  </span>
-                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
-                    &bull;
-                  </span>
-                  <span class="text-[20px] font-semibold text-[#E0E0E0]">
-                    +1,200m
-                  </span>
-                </div>
-
-                <div class="flex items-center gap-[16px] pt-[16px]">
-                  <a
-                    href={translatePath(`/events/${nextEvent.id}`)}
-                    class="bg-accent text-surface flex h-[52px] items-center justify-center rounded-[32px] px-[32px] py-[16px] text-[16px] leading-none font-bold transition-colors hover:bg-orange-600"
-                  >
-                    Register Now
-                  </a>
-                  <a
-                    href={translatePath(`/events/${nextEvent.id}`)}
-                    class="flex h-[52px] items-center justify-center rounded-[32px] border border-[#FFFFFF] px-[32px] py-[16px] text-[16px] leading-none font-semibold text-[#FFFFFF] transition-colors hover:bg-white/10"
-                  >
-                    Route Details
-                  </a>
-                </div>
+              <div class="flex items-center gap-[16px] pt-[16px]">
+                <a
+                  href={translatePath(`/events/${nextEvent.id}`)}
+                  class="bg-accent text-surface flex h-[52px] items-center justify-center rounded-[32px] px-[32px] py-[16px] text-[16px] leading-none font-bold transition-colors hover:bg-orange-600"
+                >
+                  Register Now
+                </a>
+                <a
+                  href={translatePath(`/events/${nextEvent.id}`)}
+                  class="flex h-[52px] items-center justify-center rounded-[32px] border border-[#FFFFFF] px-[32px] py-[16px] text-[16px] leading-none font-semibold text-[#FFFFFF] transition-colors hover:bg-white/10"
+                >
+                  Route Details
+                </a>
               </div>
+            </div>
 
-              <div class="mt-[24px] flex w-full items-center justify-between border-t border-[#ffffff33] pt-[32px]">
-                <div class="flex gap-[8px]">
-                  <div class="bg-accent h-[4px] w-[32px] rounded-[2px]" />
-                  <div class="h-[4px] w-[16px] rounded-[2px] bg-[#ffffff80]" />
-                  <div class="h-[4px] w-[16px] rounded-[2px] bg-[#ffffff80]" />
-                </div>
-                <div class="flex gap-[16px]">
-                  <button class="flex items-center justify-center rounded-[32px] border border-[#ffffff80] px-[16px] py-[12px] leading-none text-[#ffffff] transition-colors hover:bg-white/10">
-                    <Icon name="ArrowLeft" class="h-[20px] w-[20px]" />
-                  </button>
-                  <button class="flex items-center justify-center rounded-[32px] border border-[#ffffff] px-[16px] py-[12px] leading-none text-[#ffffff] transition-colors hover:bg-white/10">
-                    <Icon name="ArrowRight" class="h-[20px] w-[20px]" />
-                  </button>
-                </div>
+            <div class="mt-[24px] flex w-full items-center justify-between border-t border-[#ffffff33] pt-[32px]">
+              <div class="flex gap-[8px]">
+                <div class="bg-accent h-[4px] w-[32px] rounded-[2px]" />
+                <div class="h-[4px] w-[16px] rounded-[2px] bg-[#ffffff80]" />
+                <div class="h-[4px] w-[16px] rounded-[2px] bg-[#ffffff80]" />
+              </div>
+              <div class="flex gap-[16px]">
+                <button class="flex items-center justify-center rounded-[32px] border border-[#ffffff80] px-[16px] py-[12px] leading-none text-[#ffffff] transition-colors hover:bg-white/10">
+                  <Icon name="ArrowLeft" class="h-[20px] w-[20px]" />
+                </button>
+                <button class="flex items-center justify-center rounded-[32px] border border-[#ffffff] px-[16px] py-[12px] leading-none text-[#ffffff] transition-colors hover:bg-white/10">
+                  <Icon name="ArrowRight" class="h-[20px] w-[20px]" />
+                </button>
               </div>
             </div>
           </div>
-        )
-      }
+        </div>
+      )}
 
       {/* FestsWrap */}
-      <div
-        class="bg-surface flex w-full flex-col gap-[48px] px-[64px] py-[80px]"
-      >
+      <div class="bg-surface flex w-full flex-col gap-[48px] px-[64px] py-[80px]">
         <div class="flex w-full items-end justify-between">
           <div class="flex flex-col gap-[12px]">
-            <h3
-              class="text-text font-heading text-[32px] leading-none font-extrabold uppercase"
-            >
+            <h3 class="text-text font-heading text-[32px] leading-none font-extrabold uppercase">
               FESTIVALS & PERMANENTS
             </h3>
-            <p
-              class="text-text-muted font-body text-[16px] leading-tight font-normal"
-            >
+            <p class="text-text-muted font-body text-[16px] leading-tight font-normal">
               Ride these routes on any day within the open window. Submit your
               track to homologate.
             </p>
@@ -183,180 +175,162 @@ const nextEvent = events.find((e) => e.timestamp >= Date.now()) || events[0];
 
         <div class="flex w-full flex-col gap-[32px] md:flex-row">
           {/* FestCards */}
-          <div
-            class="bg-surface flex min-w-[300px] flex-1 items-center gap-[24px] rounded-[24px] border border-[#C2CAD0] p-[24px]"
-          >
+          <div class="bg-surface flex min-w-[300px] flex-1 items-center gap-[24px] rounded-[24px] border border-[#C2CAD0] p-[24px]">
             <Icon
               name="Calendar"
               class="text-text-muted h-[48px] w-[48px] shrink-0"
             />
             <div class="flex w-full flex-col gap-[8px]">
-              <span
-                class="text-text-muted font-body text-[12px] leading-none font-bold uppercase"
-                >May 1 &ndash; May 31</span
-              >
-              <h4
-                class="text-text font-heading text-[24px] leading-tight font-bold"
-              >
+              <span class="text-text-muted font-body text-[12px] leading-none font-bold uppercase">
+                May 1 &ndash; May 31
+              </span>
+              <h4 class="text-text font-heading text-[24px] leading-tight font-bold">
                 May Challenge 200km
               </h4>
-              <span
-                class="text-text-muted font-body text-[14px] leading-none font-normal"
-                >Minsk Region</span
-              >
+              <span class="text-text-muted font-body text-[14px] leading-none font-normal">
+                Minsk Region
+              </span>
             </div>
           </div>
 
-          <div
-            class="bg-surface flex min-w-[300px] flex-1 items-center gap-[24px] rounded-[24px] border border-[#C2CAD0] p-[24px]"
-          >
+          <div class="bg-surface flex min-w-[300px] flex-1 items-center gap-[24px] rounded-[24px] border border-[#C2CAD0] p-[24px]">
             <Icon
               name="Calendar"
               class="text-text-muted h-[48px] w-[48px] shrink-0"
             />
             <div class="flex w-full flex-col gap-[8px]">
-              <span
-                class="text-text-muted font-body text-[12px] leading-none font-bold uppercase"
-                >June 1 &ndash; June 15</span
-              >
-              <h4
-                class="text-text font-heading text-[24px] leading-tight font-bold"
-              >
+              <span class="text-text-muted font-body text-[12px] leading-none font-bold uppercase">
+                June 1 &ndash; June 15
+              </span>
+              <h4 class="text-text font-heading text-[24px] leading-tight font-bold">
                 Fl&egrave;che Belarus (Teams)
               </h4>
-              <span
-                class="text-text-muted font-body text-[14px] leading-none font-normal"
-                >Any location, finish in Minsk</span
-              >
+              <span class="text-text-muted font-body text-[14px] leading-none font-normal">
+                Any location, finish in Minsk
+              </span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Content Area */}
-      <div
-        class="flex w-full flex-col gap-[80px] px-[64px] pt-[80px] pb-[128px] lg:flex-row"
-      >
+      <div class="flex w-full flex-col gap-[80px] px-[64px] pt-[80px] pb-[128px] lg:flex-row">
         {/* Schedule */}
         <div class="flex flex-1 flex-col gap-[80px]" id="events-list">
-          {
-            Object.entries(eventsByMonth).map(([month, monthEvents]) => (
-              <div class="month-block flex w-full flex-col gap-[24px]">
-                {/* MonthDivider */}
-                <div class="flex w-full items-center gap-[16px]">
-                  <div class="bg-surface border-text-muted flex items-center justify-center rounded-[20px] border px-[16px] py-[8px]">
-                    <span class="text-text-muted font-body text-[16px] leading-none font-semibold uppercase">
-                      {month}
-                    </span>
-                  </div>
-                  <div class="bg-text-muted h-[1px] flex-1" />
+          {Object.entries(eventsByMonth).map(([month, monthEvents]) => (
+            <div class="month-block flex w-full flex-col gap-[24px]">
+              {/* MonthDivider */}
+              <div class="flex w-full items-center gap-[16px]">
+                <div class="bg-surface border-text-muted flex items-center justify-center rounded-[20px] border px-[16px] py-[8px]">
+                  <span class="text-text-muted font-body text-[16px] leading-none font-semibold uppercase">
+                    {month}
+                  </span>
                 </div>
-
-                {/* List */}
-                <div class="flex w-full flex-col">
-                  {monthEvents.map((event) => (
-                    <article
-                      class="event-row border-surface hover:bg-surface/50 flex w-full items-center gap-[32px] border-b py-[32px] transition-colors"
-                      data-name={event.data.name.toLowerCase()}
-                      data-year={event.year}
-                      data-dist={event.dist}
-                      data-loc={event.loc}
-                      data-type={event.type}
-                      data-date={event.timestamp}
-                    >
-                      {/* DateBlock */}
-                      <div class="flex w-[80px] shrink-0 flex-col items-center">
-                        <span class="text-text-muted font-body mb-1 text-[14px] leading-none font-bold tracking-widest uppercase">
-                          {event.monthStr}
-                        </span>
-                        <span class="text-text font-heading text-[32px] leading-none font-extrabold">
-                          {event.dayStr}
-                        </span>
-                      </div>
-
-                      {/* Banner */}
-                      <div class="h-[80px] w-[120px] shrink-0 overflow-hidden rounded-[8px] bg-gray-200">
-                        <img
-                          src="https://images.unsplash.com/photo-1559166631-ef208440c75a?q=80&w=300&auto=format&fit=crop"
-                          class="h-full w-full object-cover"
-                          alt=""
-                        />
-                      </div>
-
-                      {/* Center */}
-                      <div class="flex min-w-0 flex-1 flex-col gap-[12px]">
-                        <div class="flex flex-col gap-[4px]">
-                          <a
-                            href={translatePath(`/events/${event.id}`)}
-                            class="hover:text-accent transition-colors"
-                          >
-                            <h4 class="text-text font-heading truncate text-[28px] leading-tight font-bold">
-                              {event.data.name}
-                            </h4>
-                          </a>
-                          <span class="text-accent font-body text-[14px] leading-none font-semibold">
-                            {event.club}
-                          </span>
-                        </div>
-
-                        <div class="flex items-center gap-[12px]">
-                          <div
-                            class={`border-text-muted flex items-center justify-center rounded-[16px] border px-[12px] py-[4px] ${event.type === 'POPULAIRE' ? 'bg-accent' : event.type === 'FEST' ? 'bg-secondary' : 'bg-brand'}`}
-                          >
-                            <span class="text-page-bg font-body text-[12px] leading-none font-bold tracking-wider uppercase">
-                              {event.type === 'POPULAIRE'
-                                ? 'POPULAIRE'
-                                : event.type === 'FEST'
-                                  ? 'FEST'
-                                  : 'ACP CERTIFIED'}
-                            </span>
-                          </div>
-                          <span class="text-text-muted font-body text-[14px] leading-none font-semibold">
-                            {event.loc}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* ActionWrap */}
-                      <div class="flex w-[100px] shrink-0 flex-col gap-[8px]">
-                        <span class="text-text font-heading text-[24px] leading-none font-bold">
-                          {event.dist} KM
-                        </span>
-                        {event.timestamp < Date.now() ? (
-                          <a
-                            href={translatePath(`/events/${event.id}`)}
-                            class="border-text-muted text-text-muted font-body flex h-[28px] items-center justify-center rounded-[16px] border px-[16px] py-[6px] text-center text-[12px] leading-none font-bold uppercase transition-colors hover:bg-black/5"
-                          >
-                            RESULTS
-                          </a>
-                        ) : (
-                          <a
-                            href={translatePath(`/events/${event.id}`)}
-                            class="bg-accent text-page-bg font-body flex h-[28px] items-center justify-center rounded-[16px] px-[16px] py-[6px] text-center text-[12px] leading-none font-bold uppercase transition-colors hover:bg-orange-600"
-                          >
-                            REGISTER
-                          </a>
-                        )}
-                      </div>
-
-                      {/* Bookmark */}
-                      <button
-                        class="text-text-muted hover:text-accent flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[24px] border border-transparent transition-colors"
-                        title="Bookmark"
-                      >
-                        <Icon name="Bookmark" class="h-[24px] w-[24px]" />
-                      </button>
-                    </article>
-                  ))}
-                </div>
+                <div class="bg-text-muted h-[1px] flex-1" />
               </div>
-            ))
-          }
+
+              {/* List */}
+              <div class="flex w-full flex-col">
+                {monthEvents.map((event) => (
+                  <article
+                    class="event-row border-surface hover:bg-surface/50 flex w-full items-center gap-[32px] border-b py-[32px] transition-colors"
+                    data-name={event.data.name.toLowerCase()}
+                    data-year={event.year}
+                    data-dist={event.dist}
+                    data-loc={event.loc}
+                    data-type={event.type}
+                    data-date={event.timestamp}
+                  >
+                    {/* DateBlock */}
+                    <div class="flex w-[80px] shrink-0 flex-col items-center">
+                      <span class="text-text-muted font-body mb-1 text-[14px] leading-none font-bold tracking-widest uppercase">
+                        {event.monthStr}
+                      </span>
+                      <span class="text-text font-heading text-[32px] leading-none font-extrabold">
+                        {event.dayStr}
+                      </span>
+                    </div>
+
+                    {/* Banner */}
+                    <div class="h-[80px] w-[120px] shrink-0 overflow-hidden rounded-[8px] bg-gray-200">
+                      <img
+                        src="https://images.unsplash.com/photo-1559166631-ef208440c75a?q=80&w=300&auto=format&fit=crop"
+                        class="h-full w-full object-cover"
+                        alt=""
+                      />
+                    </div>
+
+                    {/* Center */}
+                    <div class="flex min-w-0 flex-1 flex-col gap-[12px]">
+                      <div class="flex flex-col gap-[4px]">
+                        <a
+                          href={translatePath(`/events/${event.id}`)}
+                          class="hover:text-accent transition-colors"
+                        >
+                          <h4 class="text-text font-heading truncate text-[28px] leading-tight font-bold">
+                            {event.data.name}
+                          </h4>
+                        </a>
+                        <span class="text-accent font-body text-[14px] leading-none font-semibold">
+                          {event.club}
+                        </span>
+                      </div>
+
+                      <div class="flex items-center gap-[12px]">
+                        <div
+                          class={`border-text-muted flex items-center justify-center rounded-[16px] border px-[12px] py-[4px] ${event.type === 'POPULAIRE' ? 'bg-accent' : event.type === 'FEST' ? 'bg-secondary' : 'bg-brand'}`}
+                        >
+                          <span class="text-page-bg font-body text-[12px] leading-none font-bold tracking-wider uppercase">
+                            {event.type === 'POPULAIRE'
+                              ? 'POPULAIRE'
+                              : event.type === 'FEST'
+                                ? 'FEST'
+                                : 'ACP CERTIFIED'}
+                          </span>
+                        </div>
+                        <span class="text-text-muted font-body text-[14px] leading-none font-semibold">
+                          {event.loc}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* ActionWrap */}
+                    <div class="flex w-[100px] shrink-0 flex-col gap-[8px]">
+                      <span class="text-text font-heading text-[24px] leading-none font-bold">
+                        {event.dist} KM
+                      </span>
+                      {event.timestamp < Date.now() ? (
+                        <a
+                          href={translatePath(`/events/${event.id}`)}
+                          class="border-text-muted text-text-muted font-body flex h-[28px] items-center justify-center rounded-[16px] border px-[16px] py-[6px] text-center text-[12px] leading-none font-bold uppercase transition-colors hover:bg-black/5"
+                        >
+                          RESULTS
+                        </a>
+                      ) : (
+                        <a
+                          href={translatePath(`/events/${event.id}`)}
+                          class="bg-accent text-page-bg font-body flex h-[28px] items-center justify-center rounded-[16px] px-[16px] py-[6px] text-center text-[12px] leading-none font-bold uppercase transition-colors hover:bg-orange-600"
+                        >
+                          REGISTER
+                        </a>
+                      )}
+                    </div>
+
+                    {/* Bookmark */}
+                    <button
+                      class="text-text-muted hover:text-accent flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[24px] border border-transparent transition-colors"
+                      title="Bookmark"
+                    >
+                      <Icon name="Bookmark" class="h-[24px] w-[24px]" />
+                    </button>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
 
           <div id="no-results" class="hidden w-full py-[80px] text-center">
-            <h3
-              class="text-text font-heading mb-[12px] text-[32px] font-extrabold"
-            >
+            <h3 class="text-text font-heading mb-[12px] text-[32px] font-extrabold">
               No events found
             </h3>
             <p class="text-text-muted font-body text-[16px] font-normal">
@@ -381,11 +355,11 @@ const nextEvent = events.find((e) => e.timestamp >= Date.now()) || events[0];
                 class="border-text-muted text-text font-body focus:border-accent w-full cursor-pointer appearance-none rounded-[8px] border bg-transparent px-[16px] py-[12px] text-[18px] font-semibold focus:outline-none"
               >
                 <option value="all">All Seasons</option>
-                {years.map((y) => <option value={y}>{y}</option>)}
+                {years.map((y) => (
+                  <option value={y}>{y}</option>
+                ))}
               </select>
-              <div
-                class="text-text-muted pointer-events-none absolute inset-y-0 right-[16px] flex items-center"
-              >
+              <div class="text-text-muted pointer-events-none absolute inset-y-0 right-[16px] flex items-center">
                 <Icon name="ChevronDown" class="h-[12px] w-[12px]" />
               </div>
             </div>
@@ -393,16 +367,12 @@ const nextEvent = events.find((e) => e.timestamp >= Date.now()) || events[0];
 
           {/* Filters */}
           <div class="flex w-full flex-col gap-[24px]" id="filter-controls">
-            <h4
-              class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase"
-            >
+            <h4 class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase">
               FILTERS
             </h4>
 
             {/* BookmarksFilter */}
-            <div
-              class="border-surface flex items-center gap-[12px] border-b py-[16px]"
-            >
+            <div class="border-surface flex items-center gap-[12px] border-b py-[16px]">
               <input
                 type="checkbox"
                 id="filter-bookmarks"
@@ -418,55 +388,47 @@ const nextEvent = events.find((e) => e.timestamp >= Date.now()) || events[0];
 
             {/* Distances */}
             <div class="flex flex-col gap-[16px]">
-              <h5
-                class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase"
-              >
+              <h5 class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase">
                 DISTANCE
               </h5>
               <div
                 class="filter-group flex flex-col gap-[16px]"
                 data-filter-type="dist"
               >
-                {
-                  [
-                    { value: 'all', label: 'All Distances' },
-                    { value: '200', label: '200 km' },
-                    { value: '300', label: '300 km' },
-                    { value: '400', label: '400 km' },
-                    { value: '600', label: '600+ km' },
-                  ].map((opt) => (
-                    <label class="group flex cursor-pointer items-center gap-[12px]">
-                      <input
-                        type="radio"
-                        name="dist"
-                        value={opt.value}
-                        checked={opt.value === 'all'}
-                        class="peer hidden"
-                      />
-                      <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
-                      <span class="text-text-muted peer-checked:text-text text-[16px] font-medium transition-colors peer-checked:font-bold">
-                        {opt.label}
-                      </span>
-                    </label>
-                  ))
-                }
+                {[
+                  { value: 'all', label: 'All Distances' },
+                  { value: '200', label: '200 km' },
+                  { value: '300', label: '300 km' },
+                  { value: '400', label: '400 km' },
+                  { value: '600', label: '600+ km' },
+                ].map((opt) => (
+                  <label class="group flex cursor-pointer items-center gap-[12px]">
+                    <input
+                      type="radio"
+                      name="dist"
+                      value={opt.value}
+                      checked={opt.value === 'all'}
+                      class="peer hidden"
+                    />
+                    <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
+                    <span class="text-text-muted peer-checked:text-text text-[16px] font-medium transition-colors peer-checked:font-bold">
+                      {opt.label}
+                    </span>
+                  </label>
+                ))}
               </div>
             </div>
 
             {/* Regions */}
             <div class="flex flex-col gap-[16px]">
-              <h5
-                class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase"
-              >
+              <h5 class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase">
                 REGION / CLUB
               </h5>
               <div
                 class="filter-group flex flex-col gap-[16px]"
                 data-filter-type="loc"
               >
-                <label
-                  class="group flex cursor-pointer items-center gap-[12px]"
-                >
+                <label class="group flex cursor-pointer items-center gap-[12px]">
                   <input
                     type="radio"
                     name="loc"
@@ -474,49 +436,38 @@ const nextEvent = events.find((e) => e.timestamp >= Date.now()) || events[0];
                     checked
                     class="peer hidden"
                   />
-                  <div
-                    class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors"
-                  >
-                  </div>
-                  <span
-                    class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold"
-                  >
+                  <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors"></div>
+                  <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
                     All Regions
                   </span>
                 </label>
-                {
-                  locations.map((loc) => (
-                    <label class="group flex cursor-pointer items-center gap-[12px]">
-                      <input
-                        type="radio"
-                        name="loc"
-                        value={loc}
-                        class="peer hidden"
-                      />
-                      <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
-                      <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
-                        {loc}
-                      </span>
-                    </label>
-                  ))
-                }
+                {locations.map((loc) => (
+                  <label class="group flex cursor-pointer items-center gap-[12px]">
+                    <input
+                      type="radio"
+                      name="loc"
+                      value={loc}
+                      class="peer hidden"
+                    />
+                    <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
+                    <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
+                      {loc}
+                    </span>
+                  </label>
+                ))}
               </div>
             </div>
 
             {/* Event Types */}
             <div class="flex flex-col gap-[16px]">
-              <h5
-                class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase"
-              >
+              <h5 class="text-text-muted font-body text-[14px] leading-none font-bold tracking-widest uppercase">
                 EVENT TYPE
               </h5>
               <div
                 class="filter-group flex flex-col gap-[16px]"
                 data-filter-type="type"
               >
-                <label
-                  class="group flex cursor-pointer items-center gap-[12px]"
-                >
+                <label class="group flex cursor-pointer items-center gap-[12px]">
                   <input
                     type="radio"
                     name="type"
@@ -524,32 +475,25 @@ const nextEvent = events.find((e) => e.timestamp >= Date.now()) || events[0];
                     checked
                     class="peer hidden"
                   />
-                  <div
-                    class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors"
-                  >
-                  </div>
-                  <span
-                    class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold"
-                  >
+                  <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors"></div>
+                  <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
                     All Types
                   </span>
                 </label>
-                {
-                  types.map((t) => (
-                    <label class="group flex cursor-pointer items-center gap-[12px]">
-                      <input
-                        type="radio"
-                        name="type"
-                        value={t}
-                        class="peer hidden"
-                      />
-                      <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
-                      <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
-                        {t}
-                      </span>
-                    </label>
-                  ))
-                }
+                {types.map((t) => (
+                  <label class="group flex cursor-pointer items-center gap-[12px]">
+                    <input
+                      type="radio"
+                      name="type"
+                      value={t}
+                      class="peer hidden"
+                    />
+                    <div class="peer-checked:bg-accent h-[6px] w-[6px] rounded-full border-none transition-colors" />
+                    <span class="text-text-muted peer-checked:text-text text-[14px] font-medium transition-colors peer-checked:font-bold">
+                      {t}
+                    </span>
+                  </label>
+                ))}
               </div>
             </div>
           </div>

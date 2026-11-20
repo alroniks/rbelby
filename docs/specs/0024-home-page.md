@@ -4,7 +4,7 @@
 
 - **Goal:** Rebuild the home page around the region's story and live next starts.
 - **User Flow:** _New visitor:_ reads the hero and How It Works → sees next starts → opens the calendar or a club.
-- **Design:** `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Home` (`xZTq6`): Notice Bar · Nav · `Home / Hero` · Next starts · Season highlights · `Home / Why People Ride` · `Home / How It Works` · Clubs of the region · CTA · Footer; `Home / Season Stats`.
+- **Design:** `design/rbelby.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Home` (`xZTq6`): Notice Bar · Nav · `Home / Hero` · Next starts · Season highlights · `Home / Why People Ride` · `Home / How It Works` · Clubs of the region · CTA · Footer; `Home / Season Stats`.
 - **Affected Areas:** `src/pages/index.astro` (+ locales), `src/components/home/`.
 
 ## 2. Technical Plan (The "How" for this specific feature)

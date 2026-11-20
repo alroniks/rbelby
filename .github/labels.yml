@@ -1,10 +1,6 @@
 - name: feature
   color: '5319E7'
-  description: 'High-level feature specification (Parent Issue)'
-
-- name: subtask
-  color: '006B75'
-  description: 'Implementation sub-issue or atomic task'
+  description: 'PR: new feature (minor version bump)'
 
 - name: bugfix
   color: 'D73A4A'
@@ -12,7 +8,7 @@
 
 - name: content
   color: 'FBCA04'
-  description: 'Content creation or updates (events, routes, articles)'
+  description: 'Content creation or updates (Learn pages, journal)'
 
 - name: release
   color: '0E8A16'

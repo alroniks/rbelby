@@ -39,8 +39,8 @@ Two sources feed one Astro site:
 - **Styling**: Tailwind CSS 4 (via Vite plugin).
 - **Interactivity**: Vanilla JavaScript.
 - **Content Management**: Brevly for event data; Markdown/JSON in Obsidian Vault (`rbelby/`) for editorial content.
-- **Translation**: in-repo files (`src/i18n/locales/*.json`, `rbelby/learn/{be,en}/`), no Crowdin.
-- **Package Manager**: npm (Node.js v20+).
+- **Translation**: in-repo files (`src/i18n/locales/*.json`, `rbelby/learn/{be,en}/`).
+- **Package Manager**: npm (Node.js 22, `.node-version`).
 - **Checks**: `npm run check` (Prettier + `astro check`), Vitest for the API client.
 - **Changelog & Versioning**: Changesets (`@changesets/cli`) using semantic PR descriptions over conventional commits (ADR-0001).
 

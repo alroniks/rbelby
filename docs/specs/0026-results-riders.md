@@ -4,7 +4,7 @@
 
 - **Goal:** Event results, single ride results and regional rider pages.
 - **User Flow:** _Family member:_ opens `/events/{id}/results` on ride day → finds a rider → sees check-ins per control. _Rider:_ opens `/riders/{id}` → Belarusian rides and BY awards, link to the global Brevly profile.
-- **Design:** `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Results` (`DIxzb`), `Results · Flèche teams` (`K7FQLx`), `Rider` (`WvRvl`), `Ride Result` (`ahEfY`), `Edge: Rider · private profile` (`WNHbA`).
+- **Design:** `design/rbelby.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Results` (`DIxzb`), `Results · Flèche teams` (`K7FQLx`), `Rider` (`WvRvl`), `Ride Result` (`ahEfY`), `Edge: Rider · private profile` (`WNHbA`).
 - **Affected Areas:** `src/pages/events/[id]/results.astro`, `src/pages/results/`, `src/pages/riders/`.
 
 ## 2. Technical Plan (The "How" for this specific feature)

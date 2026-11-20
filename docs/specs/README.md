@@ -2,7 +2,7 @@
 
 `docs/specs/` is the single source of truth for what's being built on rbel.by. Workflow: [`docs/agents/workflow.md`](../agents/workflow.md). Architecture decisions live in [`docs/adr/`](../adr/README.md).
 
-**Direction (October 2026):** rbel.by is the `by` Region's external Public Home on [Brevly](https://brevly.app) ([ADR-0003](../adr/0003-live-data-from-brevly.md)). Events, clubs, results and riders come live from Brevly's public read API; Learn pages are markdown in `rbelby/`; registration and accounts live on brevly.app. Design: `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by`.
+**Direction (October 2026):** rbel.by is the `by` Region's external Public Home on [Brevly](https://brevly.app) ([ADR-0003](../adr/0003-live-data-from-brevly.md)). Events, clubs, results and riders come live from Brevly's public read API; Learn pages are markdown in `rbelby/`; registration and accounts live on brevly.app. Design: `design/rbelby.pen`, frame `01b · Public Pages · rbel.by`.
 
 **Readiness:** **Ready** — can be built once blockers are Done · **Blocked (Brevly)** — waits on a Brevly spec/milestone · **Placeholder** — direction only, grill before building.
 
@@ -28,21 +28,24 @@ Specs 0006–0009 are superseded by the live pages below; 0010–0016 of the old
 
 ## M1 · MVP on Brevly — Nov 2026 → Jan 2027 (ready for the 2027 season)
 
-**Progress:** 0/9 specs done
+**Progress:** 1/10 specs done
 
 **Goal:** rbel.by shows what Brevly publishes (ECC's 2027 calendar first) in the new design. Launch once ECC's 2027 events are published on Brevly production (Brevly spec 0049).
 
-| #                                           | Spec                                     | Readiness | Depends on |
-| ------------------------------------------- | ---------------------------------------- | --------- | ---------- |
-| [0017](./0017-workflow-quality.md)          | Workflow & quality baseline              | Ready     | —          |
-| [0018](./0018-runtime-brevly-client.md)     | Workers runtime & Brevly API client      | Ready     | 0017       |
-| [0019](./0019-brand-theme-common-blocks.md) | Brand theme, common blocks & site config | Ready     | 0018       |
-| [0021](./0021-calendar.md)                  | Calendar (list)                          | Ready     | 0018, 0019 |
-| [0022](./0022-event-page.md)                | Event page                               | Ready     | 0018, 0019 |
-| [0023](./0023-clubs.md)                     | Clubs                                    | Ready     | 0018, 0019 |
-| [0024](./0024-home-page.md)                 | Home page                                | Ready     | 0018, 0019 |
-| [0025](./0025-learn-pages.md)               | Learn pages (markdown, RU/BE/EN)         | Ready     | 0019       |
-| [0020](./0020-vault-cleanup-redirects.md)   | Vault cleanup & redirects                | Ready     | 0021–0025  |
+**Order (2026-11-21):** design first, API last. Build the theme and Learn pages (0019, 0025), then the live pages on sample data (0018 → 0021–0024), switch to the live API when Brevly's is ready (0031), then remove the old pages (0020). Sample data never reaches production.
+
+| #                                            | Spec                                      | Readiness            | Depends on      |
+| -------------------------------------------- | ----------------------------------------- | -------------------- | --------------- |
+| [0017](./done/0017-workflow-quality.done.md) | Workflow & quality baseline               | Done                 | —               |
+| [0019](./0019-brand-theme-common-blocks.md)  | Brand theme, common blocks & site config  | Ready                | 0017            |
+| [0025](./0025-learn-pages.md)                | Learn pages (markdown, RU/BE/EN)          | Ready                | 0019            |
+| [0018](./0018-brevly-client-sample-data.md)  | Brevly client interface & sample data     | Ready                | 0017            |
+| [0021](./0021-calendar.md)                   | Calendar (list)                           | Ready                | 0018, 0019      |
+| [0022](./0022-event-page.md)                 | Event page                                | Ready                | 0018, 0019      |
+| [0023](./0023-clubs.md)                      | Clubs                                     | Ready                | 0018, 0019      |
+| [0024](./0024-home-page.md)                  | Home page                                 | Ready                | 0018, 0019      |
+| [0031](./0031-live-api-runtime-deploy.md)    | Live Brevly API, Workers runtime & deploy | Blocked (Brevly API) | 0018            |
+| [0020](./0020-vault-cleanup-redirects.md)    | Vault cleanup & redirects                 | Ready                | 0021–0025, 0031 |
 
 ## M2 · After the MVP — 2027
 

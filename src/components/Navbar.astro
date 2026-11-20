@@ -11,12 +11,8 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<header
-  class="bg-page-bg flex w-full flex-wrap py-4 sm:flex-nowrap sm:justify-start sm:py-8"
->
-  <nav
-    class="mx-auto flex w-full max-w-7xl basis-full flex-wrap items-center justify-between px-4 sm:px-8 lg:px-16"
-  >
+<header class="bg-page-bg flex w-full flex-wrap py-4 sm:flex-nowrap sm:justify-start sm:py-8">
+  <nav class="mx-auto flex w-full max-w-7xl basis-full flex-wrap items-center justify-between px-4 sm:px-8 lg:px-16">
     <a
       class="flex-none focus:opacity-80 focus:outline-hidden sm:order-1"
       href={translatePath('/')}
@@ -29,9 +25,7 @@ const translatePath = useTranslatedPath(lang);
           height="32"
           class="h-8 w-[42px] object-contain"
         />
-        <div
-          class="font-heading text-brand flex h-8 flex-col justify-center pt-1 text-sm leading-[1] font-black tracking-wider uppercase sm:text-base"
-        >
+        <div class="font-heading text-brand flex h-8 flex-col justify-center pt-1 text-sm leading-[1] font-black tracking-wider uppercase sm:text-base">
           <span>Беларускія</span>
           <span>Ранданёры</span>
         </div>
@@ -42,23 +36,35 @@ const translatePath = useTranslatedPath(lang);
       <!-- Language Switcher (Text links) -->
       <div class="hidden items-center gap-4 sm:flex">
         <a
-          class={lang === 'en'
-            ? 'font-body text-sm font-bold text-text'
-            : 'font-body text-sm font-semibold text-text-muted transition hover:text-text'}
-          href={translatePath('/', 'en')}>EN</a
+          class={
+            lang === 'en'
+              ? 'font-body text-sm font-bold text-text'
+              : 'font-body text-sm font-semibold text-text-muted transition hover:text-text'
+          }
+          href={translatePath('/', 'en')}
         >
+          EN
+        </a>
         <a
-          class={lang === 'ru'
-            ? 'font-body text-sm font-bold text-text'
-            : 'font-body text-sm font-semibold text-text-muted transition hover:text-text'}
-          href={translatePath('/', 'ru')}>RU</a
+          class={
+            lang === 'ru'
+              ? 'font-body text-sm font-bold text-text'
+              : 'font-body text-sm font-semibold text-text-muted transition hover:text-text'
+          }
+          href={translatePath('/', 'ru')}
         >
+          RU
+        </a>
         <a
-          class={lang === 'be'
-            ? 'font-body text-sm font-bold text-text'
-            : 'font-body text-sm font-semibold text-text-muted transition hover:text-text'}
-          href={translatePath('/', 'be')}>BY</a
+          class={
+            lang === 'be'
+              ? 'font-body text-sm font-bold text-text'
+              : 'font-body text-sm font-semibold text-text-muted transition hover:text-text'
+          }
+          href={translatePath('/', 'be')}
         >
+          BY
+        </a>
       </div>
 
       <!-- Theme Switcher (Circular Icon Button) -->
@@ -79,11 +85,15 @@ const translatePath = useTranslatedPath(lang);
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-            <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"
-            ></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"
-            ></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"
-            ></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"
-            ></path><path d="m19.07 4.93-1.41 1.41"></path>
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
           </svg>
         </div>
         <div class="theme-icon dark-icon hidden">
@@ -97,9 +107,7 @@ const translatePath = useTranslatedPath(lang);
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-            <path
-              d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
-            ></path>
+            <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path>
           </svg>
         </div>
       </button>
@@ -125,12 +133,11 @@ const translatePath = useTranslatedPath(lang);
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          ><line x1="3" x2="21" y1="6" y2="6"></line><line
-            x1="3"
-            x2="21"
-            y1="12"
-            y2="12"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg
         >
+          <line x1="3" x2="21" y1="6" y2="6"></line>
+          <line x1="3" x2="21" y1="12" y2="12"></line>
+          <line x1="3" x2="21" y1="18" y2="18"></line>
+        </svg>
         <svg
           class="hs-collapse-open:block hidden size-4 shrink-0"
           xmlns="http://www.w3.org/2000/svg"
@@ -142,8 +149,10 @@ const translatePath = useTranslatedPath(lang);
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          ><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
         >
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
         <span class="sr-only">Toggle</span>
       </button>
     </div>
@@ -202,9 +211,7 @@ const translatePath = useTranslatedPath(lang);
       class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 sm:order-2 sm:block sm:grow-0 sm:basis-auto"
       aria-labelledby="hs-navbar-alignment-collapse"
     >
-      <div
-        class="mt-5 flex flex-col gap-5 sm:mt-0 sm:flex-row sm:items-center sm:ps-5"
-      >
+      <div class="mt-5 flex flex-col gap-5 sm:mt-0 sm:flex-row sm:items-center sm:ps-5">
         <a
           class="hover:text-secondary focus:text-secondary text-text font-medium focus:outline-hidden"
           href={translatePath('/events')}
@@ -237,27 +244,31 @@ const translatePath = useTranslatedPath(lang);
         </a>
 
         <!-- Mobile Language Switcher -->
-        <div
-          class="mt-2 flex items-center space-x-4 border-t border-gray-200 pt-4 sm:hidden dark:border-gray-700"
-        >
+        <div class="mt-2 flex items-center space-x-4 border-t border-gray-200 pt-4 sm:hidden dark:border-gray-700">
           <a
-            class={lang === 'be'
-              ? 'text-secondary font-bold'
-              : 'text-text-muted'}
-            href={translatePath('/', 'be')}>BY</a
+            class={
+              lang === 'be' ? 'text-secondary font-bold' : 'text-text-muted'
+            }
+            href={translatePath('/', 'be')}
           >
+            BY
+          </a>
           <a
-            class={lang === 'ru'
-              ? 'text-secondary font-bold'
-              : 'text-text-muted'}
-            href={translatePath('/', 'ru')}>RU</a
+            class={
+              lang === 'ru' ? 'text-secondary font-bold' : 'text-text-muted'
+            }
+            href={translatePath('/', 'ru')}
           >
+            RU
+          </a>
           <a
-            class={lang === 'en'
-              ? 'text-secondary font-bold'
-              : 'text-text-muted'}
-            href={translatePath('/', 'en')}>EN</a
+            class={
+              lang === 'en' ? 'text-secondary font-bold' : 'text-text-muted'
+            }
+            href={translatePath('/', 'en')}
           >
+            EN
+          </a>
         </div>
       </div>
     </div>
