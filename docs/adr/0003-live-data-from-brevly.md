@@ -12,7 +12,7 @@ Until now every event, route and club on rbel.by lived as markdown/JSON in the `
 
 Brevly (`brevly.app`) is now where Belarusian clubs run their events. Its ADR-0013 makes rbel.by the `by` Region's **external Public Home**: rbel.by reads Brevly's public read API (`brevly.public.v1.PublicService`, Brevly spec 0059: ConnectRPC, anonymous, cacheable `GET`) and renders it in its own design; registration and every account action stay on `brevly.app`; later Brevly 301-redirects its regional pages to rbel.by (Brevly specs 0058, 0047). Editorial content deliberately stays out of Brevly.
 
-The new design lives in `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by`.
+The new design lives in `design/rbelby.pen`, frame `01b · Public Pages · rbel.by`.
 
 ## Decision
 

@@ -4,7 +4,7 @@
 
 - **Goal:** Re-skin the site with the new rbel.by brand and build the blocks every page shares, with site-owned content in one config file.
 - **User Flow:** _Visitor:_ sees the new nav (Brevets · Clubs · Learn, BY/RU/EN, theme switch) and footer on every page. _Editor:_ changes the notice bar or hero in `rbelby/site.json`.
-- **Design:** `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Brand tokens`, `Theme mapping`, `Blocks · Common`, `Inner page shell` (`mCFiA`), `Edge: 404` (`p0Qir`).
+- **Design:** `design/rbelby.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Brand tokens`, `Theme mapping`, `Blocks · Common`, `Inner page shell` (`mCFiA`), `Edge: 404` (`p0Qir`).
 - **Affected Areas:** `src/styles/global.css`, `src/components/`, `src/layouts/`, `DESIGN.md`, `rbelby/site.json`, `src/content.config.ts`.
 
 ## 2. Technical Plan (The "How" for this specific feature)

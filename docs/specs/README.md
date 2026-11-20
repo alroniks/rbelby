@@ -2,7 +2,7 @@
 
 `docs/specs/` is the single source of truth for what's being built on rbel.by. Workflow: [`docs/agents/workflow.md`](../agents/workflow.md). Architecture decisions live in [`docs/adr/`](../adr/README.md).
 
-**Direction (October 2026):** rbel.by is the `by` Region's external Public Home on [Brevly](https://brevly.app) ([ADR-0003](../adr/0003-live-data-from-brevly.md)). Events, clubs, results and riders come live from Brevly's public read API; Learn pages are markdown in `rbelby/`; registration and accounts live on brevly.app. Design: `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by`.
+**Direction (October 2026):** rbel.by is the `by` Region's external Public Home on [Brevly](https://brevly.app) ([ADR-0003](../adr/0003-live-data-from-brevly.md)). Events, clubs, results and riders come live from Brevly's public read API; Learn pages are markdown in `rbelby/`; registration and accounts live on brevly.app. Design: `design/rbelby.pen`, frame `01b · Public Pages · rbel.by`.
 
 **Readiness:** **Ready** — can be built once blockers are Done · **Blocked (Brevly)** — waits on a Brevly spec/milestone · **Placeholder** — direction only, grill before building.
 

@@ -45,7 +45,7 @@ We follow a simplified spec-driven workflow; the full process is in **[docs/agen
 2. **Architecture Decisions (ADRs)**: Major architectural changes are recorded as an ADR in `docs/adr/`. See the **[ADR README](docs/adr/README.md)**.
 3. **Specs First**: Never jump straight into code. Copy `docs/specs/_template.md` to `docs/specs/NNNN-feature.md` and add a row to `docs/specs/README.md`.
 4. **Tickets**: A spec that needs several PRs is split into `docs/tickets/NNNN-TT-slug.md`. The PR implementing a ticket deletes its ticket file.
-5. **Design Alignment**: Align with the design in `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by`. If spec, code and design disagree, **DO NOT update the design**; flag it to the operator.
+5. **Design Alignment**: Align with the design in `design/rbelby.pen`, frame `01b · Public Pages · rbel.by`. If spec, code and design disagree, **DO NOT update the design**; flag it to the operator.
 6. **One PR per ticket** (or per small spec), on its own branch.
 7. **Checks**: `npm run check` and `npm run build` must pass; CI runs them on every PR.
 8. **Done Specs**: Finished specs move to `docs/specs/done/` and are historical; create new specs for follow-ups.
