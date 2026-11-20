@@ -27,13 +27,11 @@
 - [x] Add `scripts/tickets.mjs` (`list`, `progress [--write]`).
 - [x] `npm run check` (Prettier + `astro check`, add `@astrojs/check`); remove ESLint deps; drop the `packageManager` field.
 - [x] `.github/workflows/ci.yml`: check + build on pull requests.
-- [x] Drop Crowdin: delete `crowdin.yml`.
-- [x] Operator uninstalls the Crowdin GitHub app.
 
-### Phase 3: GitHub cleanup (operator approval)
+### Phase 3: GitHub cleanup
 
-- [ ] Close issues #71–#110 with a comment pointing to `docs/specs/README.md`; close milestones v0.2–v1.0.
-- [ ] Add `brevlylabs/rbelby` to the `brevlylabs` org Project v2 (after the operator transfers the repo; deferred).
+- [x] Delete the old milestones.
+- [x] Close the old issues and delete the user project "Belarusian Randonneurs Roadmap"; `docs/specs/README.md` is the roadmap.
 
 ## 4. Drafts & Notes (Living Document)
 

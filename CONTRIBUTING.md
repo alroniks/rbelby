@@ -1,23 +1,23 @@
 # Contributing to Randonneurs Belarus (rbelby)
 
-Welcome to the Randonneurs Belarus open-source project! We are building the most performant, accessible, and easily maintainable cycling events platform using Astro, Tailwind CSS, and a Flat-File CMS architecture.
+Welcome to the Randonneurs Belarus open-source project! We are building the most performant, accessible, and easily maintainable cycling website using Astro, Tailwind CSS, live data from Brevly, and markdown for editorial pages.
 
 This document serves as your guide to contributing to the codebase.
 
 ## 🚀 The Vision & Architecture
 
-Our goal is to build a "ready, alive website" that minimizes technical debt and maximizes content velocity. To achieve this, we treat **Content as Data** and the **Site as a Static Viewer**.
+Our goal is to build a "ready, alive website" that minimizes technical debt and maximizes content velocity. To achieve this, we treat **Content as Data**: Brevly owns event data, the repo owns editorial content.
 
 - Club organizers manage events in [Brevly](https://brevly.app); the site renders them live from Brevly's public API.
 - Editors manage Learn pages and site config as markdown/JSON in Obsidian.
-- Artificial Intelligence (via Gemini) accelerates our development workflow.
+- AI coding agents accelerate our development workflow.
 
 For the strict technical rules, read our **[Constitution](docs/CONSTITUTION.md)**.
 
 ## 🧑‍💻 Local Setup
 
 1. Fork and clone the repository.
-2. Ensure you have **Node.js v20+** installed.
+2. Ensure you have **Node.js 22** (`.node-version`) installed.
 3. Install dependencies:
    ```bash
    npm install
@@ -52,7 +52,7 @@ We follow a simplified spec-driven workflow; the full process is in **[docs/agen
 
 ## 🤖 AI-Assisted Development
 
-We heavily utilize the Gemini AI agent for planning and code execution. If you are using an AI coding assistant, please instruct it to read:
+We heavily use AI coding agents for planning and code execution. If you are using an AI coding assistant, please instruct it to read:
 
-- [`GEMINI.md`](GEMINI.md) - The core AI behavior instructions.
+- [`AGENTS.md`](AGENTS.md) - The core AI behavior instructions.
 - [`docs/CONSTITUTION.md`](docs/CONSTITUTION.md) - The strict architectural mandates.

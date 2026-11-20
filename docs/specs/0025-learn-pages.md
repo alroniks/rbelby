@@ -9,7 +9,7 @@
 
 ## 2. Technical Plan (The "How" for this specific feature)
 
-- **Content:** `rbelby/learn/<slug>.md` in Russian; frontmatter is only `title` and `description`; ToC from H2s. Translations `rbelby/learn/{be,en}/<slug>.md` edited directly in the repo (agent-assisted translation in the same PR); no Crowdin.
+- **Content:** `rbelby/learn/<slug>.md` in Russian; frontmatter is only `title` and `description`; ToC from H2s. Translations `rbelby/learn/{be,en}/<slug>.md` edited directly in the repo (agent-assisted translation in the same PR).
 - **Rendering:** fully prerendered.
 - **Pages:** What is a brevet, Rules, FAQ, About us, Awards & Super Randonneur — content carried over from today's `about`, `rules`, `faq` pages.
 
@@ -24,4 +24,3 @@
 ## 4. Drafts & Notes (Living Document)
 
 - Blocked by: 0019.
-- **2026-11-21:** Crowdin dropped; translations are files in the repo.

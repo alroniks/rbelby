@@ -8,7 +8,7 @@
 
 ## 2. Technical Plan (The "How" for this specific feature)
 
-- **Delete:** `rbelby/events/`, `rbelby/routes/`, `rbelby/data/clubs.json`, `rbelby/Бреветы.base`, `rbelby/Маршруты.base`; collections `events`, `routes`, `clubs`, `journal` (journal returns with spec 0027); pages: old events, routes, clubs, `riders/[rider]`, `login`, `settings`, `privacy`, `terms` (all locales). Keep `rbelby/data/authors.json`. History is not migrated: Brevly holds it.
+- **Delete:** `rbelby/events/`, `rbelby/routes/`, `rbelby/data/clubs.json`, `rbelby/data/riders.json`, `rbelby/.templates/{brevet,route}-template.md`, `rbelby/Бреветы.base`, `rbelby/Маршруты.base`; collections `events`, `routes`, `clubs`, `journal` (journal returns with spec 0027); pages: old events, routes, clubs, `riders/[rider]`, `privacy`, `terms` (all locales). Keep `rbelby/data/authors.json`. History is not migrated: Brevly holds it.
 - **Redirects (301, every locale prefix too):**
   - `/events/*`, `/routes/*` → `/calendar`
   - `/clubs/{slug}` → `/clubs/{id}` via a hand-kept map, else `/clubs`

@@ -67,16 +67,19 @@ const t = useTranslations(lang);
     <script
       defer
       src="https://atmetrics.netlify.app/script.js"
-      data-website-id="811ecd8e-a38c-4aaa-935a-ddf29bbadb12"></script>
+      data-website-id="811ecd8e-a38c-4aaa-935a-ddf29bbadb12"
+    ></script>
     <script
       defer
       src="https://at-glass.alroniks.workers.dev/s.js"
       data-project="rbel-by"
-      data-persistence="cookieless"></script>
+      data-persistence="cookieless"
+    ></script>
   </head>
   <body>
     <slot />
-  </body><!-- Preline UI & Dynamic Re-initialization for Astro View Transitions -->
+  </body>
+  <!-- Preline UI & Dynamic Re-initialization for Astro View Transitions -->
   <script is:inline src="/node_modules/preline/dist/index.js"></script>
   <script is:inline>
     document.addEventListener('astro:page-load', () => {

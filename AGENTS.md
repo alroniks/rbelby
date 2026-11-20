@@ -1,6 +1,6 @@
 # Randonneurs Belarus (rbelby) - AI Agent Instructions
 
-Hello Gemini! When you are working in this repository, you must adhere strictly to the following architectural guidelines, workflow rules, and formatting standards.
+Instructions for every AI coding agent (Codex, Gemini CLI, Claude Code, …). When you are working in this repository, you must adhere strictly to the following architectural guidelines, workflow rules, and formatting standards.
 
 ## 🏗️ Core Architecture (Strict Compliance Required)
 
@@ -21,8 +21,8 @@ Specs and tickets live in files, not GitHub Issues. Full process: [`docs/agents/
 3. **No Conventional Commits**: Do NOT use conventional commits (e.g., `feat:`, `fix:`, `chore:`). Write plain, descriptive commit messages, PR titles, and changesets that focus on the "what" and "why" in standard English.
 4. **Specs First**: New features begin with a spec in `docs/specs/` from `docs/specs/_template.md`, indexed in `docs/specs/README.md`.
 5. **Tickets**: Multi-PR specs are split into `docs/tickets/NNNN-TT-*.md`; a ticket's PR deletes its own ticket file.
-6. **Design Alignment**: Whenever working on UI features or specs, you MUST inspect the design in `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by` (using `pencil` MCP server tools like `mcp_pencil_batch_get`) to understand the intended layout, spacing, and styling. Compare the spec requirements and the codebase against the design. If you discover inconsistencies, **DO NOT update the `.pen` file**. Alert the operator immediately to decide whether to adjust the design or adjust the code to strictly follow the design.
-7. **Iterative Execution**: Do not try to implement massive changes at once. If asked to implement a feature, use the `enter_plan_mode` tool to safely review the codebase, plan your strategy, and confirm the architecture before writing files.
+6. **Design Alignment**: Whenever working on UI features or specs, you MUST inspect the design in `~/dev/alr/business/brevly/design/brevly.pen`, frame `01b · Public Pages · rbel.by` (using the `pencil` MCP server tools) to understand the intended layout, spacing, and styling. Compare the spec requirements and the codebase against the design. If you discover inconsistencies, **DO NOT update the `.pen` file**. Alert the operator immediately to decide whether to adjust the design or adjust the code to strictly follow the design.
+7. **Iterative Execution**: Do not try to implement massive changes at once. If asked to implement a feature, first review the codebase, plan your strategy, and confirm the architecture with the operator before writing files (use your plan mode if you have one).
 
 ## 🛠️ Commands and formatting
 
@@ -44,6 +44,7 @@ When building or testing locally:
 - `rbelby/`: The Obsidian Vault with editorial content (Learn pages, authors, `site.json`).
 - `src/content.config.ts`: Defines how Astro loads content from `rbelby/`.
 - `docs/CONSTITUTION.md`: The mandatory ruleset and architecture truth.
+- `CLAUDE.md`, `.gemini/settings.json`: pointers to this file for tools that don't read `AGENTS.md` by default.
 - `CONTRIBUTING.md`: How to plan, execute tasks, and submit PRs.
 - `docs/specs/README.md`: Milestones and the spec index.
 - `docs/specs/`: Active specs; `docs/specs/done/` completed ones.

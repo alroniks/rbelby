@@ -18,7 +18,6 @@
 ### Minor Changes
 
 - 5a7e5b7: **A big upgrade of the UI pages and implementing the main one from the updated UI** (#143)
-- c4c90a3: **New Crowdin updates** (#144)
 - 890f43e: **Add new pages for FAQ, rules, about, community, club and rider profile** (#145)
 
 ### Patch Changes

@@ -50,22 +50,14 @@ const routes = [
   <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
     <!-- Header Section -->
     <div class="mb-16 flex flex-col items-center gap-4 text-center">
-      <p
-        class="font-body text-text-muted text-sm font-bold tracking-widest uppercase"
-      >
+      <p class="font-body text-text-muted text-sm font-bold tracking-widest uppercase">
         {t('home.popular_routes')}
       </p>
-      <h2
-        class="font-heading text-text max-w-4xl text-3xl font-extrabold tracking-tight uppercase md:text-5xl"
-      >
+      <h2 class="font-heading text-text max-w-4xl text-3xl font-extrabold tracking-tight uppercase md:text-5xl">
         {t('home.explore_courses')}
       </h2>
-      <div
-        class="bg-surface inline-flex items-center justify-center rounded-full px-4 py-1"
-      >
-        <span
-          class="font-heading text-brand text-[10px] font-bold tracking-widest uppercase"
-        >
+      <div class="bg-surface inline-flex items-center justify-center rounded-full px-4 py-1">
+        <span class="font-heading text-brand text-[10px] font-bold tracking-widest uppercase">
           {t('home.routes_count')}
         </span>
       </div>
@@ -73,73 +65,71 @@ const routes = [
 
     <!-- Routes Grid -->
     <div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      {
-        routes.map((route) => (
-          <div class="bg-page-bg border-surface group flex h-[460px] flex-col overflow-hidden rounded-[24px] border-2 transition-all duration-300 hover:shadow-xl">
-            {/* Image Header (200px) */}
-            <div class="bg-surface relative flex h-[200px] w-full items-end overflow-hidden p-4">
-              <img
-                src={route.image}
-                alt={route.name}
-                class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              {/* Surface Badge (bottom right inside image) */}
-              <div class="bg-page-bg z-10 ml-auto flex items-center justify-center rounded-full px-3 py-1.5 shadow-sm">
-                <span class="font-heading text-text text-xs font-bold">
-                  {route.surface}
+      {routes.map((route) => (
+        <div class="bg-page-bg border-surface group flex h-[460px] flex-col overflow-hidden rounded-[24px] border-2 transition-all duration-300 hover:shadow-xl">
+          {/* Image Header (200px) */}
+          <div class="bg-surface relative flex h-[200px] w-full items-end overflow-hidden p-4">
+            <img
+              src={route.image}
+              alt={route.name}
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            {/* Surface Badge (bottom right inside image) */}
+            <div class="bg-page-bg z-10 ml-auto flex items-center justify-center rounded-full px-3 py-1.5 shadow-sm">
+              <span class="font-heading text-text text-xs font-bold">
+                {route.surface}
+              </span>
+            </div>
+          </div>
+
+          {/* Bottom Content Box (260px) */}
+          <div class="flex flex-1 flex-col justify-between p-6">
+            {/* Title and Location */}
+            <div class="flex flex-col gap-2">
+              <h3 class="font-heading text-text line-clamp-2 text-xl leading-tight font-black uppercase md:text-2xl">
+                {route.name}
+              </h3>
+              <div class="text-text-muted flex items-center gap-2">
+                <Icon
+                  name="LocationPin"
+                  class="text-text-muted size-4 shrink-0"
+                />
+                <span class="font-body text-sm font-medium">
+                  {t('home.starts_in')} Minsk
                 </span>
               </div>
             </div>
 
-            {/* Bottom Content Box (260px) */}
-            <div class="flex flex-1 flex-col justify-between p-6">
-              {/* Title and Location */}
-              <div class="flex flex-col gap-2">
-                <h3 class="font-heading text-text line-clamp-2 text-xl leading-tight font-black uppercase md:text-2xl">
-                  {route.name}
-                </h3>
-                <div class="text-text-muted flex items-center gap-2">
-                  <Icon
-                    name="LocationPin"
-                    class="text-text-muted size-4 shrink-0"
-                  />
-                  <span class="font-body text-sm font-medium">
-                    {t('home.starts_in')} Minsk
-                  </span>
-                </div>
+            {/* Route Info Tags (distance & elevation) */}
+            <div class="flex items-center gap-3">
+              <div class="bg-surface flex items-center gap-2 rounded-[12px] px-4 py-2">
+                <Icon name="Map" class="text-brand size-4 shrink-0" />
+                <span class="font-heading text-brand text-sm font-bold">
+                  {route.distance}
+                </span>
               </div>
-
-              {/* Route Info Tags (distance & elevation) */}
-              <div class="flex items-center gap-3">
-                <div class="bg-surface flex items-center gap-2 rounded-[12px] px-4 py-2">
-                  <Icon name="Map" class="text-brand size-4 shrink-0" />
-                  <span class="font-heading text-brand text-sm font-bold">
-                    {route.distance}
-                  </span>
-                </div>
-                <div class="bg-surface flex items-center gap-2 rounded-[12px] px-4 py-2">
-                  <Icon name="TrendUp" class="text-brand size-4 shrink-0" />
-                  <span class="font-heading text-brand text-sm font-bold">
-                    {route.elevation}
-                  </span>
-                </div>
+              <div class="bg-surface flex items-center gap-2 rounded-[12px] px-4 py-2">
+                <Icon name="TrendUp" class="text-brand size-4 shrink-0" />
+                <span class="font-heading text-brand text-sm font-bold">
+                  {route.elevation}
+                </span>
               </div>
-
-              {/* View Route CTA */}
-              <a
-                href={translatePath('/routes')}
-                class="text-accent font-body mt-2 flex items-center justify-between text-sm font-bold"
-              >
-                <span>{t('home.view_route')}</span>
-                <Icon
-                  name="ArrowRight"
-                  class="text-accent size-4 transition-transform duration-200 group-hover:translate-x-1"
-                />
-              </a>
             </div>
+
+            {/* View Route CTA */}
+            <a
+              href={translatePath('/routes')}
+              class="text-accent font-body mt-2 flex items-center justify-between text-sm font-bold"
+            >
+              <span>{t('home.view_route')}</span>
+              <Icon
+                name="ArrowRight"
+                class="text-accent size-4 transition-transform duration-200 group-hover:translate-x-1"
+              />
+            </a>
           </div>
-        ))
-      }
+        </div>
+      ))}
     </div>
 
     <!-- Bottom Action Button -->

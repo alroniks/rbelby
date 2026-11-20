@@ -34,21 +34,17 @@ const stats = [
 
 <section class="bg-brand py-12 md:py-16">
   <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-    <div
-      class="grid grid-cols-2 gap-8 text-center md:grid-cols-3 lg:grid-cols-6"
-    >
-      {
-        stats.map((stat) => (
-          <div class="flex flex-col items-center gap-2">
-            <span class="font-heading text-surface text-4xl font-black tracking-tight md:text-5xl">
-              {stat.value}
-            </span>
-            <span class="font-body text-complementary max-w-[180px] text-xs font-bold tracking-wide uppercase md:text-sm">
-              {stat.label}
-            </span>
-          </div>
-        ))
-      }
+    <div class="grid grid-cols-2 gap-8 text-center md:grid-cols-3 lg:grid-cols-6">
+      {stats.map((stat) => (
+        <div class="flex flex-col items-center gap-2">
+          <span class="font-heading text-surface text-4xl font-black tracking-tight md:text-5xl">
+            {stat.value}
+          </span>
+          <span class="font-body text-complementary max-w-[180px] text-xs font-bold tracking-wide uppercase md:text-sm">
+            {stat.label}
+          </span>
+        </div>
+      ))}
     </div>
   </div>
 </section>
