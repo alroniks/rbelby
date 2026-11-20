@@ -23,17 +23,20 @@
 
 ### Phase 2: Tooling
 
-- [ ] Delete `docs/ROADMAP.md`, `scripts/sync-roadmap.ts`, `.github/workflows/sync-roadmap.yml`.
-- [ ] Add `scripts/tickets.mjs` (`list`, `progress [--write]`).
-- [ ] `npm run check` (Prettier + `astro check`, add `@astrojs/check`); remove ESLint deps; drop the `packageManager` field.
-- [ ] `.github/workflows/ci.yml`: check + build on pull requests.
+- [x] Delete `docs/ROADMAP.md`, `scripts/sync-roadmap.ts`, `.github/workflows/sync-roadmap.yml`.
+- [x] Add `scripts/tickets.mjs` (`list`, `progress [--write]`).
+- [x] `npm run check` (Prettier + `astro check`, add `@astrojs/check`); remove ESLint deps; drop the `packageManager` field.
+- [x] `.github/workflows/ci.yml`: check + build on pull requests.
+- [x] Drop Crowdin: delete `crowdin.yml`.
+- [x] Operator uninstalls the Crowdin GitHub app.
 
 ### Phase 3: GitHub cleanup (operator approval)
 
 - [ ] Close issues #71–#110 with a comment pointing to `docs/specs/README.md`; close milestones v0.2–v1.0.
-- [ ] Add `brevlylabs/rbelby` to the `brevlylabs` org Project v2 (repo transferred by the operator).
+- [ ] Add `brevlylabs/rbelby` to the `brevlylabs` org Project v2 (after the operator transfers the repo; deferred).
 
 ## 4. Drafts & Notes (Living Document)
 
 - **2026-10-24:** decided in the rbel.by re-plan grilling (Q20, Q21, Q27): keep it simple — a public site without user data.
+- **2026-11-21:** `astro check` found 21 errors already on `main` (icon names missing from griddy, which render as a red ✕; `event.data.image` not in the schema; possibly-undefined entries in event pages). Fixed in the Phase 2 PR so CI starts green. `src/components/icons.json` is generated, so it's in `.prettierignore`.
 - **2026-10-28:** repo moves to `brevlylabs/rbelby` and stays public. Tasks may come from the org Project board; only `gh_issue:` + `Closes #N` are adopted from Brevly spec 0098.

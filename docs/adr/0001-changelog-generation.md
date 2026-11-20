@@ -24,5 +24,5 @@ We need a tool to maintain a human-readable changelog that avoids the rigidity o
 
 - Pull request authors will need to run `npx changeset` to document their changes if they are user-facing or notable.
 - A `CHANGELOG.md` will be generated at the repository root.
-- We will configure Crowdin to sync `CHANGELOG.md` for translation.
+- ~~We will configure Crowdin to sync `CHANGELOG.md` for translation.~~ Crowdin dropped (2026-11-21); the changelog stays English-only.
 - We will create an Astro page or component to read and display the changelog, bringing it directly into the website's UI.

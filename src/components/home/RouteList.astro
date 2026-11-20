@@ -99,7 +99,10 @@ const routes = [
                   {route.name}
                 </h3>
                 <div class="text-text-muted flex items-center gap-2">
-                  <Icon name="MapPin" class="text-text-muted size-4 shrink-0" />
+                  <Icon
+                    name="LocationPin"
+                    class="text-text-muted size-4 shrink-0"
+                  />
                   <span class="font-body text-sm font-medium">
                     {t('home.starts_in')} Minsk
                   </span>
@@ -109,13 +112,13 @@ const routes = [
               {/* Route Info Tags (distance & elevation) */}
               <div class="flex items-center gap-3">
                 <div class="bg-surface flex items-center gap-2 rounded-[12px] px-4 py-2">
-                  <Icon name="Route" class="text-brand size-4 shrink-0" />
+                  <Icon name="Map" class="text-brand size-4 shrink-0" />
                   <span class="font-heading text-brand text-sm font-bold">
                     {route.distance}
                   </span>
                 </div>
                 <div class="bg-surface flex items-center gap-2 rounded-[12px] px-4 py-2">
-                  <Icon name="Mountain" class="text-brand size-4 shrink-0" />
+                  <Icon name="TrendUp" class="text-brand size-4 shrink-0" />
                   <span class="font-heading text-brand text-sm font-bold">
                     {route.elevation}
                   </span>

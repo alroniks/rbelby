@@ -9,17 +9,21 @@ Short-lived; the canonical index is `docs/specs/README.md`. Delete when all chec
 - Connect-ES client; REST/OpenAPI is for other sites. No club logo at launch (Brevly 0095 stays M4).
 - No Access on dev.brevly.app for now; a banner instead.
 
+## Deferred (2026-11-21)
+
+- Vault stays as is, with all its data.
+- Transfer to `brevlylabs/rbelby` (+ remote, folder move, Cloudflare reconnect, org Project) — later.
+
 ## Checkpoints
 
 - [x] Docs: workflow (GitHub + Deploy), ticket template `gh_issue`, specs 0017/0018/0019, ADR-0003, README.
 - [x] Stray `packageManager: pnpm` reverted in `package.json`.
 - [x] Brevly: repo name in `docs/agents/issue-tracker.md`; draft ticket `0000-09` dev banner.
-- [ ] Operator: check `rbelby/` vault for personal data before it's public in the org.
-- [ ] Operator: transfer repo to `brevlylabs/rbelby`, move folder, `git remote set-url origin git@github.com:brevlylabs/rbelby.git`.
-- [ ] Operator: reconnect Cloudflare and Crowdin GitHub integrations.
-- [ ] Commit the re-plan on a branch → PR (rbelby); commit the Brevly doc changes separately.
+- [x] Crowdin dropped (2026-11-21): docs updated; `crowdin.yml` removal is in 0017 Phase 2.
+- [ ] Operator: uninstall the Crowdin GitHub app.
+- [x] Re-plan committed (`62d0056`, on `main`); Brevly doc changes committed.
+- [ ] Brevly `0000-09` (dev banner) left the wall in #311 without code (`APP_ENV` not in `src/`): re-add or confirm dropped.
 - [ ] 0017 Phase 2: tooling + CI, one PR.
-- [ ] 0017 Phase 3: close old issues/milestones, add repo to org Project (operator go-ahead).
+- [ ] 0017 Phase 3: close old issues/milestones (operator go-ahead); org Project waits for the transfer.
 - [ ] 0018: `/to-tickets` → smoke test first, then runtime/deploy, then client.
 - [ ] Operator: Cloudflare Access on the Worker's preview URLs (after 0018 deploy lands).
-- [ ] Brevly architect: detail `0000-09` → `ready`.

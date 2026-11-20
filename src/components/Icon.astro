@@ -9,7 +9,7 @@ export interface Props {
 
 const { name, class: className = '', size = 24 } = Astro.props;
 
-const iconData = icons[name];
+const iconData = (icons as Record<string, Record<string, string>[]>)[name];
 ---
 
 {
@@ -24,7 +24,7 @@ const iconData = icons[name];
       class={className}
       aria-hidden="true"
     >
-      {iconData.map((pathProps: any) => (
+      {iconData.map((pathProps) => (
         <path {...pathProps} />
       ))}
     </svg>

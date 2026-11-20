@@ -18,7 +18,7 @@ A simplified copy of Brevly's spec-driven workflow. rbel.by is a public site wit
 
 ## GitHub
 
-- The repo is `brevlylabs/rbelby`, on the `brevlylabs` org Project v2 board shared with Brevly (Brevly spec 0098).
+- The repo is `alroniks/rbelby` for now; it moves to `brevlylabs/rbelby` later (deferred) and joins the `brevlylabs` org Project v2 board shared with Brevly (Brevly spec 0098).
 - Git stays canonical. A task may arrive as an issue on the board (cross-repo work from Brevly, a bug): if it's real work, it becomes a spec or ticket file here, with the issue number in the ticket's `gh_issue:`.
 - A PR for such a ticket says `Closes #<gh_issue>` so merging closes the issue.
 - No issue sync tooling here: Brevly's `sync-gh`, `state` and `guard` are not ported. Creating, labelling or closing issues needs the operator's go-ahead.
