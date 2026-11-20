@@ -1,7 +1,7 @@
 {
   "name": "rbelby",
   "type": "module",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "scripts": {
     "extract-icons": "tsx scripts/extract-icons.ts",
     "predev": "npm run extract-icons",
@@ -32,7 +32,7 @@
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
-    "tsx": "^4.21.0",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3"
   },
   "private": "true"
