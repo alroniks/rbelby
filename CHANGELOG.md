@@ -1,5 +1,18 @@
 # rbelby
 
+## 0.3.3
+
+### Patch Changes
+
+- 1f6e4de: **Bump prettier-plugin-astro from 0.14.1 to 1.1.2** (#158)
+- 5367414: **Bump @tailwindcss/vite from 4.3.1 to 4.3.5** (#159)
+- 7bff14d: **Bump preline from 4.2.0 to 5.1.0** (#160)
+- e181019: **Bump @types/node from 25.9.2 to 26.6.6** (#162)
+- 90f2373: **spec/0017 tooling** (#163)
+- 776e75f: **Bump @astrojs/node from 11.1.11 to 11.1.12 in the npm_and_yarn group across 1 directory** (#165)
+- acc0381: **Close spec 0017 and clean up leftovers from the old plan** (#166)
+- fb3a11e: **Split redesign spec into tickets** (#167)
+
 ## 0.3.2
 
 ### Patch Changes
