@@ -7,7 +7,7 @@
   - **Reader:** Opens `/journal` → browses featured stories and community voices → reads an article with rich photo galleries → sees an interactive Brevly Event/Route badge → taps through to event registration or homologated results on `brevly.app`.
   - **Contributor (Cyclist/Author):** Logs into `rbel.by/admin` (EmDash CMS) → drafts a ride report with photos uploaded directly to Cloudflare R2 → selects related Brevly Event (`event_id`) → hits "Submit for Review".
   - **Editor (Ivan / Curators):** Reviews draft in EmDash admin → polishes formatting and Belarusian typography (optionally assisted by AI agent via EmDash MCP) → sets publication status to `published`.
-- **Design:** `design/rbelby.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Journal` (`dQ6xn`), `Article` (`qKIKx`); blocks:
+- **Design:** `design/rbelby.pen`, frame `rbel.by · Public Site` (`iexz1`) — `Journal` (`dQ6xn`), `Article` (`qKIKx`); blocks:
   - `Journal / Featured`
   - `Journal / Voices`
   - `Journal / Article Card`

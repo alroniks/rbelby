@@ -3,7 +3,7 @@
 ## 1. Context & Specification (The "What")
 
 - **Goal:** `/calendar/map`: the season's events placed by start location.
-- **Design:** `design/rbelby.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Calendar · Map` (`h3M4zj`).
+- **Design:** `design/rbelby.pen`, frame `rbel.by · Public Site` (`iexz1`) — `Calendar · Map` (`h3M4zj`).
 
 ## 2. Technical Plan (The "How" for this specific feature)
 

@@ -4,7 +4,7 @@
 
 - **Goal:** Club directory and club pages from Brevly.
 - **User Flow:** _Visitor:_ opens `/clubs` → picks a club → sees its upcoming and past events and contacts.
-- **Design:** `design/rbelby.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Clubs` (`Pm4EK`), `Club` (`i9VnI`), `Edge: Club · no events yet` (`z2zebO`). Blocks: `Club / Card`, `Clubs / Why Join`, `Clubs / In Numbers`, `Club / Header`, `Club / Story`, `Club / Contact`, `Event / Row`.
+- **Design:** `design/rbelby.pen`, frame `rbel.by · Public Site` (`iexz1`) — `Clubs` (`Pm4EK`), `Club` (`i9VnI`), `Edge: Club · no events yet` (`z2zebO`). Blocks: `Club / Card`, `Clubs / Why Join`, `Clubs / In Numbers`, `Club / Header`, `Club / Story`, `Club / Contact`, `Event / Row`.
 - **Affected Areas:** `src/pages/clubs/` (+ locales), `src/components/club/`.
 
 ## 2. Technical Plan (The "How" for this specific feature)

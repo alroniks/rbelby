@@ -4,7 +4,7 @@
 
 - **Goal:** What visitor or community problem does this solve?
 - **User Flow:** E.g., A visitor opens `/calendar`, filters by 300 km, opens an event and taps Register (→ brevly.app).
-- **Design:** Screens and blocks in `design/rbelby.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`), by node id.
+- **Design:** Screens and blocks in `design/rbelby.pen`, frame `rbel.by · Public Site` (`iexz1`), by node id.
 - **Affected Areas:** `src/pages/`, `src/components/`, `src/lib/brevly/`, `rbelby/` content, config.
 
 ## 2. Technical Plan (The "How" for this specific feature)
