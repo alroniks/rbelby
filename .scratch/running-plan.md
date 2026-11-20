@@ -22,5 +22,8 @@ Short-lived; the canonical index is `docs/specs/README.md`. Delete when all chec
 - [x] Re-plan committed (`62d0056`, on `main`); Brevly doc changes committed.
 - [ ] Brevly `0000-09` (dev banner) left the wall in #311 without code (`APP_ENV` not in `src/`): re-add or confirm dropped.
 - [x] Spec 0017 done: tooling + CI (#163), old issues closed, milestones and the old project deleted.
-- [ ] 0018: `/to-tickets` → smoke test first, then runtime/deploy, then client.
-- [ ] Operator: Cloudflare Access on the Worker's preview URLs (after 0018 deploy lands).
+- [ ] 0019: `/to-tickets` → theme, common blocks, 404 (design first; no API needed).
+- [ ] 0025 Learn pages; 0018 client interface + sample data; then 0021–0024 on sample data.
+- [ ] 0031 when Brevly's API is ready: smoke test, runtime/deploy, live transport.
+- [ ] Operator: Cloudflare Access on the Worker's preview URLs (after 0031's deploy lands).
+- [ ] Required `check` on `main`: ruleset with bot bypass after the transfer to `brevlylabs`.

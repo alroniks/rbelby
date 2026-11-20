@@ -38,7 +38,7 @@ A simplified copy of Brevly's spec-driven workflow. rbel.by is a public site wit
 
 ## Deploy
 
-One Cloudflare Worker, two stages (spec 0018):
+One Cloudflare Worker, two stages (spec 0031):
 
 - **Merge to `main`** → `wrangler versions upload --preview-alias dev` with `BREVLY_API_URL=https://dev.brevly.app/api` → `dev-rbelby.<subdomain>.workers.dev`, closed by Cloudflare Access, test data. A manual workflow run can point the preview at the production API.
 - **Published release** → `wrangler deploy` → `rbel.by`, production API.

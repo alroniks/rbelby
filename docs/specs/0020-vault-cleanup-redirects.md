@@ -25,4 +25,4 @@
 
 ## 4. Drafts & Notes (Living Document)
 
-- Blocked by: 0021, 0022, 0023, 0025 (the replacement pages must exist before deletions ship).
+- Blocked by: 0021, 0022, 0023, 0025 (the replacement pages must exist before deletions ship) and 0031 (they must show live data, not sample data).

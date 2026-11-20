@@ -41,7 +41,7 @@ Pages are prerendered by default; live data renders on demand on Cloudflare Work
 
 ### Deployment
 
-Today the site deploys via **Cloudflare Pages** when a GitHub release is published. Spec 0018 moves it to one **Cloudflare Worker** with two stages:
+Today the site deploys via **Cloudflare Pages** when a GitHub release is published. Spec 0031 moves it to one **Cloudflare Worker** with two stages:
 
 - **Merge to `main`** → dev preview at `dev-rbelby.<subdomain>.workers.dev` (Cloudflare Access), test data from `dev.brevly.app`.
 - **Published release** → production at `rbel.by`, data from `brevly.app`.

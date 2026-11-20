@@ -32,10 +32,11 @@
 - [ ] Notice Bar, Page Header, Section Header, Breadcrumbs, Pagination, CTA Band, Data Notice, Empty State, Distance Badge, Status Chip.
 - [ ] `rbelby/site.json` collection and schema.
 - [ ] Preview notice bar when not on the production API.
-- [ ] 404 page: hero + next starts island (`ListEvents`), hero only when Brevly is unavailable.
+- [ ] 404 page: hero (the next-starts island comes in 0031).
 - [ ] `npm run check` and `npm run build` pass.
 
 ## 4. Drafts & Notes (Living Document)
 
-- Blocked by: 0018 (the 404's live island).
+- Blocked by: 0017 (done). Doesn't need the API: the 404's next-starts island moved to 0031.
+- Until 0020 ships, the nav's Brevets item links to the current `/events` pages.
 - Dark mode design is a later spec.
