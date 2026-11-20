@@ -10,7 +10,7 @@ Per [ADR-0003](adr/0003-live-data-from-brevly.md), event data (regions, clubs, e
 
 ### 2. Internationalization (i18n)
 
-Support for English, Russian (default), and Belarusian is mandatory. All user-facing UI text MUST be localized using keys in `src/i18n/locales`. Obsidian content translation MUST be managed strictly via the existing Crowdin integration. Native directory-based routing (e.g., `/be/`) is used.
+Support for English, Russian (default), and Belarusian is mandatory. All user-facing UI text MUST be localized using keys in `src/i18n/locales`. Translations of vault content live next to the Russian source as separate markdown files, edited in the repo; there is no external translation service. Native directory-based routing (e.g., `/be/`) is used.
 
 ### 3. SEO and Semantic Data
 
@@ -39,7 +39,7 @@ Two sources feed one Astro site:
 - **Styling**: Tailwind CSS 4 (via Vite plugin).
 - **Interactivity**: Vanilla JavaScript.
 - **Content Management**: Brevly for event data; Markdown/JSON in Obsidian Vault (`rbelby/`) for editorial content.
-- **Translation**: Crowdin (syncs to `src/i18n/locales/`).
+- **Translation**: in-repo files (`src/i18n/locales/*.json`, `rbelby/learn/{be,en}/`), no Crowdin.
 - **Package Manager**: npm (Node.js v20+).
 - **Checks**: `npm run check` (Prettier + `astro check`), Vitest for the API client.
 - **Changelog & Versioning**: Changesets (`@changesets/cli`) using semantic PR descriptions over conventional commits (ADR-0001).

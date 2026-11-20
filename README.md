@@ -15,7 +15,7 @@ A "ready, alive website" with no rebuild lag: an organizer saves an event in Bre
 ## ✍️ For Content Editors & Authors
 
 - **Events and clubs**: edited by club organizers in Brevly (`brevly.app/dash`), not here.
-- **Learn pages and site settings**: Markdown/JSON in the `rbelby/` folder. Clone the repository, open `rbelby` as an [Obsidian](https://obsidian.md/) vault, edit, and open a pull request. Translations go through Crowdin.
+- **Learn pages and site settings**: Markdown/JSON in the `rbelby/` folder. Clone the repository, open `rbelby` as an [Obsidian](https://obsidian.md/) vault, edit, and open a pull request. Translations are separate files in the repo (`rbelby/learn/{be,en}/`, `src/i18n/locales/`), edited by pull request.
 
 ---
 

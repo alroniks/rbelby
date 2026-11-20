@@ -10,7 +10,7 @@ export async function getStaticPaths() {
   );
 
   return uniqueBaseIds.map((baseId) => {
-    const event = getEntryForLang(events, baseId, 'en');
+    const event = getEntryForLang(events, baseId, 'en')!;
     return {
       params: { id: baseId },
       props: { event },

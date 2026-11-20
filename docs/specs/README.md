@@ -41,7 +41,7 @@ Specs 0006–0009 are superseded by the live pages below; 0010–0016 of the old
 | [0022](./0022-event-page.md)                | Event page                               | Ready     | 0018, 0019 |
 | [0023](./0023-clubs.md)                     | Clubs                                    | Ready     | 0018, 0019 |
 | [0024](./0024-home-page.md)                 | Home page                                | Ready     | 0018, 0019 |
-| [0025](./0025-learn-pages.md)               | Learn pages (markdown + Crowdin)         | Ready     | 0019       |
+| [0025](./0025-learn-pages.md)               | Learn pages (markdown, RU/BE/EN)         | Ready     | 0019       |
 | [0020](./0020-vault-cleanup-redirects.md)   | Vault cleanup & redirects                | Ready     | 0021–0025  |
 
 ## M2 · After the MVP — 2027
