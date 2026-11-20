@@ -21,6 +21,7 @@
 - [ ] Delete the content, collections and pages listed above.
 - [ ] Redirect map in `astro.config.mjs` `redirects` (or middleware for wildcard/locale cases).
 - [ ] Club slug → Brevly ID map (filled once BY clubs are in Brevly; until then `/clubs`).
+- [ ] Remove the legacy token aliases in `global.css`, the old `Icon.astro` + `icons.json` and the `griddy-icons` package (kept alive by 0019).
 - [ ] `npm run check` and `npm run build` pass.
 
 ## 4. Drafts & Notes (Living Document)

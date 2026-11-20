@@ -4,7 +4,7 @@
 
 - **Goal:** The event page for brevets, fests and Flèche in every lifecycle state; registration hands off to Brevly.
 - **User Flow:** _Visitor:_ opens `/events/{id}` → reads date, distance, controls, route → taps Register → `register_url` on brevly.app.
-- **Design:** `design/rbelby.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Event · Brevet (cancelled)` (`H0Fdl`), `(postponed)` (`K3xmN`), `Event · Fest (guest, window open)` (`pj7BD`), `Event · Flèche (guest)` (`a6hFPV`), `Event · Brevet (ride day, guest)` (`SW5lq`); `Event · Brevet (registered)` (`yQgVV`) as the layout reference for a scheduled brevet, guest variant. Blocks: `Event / Cover`, `Quick Facts`, `Status Banner`, `Announcements`, `About`, `Control Timeline`, `Route & Navigation`, `Fest Steps`, `Start Window`, `Teams`, `Action Card`, `Share Card`, `Results / Summary`.
+- **Design:** `design/rbelby.pen`, frame `rbel.by · Public Site` (`iexz1`) — `Event · Brevet (cancelled)` (`H0Fdl`), `(postponed)` (`K3xmN`), `Event · Fest (guest, window open)` (`pj7BD`), `Event · Flèche (guest)` (`a6hFPV`), `Event · Brevet (ride day, guest)` (`SW5lq`); `Event · Brevet (registered)` (`yQgVV`) as the layout reference for a scheduled brevet, guest variant. Blocks: `Event / Cover`, `Quick Facts`, `Status Banner`, `Announcements`, `About`, `Control Timeline`, `Route & Navigation`, `Fest Steps`, `Start Window`, `Teams`, `Action Card`, `Share Card`, `Results / Summary`.
 - **Affected Areas:** `src/pages/events/[id].astro` (+ locales), `src/components/event/`.
 
 ## 2. Technical Plan (The "How" for this specific feature)

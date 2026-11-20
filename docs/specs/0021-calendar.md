@@ -4,7 +4,7 @@
 
 - **Goal:** One live calendar of every BY brevet and fest Brevly publishes, replacing the markdown events directory.
 - **User Flow:** _Visitor:_ opens `/calendar` → sees the season by month → narrows by month, distance or type → opens an event.
-- **Design:** `design/rbelby.pen`, frame `01b · Public Pages · rbel.by` (`iexz1`) — `Calendar` (`yqjPc`), `Edge: Calendar · live data unavailable` (`AH4z2`), `Edge: Calendar · nothing published` (`YFw8b`). Blocks: `Calendar / Flagship Slider`, `Calendar / Finder`, `Calendar / Year Overview`, `Calendar / Month Divider`, `Event / Row`, `Event / Fest Tile`, `Calendar / Alerts Card`.
+- **Design:** `design/rbelby.pen`, frame `rbel.by · Public Site` (`iexz1`) — `Calendar` (`yqjPc`), `Edge: Calendar · live data unavailable` (`AH4z2`), `Edge: Calendar · nothing published` (`YFw8b`). Blocks: `Calendar / Flagship Slider`, `Calendar / Finder`, `Calendar / Year Overview`, `Calendar / Month Divider`, `Event / Row`, `Event / Fest Tile`, `Calendar / Alerts Card`.
 - **Affected Areas:** `src/pages/[...locale]/calendar` (or per-locale pages), `src/components/calendar/`.
 
 ## 2. Technical Plan (The "How" for this specific feature)
